@@ -1,93 +1,57 @@
 import React from "react";
 
-function Profile() {
+function Transactions({ dashboardData }) {
+  const transactions = dashboardData?.recent_transactions || [];
+
   return (
     <main className="dashboard-main">
       <section className="dashboard-panel page-hero-panel">
         <div className="page-hero-content">
           <div>
-            <span className="page-badge">Customer Profile</span>
+            <span className="page-badge">Transaction Records</span>
             <div className="panel-header panel-header-no-margin">
-              <h3>Profile & Security</h3>
+              <h3>Transactions</h3>
             </div>
             <p className="section-description">
-              Update your personal information, manage password settings, and
-              keep your account secure.
+              View real transaction records from MySQL.
             </p>
           </div>
 
-          <div className="profile-avatar-card">
-            <div className="profile-avatar-large">K</div>
-            <div>
-              <h4>Khim Lucintes</h4>
-              <p>Verified Customer</p>
-            </div>
+          <div className="hero-summary-box">
+            <p>Total Records</p>
+            <h2>{transactions.length}</h2>
+            <span>Latest customer transactions</span>
           </div>
         </div>
       </section>
 
-      <section className="dashboard-grid">
-        <div className="dashboard-panel">
-          <div className="panel-header">
-            <h3>Personal Information</h3>
-          </div>
-
-          <form className="dashboard-form">
-            <div className="form-group">
-              <label>Full Name</label>
-              <input type="text" defaultValue="Khim Lucintes" />
-            </div>
-
-            <div className="form-group">
-              <label>Email Address</label>
-              <input type="email" defaultValue="admin@gmail.com" />
-            </div>
-
-            <div className="form-group">
-              <label>Mobile Number</label>
-              <input type="text" defaultValue="+63 912 345 6789" />
-            </div>
-
-            <div className="form-group">
-              <label>Address</label>
-              <input type="text" defaultValue="Davao City, Philippines" />
-            </div>
-
-            <button type="button" className="form-action-btn">
-              Save Changes
-            </button>
-          </form>
+      <section className="dashboard-panel">
+        <div className="panel-header">
+          <h3>Transaction History</h3>
         </div>
 
-        <div className="dashboard-panel">
-          <div className="panel-header">
-            <h3>Security Settings</h3>
-          </div>
-
-          <form className="dashboard-form">
-            <div className="form-group">
-              <label>Current Password</label>
-              <input type="password" placeholder="Enter current password" />
-            </div>
-
-            <div className="form-group">
-              <label>New Password</label>
-              <input type="password" placeholder="Enter new password" />
-            </div>
-
-            <div className="form-group">
-              <label>Confirm Password</label>
-              <input type="password" placeholder="Confirm new password" />
-            </div>
-
-            <button type="button" className="form-action-btn">
-              Update Password
-            </button>
-          </form>
+        <div className="transaction-list">
+          {transactions.length > 0 ? (
+            transactions.map((txn) => (
+              <div className="transaction-item" key={txn.transaction_id}>
+                <div>
+                  <h4>{txn.transaction_type}</h4>
+                  <p>
+                    {txn.description || "No description"} • {txn.transaction_date}
+                  </p>
+                </div>
+                <span className={Number(txn.amount) >= 0 ? "positive" : "negative"}>
+                  ₱{Number(txn.amount).toLocaleString()}
+                </span>
+              </div>
+            ))
+          ) : (
+            <p>No transactions found.</p>
+          )}
         </div>
       </section>
     </main>
   );
 }
 
-export default Profile;
+export default Transactions;

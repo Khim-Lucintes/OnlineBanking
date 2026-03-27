@@ -8,16 +8,39 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
+    setError("");
+    setLoading(true);
 
-    // DEMO ACCOUNT
-    if (email === "admin@gmail.com" && password === "123456") {
+    try {
+      const response = await fetch("/api/login", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({ email, password }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.message || "Login failed");
+        setLoading(false);
+        return;
+      }
+
       localStorage.setItem("isAuth", "true");
+      localStorage.setItem("user", JSON.stringify(data.user));
+
       navigate("/dashboard");
-    } else {
-      setError("Invalid email or password");
+    } catch (err) {
+      setError("Server error. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -42,7 +65,6 @@ function Login() {
             <h2>Login</h2>
             <p className="auth-subtext">Enter your credentials to continue</p>
 
-            {/* ERROR MESSAGE */}
             {error && <p style={{ color: "#ff6b6b" }}>{error}</p>}
 
             <form className="auth-form" onSubmit={handleLogin}>
@@ -50,7 +72,7 @@ function Login() {
                 <label>Email Address</label>
                 <input
                   type="email"
-                  placeholder="admin@gmail.com"
+                  placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
                 />
@@ -60,30 +82,22 @@ function Login() {
                 <label>Password</label>
                 <input
                   type="password"
-                  placeholder="123456"
+                  placeholder="Enter your password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
 
-              <div className="auth-options">
-                <label className="remember-me">
-                  <input type="checkbox" />
-                  <span>Remember me</span>
-                </label>
-                <a href="#">Forgot password?</a>
-              </div>
-
               <button
                 type="submit"
                 className="neo-btn neo-btn-primary neo-btn-lg auth-submit"
+                disabled={loading}
               >
-                Sign In
+                {loading ? "Signing In..." : "Sign In"}
               </button>
 
               <p className="auth-switch">
-                Don’t have an account?{" "}
-                <Link to="/register">Create one</Link>
+                Don’t have an account? <Link to="/register">Create one</Link>
               </p>
             </form>
           </div>

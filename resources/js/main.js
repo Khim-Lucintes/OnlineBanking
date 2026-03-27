@@ -8,20 +8,27 @@ import Login from "./components/public/LandingPage/Login";
 import Register from "./components/public/LandingPage/Register";
 import Dashboard from "./components/private/Dashboard/Dashboard";
 
+const PrivateRoute = ({ children }) => {
+  const isAuth = localStorage.getItem("isAuth");
+  return isAuth === "true" ? children : <Navigate to="/login" />;
+};
+
 function Main() {
   return (
     <BrowserRouter>
       <Routes>
-
-        {/* Public */}
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-
-        {/* Private (optional protection later) */}
-        <Route path="/dashboard" element={<Dashboard />} />
-
+        <Route
+          path="/dashboard"
+          element={
+            <PrivateRoute>
+              <Dashboard />
+            </PrivateRoute>
+          }
+        />
       </Routes>
     </BrowserRouter>
   );

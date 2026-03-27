@@ -5,9 +5,10 @@ function Sidebarlist({ activePage, setActivePage }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-    localStorage.removeItem("isAuth");
-    navigate("/login");
-  };
+  localStorage.removeItem("isAuth");
+  localStorage.removeItem("user");
+  navigate("/login");
+};
 
   const menuItems = [
     { key: "dashboard", label: "Dashboard" },
