@@ -1,0 +1,9 @@
+@import "./Login.css";
+
+.auth-right h2 {
+  font-size: 28px;
+}
+
+.auth-group {
+  margin-bottom: 10px;
+}

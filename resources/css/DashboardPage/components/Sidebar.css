@@ -1,0 +1,108 @@
+.dashboard-sidebar {
+  background: #11162a;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 24px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.dashboard-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.dashboard-brand-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #5c67ff, #00cfff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+}
+
+.dashboard-brand h2 {
+  font-size: 20px;
+  margin-bottom: 2px;
+  color: #fff;
+}
+
+.dashboard-brand span {
+  font-size: 12px;
+  color: #94a2c6;
+}
+
+.dashboard-sidebar-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.dashboard-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.dashboard-menu-btn {
+  width: 100%;
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  color: #b6c0de;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.dashboard-menu-btn:hover,
+.dashboard-menu-btn.active {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+}
+
+.dashboard-sidebar-footer {
+  margin-top: 30px;
+}
+
+.logout-btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  color: #fff;
+  background: linear-gradient(135deg, #5c67ff, #00cfff);
+  border: none;
+  cursor: pointer;
+}
+
+.secondary-btn {
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+@media (max-width: 1100px) {
+  .dashboard-sidebar {
+    display: none;
+  }
+}
+
+.logout-menu {
+  margin-top: 10px;
+  color: #ff7b7b;
+}
+
+.logout-menu:hover {
+  background: rgba(255, 123, 123, 0.12);
+  color: #ff9a9a;
+}
