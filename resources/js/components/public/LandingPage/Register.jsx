@@ -24,51 +24,69 @@ function Register() {
   };
 
   const handleRegister = async (e) => {
-  e.preventDefault();
-  setError("");
-  setSuccess("");
+    e.preventDefault();
+    setError("");
+    setSuccess("");
 
-  if (form.password !== form.confirmPassword) {
-    setError("Passwords do not match");
-    return;
-  }
-
-  setLoading(true);
-
-  try {
-    const response = await fetch("/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        username: form.username,
-        email: form.email,
-        password: form.password,
-      }),
-    });
-
-    const data = await response.json();
-
-    if (!response.ok) {
-      if (data.errors) {
-        const firstError = Object.values(data.errors)[0][0];
-        setError(firstError);
-      } else {
-        setError(data.message || "Registration failed");
-      }
+    if (form.password !== form.confirmPassword) {
+      setError("Passwords do not match");
       return;
     }
 
-    setSuccess("Customer account created successfully");
-    setTimeout(() => navigate("/login"), 1200);
-  } catch (err) {
-    setError("Server error. Please try again.");
-  } finally {
-    setLoading(false);
-  }
-};
+    if (form.password.length < 8) {
+      setError("Password must be at least 8 characters");
+      return;
+    }
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          username: form.username.trim(),
+          email: form.email.trim(),
+          password: form.password,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        console.log("Register API error:", data);
+
+        if (data.errors) {
+          const firstError = Object.values(data.errors)[0][0];
+          setError(firstError);
+        } else {
+          setError(data.error || data.message || "Registration failed");
+        }
+        return;
+      }
+
+      setSuccess(data.message || "Customer account created successfully");
+
+      setForm({
+        username: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+
+      setTimeout(() => {
+        navigate("/login");
+      }, 1200);
+    } catch (err) {
+      console.error("Register request failed:", err);
+      setError("Server error. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <div className="neo-page auth-page">

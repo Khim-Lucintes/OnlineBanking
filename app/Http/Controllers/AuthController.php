@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Str;
 class AuthController extends Controller
 {
-   public function register(Request $request)
+ public function register(Request $request)
 {
     $request->validate([
         'username' => 'required|string|max:100|unique:users_table,username',
@@ -19,11 +19,21 @@ class AuthController extends Controller
     DB::beginTransaction();
 
     try {
+        $customerRole = DB::table('roles_table')
+            ->where('role_name', 'Customer')
+            ->first();
+
+        if (!$customerRole) {
+            return response()->json([
+                'message' => 'Customer role not found'
+            ], 500);
+        }
+
         $userId = DB::table('users_table')->insertGetId([
-            'role_id' => 1,
-            'username' => $request->username,
+            'role_id' => $customerRole->role_id,
+            'username' => trim($request->username),
             'password_hash' => Hash::make($request->password),
-            'email' => $request->email,
+            'email' => trim($request->email),
             'email_verified' => 1,
             'status' => 'Active',
             'created_at' => now(),
@@ -43,14 +53,17 @@ class AuthController extends Controller
         DB::commit();
 
         return response()->json([
-            'message' => 'Customer registered successfully'
+            'message' => 'Customer registered successfully',
+            'user_id' => $userId,
+            'account_number' => $accountNumber,
         ], 201);
-    } catch (\Exception $e) {
+
+    } catch (\Throwable $e) {
         DB::rollBack();
 
         return response()->json([
             'message' => 'Registration failed',
-            'error' => $e->getMessage()
+            'error' => $e->getMessage(),
         ], 500);
     }
 }

@@ -7462,9 +7462,16 @@ function Register() {
             setError("Passwords do not match");
             return _context.a(2);
           case 1:
+            if (!(form.password.length < 8)) {
+              _context.n = 2;
+              break;
+            }
+            setError("Password must be at least 8 characters");
+            return _context.a(2);
+          case 2:
             setLoading(true);
-            _context.p = 2;
-            _context.n = 3;
+            _context.p = 3;
+            _context.n = 4;
             return fetch("/api/register", {
               method: "POST",
               headers: {
@@ -7472,47 +7479,55 @@ function Register() {
                 Accept: "application/json"
               },
               body: JSON.stringify({
-                username: form.username,
-                email: form.email,
+                username: form.username.trim(),
+                email: form.email.trim(),
                 password: form.password
               })
             });
-          case 3:
-            response = _context.v;
-            _context.n = 4;
-            return response.json();
           case 4:
+            response = _context.v;
+            _context.n = 5;
+            return response.json();
+          case 5:
             data = _context.v;
             if (response.ok) {
-              _context.n = 5;
+              _context.n = 6;
               break;
             }
+            console.log("Register API error:", data);
             if (data.errors) {
               firstError = Object.values(data.errors)[0][0];
               setError(firstError);
             } else {
-              setError(data.message || "Registration failed");
+              setError(data.error || data.message || "Registration failed");
             }
             return _context.a(2);
-          case 5:
-            setSuccess("Customer account created successfully");
-            setTimeout(function () {
-              return navigate("/login");
-            }, 1200);
-            _context.n = 7;
-            break;
           case 6:
-            _context.p = 6;
-            _t = _context.v;
-            setError("Server error. Please try again.");
+            setSuccess(data.message || "Customer account created successfully");
+            setForm({
+              username: "",
+              email: "",
+              password: "",
+              confirmPassword: ""
+            });
+            setTimeout(function () {
+              navigate("/login");
+            }, 1200);
+            _context.n = 8;
+            break;
           case 7:
             _context.p = 7;
-            setLoading(false);
-            return _context.f(7);
+            _t = _context.v;
+            console.error("Register request failed:", _t);
+            setError("Server error. Please try again.");
           case 8:
+            _context.p = 8;
+            setLoading(false);
+            return _context.f(8);
+          case 9:
             return _context.a(2);
         }
-      }, _callee, null, [[2, 6, 7, 8]]);
+      }, _callee, null, [[3, 7, 8, 9]]);
     }));
     return function handleRegister(_x) {
       return _ref.apply(this, arguments);
