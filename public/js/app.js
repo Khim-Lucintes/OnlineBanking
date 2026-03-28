@@ -5174,6 +5174,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Profile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Profile */ "./resources/js/components/private/Dashboard/components/Profile.jsx");
 /* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/Footer */ "./resources/js/components/private/Dashboard/components/Footer.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -5213,87 +5219,77 @@ function Dashboard() {
   var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_1__.useNavigate)();
   var storedUser = localStorage.getItem("user");
   var user = storedUser ? JSON.parse(storedUser) : null;
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    if (!user || !user.user_id) {
-      navigate("/login");
-      return;
-    }
-    var fetchDashboardData = /*#__PURE__*/function () {
-      var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
-        var response, data, _t;
-        return _regenerator().w(function (_context) {
-          while (1) switch (_context.p = _context.n) {
-            case 0:
-              _context.p = 0;
+  var fetchDashboardData = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            if (!(!user || !user.user_id)) {
               _context.n = 1;
-              return fetch("/api/dashboard/".concat(user.user_id), {
-                headers: {
-                  Accept: "application/json"
-                }
-              });
-            case 1:
-              response = _context.v;
-              _context.n = 2;
-              return response.json();
-            case 2:
-              data = _context.v;
-              if (response.ok) {
-                _context.n = 3;
-                break;
-              }
-              console.error(data.message || "Failed to load dashboard data");
-              setLoading(false);
-              return _context.a(2);
-            case 3:
-              setDashboardData(data);
-              _context.n = 5;
               break;
-            case 4:
-              _context.p = 4;
-              _t = _context.v;
-              console.error("Dashboard fetch error:", _t);
-            case 5:
-              _context.p = 5;
-              setLoading(false);
-              return _context.f(5);
-            case 6:
-              return _context.a(2);
-          }
-        }, _callee, null, [[0, 4, 5, 6]]);
-      }));
-      return function fetchDashboardData() {
-        return _ref.apply(this, arguments);
-      };
-    }();
+            }
+            navigate("/login");
+            return _context.a(2);
+          case 1:
+            _context.p = 1;
+            _context.n = 2;
+            return fetch("/api/dashboard/".concat(user.user_id), {
+              headers: {
+                Accept: "application/json"
+              }
+            });
+          case 2:
+            response = _context.v;
+            _context.n = 3;
+            return response.json();
+          case 3:
+            data = _context.v;
+            if (response.ok) {
+              setDashboardData(data);
+            } else {
+              console.error(data.message || "Failed to load dashboard");
+            }
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            console.error("Dashboard fetch error:", _t);
+          case 5:
+            _context.p = 5;
+            setLoading(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[1, 4, 5, 6]]);
+    }));
+    return function fetchDashboardData() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     fetchDashboardData();
-  }, [navigate]);
+  }, []);
+  var sharedProps = {
+    dashboardData: dashboardData,
+    refreshDashboard: fetchDashboardData
+  };
   var renderPage = function renderPage() {
     switch (activePage) {
       case "accounts":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Accounts__WEBPACK_IMPORTED_MODULE_6__["default"], {
-          dashboardData: dashboardData
-        });
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Accounts__WEBPACK_IMPORTED_MODULE_6__["default"], _objectSpread({}, sharedProps));
       case "transfer":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_TransferMoney__WEBPACK_IMPORTED_MODULE_7__["default"], {
-          dashboardData: dashboardData
-        });
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_TransferMoney__WEBPACK_IMPORTED_MODULE_7__["default"], _objectSpread({}, sharedProps));
       case "paybills":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_PayBills__WEBPACK_IMPORTED_MODULE_8__["default"], {
-          dashboardData: dashboardData
-        });
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_PayBills__WEBPACK_IMPORTED_MODULE_8__["default"], _objectSpread({}, sharedProps));
       case "transactions":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Transactions__WEBPACK_IMPORTED_MODULE_9__["default"], {
-          dashboardData: dashboardData
-        });
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Transactions__WEBPACK_IMPORTED_MODULE_9__["default"], _objectSpread({}, sharedProps));
       case "profile":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Profile__WEBPACK_IMPORTED_MODULE_10__["default"], {
-          dashboardData: dashboardData
-        });
-      case "dashboard":
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Profile__WEBPACK_IMPORTED_MODULE_10__["default"], _objectSpread({}, sharedProps));
       default:
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_DashboardMain__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          dashboardData: dashboardData
-        });
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_DashboardMain__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread({}, sharedProps));
     }
   };
   if (loading) {
@@ -5501,36 +5497,37 @@ function DashboardMain(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "panel-header",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-            children: "My Card"
+            children: "Account Overview"
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "dashboard-atm-card",
+          className: "account-overview-box",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "atm-top",
+            className: "overview-row",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              children: "MyBank"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-              children: "VISA"
+              children: "Primary Account"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_number) || "N/A"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "atm-chip"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "atm-number",
-            children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_number) || "0000 0000 0000 0000"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "atm-footer",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                children: "Card Holder"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-                children: (user.username || "CUSTOMER").toUpperCase()
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                children: "Status"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-                children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.status) || "ACTIVE"
-              })]
+            className: "overview-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Account Type"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_type) || "N/A"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "overview-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Status"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.status) || "Active"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "overview-row",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Available Balance"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+              children: ["\u20B1", Number((primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.balance) || 0).toLocaleString()]
             })]
           })]
         })]
@@ -5643,16 +5640,163 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
-function PayBills() {
+
+function PayBills(_ref) {
+  var _accounts$;
+  var dashboardData = _ref.dashboardData,
+    refreshDashboard = _ref.refreshDashboard;
+  var accounts = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.accounts) || [];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    bills = _useState2[0],
+    setBills = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      account_id: ((_accounts$ = accounts[0]) === null || _accounts$ === void 0 ? void 0 : _accounts$.account_id) || "",
+      bill_id: "",
+      amount: ""
+    }),
+    _useState4 = _slicedToArray(_useState3, 2),
+    form = _useState4[0],
+    setForm = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState6 = _slicedToArray(_useState5, 2),
+    message = _useState6[0],
+    setMessage = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState8 = _slicedToArray(_useState7, 2),
+    error = _useState8[0],
+    setError = _useState8[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var fetchBills = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+        var response, data, _t;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.p = _context.n) {
+            case 0:
+              _context.p = 0;
+              _context.n = 1;
+              return fetch("/api/bills", {
+                headers: {
+                  Accept: "application/json"
+                }
+              });
+            case 1:
+              response = _context.v;
+              _context.n = 2;
+              return response.json();
+            case 2:
+              data = _context.v;
+              if (response.ok) {
+                setBills(data);
+                if (data.length > 0) {
+                  setForm(function (prev) {
+                    return _objectSpread(_objectSpread({}, prev), {}, {
+                      bill_id: data[0].bill_id
+                    });
+                  });
+                }
+              }
+              _context.n = 4;
+              break;
+            case 3:
+              _context.p = 3;
+              _t = _context.v;
+              console.error("Failed to fetch bills", _t);
+            case 4:
+              return _context.a(2);
+          }
+        }, _callee, null, [[0, 3]]);
+      }));
+      return function fetchBills() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+    fetchBills();
+  }, []);
+  var handleChange = function handleChange(e) {
+    setForm(_objectSpread(_objectSpread({}, form), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+  var handlePayBill = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(e) {
+      var _accounts$2, _bills$, response, data, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            e.preventDefault();
+            setMessage("");
+            setError("");
+            _context2.p = 1;
+            _context2.n = 2;
+            return fetch("/api/pay-bill", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              },
+              body: JSON.stringify(form)
+            });
+          case 2:
+            response = _context2.v;
+            _context2.n = 3;
+            return response.json();
+          case 3:
+            data = _context2.v;
+            if (response.ok) {
+              _context2.n = 4;
+              break;
+            }
+            setError(data.message || "Bill payment failed");
+            return _context2.a(2);
+          case 4:
+            setMessage(data.message);
+            setForm({
+              account_id: ((_accounts$2 = accounts[0]) === null || _accounts$2 === void 0 ? void 0 : _accounts$2.account_id) || "",
+              bill_id: ((_bills$ = bills[0]) === null || _bills$ === void 0 ? void 0 : _bills$.bill_id) || "",
+              amount: ""
+            });
+            _context2.n = 5;
+            return refreshDashboard();
+          case 5:
+            _context2.n = 7;
+            break;
+          case 6:
+            _context2.p = 6;
+            _t2 = _context2.v;
+            setError("Server error. Please try again.");
+          case 7:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[1, 6]]);
+    }));
+    return function handlePayBill(_x) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
     className: "dashboard-main",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
       className: "dashboard-panel page-hero-panel",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "page-hero-content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
             className: "page-badge",
             children: "Bills Payment"
@@ -5663,18 +5807,9 @@ function PayBills() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
             className: "section-description",
-            children: "Pay utilities, internet, credit cards, and enrolled billers. You can also review recent and scheduled bill payments."
+            children: "Pay bills using your real account balance and store the payment in MySQL."
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "hero-summary-box",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: "Due This Week"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-            children: "\u20B110,749"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            children: "3 upcoming billers"
-          })]
-        })]
+        })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
       className: "dashboard-grid",
@@ -5685,41 +5820,48 @@ function PayBills() {
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
             children: "New Bill Payment"
           })
+        }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          style: {
+            color: "#63f0b1"
+          },
+          children: message
+        }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          style: {
+            color: "#ff7b7b"
+          },
+          children: error
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
           className: "dashboard-form",
+          onSubmit: handlePayBill,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
               children: "From Account"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Savings Account - ****2451"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Checking Account - ****7812"
-              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
+              name: "account_id",
+              value: form.account_id,
+              onChange: handleChange,
+              children: accounts.map(function (account) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("option", {
+                  value: account.account_id,
+                  children: [account.account_type, " - ", account.account_number]
+                }, account.account_id);
+              })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
               children: "Biller"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Electric Utility"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Water Utility"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Internet Provider"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Credit Card"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              children: "Reference Number"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-              type: "text",
-              placeholder: "Enter bill/reference number"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
+              name: "bill_id",
+              value: form.bill_id,
+              onChange: handleChange,
+              children: bills.map(function (bill) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("option", {
+                  value: bill.bill_id,
+                  children: [bill.biller_name, " (", bill.category, ")"]
+                }, bill.bill_id);
+              })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
@@ -5727,17 +5869,13 @@ function PayBills() {
               children: "Amount"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
               type: "number",
+              name: "amount",
+              value: form.amount,
+              onChange: handleChange,
               placeholder: "Enter payment amount"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              children: "Schedule"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-              type: "date"
-            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-            type: "button",
+            type: "submit",
             className: "form-action-btn",
             children: "Confirm Payment"
           })]
@@ -5747,51 +5885,19 @@ function PayBills() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "panel-header",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "Recent Bill Payments"
+            children: "Available Accounts"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "transaction-list",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "transaction-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-                children: "Electric Bill"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                children: "Jun 12, 5:30 PM"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "negative",
-              children: "- \u20B12,350"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "transaction-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-                children: "Internet Bill"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                children: "Jun 10, 11:20 AM"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "negative",
-              children: "- \u20B11,899"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "transaction-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-                children: "Credit Card Payment"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                children: "Jun 08, 2:05 PM"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "negative",
-              children: "- \u20B16,500"
-            })]
-          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "mini-note-box",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: "Scheduled payments will be processed automatically on the selected date if sufficient balance is available."
+          className: "summary-list",
+          children: accounts.map(function (account) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "summary-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: account.account_number
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
+                children: ["\u20B1", Number(account.balance).toLocaleString()]
+              })]
+            }, account.account_id);
           })
         })]
       })]
@@ -5818,9 +5924,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
-function Transactions(_ref) {
+
+function Profile(_ref) {
   var dashboardData = _ref.dashboardData;
-  var transactions = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.recent_transactions) || [];
+  var user = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.user) || {};
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
     className: "dashboard-main",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
@@ -5830,58 +5937,113 @@ function Transactions(_ref) {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
             className: "page-badge",
-            children: "Transaction Records"
+            children: "Customer Profile"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
             className: "panel-header panel-header-no-margin",
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-              children: "Transactions"
+              children: "Profile & Security"
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
             className: "section-description",
-            children: "View real transaction records from MySQL."
+            children: "View your real customer information from MySQL."
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "hero-summary-box",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: "Total Records"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-            children: transactions.length
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            children: "Latest customer transactions"
+          className: "profile-avatar-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+            className: "profile-avatar-large",
+            children: (user.username || "C").charAt(0).toUpperCase()
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+              children: user.username || "Customer"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+              children: user.status || "Active"
+            })]
           })]
         })]
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
-      className: "dashboard-panel",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "panel-header",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-          children: "Transaction History"
-        })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "transaction-list",
-        children: transactions.length > 0 ? transactions.map(function (txn) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "transaction-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-                children: txn.transaction_type
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-                children: [txn.description || "No description", " \u2022 ", txn.transaction_date]
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-              className: Number(txn.amount) >= 0 ? "positive" : "negative",
-              children: ["\u20B1", Number(txn.amount).toLocaleString()]
+      className: "dashboard-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "dashboard-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "panel-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            children: "Personal Information"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+          className: "dashboard-form",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: "Username"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text",
+              value: user.username || "",
+              readOnly: true
             })]
-          }, txn.transaction_id);
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          children: "No transactions found."
-        })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: "Email Address"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "email",
+              value: user.email || "",
+              readOnly: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: "Status"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text",
+              value: user.status || "",
+              readOnly: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: "Email Verified"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text",
+              value: Number(user.email_verified) === 1 ? "Yes" : "No",
+              readOnly: true
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "dashboard-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          className: "panel-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            children: "Account Metadata"
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+          className: "dashboard-form",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: "User ID"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text",
+              value: user.user_id || "",
+              readOnly: true
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+              children: "Created At"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+              type: "text",
+              value: user.created_at || "",
+              readOnly: true
+            })]
+          })]
+        })]
       })]
     })]
   });
 }
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Transactions);
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Profile);
 
 /***/ },
 
@@ -6025,68 +6187,319 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_DashboardPage_components_Transactions_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Transactions.css */ "./resources/css/DashboardPage/components/Transactions.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 function Transactions(_ref) {
   var dashboardData = _ref.dashboardData;
-  var transactions = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.recent_transactions) || [];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
-    className: "dashboard-main",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
-      className: "dashboard-panel page-hero-panel",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    allTransactions = _useState2[0],
+    setAllTransactions = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      dateFrom: "",
+      dateTo: "",
+      type: "All",
+      amount: "",
+      search: ""
+    }),
+    _useState6 = _slicedToArray(_useState5, 2),
+    filters = _useState6[0],
+    setFilters = _useState6[1];
+  var user = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.user) || {};
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var fetchTransactions = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+        var response, data, _t;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.p = _context.n) {
+            case 0:
+              if (user !== null && user !== void 0 && user.user_id) {
+                _context.n = 1;
+                break;
+              }
+              setLoading(false);
+              return _context.a(2);
+            case 1:
+              _context.p = 1;
+              _context.n = 2;
+              return fetch("/api/transactions/".concat(user.user_id), {
+                headers: {
+                  Accept: "application/json"
+                }
+              });
+            case 2:
+              response = _context.v;
+              _context.n = 3;
+              return response.json();
+            case 3:
+              data = _context.v;
+              if (response.ok) {
+                setAllTransactions(data.transactions || []);
+              } else {
+                console.error(data.message || "Failed to load transactions");
+              }
+              _context.n = 5;
+              break;
+            case 4:
+              _context.p = 4;
+              _t = _context.v;
+              console.error("Transactions fetch error:", _t);
+            case 5:
+              _context.p = 5;
+              setLoading(false);
+              return _context.f(5);
+            case 6:
+              return _context.a(2);
+          }
+        }, _callee, null, [[1, 4, 5, 6]]);
+      }));
+      return function fetchTransactions() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+    fetchTransactions();
+  }, [user === null || user === void 0 ? void 0 : user.user_id]);
+  var handleChange = function handleChange(e) {
+    setFilters(_objectSpread(_objectSpread({}, filters), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+  var filteredTransactions = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return allTransactions.filter(function (txn) {
+      var txnDate = txn.transaction_date ? new Date(txn.transaction_date) : null;
+      var fromOk = filters.dateFrom ? txnDate && txnDate >= new Date(filters.dateFrom) : true;
+      var toOk = filters.dateTo ? txnDate && txnDate <= new Date(filters.dateTo + "T23:59:59") : true;
+      var typeOk = filters.type === "All" ? true : (txn.transaction_type || "").toLowerCase() === filters.type.toLowerCase();
+      var amountOk = filters.amount ? String(txn.amount).includes(filters.amount) : true;
+      var searchValue = filters.search.toLowerCase();
+      var searchOk = filters.search ? (txn.transaction_type || "").toLowerCase().includes(searchValue) || (txn.description || "").toLowerCase().includes(searchValue) || (txn.reference_no || "").toLowerCase().includes(searchValue) : true;
+      return fromOk && toOk && typeOk && amountOk && searchOk;
+    });
+  }, [allTransactions, filters]);
+  var totalIncoming = filteredTransactions.filter(function (txn) {
+    return Number(txn.amount) > 0;
+  }).reduce(function (sum, txn) {
+    return sum + Number(txn.amount);
+  }, 0);
+  var totalOutgoing = filteredTransactions.filter(function (txn) {
+    return Number(txn.amount) < 0;
+  }).reduce(function (sum, txn) {
+    return sum + Math.abs(Number(txn.amount));
+  }, 0);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
+    className: "dashboard-main transaction-page",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+      className: "dashboard-panel",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
         className: "page-hero-content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             className: "page-badge",
             children: "Transaction Records"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "panel-header panel-header-no-margin",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-              children: "Transactions"
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "Full Transaction History"
             })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             className: "section-description",
-            children: "View real transaction records from MySQL."
+            children: "View all real transactions from MySQL and filter them by date, type, amount, or keyword."
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
           className: "hero-summary-box",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
             children: "Total Records"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-            children: transactions.length
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            children: "Latest customer transactions"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+            children: filteredTransactions.length
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: "Filtered transaction results"
           })]
         })]
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
-      className: "dashboard-panel",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "dashboard-cards",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "small-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Total Incoming"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
+          children: ["\u20B1", totalIncoming.toLocaleString()]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Positive transactions"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "small-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Total Outgoing"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
+          children: ["\u20B1", totalOutgoing.toLocaleString()]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Negative transactions"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "small-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Transaction Types"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: _toConsumableArray(new Set(allTransactions.map(function (txn) {
+            return txn.transaction_type;
+          }))).filter(Boolean).length
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Unique types found"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "small-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Customer"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: user.username || "Customer"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: user.email || "-"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "dashboard-panel transactions-filter-panel",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
         className: "panel-header",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: "Filter Transactions"
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "filter-grid transaction-filter-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+            children: "Date From"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            type: "date",
+            name: "dateFrom",
+            value: filters.dateFrom,
+            onChange: handleChange
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+            children: "Date To"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            type: "date",
+            name: "dateTo",
+            value: filters.dateTo,
+            onChange: handleChange
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+            children: "Type"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+            name: "type",
+            value: filters.type,
+            onChange: handleChange,
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+              value: "All",
+              children: "All"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+              value: "Deposit",
+              children: "Deposit"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+              value: "Transfer",
+              children: "Transfer"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+              value: "Transfer Received",
+              children: "Transfer Received"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+              value: "Bill Payment",
+              children: "Bill Payment"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+            children: "Amount Contains"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            type: "text",
+            name: "amount",
+            value: filters.amount,
+            onChange: handleChange,
+            placeholder: "e.g. 2500"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "form-group filter-search-wide",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+            children: "Search"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            type: "text",
+            name: "search",
+            value: filters.search,
+            onChange: handleChange,
+            placeholder: "Search type, description, reference no"
+          })]
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "dashboard-panel transactions-history-panel",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "panel-header",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
           children: "Transaction History"
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "transaction-list",
-        children: transactions.length > 0 ? transactions.map(function (txn) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "transaction-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+      }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: "Loading transactions..."
+      }) : filteredTransactions.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "transaction-list full-transaction-list",
+        children: filteredTransactions.map(function (txn) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "transaction-item transaction-card",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "transaction-main-info",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
                 children: txn.transaction_type
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-                children: [txn.description || "No description", " \u2022 ", txn.transaction_date]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                children: txn.description || "No description provided"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "transaction-meta",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                  children: ["Ref: ", txn.reference_no]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                  children: ["Date: ", txn.transaction_date]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                  children: ["Status: ", txn.status]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                  children: ["Account ID: ", txn.account_id]
+                })]
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
               className: Number(txn.amount) >= 0 ? "positive" : "negative",
-              children: ["\u20B1", Number(txn.amount).toLocaleString()]
+              children: ["\u20B1", Math.abs(Number(txn.amount)).toLocaleString()]
             })]
           }, txn.transaction_id);
-        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          children: "No transactions found."
         })
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: "No transactions found for the selected filters."
       })]
     })]
   });
@@ -6109,16 +6522,201 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
-function TransferMoney() {
+function TransferMoney(_ref) {
+  var dashboardData = _ref.dashboardData,
+    refreshDashboard = _ref.refreshDashboard;
+  var accounts = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.accounts) || [];
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      from_account_id: "",
+      to_account: "",
+      amount: "",
+      remarks: ""
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    form = _useState2[0],
+    setForm = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState4 = _slicedToArray(_useState3, 2),
+    recipientInfo = _useState4[0],
+    setRecipientInfo = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      show: false,
+      type: "",
+      message: ""
+    }),
+    _useState6 = _slicedToArray(_useState5, 2),
+    toast = _useState6[0],
+    setToast = _useState6[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (accounts.length > 0) {
+      setForm(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, {
+          from_account_id: prev.from_account_id || accounts[0].account_id
+        });
+      });
+    }
+  }, [accounts]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var lookupRecipient = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+        var response, data, _t;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.p = _context.n) {
+            case 0:
+              if (!(!form.to_account || form.to_account.trim().length < 5)) {
+                _context.n = 1;
+                break;
+              }
+              setRecipientInfo(null);
+              return _context.a(2);
+            case 1:
+              _context.p = 1;
+              _context.n = 2;
+              return fetch("/api/recipient/".concat(encodeURIComponent(form.to_account.trim())), {
+                headers: {
+                  Accept: "application/json"
+                }
+              });
+            case 2:
+              response = _context.v;
+              _context.n = 3;
+              return response.json();
+            case 3:
+              data = _context.v;
+              if (response.ok) {
+                setRecipientInfo(data.recipient);
+              } else {
+                setRecipientInfo(null);
+              }
+              _context.n = 5;
+              break;
+            case 4:
+              _context.p = 4;
+              _t = _context.v;
+              setRecipientInfo(null);
+            case 5:
+              return _context.a(2);
+          }
+        }, _callee, null, [[1, 4]]);
+      }));
+      return function lookupRecipient() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+    var timer = setTimeout(function () {
+      lookupRecipient();
+    }, 400);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [form.to_account]);
+  var showToast = function showToast(type, message) {
+    setToast({
+      show: true,
+      type: type,
+      message: message
+    });
+    setTimeout(function () {
+      setToast({
+        show: false,
+        type: "",
+        message: ""
+      });
+    }, 3000);
+  };
+  var handleChange = function handleChange(e) {
+    setForm(_objectSpread(_objectSpread({}, form), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+  var handleTransfer = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(e) {
+      var _accounts$, response, data, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            e.preventDefault();
+            _context2.p = 1;
+            _context2.n = 2;
+            return fetch("/api/transfer-money", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+              },
+              body: JSON.stringify(form)
+            });
+          case 2:
+            response = _context2.v;
+            _context2.n = 3;
+            return response.json();
+          case 3:
+            data = _context2.v;
+            if (response.ok) {
+              _context2.n = 4;
+              break;
+            }
+            console.log("Transfer API error:", data);
+            showToast("error", data.error || data.message || "Transfer failed");
+            return _context2.a(2);
+          case 4:
+            showToast("success", data.message || "Transfer completed successfully");
+            setForm({
+              from_account_id: ((_accounts$ = accounts[0]) === null || _accounts$ === void 0 ? void 0 : _accounts$.account_id) || "",
+              to_account: "",
+              amount: "",
+              remarks: ""
+            });
+            setRecipientInfo(null);
+            if (!refreshDashboard) {
+              _context2.n = 5;
+              break;
+            }
+            _context2.n = 5;
+            return refreshDashboard();
+          case 5:
+            _context2.n = 7;
+            break;
+          case 6:
+            _context2.p = 6;
+            _t2 = _context2.v;
+            console.error("Transfer request:", _t2);
+            showToast("error", "Server error. Please try again.");
+          case 7:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[1, 6]]);
+    }));
+    return function handleTransfer(_x) {
+      return _ref3.apply(this, arguments);
+    };
+  }();
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
     className: "dashboard-main",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
+    children: [toast.show && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      className: "custom-toast ".concat(toast.type),
+      children: toast.message
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
       className: "dashboard-panel page-hero-panel",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
         className: "page-hero-content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
             className: "page-badge",
             children: "Transfer Center"
@@ -6129,18 +6727,9 @@ function TransferMoney() {
             })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
             className: "section-description",
-            children: "Send money between your own accounts, transfer to other users, or send to external banks securely."
+            children: "Send money using your real account data from MySQL."
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "hero-summary-box",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: "Transfer Limit"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h2", {
-            children: "\u20B1100,000"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            children: "Daily available limit"
-          })]
-        })]
+        })
       })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
       className: "dashboard-grid",
@@ -6153,39 +6742,43 @@ function TransferMoney() {
           })
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
           className: "dashboard-form",
+          onSubmit: handleTransfer,
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
               children: "From Account"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Savings Account - ****2451"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Checking Account - ****7812"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Payroll Account - ****9034"
-              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
+              name: "from_account_id",
+              value: form.from_account_id,
+              onChange: handleChange,
+              children: accounts.map(function (account) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("option", {
+                  value: account.account_id,
+                  children: [account.account_type, " - ", account.account_number]
+                }, account.account_id);
+              })
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              children: "Transfer Type"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("select", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Own Account Transfer"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "Other MyBank User"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
-                children: "External Bank Transfer"
-              })]
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              children: "Recipient Account"
+              children: "Recipient Account Number"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
               type: "text",
+              name: "to_account",
+              value: form.to_account,
+              onChange: handleChange,
               placeholder: "Enter recipient account number"
+            })]
+          }), recipientInfo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+            className: "recipient-preview",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+              children: ["Recipient Name: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+                children: recipientInfo.username
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
+              children: ["Account Type: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+                children: recipientInfo.account_type
+              })]
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
@@ -6193,7 +6786,12 @@ function TransferMoney() {
               children: "Amount"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
               type: "number",
-              placeholder: "Enter amount"
+              name: "amount",
+              value: form.amount,
+              onChange: handleChange,
+              placeholder: "Enter amount",
+              min: "1",
+              step: "0.01"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
             className: "form-group",
@@ -6201,10 +6799,13 @@ function TransferMoney() {
               children: "Remarks"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
               type: "text",
+              name: "remarks",
+              value: form.remarks,
+              onChange: handleChange,
               placeholder: "Optional note"
             })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
-            type: "button",
+            type: "submit",
             className: "form-action-btn",
             children: "Confirm Transfer"
           })]
@@ -6214,51 +6815,19 @@ function TransferMoney() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
           className: "panel-header",
           children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "Recent Transfers"
+            children: "Available Accounts"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "transaction-list",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "transaction-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-                children: "Transfer to Maria Santos"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                children: "Today, 10:45 AM"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "negative",
-              children: "- \u20B18,500"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "transaction-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-                children: "Own Account Transfer"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                children: "Yesterday, 3:10 PM"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "negative",
-              children: "- \u20B15,000"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "transaction-item",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
-                children: "External Bank Transfer"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-                children: "Jun 12, 9:25 AM"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-              className: "negative",
-              children: "- \u20B112,000"
-            })]
-          })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "mini-note-box",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            children: "Transfers to external banks may take additional processing time depending on the receiving bank."
+          className: "summary-list",
+          children: accounts.map(function (account) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+              className: "summary-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+                children: account.account_number
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
+                children: ["\u20B1", Number(account.balance).toLocaleString()]
+              })]
+            }, account.account_id);
           })
         })]
       })]
@@ -6551,38 +7120,39 @@ function Home() {
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "neo-hero-right atm-highlight",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "atm-card premium-card",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              className: "atm-card-top",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "bank-name",
-                children: "MyBank"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-                className: "card-type",
-                children: "VISA"
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "atm-chip"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-              className: "atm-number",
-              children: "1234 5678 9012 3456"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-              className: "atm-bottom",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+            className: "neo-hero-right",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "hero-summary-panel",
               children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "hero-summary-stat",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-                  children: "Card Holder"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
-                  children: "KHIM LUCINTES"
+                  children: "Total Secure Transactions"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                  children: "\u20B12.4M+"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  children: "Processed this month"
                 })]
               }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "hero-summary-stat",
                 children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-                  children: "Expires"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
-                  children: "12/30"
+                  children: "Active Customers"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                  children: "12,500+"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  children: "Growing user base"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "hero-summary-stat",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                  children: "System Uptime"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+                  children: "99.9%"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  children: "Reliable platform access"
                 })]
               })]
-            })]
+            })
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "neo-floating neo-floating-top",
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
@@ -7139,7 +7709,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-page {\r\n  min-height: 100vh;\r\n  display: grid;\r\n  grid-template-columns: 260px 1fr;\r\n  background: #0b1020;\r\n  color: #fff;\r\n}\r\n\r\n.dashboard-content-wrapper {\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-height: 100vh;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-page {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-page {\r\n  min-height: 100vh;\r\n  display: grid;\r\n  grid-template-columns: 260px 1fr;\r\n  background: #0b1020;\r\n  color: #fff;\r\n}\r\n\r\n.dashboard-content-wrapper {\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-height: 100vh;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-page {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.custom-toast {\r\n  position: fixed;\r\n  top: 24px;\r\n  right: 24px;\r\n  z-index: 9999;\r\n  min-width: 260px;\r\n  max-width: 360px;\r\n  padding: 14px 18px;\r\n  border-radius: 14px;\r\n  color: #fff;\r\n  font-weight: 600;\r\n  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);\r\n  animation: slideInToast 0.3s ease;\r\n}\r\n\r\n.custom-toast.success {\r\n  background: linear-gradient(135deg, #16c997, #12b886);\r\n}\r\n\r\n.custom-toast.error {\r\n  background: linear-gradient(135deg, #ff6b6b, #fa5252);\r\n}\r\n\r\n@keyframes slideInToast {\r\n  from {\r\n    opacity: 0;\r\n    transform: translateY(-12px) translateX(20px);\r\n  }\r\n  to {\r\n    opacity: 1;\r\n    transform: translateY(0) translateX(0);\r\n  }\r\n}\r\n\r\n.recipient-preview {\r\n  margin-top: 10px;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.recipient-preview p {\r\n  color: #b6c0de;\r\n  font-size: 13px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.recipient-preview p:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.recipient-preview strong {\r\n  color: #ffffff;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7163,7 +7733,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-main {\r\n  padding: 20px 28px;\r\n}\r\n\r\n.dashboard-cards {\r\n  display: grid;\r\n  grid-template-columns: 1.4fr 1fr 1fr 1fr;\r\n  gap: 18px;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.balance-card,\r\n.small-card,\r\n.dashboard-panel {\r\n  background: rgba(255, 255, 255, 0.06);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  border-radius: 22px;\r\n  padding: 22px;\r\n  backdrop-filter: blur(16px);\r\n}\r\n\r\n.balance-card h2 {\r\n  font-size: 34px;\r\n  margin: 10px 0;\r\n}\r\n\r\n.balance-card p,\r\n.small-card p {\r\n  color: #94a2c6;\r\n}\r\n\r\n.balance-card span,\r\n.small-card span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n.small-card h3 {\r\n  font-size: 24px;\r\n  margin: 8px 0;\r\n}\r\n\r\n.dashboard-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.3fr 0.9fr;\r\n  gap: 18px;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.panel-header {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin-bottom: 18px;\r\n}\r\n\r\n.panel-header h3 {\r\n  font-size: 20px;\r\n}\r\n\r\n.panel-header a {\r\n  color: #8ad8ff;\r\n  text-decoration: none;\r\n  font-size: 14px;\r\n}\r\n\r\n.transaction-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.transaction-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transaction-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.transaction-item h4 {\r\n  font-size: 15px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.transaction-item p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n.positive {\r\n  color: #63f0b1;\r\n  font-weight: 700;\r\n}\r\n\r\n.negative {\r\n  color: #ff7b7b;\r\n  font-weight: 700;\r\n}\r\n\r\n.dashboard-atm-card {\r\n  width: 100%;\r\n  max-width: 360px;\r\n  height: 210px;\r\n  border-radius: 20px;\r\n  padding: 20px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n.atm-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-weight: 700;\r\n}\r\n\r\n.atm-chip {\r\n  width: 50px;\r\n  height: 34px;\r\n  border-radius: 8px;\r\n  background: linear-gradient(135deg, #f5d76e, #d9a62e);\r\n}\r\n\r\n.atm-number {\r\n  font-size: 20px;\r\n  letter-spacing: 2px;\r\n  font-weight: 600;\r\n}\r\n\r\n.atm-footer {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.atm-footer p {\r\n  font-size: 10px;\r\n  opacity: 0.85;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.atm-footer h4 {\r\n  font-size: 14px;\r\n}\r\n\r\n.quick-actions {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 14px;\r\n}\r\n\r\n.quick-actions button {\r\n  padding: 14px;\r\n  border: none;\r\n  border-radius: 14px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n}\r\n\r\n.summary-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.summary-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.summary-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.summary-item span {\r\n  color: #b6c0de;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-cards,\r\n  .dashboard-grid {\r\n    grid-template-columns: 1fr 1fr;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .dashboard-cards,\r\n  .dashboard-grid,\r\n  .quick-actions {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .dashboard-main {\r\n    padding: 18px;\r\n  }\r\n}\r\n\r\n.section-description {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  margin-top: 6px;\r\n}\r\n\r\n.dashboard-form {\r\n  display: grid;\r\n  gap: 16px;\r\n}\r\n\r\n.form-group {\r\n  display: grid;\r\n  gap: 8px;\r\n}\r\n\r\n.form-group label {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.form-group input,\r\n.form-group select {\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #fff;\r\n  outline: none;\r\n}\r\n\r\n.form-group input::-moz-placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.form-group input::placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.form-action-btn {\r\n  padding: 14px;\r\n  border: none;\r\n  border-radius: 14px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #fff;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n}\r\n\r\n.filter-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .filter-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.page-hero-panel {\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.page-hero-content {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.page-badge {\r\n  display: inline-block;\r\n  padding: 7px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(0, 207, 255, 0.1);\r\n  border: 1px solid rgba(0, 207, 255, 0.2);\r\n  color: #8ad8ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.panel-header-no-margin {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.hero-summary-box {\r\n  min-width: 220px;\r\n  padding: 18px 20px;\r\n  border-radius: 18px;\r\n  background: linear-gradient(\r\n    180deg,\r\n    rgba(255, 255, 255, 0.08),\r\n    rgba(255, 255, 255, 0.04)\r\n  );\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.hero-summary-box p {\r\n  color: #9fb0d8;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.hero-summary-box h2 {\r\n  color: #ffffff;\r\n  font-size: 28px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.hero-summary-box span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n}\r\n\r\n.account-card-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.account-badge,\r\n.account-status {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 6px 10px;\r\n  border-radius: 999px;\r\n  font-size: 11px;\r\n  font-weight: 700;\r\n}\r\n\r\n.account-badge.savings {\r\n  background: rgba(0, 207, 255, 0.12);\r\n  color: #8ad8ff;\r\n}\r\n\r\n.account-badge.checking {\r\n  background: rgba(92, 103, 255, 0.16);\r\n  color: #c6cbff;\r\n}\r\n\r\n.account-badge.payroll {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.account-badge.rewards {\r\n  background: rgba(245, 215, 110, 0.14);\r\n  color: #f5d76e;\r\n}\r\n\r\n.account-status.active,\r\n.account-status.good {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.gradient-card {\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.22), rgba(0, 207, 255, 0.12));\r\n}\r\n\r\n.summary-subtext {\r\n  display: block;\r\n  margin-top: 4px;\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n}\r\n\r\n.info-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 14px;\r\n}\r\n\r\n.info-box {\r\n  padding: 16px;\r\n  border-radius: 16px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.info-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.info-box h4 {\r\n  color: #ffffff;\r\n  font-size: 18px;\r\n}\r\n\r\n.panel-action-btn {\r\n  padding: 10px 14px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dbe5ff;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n}\r\n\r\n.mini-note-box {\r\n  margin-top: 18px;\r\n  padding: 14px 16px;\r\n  border-radius: 14px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.mini-note-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  line-height: 1.7;\r\n}\r\n\r\n.profile-avatar-card {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 14px;\r\n  padding: 16px 18px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.profile-avatar-large {\r\n  width: 54px;\r\n  height: 54px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-weight: 800;\r\n  font-size: 18px;\r\n}\r\n\r\n.profile-avatar-card h4 {\r\n  color: #ffffff;\r\n  font-size: 16px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.profile-avatar-card p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .page-hero-content,\r\n  .info-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .info-grid {\r\n    display: grid;\r\n  }\r\n\r\n  .hero-summary-box,\r\n  .profile-avatar-card {\r\n    width: 100%;\r\n  }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-main {\r\n  padding: 20px 28px;\r\n}\r\n\r\n.dashboard-cards {\r\n  display: grid;\r\n  grid-template-columns: 1.4fr 1fr 1fr 1fr;\r\n  gap: 18px;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.balance-card,\r\n.small-card,\r\n.dashboard-panel {\r\n  background: rgba(255, 255, 255, 0.06);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  border-radius: 22px;\r\n  padding: 22px;\r\n  backdrop-filter: blur(16px);\r\n}\r\n\r\n.balance-card h2 {\r\n  font-size: 34px;\r\n  margin: 10px 0;\r\n}\r\n\r\n.balance-card p,\r\n.small-card p {\r\n  color: #94a2c6;\r\n}\r\n\r\n.balance-card span,\r\n.small-card span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n.small-card h3 {\r\n  font-size: 24px;\r\n  margin: 8px 0;\r\n}\r\n\r\n.dashboard-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.3fr 0.9fr;\r\n  gap: 18px;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.panel-header {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin-bottom: 18px;\r\n}\r\n\r\n.panel-header h3 {\r\n  font-size: 20px;\r\n}\r\n\r\n.panel-header a {\r\n  color: #8ad8ff;\r\n  text-decoration: none;\r\n  font-size: 14px;\r\n}\r\n\r\n.transaction-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.transaction-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transaction-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.transaction-item h4 {\r\n  font-size: 15px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.transaction-item p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n.positive {\r\n  color: #63f0b1;\r\n  font-weight: 700;\r\n}\r\n\r\n.negative {\r\n  color: #ff7b7b;\r\n  font-weight: 700;\r\n}\r\n\r\n.dashboard-atm-card {\r\n  width: 100%;\r\n  max-width: 360px;\r\n  height: 210px;\r\n  border-radius: 20px;\r\n  padding: 20px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n.atm-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-weight: 700;\r\n}\r\n\r\n.atm-chip {\r\n  width: 50px;\r\n  height: 34px;\r\n  border-radius: 8px;\r\n  background: linear-gradient(135deg, #f5d76e, #d9a62e);\r\n}\r\n\r\n.atm-number {\r\n  font-size: 20px;\r\n  letter-spacing: 2px;\r\n  font-weight: 600;\r\n}\r\n\r\n.atm-footer {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.atm-footer p {\r\n  font-size: 10px;\r\n  opacity: 0.85;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.atm-footer h4 {\r\n  font-size: 14px;\r\n}\r\n\r\n.quick-actions {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 14px;\r\n}\r\n\r\n.quick-actions button {\r\n  padding: 14px;\r\n  border: none;\r\n  border-radius: 14px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n}\r\n\r\n.summary-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.summary-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.summary-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.summary-item span {\r\n  color: #b6c0de;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-cards,\r\n  .dashboard-grid {\r\n    grid-template-columns: 1fr 1fr;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .dashboard-cards,\r\n  .dashboard-grid,\r\n  .quick-actions {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .dashboard-main {\r\n    padding: 18px;\r\n  }\r\n}\r\n\r\n.section-description {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  margin-top: 6px;\r\n}\r\n\r\n.dashboard-form {\r\n  display: grid;\r\n  gap: 16px;\r\n}\r\n\r\n.form-group {\r\n  display: grid;\r\n  gap: 8px;\r\n}\r\n\r\n.form-group label {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.form-group input,\r\n.form-group select {\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #fff;\r\n  outline: none;\r\n}\r\n\r\n.form-group input::-moz-placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.form-group input::placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.form-action-btn {\r\n  padding: 14px;\r\n  border: none;\r\n  border-radius: 14px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #fff;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n}\r\n\r\n.filter-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .filter-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.page-hero-panel {\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.page-hero-content {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.page-badge {\r\n  display: inline-block;\r\n  padding: 7px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(0, 207, 255, 0.1);\r\n  border: 1px solid rgba(0, 207, 255, 0.2);\r\n  color: #8ad8ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.panel-header-no-margin {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.hero-summary-box {\r\n  min-width: 220px;\r\n  padding: 18px 20px;\r\n  border-radius: 18px;\r\n  background: linear-gradient(\r\n    180deg,\r\n    rgba(255, 255, 255, 0.08),\r\n    rgba(255, 255, 255, 0.04)\r\n  );\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.hero-summary-box p {\r\n  color: #9fb0d8;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.hero-summary-box h2 {\r\n  color: #ffffff;\r\n  font-size: 28px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.hero-summary-box span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n}\r\n\r\n.account-card-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.account-badge,\r\n.account-status {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 6px 10px;\r\n  border-radius: 999px;\r\n  font-size: 11px;\r\n  font-weight: 700;\r\n}\r\n\r\n.account-badge.savings {\r\n  background: rgba(0, 207, 255, 0.12);\r\n  color: #8ad8ff;\r\n}\r\n\r\n.account-badge.checking {\r\n  background: rgba(92, 103, 255, 0.16);\r\n  color: #c6cbff;\r\n}\r\n\r\n.account-badge.payroll {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.account-badge.rewards {\r\n  background: rgba(245, 215, 110, 0.14);\r\n  color: #f5d76e;\r\n}\r\n\r\n.account-status.active,\r\n.account-status.good {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.gradient-card {\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.22), rgba(0, 207, 255, 0.12));\r\n}\r\n\r\n.summary-subtext {\r\n  display: block;\r\n  margin-top: 4px;\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n}\r\n\r\n.info-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 14px;\r\n}\r\n\r\n.info-box {\r\n  padding: 16px;\r\n  border-radius: 16px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.info-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.info-box h4 {\r\n  color: #ffffff;\r\n  font-size: 18px;\r\n}\r\n\r\n.panel-action-btn {\r\n  padding: 10px 14px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dbe5ff;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n}\r\n\r\n.mini-note-box {\r\n  margin-top: 18px;\r\n  padding: 14px 16px;\r\n  border-radius: 14px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.mini-note-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  line-height: 1.7;\r\n}\r\n\r\n.profile-avatar-card {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 14px;\r\n  padding: 16px 18px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.profile-avatar-large {\r\n  width: 54px;\r\n  height: 54px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-weight: 800;\r\n  font-size: 18px;\r\n}\r\n\r\n.profile-avatar-card h4 {\r\n  color: #ffffff;\r\n  font-size: 16px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.profile-avatar-card p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .page-hero-content,\r\n  .info-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .info-grid {\r\n    display: grid;\r\n  }\r\n\r\n  .hero-summary-box,\r\n  .profile-avatar-card {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n.account-overview-box {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 14px;\r\n  padding: 8px 0;\r\n}\r\n\r\n.overview-row {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.overview-row:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.overview-row span {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n}\r\n\r\n.overview-row strong {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7242,6 +7812,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-sidebar {\r\n  background: 
 
 /***/ },
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Transactions.css"
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Transactions.css ***!
+  \***************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* =========================\r\n   TRANSACTIONS PAGE\r\n========================= */\r\n\r\n.transaction-page {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 28px; /* main spacing between sections */\r\n}\r\n\r\n/* ===== HERO / INTRO PANEL ===== */\r\n\r\n.page-hero-content {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: stretch;\r\n  gap: 24px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.page-badge {\r\n  display: inline-block;\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(0, 207, 255, 0.12);\r\n  border: 1px solid rgba(0, 207, 255, 0.22);\r\n  color: #8ad8ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.panel-header-no-margin {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.section-description {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  margin-top: 10px;\r\n}\r\n\r\n/* ===== PANELS ===== */\r\n\r\n.dashboard-panel {\r\n  padding: 24px;\r\n  border-radius: 20px;\r\n}\r\n\r\n.dashboard-panel .panel-header {\r\n  margin-bottom: 18px;\r\n}\r\n\r\n/* ===== HERO SUMMARY ===== */\r\n\r\n.hero-summary-box {\r\n  min-width: 220px;\r\n  padding: 20px 24px;\r\n  border-radius: 20px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  gap: 6px;\r\n}\r\n\r\n.hero-summary-box p {\r\n  font-size: 13px;\r\n  color: #9aa6cb;\r\n}\r\n\r\n.hero-summary-box h2 {\r\n  font-size: 30px;\r\n  color: #ffffff;\r\n}\r\n\r\n.hero-summary-box span {\r\n  font-size: 12px;\r\n  color: #8e99bb;\r\n}\r\n\r\n/* ===== SUMMARY CARDS ===== */\r\n\r\n.dashboard-cards {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 20px;\r\n}\r\n\r\n.small-card {\r\n  padding: 20px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 8px;\r\n  margin: 0;\r\n}\r\n\r\n.small-card p {\r\n  font-size: 13px;\r\n  color: #9aa6cb;\r\n}\r\n\r\n.small-card h3 {\r\n  font-size: 22px;\r\n  color: #ffffff;\r\n  margin-top: 2px;\r\n}\r\n\r\n.small-card span {\r\n  font-size: 12px;\r\n  color: #8e99bb;\r\n}\r\n\r\n/* ===== FILTER PANEL ===== */\r\n\r\n.transactions-filter-panel {\r\n  margin: 0;\r\n}\r\n\r\n.transaction-filter-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(5, 1fr);\r\n  gap: 20px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.filter-search-wide {\r\n  grid-column: span 2;\r\n}\r\n\r\n/* ===== FORM FIELDS ===== */\r\n\r\n.form-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 6px;\r\n}\r\n\r\n.form-group label {\r\n  font-size: 12px;\r\n  color: #9aa6cb;\r\n}\r\n\r\n.form-group input,\r\n.form-group select {\r\n  padding: 10px 12px;\r\n  border-radius: 10px;\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n/* ===== HISTORY PANEL ===== */\r\n\r\n.transactions-history-panel {\r\n  margin: 0;\r\n}\r\n\r\n.full-transaction-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 16px;\r\n  margin-top: 12px;\r\n}\r\n\r\n/* ===== TRANSACTION CARD ===== */\r\n\r\n.transaction-card {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 20px 22px;\r\n  border-radius: 20px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.transaction-card:hover {\r\n  transform: translateY(-4px);\r\n  background: rgba(255, 255, 255, 0.06);\r\n}\r\n\r\n.transaction-main-info {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 8px;\r\n  max-width: 72%;\r\n}\r\n\r\n.transaction-main-info h4 {\r\n  font-size: 16px;\r\n  font-weight: 700;\r\n  color: #ffffff;\r\n}\r\n\r\n.transaction-main-info p {\r\n  font-size: 13px;\r\n  color: #b6c0de;\r\n  line-height: 1.6;\r\n}\r\n\r\n.transaction-meta {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  gap: 8px;\r\n  margin-top: 4px;\r\n}\r\n\r\n.transaction-meta span {\r\n  font-size: 11px;\r\n  padding: 6px 12px;\r\n  border-radius: 999px;\r\n  color: #94a2c6;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.06);\r\n}\r\n\r\n.transaction-card .positive {\r\n  color: #63f0b1;\r\n  font-weight: 700;\r\n  font-size: 18px;\r\n  min-width: 120px;\r\n  text-align: right;\r\n}\r\n\r\n.transaction-card .negative {\r\n  color: #ff7b7b;\r\n  font-weight: 700;\r\n  font-size: 18px;\r\n  min-width: 120px;\r\n  text-align: right;\r\n}\r\n\r\n/* ===== RESPONSIVE ===== */\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-cards {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .transaction-filter-grid {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .filter-search-wide {\r\n    grid-column: span 2;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .transaction-page {\r\n    gap: 22px;\r\n  }\r\n\r\n  .dashboard-cards,\r\n  .transaction-filter-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .filter-search-wide {\r\n    grid-column: span 1;\r\n  }\r\n\r\n  .transaction-card {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    gap: 12px;\r\n  }\r\n\r\n  .transaction-main-info {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .transaction-meta {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .transaction-card .positive,\r\n  .transaction-card .negative {\r\n    text-align: left;\r\n  }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/LandingPage/LandingPage.css"
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/LandingPage/LandingPage.css ***!
@@ -7259,7 +7853,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: \"Inter\", \"Segoe UI\", Arial, sans-serif;\r\n  background: #0b1020;\r\n  color: #e5ecff;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbutton {\r\n  font-family: inherit;\r\n}\r\n\r\n.neo-page {\r\n  position: relative;\r\n  min-height: 100vh;\r\n  overflow: hidden;\r\n  background:\r\n    radial-gradient(circle at top left, rgba(92, 103, 255, 0.28), transparent 30%),\r\n    radial-gradient(circle at 85% 20%, rgba(0, 224, 255, 0.18), transparent 24%),\r\n    radial-gradient(circle at bottom right, rgba(113, 72, 255, 0.24), transparent 28%),\r\n    linear-gradient(135deg, #0b1020 0%, #11162a 45%, #0c1224 100%);\r\n}\r\n\r\n.neo-bg-shape {\r\n  position: absolute;\r\n  border-radius: 999px;\r\n  filter: blur(80px);\r\n  pointer-events: none;\r\n}\r\n\r\n.neo-bg-one {\r\n  width: 320px;\r\n  height: 320px;\r\n  background: rgba(0, 224, 255, 0.12);\r\n  top: 60px;\r\n  left: -80px;\r\n}\r\n\r\n.neo-bg-two {\r\n  width: 380px;\r\n  height: 380px;\r\n  background: rgba(113, 72, 255, 0.16);\r\n  right: -120px;\r\n  bottom: 80px;\r\n}\r\n\r\n.neo-bg-grid {\r\n  position: absolute;\r\n  inset: 0;\r\n  background-image:\r\n    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),\r\n    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);\r\n  background-size: 40px 40px;\r\n  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);\r\n          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);\r\n  pointer-events: none;\r\n}\r\n\r\n.neo-container {\r\n  width: 90%;\r\n  max-width: 1240px;\r\n  margin: 0 auto;\r\n  position: relative;\r\n  z-index: 2;\r\n}\r\n\r\n.neo-header {\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 50;\r\n  background: rgba(10, 14, 28, 0.62);\r\n  backdrop-filter: blur(18px);\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.neo-header-inner {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  padding: 18px 0;\r\n  gap: 20px;\r\n}\r\n\r\n.neo-brand {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 14px;\r\n}\r\n\r\n.neo-brand-icon {\r\n  width: 48px;\r\n  height: 48px;\r\n  border-radius: 16px;\r\n  background: linear-gradient(135deg, #5c67ff, #00e0ff);\r\n  color: #fff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-weight: 800;\r\n  font-size: 15px;\r\n  box-shadow: 0 14px 30px rgba(0, 224, 255, 0.25);\r\n}\r\n\r\n.neo-brand h2 {\r\n  font-size: 22px;\r\n  color: #fff;\r\n  font-weight: 800;\r\n}\r\n\r\n.neo-brand span {\r\n  display: block;\r\n  color: #96a2c7;\r\n  font-size: 12px;\r\n  margin-top: 2px;\r\n}\r\n\r\n.neo-nav {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 14px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.neo-nav a {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.neo-nav a:hover {\r\n  color: #ffffff;\r\n}\r\n\r\n.neo-btn {\r\n  border: none;\r\n  border-radius: 14px;\r\n  padding: 11px 18px;\r\n  font-size: 14px;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.neo-btn-lg {\r\n  padding: 14px 24px;\r\n  font-size: 15px;\r\n}\r\n\r\n.neo-btn-primary {\r\n  color: #fff;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  box-shadow: 0 12px 28px rgba(0, 207, 255, 0.22);\r\n}\r\n\r\n.neo-btn-primary:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 18px 36px rgba(0, 207, 255, 0.28);\r\n}\r\n\r\n.neo-btn-ghost {\r\n  color: #ffffff;\r\n  background: rgba(255, 255, 255, 0.06);\r\n  border: 1px solid rgba(255, 255, 255, 0.12);\r\n}\r\n\r\n.neo-btn-ghost:hover {\r\n  background: rgba(255, 255, 255, 0.1);\r\n}\r\n\r\n.neo-btn-secondary {\r\n  color: #dbe5ff;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n}\r\n\r\n.neo-btn-secondary:hover {\r\n  background: rgba(255, 255, 255, 0.13);\r\n}\r\n\r\n.neo-hero {\r\n  padding: 90px 0 50px;\r\n}\r\n\r\n.neo-hero-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.05fr 0.95fr;\r\n  gap: 44px;\r\n  align-items: center;\r\n}\r\n\r\n.neo-pill {\r\n  display: inline-block;\r\n  padding: 9px 16px;\r\n  border-radius: 999px;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  border: 1px solid rgba(255, 255, 255, 0.12);\r\n  color: #dce6ff;\r\n  font-size: 13px;\r\n  font-weight: 700;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.neo-pill-soft {\r\n  background: rgba(92, 103, 255, 0.12);\r\n  border-color: rgba(92, 103, 255, 0.18);\r\n}\r\n\r\n.neo-hero-left h1 {\r\n  font-size: 62px;\r\n  line-height: 1.04;\r\n  letter-spacing: -1.8px;\r\n  color: #ffffff;\r\n  max-width: 720px;\r\n}\r\n\r\n.neo-hero-left h1 span {\r\n  display: block;\r\n  background: linear-gradient(135deg, #ffffff, #8ad8ff 45%, #7b88ff);\r\n  -webkit-background-clip: text;\r\n  -webkit-text-fill-color: transparent;\r\n}\r\n\r\n.neo-hero-left p {\r\n  max-width: 640px;\r\n  margin: 22px 0 30px;\r\n  color: #9aa6cb;\r\n  font-size: 17px;\r\n  line-height: 1.85;\r\n}\r\n\r\n.neo-hero-actions {\r\n  display: flex;\r\n  gap: 14px;\r\n  flex-wrap: wrap;\r\n  margin-bottom: 34px;\r\n}\r\n\r\n.neo-hero-metrics {\r\n  display: grid;\r\n  grid-template-columns: repeat(3, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n.neo-metric {\r\n  padding: 20px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  backdrop-filter: blur(14px);\r\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);\r\n}\r\n\r\n.neo-metric h3 {\r\n  color: #ffffff;\r\n  font-size: 28px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.neo-metric p {\r\n  margin: 0;\r\n  color: #96a2c7;\r\n  font-size: 14px;\r\n}\r\n\r\n.neo-hero-right {\r\n  position: relative;\r\n  min-height: 540px;\r\n}\r\n\r\n.neo-glass-card {\r\n  background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.06));\r\n  border: 1px solid rgba(255, 255, 255, 0.12);\r\n  backdrop-filter: blur(22px);\r\n  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);\r\n}\r\n\r\n.neo-main-card {\r\n  position: relative;\r\n  z-index: 2;\r\n  border-radius: 30px;\r\n  padding: 28px;\r\n}\r\n\r\n.neo-card-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  gap: 20px;\r\n  align-items: center;\r\n  margin-bottom: 30px;\r\n}\r\n\r\n.neo-card-top span {\r\n  color: #9fb0db;\r\n  font-size: 13px;\r\n}\r\n\r\n.neo-card-top h2 {\r\n  font-size: 38px;\r\n  color: #fff;\r\n  margin-top: 6px;\r\n}\r\n\r\n.neo-status {\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(22, 201, 151, 0.14);\r\n  color: #63f0b1;\r\n  font-size: 13px;\r\n  font-weight: 700;\r\n  border: 1px solid rgba(99, 240, 177, 0.18);\r\n}\r\n\r\n\r\n.neo-floating {\r\n  position: absolute;\r\n  min-width: 220px;\r\n  padding: 18px;\r\n  border-radius: 20px;\r\n  background: rgba(255, 255, 255, 0.09);\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  backdrop-filter: blur(18px);\r\n  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);\r\n}\r\n\r\n.neo-floating p {\r\n  color: #a8b6da;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.neo-floating h4 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 5px;\r\n}\r\n\r\n.neo-floating span {\r\n  color: #c1cae6;\r\n  font-size: 13px;\r\n}\r\n\r\n.neo-floating-top {\r\n  top: 70px;\r\n  right: -16px;\r\n}\r\n\r\n.neo-floating-bottom {\r\n  left: -10px;\r\n  bottom: 48px;\r\n}\r\n\r\n.neo-trust {\r\n  padding: 10px 0 24px;\r\n}\r\n\r\n.neo-trust-row {\r\n  display: flex;\r\n  gap: 16px;\r\n  justify-content: space-between;\r\n  flex-wrap: wrap;\r\n  color: #8e99bb;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.neo-section {\r\n  padding: 90px 0;\r\n}\r\n\r\n.neo-section-alt {\r\n  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.04));\r\n}\r\n\r\n.neo-section-head {\r\n  text-align: center;\r\n  max-width: 780px;\r\n  margin: 0 auto 46px;\r\n}\r\n\r\n.neo-section-head h2 {\r\n  font-size: 42px;\r\n  line-height: 1.2;\r\n  color: #ffffff;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.neo-section-head p {\r\n  color: #97a5c8;\r\n  font-size: 16px;\r\n  line-height: 1.8;\r\n}\r\n\r\n.neo-feature-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 22px;\r\n}\r\n\r\n.neo-feature-card {\r\n  padding: 28px;\r\n  border-radius: 26px;\r\n  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  backdrop-filter: blur(18px);\r\n  transition: 0.3s ease;\r\n}\r\n\r\n.neo-feature-card:hover {\r\n  transform: translateY(-7px);\r\n  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n.neo-feature-icon {\r\n  width: 52px;\r\n  height: 52px;\r\n  border-radius: 16px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  margin-bottom: 18px;\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.28), rgba(0, 224, 255, 0.18));\r\n  color: #ffffff;\r\n  font-weight: 800;\r\n  font-size: 16px;\r\n}\r\n\r\n.neo-feature-card h3 {\r\n  color: #ffffff;\r\n  font-size: 22px;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.neo-feature-card p {\r\n  color: #9ba9cb;\r\n  line-height: 1.8;\r\n  font-size: 15px;\r\n}\r\n\r\n.neo-showcase-grid {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  gap: 28px;\r\n  align-items: start;\r\n}\r\n\r\n.neo-showcase-left h2 {\r\n  color: #ffffff;\r\n  font-size: 40px;\r\n  line-height: 1.2;\r\n  margin: 16px 0;\r\n}\r\n\r\n.neo-showcase-left p {\r\n  color: #97a5c8;\r\n  font-size: 16px;\r\n  line-height: 1.9;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.neo-check-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.neo-check-item {\r\n  padding: 16px 18px;\r\n  border-radius: 18px;\r\n  color: #dbe6ff;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.neo-showcase-right {\r\n  display: grid;\r\n  gap: 18px;\r\n}\r\n\r\n.neo-info-card {\r\n  padding: 26px;\r\n  border-radius: 24px;\r\n  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n}\r\n\r\n.neo-info-card h3 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.neo-info-card p {\r\n  color: #9ba9cb;\r\n  line-height: 1.8;\r\n}\r\n\r\n.neo-cta-section {\r\n  padding: 0 0 90px;\r\n}\r\n\r\n.neo-cta-card {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 26px;\r\n  padding: 40px;\r\n  border-radius: 32px;\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.2), rgba(0, 224, 255, 0.12)),\r\n    rgba(255, 255, 255, 0.06);\r\n  border: 1px solid rgba(255, 255, 255, 0.12);\r\n  backdrop-filter: blur(20px);\r\n  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);\r\n}\r\n\r\n.neo-cta-card h2 {\r\n  color: #ffffff;\r\n  font-size: 40px;\r\n  line-height: 1.2;\r\n  margin: 14px 0;\r\n}\r\n\r\n.neo-cta-card p {\r\n  color: #a5b0cf;\r\n  max-width: 640px;\r\n  line-height: 1.8;\r\n}\r\n\r\n.neo-cta-buttons {\r\n  display: flex;\r\n  gap: 14px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.neo-footer {\r\n  border-top: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(6, 10, 20, 0.35);\r\n}\r\n\r\n.neo-footer-inner {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 18px;\r\n  padding: 28px 0;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.neo-footer-inner h3 {\r\n  color: #ffffff;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.neo-footer-inner p {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n}\r\n\r\n.neo-footer-links {\r\n  display: flex;\r\n  gap: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.neo-footer-links a {\r\n  color: #b6c0de;\r\n  font-weight: 600;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .neo-hero-grid,\r\n  .neo-feature-grid,\r\n  .neo-showcase-grid {\r\n    grid-template-columns: 1fr 1fr;\r\n  }\r\n\r\n  .neo-hero-right {\r\n    min-height: auto;\r\n  }\r\n\r\n  .neo-floating-top,\r\n  .neo-floating-bottom {\r\n    position: static;\r\n    margin-top: 16px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .neo-header-inner,\r\n  .neo-cta-card,\r\n  .neo-footer-inner {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .neo-hero {\r\n    padding-top: 55px;\r\n  }\r\n\r\n  .neo-hero-grid,\r\n  .neo-feature-grid,\r\n  .neo-showcase-grid,\r\n  .neo-hero-metrics,\r\n  .neo-card-bottom {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .neo-hero-left h1 {\r\n    font-size: 40px;\r\n    letter-spacing: -1px;\r\n  }\r\n\r\n  .neo-section-head h2,\r\n  .neo-showcase-left h2,\r\n  .neo-cta-card h2 {\r\n    font-size: 30px;\r\n  }\r\n\r\n  .neo-card-top {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .neo-nav {\r\n    width: 100%;\r\n  }\r\n}  \r\n\r\n.atm-card {\r\n  width: 100%;\r\n  max-width: 380px;\r\n  height: 220px;\r\n  border-radius: 20px;\r\n  padding: 20px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  position: relative;\r\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n}\r\n\r\n/* Top */\r\n.atm-card-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-weight: bold;\r\n}\r\n\r\n.bank-name {\r\n  font-size: 18px;\r\n}\r\n\r\n.card-type {\r\n  font-size: 14px;\r\n}\r\n\r\n/* Chip */\r\n.atm-chip {\r\n  width: 50px;\r\n  height: 35px;\r\n  background: linear-gradient(135deg, #f5d76e, #e0a800);\r\n  border-radius: 8px;\r\n}\r\n\r\n/* Card number */\r\n.atm-number {\r\n  font-size: 20px;\r\n  letter-spacing: 2px;\r\n  font-weight: 600;\r\n}\r\n\r\n/* Bottom */\r\n.atm-bottom {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.atm-bottom p {\r\n  font-size: 10px;\r\n  opacity: 0.8;\r\n}\r\n\r\n.atm-bottom h4 {\r\n  font-size: 14px;\r\n  margin-top: 4px;\r\n}\r\n\r\n/* CENTER ATM CARD */\r\n.neo-hero-right.atm-highlight {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: relative;\r\n  min-height: 420px;\r\n}\r\n\r\n.atm-bottom h4 {\r\n  font-size: 14px;\r\n  margin-top: 4px;\r\n}\r\n\r\n.premium-card {\r\n  box-shadow:\r\n    0 20px 60px rgba(0, 0, 0, 0.4),\r\n    0 0 40px rgba(0, 207, 255, 0.3);\r\n  transition: 0.4s ease;\r\n}\r\n\r\n.premium-card:hover {\r\n  transform: translateY(-10px) scale(1.03);\r\n  box-shadow:\r\n    0 30px 80px rgba(0, 0, 0, 0.5),\r\n    0 0 60px rgba(0, 207, 255, 0.5);\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "* {\r\n  margin: 0;\r\n  padding: 0;\r\n  box-sizing: border-box;\r\n}\r\n\r\nbody {\r\n  font-family: \"Inter\", \"Segoe UI\", Arial, sans-serif;\r\n  background: #0b1020;\r\n  color: #e5ecff;\r\n}\r\n\r\na {\r\n  text-decoration: none;\r\n}\r\n\r\nbutton {\r\n  font-family: inherit;\r\n}\r\n\r\n.neo-page {\r\n  position: relative;\r\n  min-height: 100vh;\r\n  overflow: hidden;\r\n  background:\r\n    radial-gradient(circle at top left, rgba(92, 103, 255, 0.28), transparent 30%),\r\n    radial-gradient(circle at 85% 20%, rgba(0, 224, 255, 0.18), transparent 24%),\r\n    radial-gradient(circle at bottom right, rgba(113, 72, 255, 0.24), transparent 28%),\r\n    linear-gradient(135deg, #0b1020 0%, #11162a 45%, #0c1224 100%);\r\n}\r\n\r\n.neo-bg-shape {\r\n  position: absolute;\r\n  border-radius: 999px;\r\n  filter: blur(80px);\r\n  pointer-events: none;\r\n}\r\n\r\n.neo-bg-one {\r\n  width: 320px;\r\n  height: 320px;\r\n  background: rgba(0, 224, 255, 0.12);\r\n  top: 60px;\r\n  left: -80px;\r\n}\r\n\r\n.neo-bg-two {\r\n  width: 380px;\r\n  height: 380px;\r\n  background: rgba(113, 72, 255, 0.16);\r\n  right: -120px;\r\n  bottom: 80px;\r\n}\r\n\r\n.neo-bg-grid {\r\n  position: absolute;\r\n  inset: 0;\r\n  background-image:\r\n    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),\r\n    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);\r\n  background-size: 40px 40px;\r\n  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);\r\n          mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.6), transparent);\r\n  pointer-events: none;\r\n}\r\n\r\n.neo-container {\r\n  width: 90%;\r\n  max-width: 1240px;\r\n  margin: 0 auto;\r\n  position: relative;\r\n  z-index: 2;\r\n}\r\n\r\n.neo-header {\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 50;\r\n  background: rgba(10, 14, 28, 0.62);\r\n  backdrop-filter: blur(18px);\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.neo-header-inner {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  padding: 18px 0;\r\n  gap: 20px;\r\n}\r\n\r\n.neo-brand {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 14px;\r\n}\r\n\r\n.neo-brand-icon {\r\n  width: 48px;\r\n  height: 48px;\r\n  border-radius: 16px;\r\n  background: linear-gradient(135deg, #5c67ff, #00e0ff);\r\n  color: #fff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-weight: 800;\r\n  font-size: 15px;\r\n  box-shadow: 0 14px 30px rgba(0, 224, 255, 0.25);\r\n}\r\n\r\n.neo-brand h2 {\r\n  font-size: 22px;\r\n  color: #fff;\r\n  font-weight: 800;\r\n}\r\n\r\n.neo-brand span {\r\n  display: block;\r\n  color: #96a2c7;\r\n  font-size: 12px;\r\n  margin-top: 2px;\r\n}\r\n\r\n.neo-nav {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 14px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.neo-nav a {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.neo-nav a:hover {\r\n  color: #ffffff;\r\n}\r\n\r\n.neo-btn {\r\n  border: none;\r\n  border-radius: 14px;\r\n  padding: 11px 18px;\r\n  font-size: 14px;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.neo-btn-lg {\r\n  padding: 14px 24px;\r\n  font-size: 15px;\r\n}\r\n\r\n.neo-btn-primary {\r\n  color: #fff;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  box-shadow: 0 12px 28px rgba(0, 207, 255, 0.22);\r\n}\r\n\r\n.neo-btn-primary:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 18px 36px rgba(0, 207, 255, 0.28);\r\n}\r\n\r\n.neo-btn-ghost {\r\n  color: #ffffff;\r\n  background: rgba(255, 255, 255, 0.06);\r\n  border: 1px solid rgba(255, 255, 255, 0.12);\r\n}\r\n\r\n.neo-btn-ghost:hover {\r\n  background: rgba(255, 255, 255, 0.1);\r\n}\r\n\r\n.neo-btn-secondary {\r\n  color: #dbe5ff;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n}\r\n\r\n.neo-btn-secondary:hover {\r\n  background: rgba(255, 255, 255, 0.13);\r\n}\r\n\r\n.neo-hero {\r\n  padding: 90px 0 50px;\r\n}\r\n\r\n.neo-hero-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.05fr 0.95fr;\r\n  gap: 44px;\r\n  align-items: center;\r\n}\r\n\r\n.neo-pill {\r\n  display: inline-block;\r\n  padding: 9px 16px;\r\n  border-radius: 999px;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  border: 1px solid rgba(255, 255, 255, 0.12);\r\n  color: #dce6ff;\r\n  font-size: 13px;\r\n  font-weight: 700;\r\n  margin-bottom: 20px;\r\n}\r\n\r\n.neo-pill-soft {\r\n  background: rgba(92, 103, 255, 0.12);\r\n  border-color: rgba(92, 103, 255, 0.18);\r\n}\r\n\r\n.neo-hero-left h1 {\r\n  font-size: 62px;\r\n  line-height: 1.04;\r\n  letter-spacing: -1.8px;\r\n  color: #ffffff;\r\n  max-width: 720px;\r\n}\r\n\r\n.neo-hero-left h1 span {\r\n  display: block;\r\n  background: linear-gradient(135deg, #ffffff, #8ad8ff 45%, #7b88ff);\r\n  -webkit-background-clip: text;\r\n  -webkit-text-fill-color: transparent;\r\n}\r\n\r\n.neo-hero-left p {\r\n  max-width: 640px;\r\n  margin: 22px 0 30px;\r\n  color: #9aa6cb;\r\n  font-size: 17px;\r\n  line-height: 1.85;\r\n}\r\n\r\n.neo-hero-actions {\r\n  display: flex;\r\n  gap: 14px;\r\n  flex-wrap: wrap;\r\n  margin-bottom: 34px;\r\n}\r\n\r\n.neo-hero-metrics {\r\n  display: grid;\r\n  grid-template-columns: repeat(3, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n.neo-metric {\r\n  padding: 20px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  backdrop-filter: blur(14px);\r\n  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);\r\n}\r\n\r\n.neo-metric h3 {\r\n  color: #ffffff;\r\n  font-size: 28px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.neo-metric p {\r\n  margin: 0;\r\n  color: #96a2c7;\r\n  font-size: 14px;\r\n}\r\n\r\n.neo-hero-right {\r\n  position: relative;\r\n  min-height: 540px;\r\n}\r\n\r\n.neo-glass-card {\r\n  background: linear-gradient(180deg, rgba(255, 255, 255, 0.11), rgba(255, 255, 255, 0.06));\r\n  border: 1px solid rgba(255, 255, 255, 0.12);\r\n  backdrop-filter: blur(22px);\r\n  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.28);\r\n}\r\n\r\n.neo-main-card {\r\n  position: relative;\r\n  z-index: 2;\r\n  border-radius: 30px;\r\n  padding: 28px;\r\n}\r\n\r\n.neo-card-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  gap: 20px;\r\n  align-items: center;\r\n  margin-bottom: 30px;\r\n}\r\n\r\n.neo-card-top span {\r\n  color: #9fb0db;\r\n  font-size: 13px;\r\n}\r\n\r\n.neo-card-top h2 {\r\n  font-size: 38px;\r\n  color: #fff;\r\n  margin-top: 6px;\r\n}\r\n\r\n.neo-status {\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(22, 201, 151, 0.14);\r\n  color: #63f0b1;\r\n  font-size: 13px;\r\n  font-weight: 700;\r\n  border: 1px solid rgba(99, 240, 177, 0.18);\r\n}\r\n\r\n\r\n.neo-floating {\r\n  position: absolute;\r\n  min-width: 220px;\r\n  padding: 18px;\r\n  border-radius: 20px;\r\n  background: rgba(255, 255, 255, 0.09);\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  backdrop-filter: blur(18px);\r\n  box-shadow: 0 14px 40px rgba(0, 0, 0, 0.22);\r\n}\r\n\r\n.neo-floating p {\r\n  color: #a8b6da;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.neo-floating h4 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 5px;\r\n}\r\n\r\n.neo-floating span {\r\n  color: #c1cae6;\r\n  font-size: 13px;\r\n}\r\n\r\n.neo-floating-top {\r\n  top: 70px;\r\n  right: -16px;\r\n}\r\n\r\n.neo-floating-bottom {\r\n  left: -10px;\r\n  bottom: 48px;\r\n}\r\n\r\n.neo-trust {\r\n  padding: 10px 0 24px;\r\n}\r\n\r\n.neo-trust-row {\r\n  display: flex;\r\n  gap: 16px;\r\n  justify-content: space-between;\r\n  flex-wrap: wrap;\r\n  color: #8e99bb;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.neo-section {\r\n  padding: 90px 0;\r\n}\r\n\r\n.neo-section-alt {\r\n  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0.04));\r\n}\r\n\r\n.neo-section-head {\r\n  text-align: center;\r\n  max-width: 780px;\r\n  margin: 0 auto 46px;\r\n}\r\n\r\n.neo-section-head h2 {\r\n  font-size: 42px;\r\n  line-height: 1.2;\r\n  color: #ffffff;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.neo-section-head p {\r\n  color: #97a5c8;\r\n  font-size: 16px;\r\n  line-height: 1.8;\r\n}\r\n\r\n.neo-feature-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 22px;\r\n}\r\n\r\n.neo-feature-card {\r\n  padding: 28px;\r\n  border-radius: 26px;\r\n  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  backdrop-filter: blur(18px);\r\n  transition: 0.3s ease;\r\n}\r\n\r\n.neo-feature-card:hover {\r\n  transform: translateY(-7px);\r\n  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n.neo-feature-icon {\r\n  width: 52px;\r\n  height: 52px;\r\n  border-radius: 16px;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  margin-bottom: 18px;\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.28), rgba(0, 224, 255, 0.18));\r\n  color: #ffffff;\r\n  font-weight: 800;\r\n  font-size: 16px;\r\n}\r\n\r\n.neo-feature-card h3 {\r\n  color: #ffffff;\r\n  font-size: 22px;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.neo-feature-card p {\r\n  color: #9ba9cb;\r\n  line-height: 1.8;\r\n  font-size: 15px;\r\n}\r\n\r\n.neo-showcase-grid {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  gap: 28px;\r\n  align-items: start;\r\n}\r\n\r\n.neo-showcase-left h2 {\r\n  color: #ffffff;\r\n  font-size: 40px;\r\n  line-height: 1.2;\r\n  margin: 16px 0;\r\n}\r\n\r\n.neo-showcase-left p {\r\n  color: #97a5c8;\r\n  font-size: 16px;\r\n  line-height: 1.9;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.neo-check-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.neo-check-item {\r\n  padding: 16px 18px;\r\n  border-radius: 18px;\r\n  color: #dbe6ff;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.neo-showcase-right {\r\n  display: grid;\r\n  gap: 18px;\r\n}\r\n\r\n.neo-info-card {\r\n  padding: 26px;\r\n  border-radius: 24px;\r\n  background: linear-gradient(180deg, rgba(255, 255, 255, 0.09), rgba(255, 255, 255, 0.04));\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n}\r\n\r\n.neo-info-card h3 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.neo-info-card p {\r\n  color: #9ba9cb;\r\n  line-height: 1.8;\r\n}\r\n\r\n.neo-cta-section {\r\n  padding: 0 0 90px;\r\n}\r\n\r\n.neo-cta-card {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 26px;\r\n  padding: 40px;\r\n  border-radius: 32px;\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.2), rgba(0, 224, 255, 0.12)),\r\n    rgba(255, 255, 255, 0.06);\r\n  border: 1px solid rgba(255, 255, 255, 0.12);\r\n  backdrop-filter: blur(20px);\r\n  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.25);\r\n}\r\n\r\n.neo-cta-card h2 {\r\n  color: #ffffff;\r\n  font-size: 40px;\r\n  line-height: 1.2;\r\n  margin: 14px 0;\r\n}\r\n\r\n.neo-cta-card p {\r\n  color: #a5b0cf;\r\n  max-width: 640px;\r\n  line-height: 1.8;\r\n}\r\n\r\n.neo-cta-buttons {\r\n  display: flex;\r\n  gap: 14px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.neo-footer {\r\n  border-top: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(6, 10, 20, 0.35);\r\n}\r\n\r\n.neo-footer-inner {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 18px;\r\n  padding: 28px 0;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.neo-footer-inner h3 {\r\n  color: #ffffff;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.neo-footer-inner p {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n}\r\n\r\n.neo-footer-links {\r\n  display: flex;\r\n  gap: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.neo-footer-links a {\r\n  color: #b6c0de;\r\n  font-weight: 600;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .neo-hero-grid,\r\n  .neo-feature-grid,\r\n  .neo-showcase-grid {\r\n    grid-template-columns: 1fr 1fr;\r\n  }\r\n\r\n  .neo-hero-right {\r\n    min-height: auto;\r\n  }\r\n\r\n  .neo-floating-top,\r\n  .neo-floating-bottom {\r\n    position: static;\r\n    margin-top: 16px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .neo-header-inner,\r\n  .neo-cta-card,\r\n  .neo-footer-inner {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .neo-hero {\r\n    padding-top: 55px;\r\n  }\r\n\r\n  .neo-hero-grid,\r\n  .neo-feature-grid,\r\n  .neo-showcase-grid,\r\n  .neo-hero-metrics,\r\n  .neo-card-bottom {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .neo-hero-left h1 {\r\n    font-size: 40px;\r\n    letter-spacing: -1px;\r\n  }\r\n\r\n  .neo-section-head h2,\r\n  .neo-showcase-left h2,\r\n  .neo-cta-card h2 {\r\n    font-size: 30px;\r\n  }\r\n\r\n  .neo-card-top {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .neo-nav {\r\n    width: 100%;\r\n  }\r\n}  \r\n\r\n.atm-card {\r\n  width: 100%;\r\n  max-width: 380px;\r\n  height: 220px;\r\n  border-radius: 20px;\r\n  padding: 20px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  position: relative;\r\n  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n}\r\n\r\n/* Top */\r\n.atm-card-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-weight: bold;\r\n}\r\n\r\n.bank-name {\r\n  font-size: 18px;\r\n}\r\n\r\n.card-type {\r\n  font-size: 14px;\r\n}\r\n\r\n/* Chip */\r\n.atm-chip {\r\n  width: 50px;\r\n  height: 35px;\r\n  background: linear-gradient(135deg, #f5d76e, #e0a800);\r\n  border-radius: 8px;\r\n}\r\n\r\n/* Card number */\r\n.atm-number {\r\n  font-size: 20px;\r\n  letter-spacing: 2px;\r\n  font-weight: 600;\r\n}\r\n\r\n/* Bottom */\r\n.atm-bottom {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.atm-bottom p {\r\n  font-size: 10px;\r\n  opacity: 0.8;\r\n}\r\n\r\n.atm-bottom h4 {\r\n  font-size: 14px;\r\n  margin-top: 4px;\r\n}\r\n\r\n/* CENTER ATM CARD */\r\n.neo-hero-right.atm-highlight {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  position: relative;\r\n  min-height: 420px;\r\n}\r\n\r\n.atm-bottom h4 {\r\n  font-size: 14px;\r\n  margin-top: 4px;\r\n}\r\n\r\n.premium-card {\r\n  box-shadow:\r\n    0 20px 60px rgba(0, 0, 0, 0.4),\r\n    0 0 40px rgba(0, 207, 255, 0.3);\r\n  transition: 0.4s ease;\r\n}\r\n\r\n.premium-card:hover {\r\n  transform: translateY(-10px) scale(1.03);\r\n  box-shadow:\r\n    0 30px 80px rgba(0, 0, 0, 0.5),\r\n    0 0 60px rgba(0, 207, 255, 0.5);\r\n}\r\n\r\n.hero-summary-panel {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 18px;\r\n  width: 100%;\r\n  max-width: 420px;\r\n}\r\n\r\n.hero-summary-stat {\r\n  padding: 22px;\r\n  border-radius: 20px;\r\n  background: rgba(255, 255, 255, 0.06);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  backdrop-filter: blur(16px);\r\n}\r\n\r\n.hero-summary-stat p {\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.hero-summary-stat h3 {\r\n  color: #ffffff;\r\n  font-size: 28px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.hero-summary-stat span {\r\n  color: #8ad8ff;\r\n  font-size: 12px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41629,6 +42223,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebar_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/DashboardPage/components/Transactions.css"
+/*!*****************************************************************!*\
+  !*** ./resources/css/DashboardPage/components/Transactions.css ***!
+  \*****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Transactions_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Transactions.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Transactions.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Transactions_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Transactions_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ },
 

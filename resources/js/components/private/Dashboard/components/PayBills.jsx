@@ -1,6 +1,83 @@
 import React from "react";
+import { useEffect, useState } from "react";
 
-function PayBills() {
+function PayBills({ dashboardData, refreshDashboard }) {
+  const accounts = dashboardData?.accounts || [];
+  const [bills, setBills] = useState([]);
+  const [form, setForm] = useState({
+    account_id: accounts[0]?.account_id || "",
+    bill_id: "",
+    amount: "",
+  });
+  const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
+
+  useEffect(() => {
+    const fetchBills = async () => {
+      try {
+        const response = await fetch("/api/bills", {
+          headers: {
+            Accept: "application/json",
+          },
+        });
+
+        const data = await response.json();
+        if (response.ok) {
+          setBills(data);
+          if (data.length > 0) {
+            setForm((prev) => ({ ...prev, bill_id: data[0].bill_id }));
+          }
+        }
+      } catch (err) {
+        console.error("Failed to fetch bills", err);
+      }
+    };
+
+    fetchBills();
+  }, []);
+
+  const handleChange = (e) => {
+    setForm({
+      ...form,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handlePayBill = async (e) => {
+    e.preventDefault();
+    setMessage("");
+    setError("");
+
+    try {
+      const response = await fetch("/api/pay-bill", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(form),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        setError(data.message || "Bill payment failed");
+        return;
+      }
+
+      setMessage(data.message);
+      setForm({
+        account_id: accounts[0]?.account_id || "",
+        bill_id: bills[0]?.bill_id || "",
+        amount: "",
+      });
+
+      await refreshDashboard();
+    } catch (err) {
+      setError("Server error. Please try again.");
+    }
+  };
+
   return (
     <main className="dashboard-main">
       <section className="dashboard-panel page-hero-panel">
@@ -11,15 +88,8 @@ function PayBills() {
               <h3>Pay Bills</h3>
             </div>
             <p className="section-description">
-              Pay utilities, internet, credit cards, and enrolled billers. You
-              can also review recent and scheduled bill payments.
+              Pay bills using your real account balance and store the payment in MySQL.
             </p>
-          </div>
-
-          <div className="hero-summary-box">
-            <p>Due This Week</p>
-            <h2>₱10,749</h2>
-            <span>3 upcoming billers</span>
           </div>
         </div>
       </section>
@@ -30,41 +100,52 @@ function PayBills() {
             <h3>New Bill Payment</h3>
           </div>
 
-          <form className="dashboard-form">
+          {message && <p style={{ color: "#63f0b1" }}>{message}</p>}
+          {error && <p style={{ color: "#ff7b7b" }}>{error}</p>}
+
+          <form className="dashboard-form" onSubmit={handlePayBill}>
             <div className="form-group">
               <label>From Account</label>
-              <select>
-                <option>Savings Account - ****2451</option>
-                <option>Checking Account - ****7812</option>
+              <select
+                name="account_id"
+                value={form.account_id}
+                onChange={handleChange}
+              >
+                {accounts.map((account) => (
+                  <option key={account.account_id} value={account.account_id}>
+                    {account.account_type} - {account.account_number}
+                  </option>
+                ))}
               </select>
             </div>
 
             <div className="form-group">
               <label>Biller</label>
-              <select>
-                <option>Electric Utility</option>
-                <option>Water Utility</option>
-                <option>Internet Provider</option>
-                <option>Credit Card</option>
+              <select
+                name="bill_id"
+                value={form.bill_id}
+                onChange={handleChange}
+              >
+                {bills.map((bill) => (
+                  <option key={bill.bill_id} value={bill.bill_id}>
+                    {bill.biller_name} ({bill.category})
+                  </option>
+                ))}
               </select>
             </div>
 
             <div className="form-group">
-              <label>Reference Number</label>
-              <input type="text" placeholder="Enter bill/reference number" />
-            </div>
-
-            <div className="form-group">
               <label>Amount</label>
-              <input type="number" placeholder="Enter payment amount" />
+              <input
+                type="number"
+                name="amount"
+                value={form.amount}
+                onChange={handleChange}
+                placeholder="Enter payment amount"
+              />
             </div>
 
-            <div className="form-group">
-              <label>Schedule</label>
-              <input type="date" />
-            </div>
-
-            <button type="button" className="form-action-btn">
+            <button type="submit" className="form-action-btn">
               Confirm Payment
             </button>
           </form>
@@ -72,40 +153,16 @@ function PayBills() {
 
         <div className="dashboard-panel">
           <div className="panel-header">
-            <h3>Recent Bill Payments</h3>
+            <h3>Available Accounts</h3>
           </div>
 
-          <div className="transaction-list">
-            <div className="transaction-item">
-              <div>
-                <h4>Electric Bill</h4>
-                <p>Jun 12, 5:30 PM</p>
+          <div className="summary-list">
+            {accounts.map((account) => (
+              <div className="summary-item" key={account.account_id}>
+                <span>{account.account_number}</span>
+                <strong>₱{Number(account.balance).toLocaleString()}</strong>
               </div>
-              <span className="negative">- ₱2,350</span>
-            </div>
-
-            <div className="transaction-item">
-              <div>
-                <h4>Internet Bill</h4>
-                <p>Jun 10, 11:20 AM</p>
-              </div>
-              <span className="negative">- ₱1,899</span>
-            </div>
-
-            <div className="transaction-item">
-              <div>
-                <h4>Credit Card Payment</h4>
-                <p>Jun 08, 2:05 PM</p>
-              </div>
-              <span className="negative">- ₱6,500</span>
-            </div>
-          </div>
-
-          <div className="mini-note-box">
-            <p>
-              Scheduled payments will be processed automatically on the selected
-              date if sufficient balance is available.
-            </p>
+            ))}
           </div>
         </div>
       </section>

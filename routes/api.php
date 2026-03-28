@@ -24,3 +24,9 @@ Route::post('/register', [AuthController::class, 'register']);
 Route::post('/login', [AuthController::class, 'login']);
 Route::get('/customer/{id}', [AuthController::class, 'customer']);
 Route::get('/dashboard/{id}', [AuthController::class, 'dashboard']);
+
+Route::post('/transfer-money', [AuthController::class, 'transferMoney']);
+Route::post('/pay-bill', [AuthController::class, 'payBill']);
+Route::get('/bills', [AuthController::class, 'getBills']);
+Route::get('/transactions/{id}', [AuthController::class, 'allTransactions']);
+Route::get('/recipient/{accountNumber}', [AuthController::class, 'getRecipient']);

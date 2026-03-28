@@ -59,30 +59,27 @@ function Home() {
           </div>
 
           <div className="neo-hero-right atm-highlight">
-            <div className="atm-card premium-card">
-              <div className="atm-card-top">
-                <span className="bank-name">MyBank</span>
-                <span className="card-type">VISA</span>
-              </div>
+           <div className="neo-hero-right">
+  <div className="hero-summary-panel">
+    <div className="hero-summary-stat">
+      <p>Total Secure Transactions</p>
+      <h3>₱2.4M+</h3>
+      <span>Processed this month</span>
+    </div>
 
-              <div className="atm-chip"></div>
+    <div className="hero-summary-stat">
+      <p>Active Customers</p>
+      <h3>12,500+</h3>
+      <span>Growing user base</span>
+    </div>
 
-              <div className="atm-number">
-                1234 5678 9012 3456
-              </div>
-
-              <div className="atm-bottom">
-                <div>
-                  <p>Card Holder</p>
-                  <h4>KHIM LUCINTES</h4>
-                </div>
-
-                <div>
-                  <p>Expires</p>
-                  <h4>12/30</h4>
-                </div>
-              </div>
-            </div>
+    <div className="hero-summary-stat">
+      <p>System Uptime</p>
+      <h3>99.9%</h3>
+      <span>Reliable platform access</span>
+    </div>
+  </div>
+</div>
 
             <div className="neo-floating neo-floating-top">
               <p>Quick Transfer</p>

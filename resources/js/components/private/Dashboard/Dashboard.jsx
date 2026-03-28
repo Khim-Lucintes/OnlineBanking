@@ -21,54 +21,56 @@ function Dashboard() {
   const storedUser = localStorage.getItem("user");
   const user = storedUser ? JSON.parse(storedUser) : null;
 
-  useEffect(() => {
+  const fetchDashboardData = async () => {
     if (!user || !user.user_id) {
       navigate("/login");
       return;
     }
 
-    const fetchDashboardData = async () => {
-      try {
-        const response = await fetch(`/api/dashboard/${user.user_id}`, {
-          headers: {
-            Accept: "application/json",
-          },
-        });
+    try {
+      const response = await fetch(`/api/dashboard/${user.user_id}`, {
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-        const data = await response.json();
+      const data = await response.json();
 
-        if (!response.ok) {
-          console.error(data.message || "Failed to load dashboard data");
-          setLoading(false);
-          return;
-        }
-
+      if (response.ok) {
         setDashboardData(data);
-      } catch (error) {
-        console.error("Dashboard fetch error:", error);
-      } finally {
-        setLoading(false);
+      } else {
+        console.error(data.message || "Failed to load dashboard");
       }
-    };
+    } catch (error) {
+      console.error("Dashboard fetch error:", error);
+    } finally {
+      setLoading(false);
+    }
+  };
 
+  useEffect(() => {
     fetchDashboardData();
-  }, [navigate]);
+  }, []);
+
+  const sharedProps = {
+    dashboardData,
+    refreshDashboard: fetchDashboardData,
+  };
 
   const renderPage = () => {
     switch (activePage) {
       case "accounts":
-        return <Accounts dashboardData={dashboardData} />;
+        return <Accounts {...sharedProps} />;
       case "transfer":
-        return <TransferMoney dashboardData={dashboardData} />;
+        return <TransferMoney {...sharedProps} />;
       case "paybills":
-        return <PayBills dashboardData={dashboardData} />;
+        return <PayBills {...sharedProps} />;
       case "transactions":
-        return <Transactions dashboardData={dashboardData} />;
+        return <Transactions {...sharedProps} />;
       case "profile":
-        return <Profile dashboardData={dashboardData} />;
-      case "dashboard":
+        return <Profile {...sharedProps} />;
       default:
-        return <DashboardMain dashboardData={dashboardData} />;
+        return <DashboardMain {...sharedProps} />;
     }
   };
 

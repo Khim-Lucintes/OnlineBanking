@@ -65,34 +65,32 @@ function DashboardMain({ dashboardData }) {
         </div>
 
         <div className="dashboard-panel">
-          <div className="panel-header">
-            <h3>My Card</h3>
-          </div>
+  <div className="panel-header">
+    <h3>Account Overview</h3>
+  </div>
 
-          <div className="dashboard-atm-card">
-            <div className="atm-top">
-              <span>MyBank</span>
-              <span>VISA</span>
-            </div>
+  <div className="account-overview-box">
+    <div className="overview-row">
+      <span>Primary Account</span>
+      <strong>{primaryAccount?.account_number || "N/A"}</strong>
+    </div>
 
-            <div className="atm-chip"></div>
+    <div className="overview-row">
+      <span>Account Type</span>
+      <strong>{primaryAccount?.account_type || "N/A"}</strong>
+    </div>
 
-            <div className="atm-number">
-              {primaryAccount?.account_number || "0000 0000 0000 0000"}
-            </div>
+    <div className="overview-row">
+      <span>Status</span>
+      <strong>{primaryAccount?.status || "Active"}</strong>
+    </div>
 
-            <div className="atm-footer">
-              <div>
-                <p>Card Holder</p>
-                <h4>{(user.username || "CUSTOMER").toUpperCase()}</h4>
-              </div>
-              <div>
-                <p>Status</p>
-                <h4>{primaryAccount?.status || "ACTIVE"}</h4>
-              </div>
-            </div>
-          </div>
-        </div>
+    <div className="overview-row">
+      <span>Available Balance</span>
+      <strong>₱{Number(primaryAccount?.balance || 0).toLocaleString()}</strong>
+    </div>
+  </div>
+</div>
       </section>
     </main>
   );

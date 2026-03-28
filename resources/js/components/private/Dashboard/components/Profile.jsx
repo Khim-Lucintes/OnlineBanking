@@ -1,57 +1,88 @@
 import React from "react";
+import { useEffect, useState } from "react";
 
-function Transactions({ dashboardData }) {
-  const transactions = dashboardData?.recent_transactions || [];
+function Profile({ dashboardData }) {
+  const user = dashboardData?.user || {};
 
   return (
     <main className="dashboard-main">
       <section className="dashboard-panel page-hero-panel">
         <div className="page-hero-content">
           <div>
-            <span className="page-badge">Transaction Records</span>
+            <span className="page-badge">Customer Profile</span>
             <div className="panel-header panel-header-no-margin">
-              <h3>Transactions</h3>
+              <h3>Profile & Security</h3>
             </div>
             <p className="section-description">
-              View real transaction records from MySQL.
+              View your real customer information from MySQL.
             </p>
           </div>
 
-          <div className="hero-summary-box">
-            <p>Total Records</p>
-            <h2>{transactions.length}</h2>
-            <span>Latest customer transactions</span>
+          <div className="profile-avatar-card">
+            <div className="profile-avatar-large">
+              {(user.username || "C").charAt(0).toUpperCase()}
+            </div>
+            <div>
+              <h4>{user.username || "Customer"}</h4>
+              <p>{user.status || "Active"}</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="dashboard-panel">
-        <div className="panel-header">
-          <h3>Transaction History</h3>
+      <section className="dashboard-grid">
+        <div className="dashboard-panel">
+          <div className="panel-header">
+            <h3>Personal Information</h3>
+          </div>
+
+          <form className="dashboard-form">
+            <div className="form-group">
+              <label>Username</label>
+              <input type="text" value={user.username || ""} readOnly />
+            </div>
+
+            <div className="form-group">
+              <label>Email Address</label>
+              <input type="email" value={user.email || ""} readOnly />
+            </div>
+
+            <div className="form-group">
+              <label>Status</label>
+              <input type="text" value={user.status || ""} readOnly />
+            </div>
+
+            <div className="form-group">
+              <label>Email Verified</label>
+              <input
+                type="text"
+                value={Number(user.email_verified) === 1 ? "Yes" : "No"}
+                readOnly
+              />
+            </div>
+          </form>
         </div>
 
-        <div className="transaction-list">
-          {transactions.length > 0 ? (
-            transactions.map((txn) => (
-              <div className="transaction-item" key={txn.transaction_id}>
-                <div>
-                  <h4>{txn.transaction_type}</h4>
-                  <p>
-                    {txn.description || "No description"} • {txn.transaction_date}
-                  </p>
-                </div>
-                <span className={Number(txn.amount) >= 0 ? "positive" : "negative"}>
-                  ₱{Number(txn.amount).toLocaleString()}
-                </span>
-              </div>
-            ))
-          ) : (
-            <p>No transactions found.</p>
-          )}
+        <div className="dashboard-panel">
+          <div className="panel-header">
+            <h3>Account Metadata</h3>
+          </div>
+
+          <form className="dashboard-form">
+            <div className="form-group">
+              <label>User ID</label>
+              <input type="text" value={user.user_id || ""} readOnly />
+            </div>
+
+            <div className="form-group">
+              <label>Created At</label>
+              <input type="text" value={user.created_at || ""} readOnly />
+            </div>
+          </form>
         </div>
       </section>
     </main>
   );
 }
 
-export default Transactions;
+export default Profile;
