@@ -1,7 +1,8 @@
 import React from "react";
 import "../../../../../css/DashboardPage/components/DashboardMain.css";
+import QuickAction from "./QuickAction";
 
-function DashboardMain({ dashboardData }) {
+function DashboardMain({ dashboardData, setActivePage }) {
   const user = dashboardData?.user || {};
   const accounts = dashboardData?.accounts || [];
   const totalBalance = Number(dashboardData?.total_balance || 0);
@@ -10,7 +11,7 @@ function DashboardMain({ dashboardData }) {
   const primaryAccount = accounts[0] || null;
 
   return (
-    <main className="dashboard-main">
+    <main className="dashboard-main banking-dashboard">
       <section className="dashboard-cards">
         <div className="balance-card">
           <p>Total Balance</p>
@@ -63,6 +64,22 @@ function DashboardMain({ dashboardData }) {
             )}
           </div>
         </div>
+
+
+        <div className="dashboard-panel premium-panel">
+  <div className="panel-header">
+    <h3>Quick Actions</h3>
+    <span className="panel-subtitle">Banking shortcuts</span>
+  </div>
+
+  <QuickAction setActivePage={setActivePage} />
+
+  <div className="insight-box">
+    <p>Account Holder</p>
+    <h4>{user.username || "Customer"}</h4>
+    <span>{user.email || "No email found"}</span>
+  </div>
+</div>
 
         <div className="dashboard-panel">
   <div className="panel-header">

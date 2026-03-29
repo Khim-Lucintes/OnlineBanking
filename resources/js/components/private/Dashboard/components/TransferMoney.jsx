@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import "../../../../../css/DashboardPage/components/TransferMoney.css";
 
 function TransferMoney({ dashboardData, refreshDashboard }) {
   const accounts = dashboardData?.accounts || [];
@@ -101,7 +102,6 @@ function TransferMoney({ dashboardData, refreshDashboard }) {
       const data = await response.json();
 
       if (!response.ok) {
-        console.log("Transfer API error:", data);
         showToast("error", data.error || data.message || "Transfer failed");
         return;
       }
@@ -121,40 +121,83 @@ function TransferMoney({ dashboardData, refreshDashboard }) {
         await refreshDashboard();
       }
     } catch (err) {
-      console.error("Transfer request:", err);
       showToast("error", "Server error. Please try again.");
     }
   };
 
+  const selectedAccount = accounts.find(
+    (acc) => String(acc.account_id) === String(form.from_account_id)
+  );
+
+  const formatAmount = (value) => {
+    return `₱${Number(value || 0).toLocaleString()}`;
+  };
+
   return (
-    <main className="dashboard-main">
+    <main className="dashboard-main transfer-page">
       {toast.show && (
         <div className={`custom-toast ${toast.type}`}>
           {toast.message}
         </div>
       )}
 
-      <section className="dashboard-panel page-hero-panel">
-        <div className="page-hero-content">
-          <div>
-            <span className="page-badge">Transfer Center</span>
-            <div className="panel-header panel-header-no-margin">
-              <h3>Transfer Money</h3>
-            </div>
-            <p className="section-description">
-              Send money using your real account data from MySQL.
-            </p>
+      <section className="transfer-hero">
+        <div className="transfer-hero-left">
+          <span className="transfer-badge">Secure Transfer Center</span>
+          <h2>Send funds with confidence</h2>
+          <p>
+            Transfer money between accounts securely and review the recipient
+            details before confirming the transaction.
+          </p>
+        </div>
+
+        <div className="transfer-hero-right">
+          <div className="transfer-balance-card">
+            <span>Available Balance</span>
+            <h1>{formatAmount(selectedAccount?.balance)}</h1>
+            <p>{selectedAccount?.account_number || "No account selected"}</p>
           </div>
         </div>
       </section>
 
-      <section className="dashboard-grid">
-        <div className="dashboard-panel">
+      <section className="transfer-summary-grid">
+        <div className="transfer-stat-card highlight">
+          <span>From Account</span>
+          <h3>{selectedAccount?.account_type || "Savings"} Account</h3>
+          <p>{selectedAccount?.account_number || "N/A"}</p>
+        </div>
+
+        <div className="transfer-stat-card">
+          <span>Status</span>
+          <h3>{selectedAccount?.status || "Active"}</h3>
+          <p>Current source account state</p>
+        </div>
+
+        <div className="transfer-stat-card">
+          <span>Recipient Lookup</span>
+          <h3>{recipientInfo?.username || "Waiting..."}</h3>
+          <p>{recipientInfo?.account_type || "Enter account number"}</p>
+        </div>
+
+        <div className="transfer-stat-card">
+          <span>Transfer Amount</span>
+          <h3>{form.amount ? formatAmount(form.amount) : "₱0"}</h3>
+          <p>Live transfer preview</p>
+        </div>
+      </section>
+
+      <section className="transfer-grid">
+        <div className="dashboard-panel transfer-panel">
           <div className="panel-header">
-            <h3>New Transfer</h3>
+            <div>
+              <h3>New Transfer</h3>
+              <span className="panel-subtitle">
+                Complete the details below
+              </span>
+            </div>
           </div>
 
-          <form className="dashboard-form" onSubmit={handleTransfer}>
+          <form className="transfer-form" onSubmit={handleTransfer}>
             <div className="form-group">
               <label>From Account</label>
               <select
@@ -183,11 +226,17 @@ function TransferMoney({ dashboardData, refreshDashboard }) {
 
             {recipientInfo && (
               <div className="recipient-preview">
+                <div className="recipient-preview-top">
+                  <span className="recipient-chip">Verified Recipient</span>
+                </div>
                 <p>
                   Recipient Name: <strong>{recipientInfo.username}</strong>
                 </p>
                 <p>
                   Account Type: <strong>{recipientInfo.account_type}</strong>
+                </p>
+                <p>
+                  Account Number: <strong>{recipientInfo.account_number}</strong>
                 </p>
               </div>
             )}
@@ -216,24 +265,40 @@ function TransferMoney({ dashboardData, refreshDashboard }) {
               />
             </div>
 
-            <button type="submit" className="form-action-btn">
+            <button type="submit" className="transfer-submit-btn">
               Confirm Transfer
             </button>
           </form>
         </div>
 
-        <div className="dashboard-panel">
+        <div className="dashboard-panel transfer-side-panel">
           <div className="panel-header">
-            <h3>Available Accounts</h3>
+            <div>
+              <h3>Available Accounts</h3>
+              <span className="panel-subtitle">Choose a source account</span>
+            </div>
           </div>
 
-          <div className="summary-list">
+          <div className="transfer-account-list">
             {accounts.map((account) => (
-              <div className="summary-item" key={account.account_id}>
-                <span>{account.account_number}</span>
-                <strong>₱{Number(account.balance).toLocaleString()}</strong>
+              <div className="transfer-account-item" key={account.account_id}>
+                <div className="transfer-account-info">
+                  <h4>{account.account_type} Account</h4>
+                  <p>{account.account_number}</p>
+                </div>
+                <div className="transfer-account-amount">
+                  <strong>{formatAmount(account.balance)}</strong>
+                  <span>{account.status}</span>
+                </div>
               </div>
             ))}
+          </div>
+
+          <div className="transfer-note-box">
+            <p>
+              Double-check the recipient account number before confirming the
+              transaction to avoid sending funds to the wrong account.
+            </p>
           </div>
         </div>
       </section>

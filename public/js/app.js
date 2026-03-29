@@ -5289,7 +5289,9 @@ function Dashboard() {
       case "profile":
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Profile__WEBPACK_IMPORTED_MODULE_10__["default"], _objectSpread({}, sharedProps));
       default:
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_DashboardMain__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread({}, sharedProps));
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_DashboardMain__WEBPACK_IMPORTED_MODULE_5__["default"], _objectSpread(_objectSpread({}, sharedProps), {}, {
+          setActivePage: setActivePage
+        }));
     }
   };
   if (loading) {
@@ -5334,62 +5336,232 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_DashboardPage_components_Accounts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Accounts.css */ "./resources/css/DashboardPage/components/Accounts.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 function Accounts(_ref) {
+  var _accounts$, _accounts$2, _accounts$3, _accounts$4, _accounts$5, _accounts$6, _accounts$7;
   var dashboardData = _ref.dashboardData;
   var accounts = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.accounts) || [];
   var totalBalance = Number((dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.total_balance) || 0);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
-    className: "dashboard-main",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
-      className: "dashboard-panel page-hero-panel",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "page-hero-content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "page-badge",
-            children: "Customer Accounts"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "panel-header panel-header-no-margin",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-              children: "Accounts Overview"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "section-description",
-            children: "View your real linked accounts and balances from MySQL."
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "hero-summary-box",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+  var user = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.user) || {};
+  var formatAmount = function formatAmount(value) {
+    return "\u20B1".concat(Number(value || 0).toLocaleString());
+  };
+  var maskAccountNumber = function maskAccountNumber(accountNumber) {
+    if (!accountNumber) return "N/A";
+    if (accountNumber.length <= 6) return accountNumber;
+    return "".concat(accountNumber.slice(0, 4), " \u2022\u2022\u2022\u2022 ").concat(accountNumber.slice(-4));
+  };
+  var getStatusClass = function getStatusClass(status) {
+    var value = (status || "").toLowerCase();
+    if (value === "active") return "account-status active";
+    if (value === "pending") return "account-status pending";
+    if (value === "inactive") return "account-status inactive";
+    return "account-status neutral";
+  };
+  var getAccountBadgeClass = function getAccountBadgeClass(type) {
+    var value = (type || "").toLowerCase();
+    if (value.includes("savings")) return "account-badge savings";
+    if (value.includes("checking")) return "account-badge checking";
+    if (value.includes("payroll")) return "account-badge payroll";
+    return "account-badge default";
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
+    className: "dashboard-main accounts-page",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "accounts-hero",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "accounts-hero-left",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "accounts-badge",
+          children: "Customer Accounts"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Your Banking Portfolio"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Review all your active accounts, balances, and account details in one secure place."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "accounts-hero-right",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "accounts-total-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
             children: "Total Available Balance"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h2", {
-            children: ["\u20B1", totalBalance.toLocaleString()]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
-            children: [accounts.length, " active account(s)"]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+            children: formatAmount(totalBalance)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+            children: [accounts.length, " linked account(s)"]
+          })]
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "accounts-summary-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "account-highlight-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "account-highlight-top",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: "Primary Account"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: getStatusClass((_accounts$ = accounts[0]) === null || _accounts$ === void 0 ? void 0 : _accounts$.status),
+            children: ((_accounts$2 = accounts[0]) === null || _accounts$2 === void 0 ? void 0 : _accounts$2.status) || "Active"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
+          children: [((_accounts$3 = accounts[0]) === null || _accounts$3 === void 0 ? void 0 : _accounts$3.account_type) || "Savings", " Account"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          className: "account-highlight-number",
+          children: ((_accounts$4 = accounts[0]) === null || _accounts$4 === void 0 ? void 0 : _accounts$4.account_number) || "No account found"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "account-highlight-meta",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              children: "Balance"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: formatAmount((_accounts$5 = accounts[0]) === null || _accounts$5 === void 0 ? void 0 : _accounts$5.balance)
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              children: "Owner"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: user.username || "Customer"
+            })]
           })]
         })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
-      className: "dashboard-cards",
-      children: accounts.length > 0 ? accounts.map(function (account) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "small-card",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-            children: [account.account_type, " Account"]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("h3", {
-            children: ["\u20B1", Number(account.balance).toLocaleString()]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            children: account.account_number
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "accounts-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Total Accounts"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: accounts.length
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Linked banking accounts"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "accounts-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Customer"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: user.username || "Customer"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: user.email || "No email found"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "accounts-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Portfolio Status"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: "Healthy"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Account portfolio overview"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "accounts-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "dashboard-panel accounts-list-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "panel-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "All Accounts"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Detailed account overview"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "accounts-list",
+          children: accounts.length > 0 ? accounts.map(function (account) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "account-row-pro",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "account-row-pro-left",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                  className: "account-row-icon",
+                  children: (account.account_type || "A").charAt(0)
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  className: "account-row-info",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                    className: "account-row-title-line",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h4", {
+                      children: [account.account_type, " Account"]
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                      className: getAccountBadgeClass(account.account_type),
+                      children: account.account_type
+                    })]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                    children: maskAccountNumber(account.account_number)
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("small", {
+                    children: ["Full No: ", account.account_number]
+                  })]
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "account-row-pro-right",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+                  children: formatAmount(account.balance)
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: getStatusClass(account.status),
+                  children: account.status
+                })]
+              })]
+            }, account.account_id);
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            className: "accounts-empty-state",
+            children: "No account records found."
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "dashboard-panel accounts-insight-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "panel-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "Portfolio Insights"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Quick financial overview"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "accounts-insight-list",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "accounts-insight-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Primary Account Number"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: ((_accounts$6 = accounts[0]) === null || _accounts$6 === void 0 ? void 0 : _accounts$6.account_number) || "N/A"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "accounts-insight-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Main Account Type"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: ((_accounts$7 = accounts[0]) === null || _accounts$7 === void 0 ? void 0 : _accounts$7.account_type) || "N/A"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "accounts-insight-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Total Portfolio Value"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: formatAmount(totalBalance)
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "accounts-insight-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Account Holder"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: user.username || "Customer"
+            })]
           })]
-        }, account.account_id);
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "dashboard-panel",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          children: "No account records found."
-        })
-      })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "accounts-mini-note",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Keep your account information secure and regularly monitor your balances and account activity."
+          })
+        })]
+      })]
     })]
   });
 }
@@ -5411,122 +5583,147 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_DashboardPage_components_DashboardMain_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/DashboardMain.css */ "./resources/css/DashboardPage/components/DashboardMain.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _QuickAction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickAction */ "./resources/js/components/private/Dashboard/components/QuickAction.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 function DashboardMain(_ref) {
-  var dashboardData = _ref.dashboardData;
+  var dashboardData = _ref.dashboardData,
+    setActivePage = _ref.setActivePage;
   var user = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.user) || {};
   var accounts = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.accounts) || [];
   var totalBalance = Number((dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.total_balance) || 0);
   var transactions = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.recent_transactions) || [];
   var primaryAccount = accounts[0] || null;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
-    className: "dashboard-main",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("main", {
+    className: "dashboard-main banking-dashboard",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
       className: "dashboard-cards",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "balance-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           children: "Total Balance"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h2", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h2", {
           children: ["\u20B1", totalBalance.toLocaleString()]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
           children: [accounts.length, " linked account(s)"]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "small-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           children: "Customer"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
           children: user.username || "Customer"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           children: user.email || "-"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "small-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           children: "Primary Account Type"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
           children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_type) || "N/A"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
           children: ["Status: ", (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.status) || "N/A"]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "small-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
           children: "Primary Account Number"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
           children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_number) || "N/A"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
           children: "Active account"
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
       className: "dashboard-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "dashboard-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
             children: "Recent Transactions"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "transaction-list",
           children: transactions.length > 0 ? transactions.map(function (txn) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
               className: "transaction-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
                   children: txn.transaction_type
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
                   children: [txn.description || "No description", " \u2022 ", txn.transaction_date]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
                 className: Number(txn.amount) >= 0 ? "positive" : "negative",
                 children: ["\u20B1", Number(txn.amount).toLocaleString()]
               })]
             }, txn.transaction_id);
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
             children: "No transactions yet."
           })
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "dashboard-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "dashboard-panel premium-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+            children: "Quick Actions"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "panel-subtitle",
+            children: "Banking shortcuts"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_QuickAction__WEBPACK_IMPORTED_MODULE_2__["default"], {
+          setActivePage: setActivePage
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "insight-box",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            children: "Account Holder"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
+            children: user.username || "Customer"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            children: user.email || "No email found"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "dashboard-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "panel-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
             children: "Account Overview"
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "account-overview-box",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "overview-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
               children: "Primary Account"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
               children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_number) || "N/A"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "overview-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
               children: "Account Type"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
               children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_type) || "N/A"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "overview-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
               children: "Status"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
               children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.status) || "Active"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: "overview-row",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
               children: "Available Balance"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("strong", {
               children: ["\u20B1", Number((primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.balance) || 0).toLocaleString()]
             })]
           })]
@@ -5639,17 +5836,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_DashboardPage_components_PayBills_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/PayBills.css */ "./resources/css/DashboardPage/components/PayBills.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
-function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
-function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
@@ -5659,8 +5857,8 @@ function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
 
 
 
+
 function PayBills(_ref) {
-  var _accounts$;
   var dashboardData = _ref.dashboardData,
     refreshDashboard = _ref.refreshDashboard;
   var accounts = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.accounts) || [];
@@ -5669,21 +5867,34 @@ function PayBills(_ref) {
     bills = _useState2[0],
     setBills = _useState2[1];
   var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
-      account_id: ((_accounts$ = accounts[0]) === null || _accounts$ === void 0 ? void 0 : _accounts$.account_id) || "",
+      account_id: "",
       bill_id: "",
       amount: ""
     }),
     _useState4 = _slicedToArray(_useState3, 2),
     form = _useState4[0],
     setForm = _useState4[1];
-  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState6 = _slicedToArray(_useState5, 2),
-    message = _useState6[0],
-    setMessage = _useState6[1];
-  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    selectedBill = _useState6[0],
+    setSelectedBill = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      show: false,
+      type: "",
+      message: ""
+    }),
     _useState8 = _slicedToArray(_useState7, 2),
-    error = _useState8[0],
-    setError = _useState8[1];
+    toast = _useState8[0],
+    setToast = _useState8[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (accounts.length > 0) {
+      setForm(function (prev) {
+        return _objectSpread(_objectSpread({}, prev), {}, {
+          account_id: prev.account_id || accounts[0].account_id
+        });
+      });
+    }
+  }, [accounts]);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     var fetchBills = /*#__PURE__*/function () {
       var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
@@ -5709,7 +5920,7 @@ function PayBills(_ref) {
                 if (data.length > 0) {
                   setForm(function (prev) {
                     return _objectSpread(_objectSpread({}, prev), {}, {
-                      bill_id: data[0].bill_id
+                      bill_id: prev.bill_id || String(data[0].bill_id)
                     });
                   });
                 }
@@ -5731,18 +5942,36 @@ function PayBills(_ref) {
     }();
     fetchBills();
   }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var foundBill = bills.find(function (bill) {
+      return String(bill.bill_id) === String(form.bill_id);
+    });
+    setSelectedBill(foundBill || null);
+  }, [form.bill_id, bills]);
+  var showToast = function showToast(type, message) {
+    setToast({
+      show: true,
+      type: type,
+      message: message
+    });
+    setTimeout(function () {
+      setToast({
+        show: false,
+        type: "",
+        message: ""
+      });
+    }, 3000);
+  };
   var handleChange = function handleChange(e) {
     setForm(_objectSpread(_objectSpread({}, form), {}, _defineProperty({}, e.target.name, e.target.value)));
   };
   var handlePayBill = /*#__PURE__*/function () {
     var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(e) {
-      var _accounts$2, _bills$, response, data, _t2;
+      var _accounts$, _bills$, response, data, _t2;
       return _regenerator().w(function (_context2) {
         while (1) switch (_context2.p = _context2.n) {
           case 0:
             e.preventDefault();
-            setMessage("");
-            setError("");
             _context2.p = 1;
             _context2.n = 2;
             return fetch("/api/pay-bill", {
@@ -5763,15 +5992,19 @@ function PayBills(_ref) {
               _context2.n = 4;
               break;
             }
-            setError(data.message || "Bill payment failed");
+            showToast("error", data.error || data.message || "Bill payment failed");
             return _context2.a(2);
           case 4:
-            setMessage(data.message);
+            showToast("success", data.message || "Bill payment completed successfully");
             setForm({
-              account_id: ((_accounts$2 = accounts[0]) === null || _accounts$2 === void 0 ? void 0 : _accounts$2.account_id) || "",
-              bill_id: ((_bills$ = bills[0]) === null || _bills$ === void 0 ? void 0 : _bills$.bill_id) || "",
+              account_id: ((_accounts$ = accounts[0]) === null || _accounts$ === void 0 ? void 0 : _accounts$.account_id) || "",
+              bill_id: (_bills$ = bills[0]) !== null && _bills$ !== void 0 && _bills$.bill_id ? String(bills[0].bill_id) : "",
               amount: ""
             });
+            if (!refreshDashboard) {
+              _context2.n = 5;
+              break;
+            }
             _context2.n = 5;
             return refreshDashboard();
           case 5:
@@ -5780,7 +6013,7 @@ function PayBills(_ref) {
           case 6:
             _context2.p = 6;
             _t2 = _context2.v;
-            setError("Server error. Please try again.");
+            showToast("error", "Server error. Please try again.");
           case 7:
             return _context2.a(2);
         }
@@ -5790,114 +6023,192 @@ function PayBills(_ref) {
       return _ref3.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
-    className: "dashboard-main",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
-      className: "dashboard-panel page-hero-panel",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "page-hero-content",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "page-badge",
-            children: "Bills Payment"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "panel-header panel-header-no-margin",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-              children: "Pay Bills"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "section-description",
-            children: "Pay bills using your real account balance and store the payment in MySQL."
+  var selectedAccount = accounts.find(function (acc) {
+    return String(acc.account_id) === String(form.account_id);
+  });
+  var formatAmount = function formatAmount(value) {
+    return "\u20B1".concat(Number(value || 0).toLocaleString());
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
+    className: "dashboard-main paybills-page",
+    children: [toast.show && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "custom-toast ".concat(toast.type),
+      children: toast.message
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "paybills-hero",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "paybills-hero-left",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "paybills-badge",
+          children: "Bills Payment Center"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Pay your bills securely and on time"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Manage utility, internet, telecom, and credit card payments with a professional and secure banking experience."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "paybills-hero-right",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "paybills-balance-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: "Available Balance"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+            children: formatAmount(selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.balance)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: (selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.account_number) || "No account selected"
           })]
         })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
-      className: "dashboard-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "dashboard-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "paybills-summary-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "paybills-stat-card highlight",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Source Account"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
+          children: [(selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.account_type) || "Savings", " Account"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: (selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.account_number) || "N/A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "paybills-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Selected Biller"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: (selectedBill === null || selectedBill === void 0 ? void 0 : selectedBill.biller_name) || "Waiting..."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: (selectedBill === null || selectedBill === void 0 ? void 0 : selectedBill.category) || "Choose a biller"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "paybills-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Payment Amount"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: form.amount ? formatAmount(form.amount) : "₱0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Live payment preview"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "paybills-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Available Billers"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: bills.length
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Ready for payment"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "paybills-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "dashboard-panel paybills-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "New Bill Payment"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "New Bill Payment"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Complete the payment details below"
+            })]
           })
-        }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          style: {
-            color: "#63f0b1"
-          },
-          children: message
-        }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-          style: {
-            color: "#ff7b7b"
-          },
-          children: error
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-          className: "dashboard-form",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+          className: "paybills-form",
           onSubmit: handlePayBill,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "From Account"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("select", {
               name: "account_id",
               value: form.account_id,
               onChange: handleChange,
               children: accounts.map(function (account) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("option", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("option", {
                   value: account.account_id,
                   children: [account.account_type, " - ", account.account_number]
                 }, account.account_id);
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Biller"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("select", {
               name: "bill_id",
               value: form.bill_id,
               onChange: handleChange,
               children: bills.map(function (bill) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("option", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("option", {
                   value: bill.bill_id,
                   children: [bill.biller_name, " (", bill.category, ")"]
                 }, bill.bill_id);
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), selectedBill && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "biller-preview",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "biller-preview-top",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                className: "biller-chip",
+                children: "Verified Biller"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+              children: ["Biller Name: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+                children: selectedBill.biller_name
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+              children: ["Category: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+                children: selectedBill.category
+              })]
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Amount"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
               type: "number",
               name: "amount",
               value: form.amount,
               onChange: handleChange,
-              placeholder: "Enter payment amount"
+              placeholder: "Enter payment amount",
+              min: "1",
+              step: "0.01"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
             type: "submit",
-            className: "form-action-btn",
+            className: "paybills-submit-btn",
             children: "Confirm Payment"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "dashboard-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "dashboard-panel paybills-side-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "Available Accounts"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "Available Billers"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Supported payment partners"
+            })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "summary-list",
-          children: accounts.map(function (account) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "summary-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                children: account.account_number
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
-                children: ["\u20B1", Number(account.balance).toLocaleString()]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "billers-list",
+          children: bills.map(function (bill) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "biller-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+                children: bill.biller_name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                children: bill.category
               })]
-            }, account.account_id);
+            }, bill.bill_id);
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "paybills-note-box",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Always review the selected biller and payment amount before confirming to avoid incorrect bill payments."
           })
         })]
       })]
@@ -5921,129 +6232,269 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_DashboardPage_components_Profile_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Profile.css */ "./resources/css/DashboardPage/components/Profile.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
 function Profile(_ref) {
+  var _accounts$, _accounts$2;
   var dashboardData = _ref.dashboardData;
   var user = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.user) || {};
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
-    className: "dashboard-main",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
-      className: "dashboard-panel page-hero-panel",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "page-hero-content",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "page-badge",
-            children: "Customer Profile"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "panel-header panel-header-no-margin",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-              children: "Profile & Security"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "section-description",
-            children: "View your real customer information from MySQL."
+  var accounts = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.accounts) || [];
+  var totalBalance = Number((dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.total_balance) || 0);
+  var formatAmount = function formatAmount(value) {
+    return "\u20B1".concat(Number(value || 0).toLocaleString());
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
+    className: "dashboard-main profile-page",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "profile-hero",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "profile-hero-left",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "profile-badge",
+          children: "Customer Profile"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Manage your account profile"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Review your identity, account status, linked banking information, and customer details in one secure place."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "profile-hero-right",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "profile-balance-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: "Total Portfolio Value"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+            children: formatAmount(totalBalance)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+            children: [accounts.length, " linked account(s)"]
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          className: "profile-avatar-card",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "profile-summary-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "profile-highlight-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "profile-highlight-top",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
             className: "profile-avatar-large",
             children: (user.username || "C").charAt(0).toUpperCase()
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "profile-highlight-info",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "profile-role-chip",
+              children: "Verified Customer"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
               children: user.username || "Customer"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: user.email || "No email found"
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "profile-highlight-meta",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              children: "User ID"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: user.user_id || "N/A"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              children: "Status"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
               children: user.status || "Active"
             })]
           })]
         })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
-      className: "dashboard-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "dashboard-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "profile-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Email Verification"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: Number(user.email_verified) === 1 ? "Verified" : "Pending"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Security verification status"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "profile-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Linked Accounts"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: accounts.length
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Banking accounts connected"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "profile-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Created At"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: user.created_at ? "Recorded" : "N/A"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: user.created_at || "No timestamp found"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "profile-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "dashboard-panel profile-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "Personal Information"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "Personal Information"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Registered customer details"
+            })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-          className: "dashboard-form",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+          className: "profile-form",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Username"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
               type: "text",
               value: user.username || "",
               readOnly: true
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Email Address"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
               type: "email",
               value: user.email || "",
               readOnly: true
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Status"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
               type: "text",
               value: user.status || "",
               readOnly: true
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Email Verified"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
               type: "text",
               value: Number(user.email_verified) === 1 ? "Yes" : "No",
               readOnly: true
             })]
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "dashboard-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "dashboard-panel profile-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "Account Metadata"
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-          className: "dashboard-form",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
-              children: "User ID"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-              type: "text",
-              value: user.user_id || "",
-              readOnly: true
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "Account Metadata"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "System-level customer information"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-            className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "profile-info-list",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "profile-info-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "User ID"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: user.user_id || "N/A"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "profile-info-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Primary Account"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: ((_accounts$ = accounts[0]) === null || _accounts$ === void 0 ? void 0 : _accounts$.account_number) || "N/A"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "profile-info-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              children: "Primary Account Type"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: ((_accounts$2 = accounts[0]) === null || _accounts$2 === void 0 ? void 0 : _accounts$2.account_type) || "N/A"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "profile-info-item",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
               children: "Created At"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
-              type: "text",
-              value: user.created_at || "",
-              readOnly: true
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+              children: user.created_at || "N/A"
             })]
           })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "profile-note-box",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Keep your profile information secure. Contact system support if any customer account details appear incorrect."
+          })
         })]
       })]
     })]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Profile);
+
+/***/ },
+
+/***/ "./resources/js/components/private/Dashboard/components/QuickAction.jsx"
+/*!******************************************************************************!*\
+  !*** ./resources/js/components/private/Dashboard/components/QuickAction.jsx ***!
+  \******************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function QuickAction(_ref) {
+  var setActivePage = _ref.setActivePage;
+  var actions = [{
+    label: "Transfer Money",
+    page: "transfer"
+  }, {
+    label: "Pay Bills",
+    page: "paybills"
+  }, {
+    label: "View Transactions",
+    page: "transactions"
+  }, {
+    label: "Profile Settings",
+    page: "profile"
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "quick-action-grid",
+    children: actions.map(function (action) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        type: "button",
+        className: "quick-action-btn",
+        onClick: function onClick() {
+          return setActivePage(action.page);
+        },
+        children: action.label
+      }, action.page);
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (QuickAction);
 
 /***/ },
 
@@ -6190,10 +6641,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_DashboardPage_components_Transactions_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Transactions.css */ "./resources/css/DashboardPage/components/Transactions.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
-function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
-function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
 function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
@@ -6226,7 +6673,6 @@ function Transactions(_ref) {
       dateFrom: "",
       dateTo: "",
       type: "All",
-      amount: "",
       search: ""
     }),
     _useState6 = _slicedToArray(_useState5, 2),
@@ -6295,10 +6741,9 @@ function Transactions(_ref) {
       var fromOk = filters.dateFrom ? txnDate && txnDate >= new Date(filters.dateFrom) : true;
       var toOk = filters.dateTo ? txnDate && txnDate <= new Date(filters.dateTo + "T23:59:59") : true;
       var typeOk = filters.type === "All" ? true : (txn.transaction_type || "").toLowerCase() === filters.type.toLowerCase();
-      var amountOk = filters.amount ? String(txn.amount).includes(filters.amount) : true;
       var searchValue = filters.search.toLowerCase();
       var searchOk = filters.search ? (txn.transaction_type || "").toLowerCase().includes(searchValue) || (txn.description || "").toLowerCase().includes(searchValue) || (txn.reference_no || "").toLowerCase().includes(searchValue) : true;
-      return fromOk && toOk && typeOk && amountOk && searchOk;
+      return fromOk && toOk && typeOk && searchOk;
     });
   }, [allTransactions, filters]);
   var totalIncoming = filteredTransactions.filter(function (txn) {
@@ -6311,88 +6756,78 @@ function Transactions(_ref) {
   }).reduce(function (sum, txn) {
     return sum + Math.abs(Number(txn.amount));
   }, 0);
+  var formatDate = function formatDate(dateString) {
+    if (!dateString) return "-";
+    var date = new Date(dateString);
+    return date.toLocaleString();
+  };
+  var getTypeClass = function getTypeClass(type) {
+    var value = (type || "").toLowerCase();
+    if (value.includes("deposit")) return "txn-type deposit";
+    if (value.includes("transfer received")) return "txn-type received";
+    if (value.includes("transfer")) return "txn-type transfer";
+    if (value.includes("bill")) return "txn-type bill";
+    return "txn-type default";
+  };
+  var getStatusClass = function getStatusClass(status) {
+    var value = (status || "").toLowerCase();
+    if (value === "completed") return "txn-status completed";
+    if (value === "pending") return "txn-status pending";
+    if (value === "failed") return "txn-status failed";
+    return "txn-status default";
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
     className: "dashboard-main transaction-page",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
-      className: "dashboard-panel",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "page-hero-content",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "transactions-hero",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "transactions-hero-left",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "transactions-badge",
+          children: "Banking Records"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Transaction History"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Review all incoming and outgoing activity with filters, search, and status tracking."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "transactions-hero-right",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "transactions-stat-card",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            className: "page-badge",
-            children: "Transaction Records"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-            className: "panel-header panel-header-no-margin",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-              children: "Full Transaction History"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            className: "section-description",
-            children: "View all real transactions from MySQL and filter them by date, type, amount, or keyword."
+            children: "Total Records"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+            children: filteredTransactions.length
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "hero-summary-box",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-            children: "Total Records"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
-            children: filteredTransactions.length
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-            children: "Filtered transaction results"
+          className: "transactions-stat-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: "Total Incoming"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+            className: "positive-text",
+            children: ["\u20B1", totalIncoming.toLocaleString()]
           })]
-        })]
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
-      className: "dashboard-cards",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "small-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          children: "Total Incoming"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
-          children: ["\u20B1", totalIncoming.toLocaleString()]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          children: "Positive transactions"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "small-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          children: "Total Outgoing"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
-          children: ["\u20B1", totalOutgoing.toLocaleString()]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          children: "Negative transactions"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "small-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          children: "Transaction Types"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-          children: _toConsumableArray(new Set(allTransactions.map(function (txn) {
-            return txn.transaction_type;
-          }))).filter(Boolean).length
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          children: "Unique types found"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "small-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-          children: "Customer"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-          children: user.username || "Customer"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
-          children: user.email || "-"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "transactions-stat-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: "Total Outgoing"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+            className: "negative-text",
+            children: ["\u20B1", totalOutgoing.toLocaleString()]
+          })]
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
-      className: "dashboard-panel transactions-filter-panel",
+      className: "transactions-filter-panel",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "panel-header",
+        className: "transactions-filter-header",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
           children: "Filter Transactions"
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-        className: "filter-grid transaction-filter-grid",
+        className: "transactions-filter-grid",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form-group",
+          className: "transactions-form-group",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
             children: "Date From"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
@@ -6402,7 +6837,7 @@ function Transactions(_ref) {
             onChange: handleChange
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form-group",
+          className: "transactions-form-group",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
             children: "Date To"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
@@ -6412,7 +6847,7 @@ function Transactions(_ref) {
             onChange: handleChange
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form-group",
+          className: "transactions-form-group",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
             children: "Type"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
@@ -6437,18 +6872,7 @@ function Transactions(_ref) {
             })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form-group",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
-            children: "Amount Contains"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-            type: "text",
-            name: "amount",
-            value: filters.amount,
-            onChange: handleChange,
-            placeholder: "e.g. 2500"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-          className: "form-group filter-search-wide",
+          className: "transactions-form-group search-wide",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
             children: "Search"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
@@ -6456,50 +6880,83 @@ function Transactions(_ref) {
             name: "search",
             value: filters.search,
             onChange: handleChange,
-            placeholder: "Search type, description, reference no"
+            placeholder: "Search reference, description, or type"
           })]
         })]
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
-      className: "dashboard-panel transactions-history-panel",
+      className: "transactions-table-panel",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "panel-header",
+        className: "transactions-table-header",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
-          children: "Transaction History"
+          children: "All Transactions"
         })
-      }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "transactions-state",
         children: "Loading transactions..."
-      }) : filteredTransactions.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "transaction-list full-transaction-list",
-        children: filteredTransactions.map(function (txn) {
-          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-            className: "transaction-item transaction-card",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-              className: "transaction-main-info",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
-                children: txn.transaction_type
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-                children: txn.description || "No description provided"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-                className: "transaction-meta",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-                  children: ["Ref: ", txn.reference_no]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-                  children: ["Date: ", txn.transaction_date]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-                  children: ["Status: ", txn.status]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-                  children: ["Account ID: ", txn.account_id]
-                })]
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
-              className: Number(txn.amount) >= 0 ? "positive" : "negative",
-              children: ["\u20B1", Math.abs(Number(txn.amount)).toLocaleString()]
-            })]
-          }, txn.transaction_id);
-        })
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      }) : filteredTransactions.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "transactions-state",
         children: "No transactions found for the selected filters."
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "transactions-table-wrapper",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
+          className: "transactions-table",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                children: "Reference"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                children: "Type"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                children: "Description"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                children: "Date"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                children: "Status"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                className: "amount-col",
+                children: "Amount"
+              })]
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
+            children: filteredTransactions.map(function (txn) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    className: "txn-ref",
+                    children: txn.reference_no
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    className: getTypeClass(txn.transaction_type),
+                    children: txn.transaction_type
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    className: "txn-description",
+                    children: txn.description || "No description provided"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                    className: "txn-date",
+                    children: formatDate(txn.transaction_date)
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    className: getStatusClass(txn.status),
+                    children: txn.status || "Unknown"
+                  })
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  className: "amount-col",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+                    className: Number(txn.amount) >= 0 ? "txn-amount positive" : "txn-amount negative",
+                    children: [Number(txn.amount) >= 0 ? "+" : "-", "\u20B1", Math.abs(Number(txn.amount)).toLocaleString()]
+                  })
+                })]
+              }, txn.transaction_id);
+            })
+          })]
+        })
       })]
     })]
   });
@@ -6521,7 +6978,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_DashboardPage_components_TransferMoney_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/TransferMoney.css */ "./resources/css/DashboardPage/components/TransferMoney.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
@@ -6538,6 +6996,7 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 function TransferMoney(_ref) {
@@ -6672,7 +7131,6 @@ function TransferMoney(_ref) {
               _context2.n = 4;
               break;
             }
-            console.log("Transfer API error:", data);
             showToast("error", data.error || data.message || "Transfer failed");
             return _context2.a(2);
           case 4:
@@ -6696,7 +7154,6 @@ function TransferMoney(_ref) {
           case 6:
             _context2.p = 6;
             _t2 = _context2.v;
-            console.error("Transfer request:", _t2);
             showToast("error", "Server error. Please try again.");
           case 7:
             return _context2.a(2);
@@ -6707,84 +7164,150 @@ function TransferMoney(_ref) {
       return _ref3.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("main", {
-    className: "dashboard-main",
-    children: [toast.show && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+  var selectedAccount = accounts.find(function (acc) {
+    return String(acc.account_id) === String(form.from_account_id);
+  });
+  var formatAmount = function formatAmount(value) {
+    return "\u20B1".concat(Number(value || 0).toLocaleString());
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
+    className: "dashboard-main transfer-page",
+    children: [toast.show && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
       className: "custom-toast ".concat(toast.type),
       children: toast.message
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("section", {
-      className: "dashboard-panel page-hero-panel",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-        className: "page-hero-content",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-            className: "page-badge",
-            children: "Transfer Center"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-            className: "panel-header panel-header-no-margin",
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-              children: "Transfer Money"
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
-            className: "section-description",
-            children: "Send money using your real account data from MySQL."
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "transfer-hero",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "transfer-hero-left",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "transfer-badge",
+          children: "Secure Transfer Center"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+          children: "Send funds with confidence"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Transfer money between accounts securely and review the recipient details before confirming the transaction."
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "transfer-hero-right",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "transfer-balance-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            children: "Available Balance"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+            children: formatAmount(selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.balance)
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: (selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.account_number) || "No account selected"
           })]
         })
-      })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("section", {
-      className: "dashboard-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "dashboard-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "transfer-summary-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "transfer-stat-card highlight",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "From Account"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h3", {
+          children: [(selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.account_type) || "Savings", " Account"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: (selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.account_number) || "N/A"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "transfer-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Status"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: (selectedAccount === null || selectedAccount === void 0 ? void 0 : selectedAccount.status) || "Active"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Current source account state"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "transfer-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Recipient Lookup"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: (recipientInfo === null || recipientInfo === void 0 ? void 0 : recipientInfo.username) || "Waiting..."
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: (recipientInfo === null || recipientInfo === void 0 ? void 0 : recipientInfo.account_type) || "Enter account number"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "transfer-stat-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          children: "Transfer Amount"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: form.amount ? formatAmount(form.amount) : "₱0"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          children: "Live transfer preview"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "transfer-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "dashboard-panel transfer-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "New Transfer"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "New Transfer"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Complete the details below"
+            })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
-          className: "dashboard-form",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("form", {
+          className: "transfer-form",
           onSubmit: handleTransfer,
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "From Account"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("select", {
               name: "from_account_id",
               value: form.from_account_id,
               onChange: handleChange,
               children: accounts.map(function (account) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("option", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("option", {
                   value: account.account_id,
                   children: [account.account_type, " - ", account.account_number]
                 }, account.account_id);
               })
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Recipient Account Number"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
               type: "text",
               name: "to_account",
               value: form.to_account,
               onChange: handleChange,
               placeholder: "Enter recipient account number"
             })]
-          }), recipientInfo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), recipientInfo && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "recipient-preview",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-              children: ["Recipient Name: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "recipient-preview-top",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                className: "recipient-chip",
+                children: "Verified Recipient"
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+              children: ["Recipient Name: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
                 children: recipientInfo.username
               })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("p", {
-              children: ["Account Type: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("strong", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+              children: ["Account Type: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
                 children: recipientInfo.account_type
               })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+              children: ["Account Number: ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+                children: recipientInfo.account_number
+              })]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Amount"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
               type: "number",
               name: "amount",
               value: form.amount,
@@ -6793,41 +7316,61 @@ function TransferMoney(_ref) {
               min: "1",
               step: "0.01"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
             className: "form-group",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
               children: "Remarks"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
               type: "text",
               name: "remarks",
               value: form.remarks,
               onChange: handleChange,
               placeholder: "Optional note"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
             type: "submit",
-            className: "form-action-btn",
+            className: "transfer-submit-btn",
             children: "Confirm Transfer"
           })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-        className: "dashboard-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "dashboard-panel transfer-side-panel",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
-            children: "Available Accounts"
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+              children: "Available Accounts"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Choose a source account"
+            })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
-          className: "summary-list",
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "transfer-account-list",
           children: accounts.map(function (account) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
-              className: "summary-item",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
-                children: account.account_number
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("strong", {
-                children: ["\u20B1", Number(account.balance).toLocaleString()]
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "transfer-account-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "transfer-account-info",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("h4", {
+                  children: [account.account_type, " Account"]
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+                  children: account.account_number
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                className: "transfer-account-amount",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+                  children: formatAmount(account.balance)
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  children: account.status
+                })]
               })]
             }, account.account_id);
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "transfer-note-box",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Double-check the recipient account number before confirming the transaction to avoid sending funds to the wrong account."
           })
         })]
       })]
@@ -7731,6 +8274,30 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-page {\r\n  min-height: 100
 
 /***/ },
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Accounts.css"
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Accounts.css ***!
+  \***********************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".accounts-page {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 28px;\r\n}\r\n\r\n/* hero */\r\n.accounts-hero {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: stretch;\r\n  gap: 20px;\r\n  padding: 28px;\r\n  border-radius: 24px;\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.10)),\r\n    rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.accounts-hero-left {\r\n  max-width: 620px;\r\n}\r\n\r\n.accounts-badge {\r\n  display: inline-block;\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dce6ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.accounts-hero-left h2 {\r\n  font-size: 32px;\r\n  color: #ffffff;\r\n  margin-bottom: 12px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.accounts-hero-left p {\r\n  font-size: 15px;\r\n  line-height: 1.8;\r\n  color: #a9b4d4;\r\n}\r\n\r\n.accounts-hero-right {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.accounts-total-card {\r\n  min-width: 280px;\r\n  padding: 24px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.07);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.accounts-total-card span {\r\n  display: block;\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.accounts-total-card h1 {\r\n  color: #ffffff;\r\n  font-size: 36px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.accounts-total-card p {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n/* summary */\r\n.accounts-summary-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.5fr 1fr 1fr 1fr;\r\n  gap: 20px;\r\n}\r\n\r\n.account-highlight-card,\r\n.accounts-stat-card {\r\n  padding: 22px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.account-highlight-card {\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.08)),\r\n    rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.account-highlight-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 12px;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.account-highlight-card h3 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.account-highlight-number {\r\n  color: #ffffff;\r\n  font-size: 18px;\r\n  font-weight: 700;\r\n  margin-bottom: 16px;\r\n  word-break: break-word;\r\n}\r\n\r\n.account-highlight-meta {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n.account-highlight-meta label {\r\n  display: block;\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.account-highlight-meta strong {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n}\r\n\r\n.accounts-stat-card {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.accounts-stat-card span {\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n}\r\n\r\n.accounts-stat-card h3 {\r\n  color: #ffffff;\r\n  font-size: 22px;\r\n}\r\n\r\n.accounts-stat-card p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n/* content */\r\n.accounts-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.2fr 0.8fr;\r\n  gap: 24px;\r\n}\r\n\r\n.accounts-list-panel,\r\n.accounts-insight-panel {\r\n  padding: 24px;\r\n  border-radius: 24px;\r\n}\r\n\r\n.accounts-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 14px;\r\n}\r\n\r\n.account-row-pro {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 18px;\r\n  padding: 18px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.account-row-pro:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.account-row-pro-left {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 16px;\r\n}\r\n\r\n.account-row-icon {\r\n  width: 48px;\r\n  height: 48px;\r\n  border-radius: 14px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-weight: 800;\r\n  font-size: 16px;\r\n  flex-shrink: 0;\r\n}\r\n\r\n.account-row-info h4 {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.account-row-info p {\r\n  color: #b6c0de;\r\n  font-size: 13px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.account-row-info small {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n.account-row-title-line {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 10px;\r\n  margin-bottom: 4px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.account-row-pro-right {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  gap: 8px;\r\n}\r\n\r\n.account-row-pro-right strong {\r\n  color: #ffffff;\r\n  font-size: 16px;\r\n}\r\n\r\n/* insight panel */\r\n.accounts-insight-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 14px;\r\n}\r\n\r\n.accounts-insight-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 16px;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.accounts-insight-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.accounts-insight-item span {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n}\r\n\r\n.accounts-insight-item strong {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n  text-align: right;\r\n}\r\n\r\n.accounts-mini-note {\r\n  margin-top: 18px;\r\n  padding: 16px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n}\r\n\r\n.accounts-mini-note p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  line-height: 1.7;\r\n}\r\n\r\n.accounts-empty-state {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n  padding: 12px 0;\r\n}\r\n\r\n/* badges */\r\n.account-status,\r\n.account-badge {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 6px 12px;\r\n  border-radius: 999px;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n}\r\n\r\n.account-status.active {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.account-status.pending {\r\n  background: rgba(255, 193, 7, 0.14);\r\n  color: #ffd76a;\r\n}\r\n\r\n.account-status.inactive {\r\n  background: rgba(255, 107, 107, 0.14);\r\n  color: #ff8b8b;\r\n}\r\n\r\n.account-status.neutral {\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #d7def6;\r\n}\r\n\r\n.account-badge.savings {\r\n  background: rgba(0, 207, 255, 0.12);\r\n  color: #8ad8ff;\r\n}\r\n\r\n.account-badge.checking {\r\n  background: rgba(92, 103, 255, 0.16);\r\n  color: #c6cbff;\r\n}\r\n\r\n.account-badge.payroll {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.account-badge.default {\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #d7def6;\r\n}\r\n\r\n/* responsive */\r\n@media (max-width: 1200px) {\r\n  .accounts-summary-grid {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .accounts-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n@media (max-width: 900px) {\r\n  .accounts-hero {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .accounts-hero-right {\r\n    justify-content: flex-start;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .account-highlight-meta {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .accounts-summary-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .account-row-pro,\r\n  .accounts-insight-item {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .account-row-pro-right {\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .accounts-total-card {\r\n    width: 100%;\r\n  }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/DashboardMain.css"
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/DashboardMain.css ***!
@@ -7748,7 +8315,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-main {\r\n  padding: 20px 28px;\r\n}\r\n\r\n.dashboard-cards {\r\n  display: grid;\r\n  grid-template-columns: 1.4fr 1fr 1fr 1fr;\r\n  gap: 18px;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.balance-card,\r\n.small-card,\r\n.dashboard-panel {\r\n  background: rgba(255, 255, 255, 0.06);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  border-radius: 22px;\r\n  padding: 22px;\r\n  backdrop-filter: blur(16px);\r\n}\r\n\r\n.balance-card h2 {\r\n  font-size: 34px;\r\n  margin: 10px 0;\r\n}\r\n\r\n.balance-card p,\r\n.small-card p {\r\n  color: #94a2c6;\r\n}\r\n\r\n.balance-card span,\r\n.small-card span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n.small-card h3 {\r\n  font-size: 24px;\r\n  margin: 8px 0;\r\n}\r\n\r\n.dashboard-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.3fr 0.9fr;\r\n  gap: 18px;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.panel-header {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  margin-bottom: 18px;\r\n}\r\n\r\n.panel-header h3 {\r\n  font-size: 20px;\r\n}\r\n\r\n.panel-header a {\r\n  color: #8ad8ff;\r\n  text-decoration: none;\r\n  font-size: 14px;\r\n}\r\n\r\n.transaction-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.transaction-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transaction-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.transaction-item h4 {\r\n  font-size: 15px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.transaction-item p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n.positive {\r\n  color: #63f0b1;\r\n  font-weight: 700;\r\n}\r\n\r\n.negative {\r\n  color: #ff7b7b;\r\n  font-weight: 700;\r\n}\r\n\r\n.dashboard-atm-card {\r\n  width: 100%;\r\n  max-width: 360px;\r\n  height: 210px;\r\n  border-radius: 20px;\r\n  padding: 20px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.3);\r\n}\r\n\r\n.atm-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  font-weight: 700;\r\n}\r\n\r\n.atm-chip {\r\n  width: 50px;\r\n  height: 34px;\r\n  border-radius: 8px;\r\n  background: linear-gradient(135deg, #f5d76e, #d9a62e);\r\n}\r\n\r\n.atm-number {\r\n  font-size: 20px;\r\n  letter-spacing: 2px;\r\n  font-weight: 600;\r\n}\r\n\r\n.atm-footer {\r\n  display: flex;\r\n  justify-content: space-between;\r\n}\r\n\r\n.atm-footer p {\r\n  font-size: 10px;\r\n  opacity: 0.85;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.atm-footer h4 {\r\n  font-size: 14px;\r\n}\r\n\r\n.quick-actions {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 14px;\r\n}\r\n\r\n.quick-actions button {\r\n  padding: 14px;\r\n  border: none;\r\n  border-radius: 14px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n}\r\n\r\n.summary-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.summary-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.summary-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.summary-item span {\r\n  color: #b6c0de;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-cards,\r\n  .dashboard-grid {\r\n    grid-template-columns: 1fr 1fr;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .dashboard-cards,\r\n  .dashboard-grid,\r\n  .quick-actions {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .dashboard-main {\r\n    padding: 18px;\r\n  }\r\n}\r\n\r\n.section-description {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  margin-top: 6px;\r\n}\r\n\r\n.dashboard-form {\r\n  display: grid;\r\n  gap: 16px;\r\n}\r\n\r\n.form-group {\r\n  display: grid;\r\n  gap: 8px;\r\n}\r\n\r\n.form-group label {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.form-group input,\r\n.form-group select {\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #fff;\r\n  outline: none;\r\n}\r\n\r\n.form-group input::-moz-placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.form-group input::placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.form-action-btn {\r\n  padding: 14px;\r\n  border: none;\r\n  border-radius: 14px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #fff;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n}\r\n\r\n.filter-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .filter-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.page-hero-panel {\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.page-hero-content {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.page-badge {\r\n  display: inline-block;\r\n  padding: 7px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(0, 207, 255, 0.1);\r\n  border: 1px solid rgba(0, 207, 255, 0.2);\r\n  color: #8ad8ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.panel-header-no-margin {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.hero-summary-box {\r\n  min-width: 220px;\r\n  padding: 18px 20px;\r\n  border-radius: 18px;\r\n  background: linear-gradient(\r\n    180deg,\r\n    rgba(255, 255, 255, 0.08),\r\n    rgba(255, 255, 255, 0.04)\r\n  );\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.hero-summary-box p {\r\n  color: #9fb0d8;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.hero-summary-box h2 {\r\n  color: #ffffff;\r\n  font-size: 28px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.hero-summary-box span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n}\r\n\r\n.account-card-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin-bottom: 12px;\r\n}\r\n\r\n.account-badge,\r\n.account-status {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 6px 10px;\r\n  border-radius: 999px;\r\n  font-size: 11px;\r\n  font-weight: 700;\r\n}\r\n\r\n.account-badge.savings {\r\n  background: rgba(0, 207, 255, 0.12);\r\n  color: #8ad8ff;\r\n}\r\n\r\n.account-badge.checking {\r\n  background: rgba(92, 103, 255, 0.16);\r\n  color: #c6cbff;\r\n}\r\n\r\n.account-badge.payroll {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.account-badge.rewards {\r\n  background: rgba(245, 215, 110, 0.14);\r\n  color: #f5d76e;\r\n}\r\n\r\n.account-status.active,\r\n.account-status.good {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.gradient-card {\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.22), rgba(0, 207, 255, 0.12));\r\n}\r\n\r\n.summary-subtext {\r\n  display: block;\r\n  margin-top: 4px;\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n}\r\n\r\n.info-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 14px;\r\n}\r\n\r\n.info-box {\r\n  padding: 16px;\r\n  border-radius: 16px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.info-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.info-box h4 {\r\n  color: #ffffff;\r\n  font-size: 18px;\r\n}\r\n\r\n.panel-action-btn {\r\n  padding: 10px 14px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dbe5ff;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n}\r\n\r\n.mini-note-box {\r\n  margin-top: 18px;\r\n  padding: 14px 16px;\r\n  border-radius: 14px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.mini-note-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  line-height: 1.7;\r\n}\r\n\r\n.profile-avatar-card {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 14px;\r\n  padding: 16px 18px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.profile-avatar-large {\r\n  width: 54px;\r\n  height: 54px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-weight: 800;\r\n  font-size: 18px;\r\n}\r\n\r\n.profile-avatar-card h4 {\r\n  color: #ffffff;\r\n  font-size: 16px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.profile-avatar-card p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .page-hero-content,\r\n  .info-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .info-grid {\r\n    display: grid;\r\n  }\r\n\r\n  .hero-summary-box,\r\n  .profile-avatar-card {\r\n    width: 100%;\r\n  }\r\n}\r\n\r\n.account-overview-box {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 14px;\r\n  padding: 8px 0;\r\n}\r\n\r\n.overview-row {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.overview-row:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.overview-row span {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n}\r\n\r\n.overview-row strong {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* =====================================================\r\n   DASHBOARD MAIN CSS\r\n   Role:\r\n   - Shared dashboard layout styles\r\n   - Dashboard home page styles\r\n   - Safe base styles for all dashboard pages\r\n   ===================================================== */\r\n\r\n/* ---------- BASE LAYOUT ---------- */\r\n.dashboard-main {\r\n  padding: 24px 28px;\r\n}\r\n\r\n.banking-dashboard,\r\n.accounts-page,\r\n.transfer-page,\r\n.paybills-page,\r\n.profile-page,\r\n.transaction-page {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 28px;\r\n}\r\n\r\n/* ---------- SHARED PANEL SYSTEM ---------- */\r\n.dashboard-panel,\r\n.balance-card,\r\n.small-card,\r\n.summary-card {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  border-radius: 24px;\r\n  padding: 24px;\r\n  backdrop-filter: blur(16px);\r\n  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.14);\r\n}\r\n\r\n.dashboard-panel {\r\n  overflow: hidden;\r\n}\r\n\r\n.panel-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 16px;\r\n  margin-bottom: 18px;\r\n}\r\n\r\n.panel-header h3 {\r\n  color: #ffffff;\r\n  font-size: 20px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.panel-subtitle {\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n}\r\n\r\n.section-description {\r\n  color: #9aa6cb;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  margin-top: 6px;\r\n}\r\n\r\n/* ---------- HERO / PAGE TOP ---------- */\r\n.dashboard-hero,\r\n.page-hero-panel {\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.10)),\r\n    rgba(255, 255, 255, 0.04);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  border-radius: 24px;\r\n}\r\n\r\n.dashboard-hero {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: stretch;\r\n  gap: 20px;\r\n  padding: 28px;\r\n}\r\n\r\n.page-hero-content {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 18px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.dashboard-hero-left {\r\n  max-width: 620px;\r\n}\r\n\r\n.dashboard-hero-left h2 {\r\n  font-size: 32px;\r\n  color: #ffffff;\r\n  margin-bottom: 12px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.dashboard-hero-left p {\r\n  color: #a9b4d4;\r\n  font-size: 15px;\r\n  line-height: 1.8;\r\n}\r\n\r\n.dashboard-badge,\r\n.page-badge {\r\n  display: inline-block;\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dce6ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.dashboard-hero-right {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.hero-balance-card,\r\n.hero-summary-box {\r\n  min-width: 260px;\r\n  padding: 22px 24px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.07);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.hero-balance-card span,\r\n.hero-summary-box p {\r\n  display: block;\r\n  color: #9fb0d8;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.hero-balance-card h1,\r\n.hero-summary-box h2 {\r\n  color: #ffffff;\r\n  font-size: 32px;\r\n  margin-bottom: 8px;\r\n  line-height: 1.1;\r\n}\r\n\r\n.hero-balance-card p,\r\n.hero-summary-box span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n}\r\n\r\n/* ---------- SUMMARY GRID ---------- */\r\n.dashboard-summary-grid,\r\n.dashboard-cards {\r\n  display: grid;\r\n  grid-template-columns: 1.5fr 1fr 1fr 1fr;\r\n  gap: 20px;\r\n}\r\n\r\n.summary-card,\r\n.balance-card,\r\n.small-card {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.summary-card span,\r\n.small-card p,\r\n.balance-card p {\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n}\r\n\r\n.summary-card h3,\r\n.small-card h3 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.balance-card h2 {\r\n  color: #ffffff;\r\n  font-size: 34px;\r\n  margin: 10px 0;\r\n  line-height: 1.1;\r\n}\r\n\r\n.summary-card p,\r\n.small-card span,\r\n.balance-card span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n.large-card {\r\n  gap: 14px;\r\n}\r\n\r\n.primary-gradient,\r\n.gradient-card {\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.10)),\r\n    rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.summary-card-top,\r\n.account-card-top {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 12px;\r\n}\r\n\r\n.summary-main-text {\r\n  color: #ffffff;\r\n  font-size: 18px;\r\n  font-weight: 700;\r\n  word-break: break-word;\r\n}\r\n\r\n.summary-meta {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n.summary-meta label {\r\n  display: block;\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.summary-meta strong {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n}\r\n\r\n/* ---------- CONTENT GRID ---------- */\r\n.dashboard-content-grid,\r\n.dashboard-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.2fr 0.8fr;\r\n  gap: 24px;\r\n}\r\n\r\n.premium-panel {\r\n  padding: 24px;\r\n}\r\n\r\n/* ---------- ACCOUNTS / LISTS ---------- */\r\n.accounts-list,\r\n.summary-list,\r\n.account-overview-box {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 14px;\r\n}\r\n\r\n.account-row,\r\n.summary-item,\r\n.overview-row {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 16px;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.account-row:last-child,\r\n.summary-item:last-child,\r\n.overview-row:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.account-row-left {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 14px;\r\n}\r\n\r\n.account-icon,\r\n.profile-avatar-large {\r\n  width: 46px;\r\n  height: 46px;\r\n  border-radius: 14px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-weight: 800;\r\n  flex-shrink: 0;\r\n}\r\n\r\n.profile-avatar-large {\r\n  width: 54px;\r\n  height: 54px;\r\n  border-radius: 50%;\r\n  font-size: 18px;\r\n}\r\n\r\n.account-row-left h4 {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.account-row-left p,\r\n.profile-avatar-card p,\r\n.summary-subtext,\r\n.overview-row span,\r\n.info-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n.account-row-right {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  gap: 8px;\r\n}\r\n\r\n.account-row-right strong,\r\n.overview-row strong,\r\n.info-box h4 {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n}\r\n\r\n/* ---------- QUICK ACTIONS ---------- */\r\n.quick-action-grid,\r\n.quick-actions {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 14px;\r\n}\r\n\r\n.quick-action-btn,\r\n.quick-actions button,\r\n.form-action-btn {\r\n  padding: 14px 16px;\r\n  border: none;\r\n  border-radius: 16px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.quick-action-btn:hover,\r\n.quick-actions button:hover,\r\n.form-action-btn:hover,\r\n.panel-action-btn:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.18);\r\n}\r\n\r\n.insight-box,\r\n.info-box,\r\n.profile-avatar-card,\r\n.mini-note-box {\r\n  padding: 18px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n}\r\n\r\n.insight-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.insight-box h4,\r\n.profile-avatar-card h4 {\r\n  color: #ffffff;\r\n  font-size: 20px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.insight-box span {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n/* ---------- TRANSACTIONS TABLE ---------- */\r\n.transaction-table-wrapper {\r\n  overflow-x: auto;\r\n}\r\n\r\n.dashboard-transaction-table {\r\n  width: 100%;\r\n  border-collapse: collapse;\r\n  min-width: 900px;\r\n}\r\n\r\n.dashboard-transaction-table thead th {\r\n  padding: 14px 12px;\r\n  text-align: left;\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n  text-transform: uppercase;\r\n  letter-spacing: 0.4px;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-transaction-table tbody td {\r\n  padding: 18px 12px;\r\n  color: #d8e0f4;\r\n  font-size: 14px;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.06);\r\n}\r\n\r\n.dashboard-transaction-table tbody tr:hover {\r\n  background: rgba(255, 255, 255, 0.03);\r\n}\r\n\r\n.transaction-type-chip {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 7px 12px;\r\n  border-radius: 999px;\r\n  background: rgba(92, 103, 255, 0.14);\r\n  color: #d3d8ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n}\r\n\r\n.transaction-list {\r\n  display: grid;\r\n  gap: 14px;\r\n}\r\n\r\n.transaction-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 16px;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transaction-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.transaction-item h4 {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.transaction-item p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n.align-right {\r\n  text-align: right;\r\n}\r\n\r\n.amount-text,\r\n.positive,\r\n.negative {\r\n  font-weight: 700;\r\n}\r\n\r\n.amount-text.positive,\r\n.positive {\r\n  color: #63f0b1;\r\n}\r\n\r\n.amount-text.negative,\r\n.negative {\r\n  color: #ff7b7b;\r\n}\r\n\r\n/* ---------- STATUS / BADGES ---------- */\r\n.status-badge,\r\n.account-badge,\r\n.account-status {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 6px 12px;\r\n  border-radius: 999px;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n}\r\n\r\n.status-badge.success,\r\n.account-status.active,\r\n.account-status.good {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.status-badge.warning {\r\n  background: rgba(255, 193, 7, 0.14);\r\n  color: #ffd76a;\r\n}\r\n\r\n.status-badge.danger {\r\n  background: rgba(255, 107, 107, 0.14);\r\n  color: #ff8b8b;\r\n}\r\n\r\n.status-badge.neutral {\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #d7def6;\r\n}\r\n\r\n.account-badge.savings {\r\n  background: rgba(0, 207, 255, 0.12);\r\n  color: #8ad8ff;\r\n}\r\n\r\n.account-badge.checking {\r\n  background: rgba(92, 103, 255, 0.16);\r\n  color: #c6cbff;\r\n}\r\n\r\n.account-badge.payroll {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.account-badge.rewards {\r\n  background: rgba(245, 215, 110, 0.14);\r\n  color: #f5d76e;\r\n}\r\n\r\n/* ---------- FORMS ---------- */\r\n.dashboard-form {\r\n  display: grid;\r\n  gap: 16px;\r\n}\r\n\r\n.form-group {\r\n  display: grid;\r\n  gap: 8px;\r\n}\r\n\r\n.form-group label {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.form-group input,\r\n.form-group select {\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  outline: none;\r\n}\r\n\r\n.form-group input::-moz-placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.form-group input::placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.filter-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n.panel-action-btn {\r\n  padding: 10px 14px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dbe5ff;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n}\r\n\r\n.empty-state {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n  padding: 12px 0;\r\n}\r\n\r\n/* ---------- REMOVE OLD ATM CARD ---------- */\r\n.dashboard-atm-card,\r\n.atm-top,\r\n.atm-chip,\r\n.atm-number,\r\n.atm-footer {\r\n  display: none !important;\r\n}\r\n\r\n/* ---------- RESPONSIVE ---------- */\r\n@media (max-width: 1200px) {\r\n  .dashboard-summary-grid,\r\n  .dashboard-cards {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .dashboard-content-grid,\r\n  .dashboard-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n@media (max-width: 900px) {\r\n  .dashboard-hero {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .dashboard-hero-right {\r\n    justify-content: flex-start;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .dashboard-main {\r\n    padding: 18px;\r\n  }\r\n\r\n  .dashboard-summary-grid,\r\n  .dashboard-cards,\r\n  .quick-action-grid,\r\n  .quick-actions,\r\n  .filter-grid,\r\n  .info-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .summary-meta {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .account-row,\r\n  .summary-item,\r\n  .overview-row,\r\n  .transaction-item {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .account-row-right {\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .hero-balance-card,\r\n  .hero-summary-box,\r\n  .profile-avatar-card {\r\n    width: 100%;\r\n  }\r\n\r\n\r\n.banking-dashboard {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 24px;\r\n}\r\n\r\n/* optional: consistent spacing for all direct sections */\r\n.banking-dashboard > section {\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.banking-dashboard > section:last-child {\r\n  margin-bottom: 0;\r\n}\r\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -7803,6 +8370,54 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-header {\r\n  position: sti
 
 /***/ },
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/PayBills.css"
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/PayBills.css ***!
+  \***********************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".paybills-page {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 28px;\r\n}\r\n\r\n/* hero */\r\n.paybills-hero {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: stretch;\r\n  gap: 20px;\r\n  padding: 28px;\r\n  border-radius: 24px;\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.10)),\r\n    rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.paybills-hero-left {\r\n  max-width: 620px;\r\n}\r\n\r\n.paybills-badge {\r\n  display: inline-block;\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dce6ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.paybills-hero-left h2 {\r\n  font-size: 32px;\r\n  color: #ffffff;\r\n  margin-bottom: 12px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.paybills-hero-left p {\r\n  font-size: 15px;\r\n  line-height: 1.8;\r\n  color: #a9b4d4;\r\n}\r\n\r\n.paybills-hero-right {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.paybills-balance-card {\r\n  min-width: 280px;\r\n  padding: 24px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.07);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.paybills-balance-card span {\r\n  display: block;\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.paybills-balance-card h1 {\r\n  color: #ffffff;\r\n  font-size: 36px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.paybills-balance-card p {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n/* top stats */\r\n.paybills-summary-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 20px;\r\n}\r\n\r\n.paybills-stat-card {\r\n  padding: 22px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.paybills-stat-card.highlight {\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.08)),\r\n    rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.paybills-stat-card span {\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n}\r\n\r\n.paybills-stat-card h3 {\r\n  color: #ffffff;\r\n  font-size: 22px;\r\n}\r\n\r\n.paybills-stat-card p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n/* content */\r\n.paybills-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.2fr 0.8fr;\r\n  gap: 24px;\r\n}\r\n\r\n.paybills-panel,\r\n.paybills-side-panel {\r\n  padding: 24px;\r\n  border-radius: 24px;\r\n}\r\n\r\n.paybills-form {\r\n  display: grid;\r\n  gap: 16px;\r\n}\r\n\r\n.paybills-form .form-group {\r\n  display: grid;\r\n  gap: 8px;\r\n}\r\n\r\n.paybills-form .form-group label {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.paybills-form .form-group input,\r\n.paybills-form .form-group select {\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  outline: none;\r\n}\r\n\r\n.paybills-form .form-group input::-moz-placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.paybills-form .form-group input::placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.paybills-submit-btn {\r\n  padding: 14px 16px;\r\n  border: none;\r\n  border-radius: 16px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.paybills-submit-btn:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.18);\r\n}\r\n\r\n/* biller preview */\r\n.biller-preview {\r\n  margin-top: 6px;\r\n  padding: 16px;\r\n  border-radius: 16px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.biller-preview-top {\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.biller-chip {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 6px 12px;\r\n  border-radius: 999px;\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n}\r\n\r\n.biller-preview p {\r\n  color: #b6c0de;\r\n  font-size: 13px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.biller-preview p:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.biller-preview strong {\r\n  color: #ffffff;\r\n}\r\n\r\n/* billers side */\r\n.billers-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 12px;\r\n}\r\n\r\n.biller-item {\r\n  padding: 16px;\r\n  border-radius: 16px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n  border: 1px solid rgba(255, 255, 255, 0.06);\r\n}\r\n\r\n.biller-item h4 {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.biller-item p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n.paybills-note-box {\r\n  margin-top: 18px;\r\n  padding: 16px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n}\r\n\r\n.paybills-note-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  line-height: 1.7;\r\n}\r\n\r\n/* toast */\r\n.custom-toast {\r\n  position: fixed;\r\n  top: 24px;\r\n  right: 24px;\r\n  z-index: 9999;\r\n  min-width: 260px;\r\n  max-width: 360px;\r\n  padding: 14px 18px;\r\n  border-radius: 14px;\r\n  color: #fff;\r\n  font-weight: 600;\r\n  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);\r\n  animation: slideInToast 0.3s ease;\r\n}\r\n\r\n.custom-toast.success {\r\n  background: linear-gradient(135deg, #16c997, #12b886);\r\n}\r\n\r\n.custom-toast.error {\r\n  background: linear-gradient(135deg, #ff6b6b, #fa5252);\r\n}\r\n\r\n@keyframes slideInToast {\r\n  from {\r\n    opacity: 0;\r\n    transform: translateY(-12px) translateX(20px);\r\n  }\r\n  to {\r\n    opacity: 1;\r\n    transform: translateY(0) translateX(0);\r\n  }\r\n}\r\n\r\n/* responsive */\r\n@media (max-width: 1200px) {\r\n  .paybills-summary-grid {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .paybills-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n@media (max-width: 900px) {\r\n  .paybills-hero {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .paybills-hero-right {\r\n    justify-content: flex-start;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .paybills-summary-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .paybills-balance-card {\r\n    width: 100%;\r\n  }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Profile.css"
+/*!**********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Profile.css ***!
+  \**********************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".profile-page {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 28px;\r\n}\r\n\r\n/* hero */\r\n.profile-hero {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: stretch;\r\n  gap: 20px;\r\n  padding: 28px;\r\n  border-radius: 24px;\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.10)),\r\n    rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.profile-hero-left {\r\n  max-width: 620px;\r\n}\r\n\r\n.profile-badge {\r\n  display: inline-block;\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dce6ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.profile-hero-left h2 {\r\n  font-size: 32px;\r\n  color: #ffffff;\r\n  margin-bottom: 12px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.profile-hero-left p {\r\n  font-size: 15px;\r\n  line-height: 1.8;\r\n  color: #a9b4d4;\r\n}\r\n\r\n.profile-hero-right {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.profile-balance-card {\r\n  min-width: 280px;\r\n  padding: 24px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.07);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.profile-balance-card span {\r\n  display: block;\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.profile-balance-card h1 {\r\n  color: #ffffff;\r\n  font-size: 36px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.profile-balance-card p {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n/* summary */\r\n.profile-summary-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.5fr 1fr 1fr 1fr;\r\n  gap: 20px;\r\n}\r\n\r\n.profile-highlight-card,\r\n.profile-stat-card {\r\n  padding: 22px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.profile-highlight-card {\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.08)),\r\n    rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.profile-highlight-top {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 16px;\r\n  margin-bottom: 18px;\r\n}\r\n\r\n.profile-avatar-large {\r\n  width: 58px;\r\n  height: 58px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-weight: 800;\r\n  font-size: 20px;\r\n  flex-shrink: 0;\r\n}\r\n\r\n.profile-highlight-info h3 {\r\n  color: #ffffff;\r\n  font-size: 22px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.profile-highlight-info p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n.profile-role-chip {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 6px 12px;\r\n  border-radius: 999px;\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.profile-highlight-meta {\r\n  display: grid;\r\n  grid-template-columns: repeat(2, 1fr);\r\n  gap: 16px;\r\n}\r\n\r\n.profile-highlight-meta label {\r\n  display: block;\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.profile-highlight-meta strong {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n}\r\n\r\n.profile-stat-card {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.profile-stat-card span {\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n}\r\n\r\n.profile-stat-card h3 {\r\n  color: #ffffff;\r\n  font-size: 22px;\r\n}\r\n\r\n.profile-stat-card p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n/* content */\r\n.profile-grid {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  gap: 24px;\r\n}\r\n\r\n.profile-panel {\r\n  padding: 24px;\r\n  border-radius: 24px;\r\n}\r\n\r\n.profile-form {\r\n  display: grid;\r\n  gap: 16px;\r\n}\r\n\r\n.profile-form .form-group {\r\n  display: grid;\r\n  gap: 8px;\r\n}\r\n\r\n.profile-form .form-group label {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.profile-form .form-group input {\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  outline: none;\r\n}\r\n\r\n.profile-form .form-group input[readonly] {\r\n  opacity: 0.95;\r\n}\r\n\r\n.profile-info-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 14px;\r\n}\r\n\r\n.profile-info-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 16px;\r\n  padding: 14px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.profile-info-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.profile-info-item span {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n}\r\n\r\n.profile-info-item strong {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n  text-align: right;\r\n}\r\n\r\n.profile-note-box {\r\n  margin-top: 18px;\r\n  padding: 16px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n}\r\n\r\n.profile-note-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  line-height: 1.7;\r\n}\r\n\r\n/* responsive */\r\n@media (max-width: 1200px) {\r\n  .profile-summary-grid {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .profile-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n@media (max-width: 900px) {\r\n  .profile-hero {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .profile-hero-right {\r\n    justify-content: flex-start;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .profile-summary-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .profile-highlight-meta {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .profile-info-item {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .profile-balance-card {\r\n    width: 100%;\r\n  }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Sidebar.css"
 /*!**********************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Sidebar.css ***!
@@ -7844,7 +8459,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* =========================\r\n   TRANSACTIONS PAGE\r\n========================= */\r\n\r\n.transaction-page {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 28px; /* main spacing between sections */\r\n}\r\n\r\n/* ===== HERO / INTRO PANEL ===== */\r\n\r\n.page-hero-content {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: stretch;\r\n  gap: 24px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.page-badge {\r\n  display: inline-block;\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(0, 207, 255, 0.12);\r\n  border: 1px solid rgba(0, 207, 255, 0.22);\r\n  color: #8ad8ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.panel-header-no-margin {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.section-description {\r\n  color: #94a2c6;\r\n  font-size: 14px;\r\n  line-height: 1.8;\r\n  margin-top: 10px;\r\n}\r\n\r\n/* ===== PANELS ===== */\r\n\r\n.dashboard-panel {\r\n  padding: 24px;\r\n  border-radius: 20px;\r\n}\r\n\r\n.dashboard-panel .panel-header {\r\n  margin-bottom: 18px;\r\n}\r\n\r\n/* ===== HERO SUMMARY ===== */\r\n\r\n.hero-summary-box {\r\n  min-width: 220px;\r\n  padding: 20px 24px;\r\n  border-radius: 20px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  gap: 6px;\r\n}\r\n\r\n.hero-summary-box p {\r\n  font-size: 13px;\r\n  color: #9aa6cb;\r\n}\r\n\r\n.hero-summary-box h2 {\r\n  font-size: 30px;\r\n  color: #ffffff;\r\n}\r\n\r\n.hero-summary-box span {\r\n  font-size: 12px;\r\n  color: #8e99bb;\r\n}\r\n\r\n/* ===== SUMMARY CARDS ===== */\r\n\r\n.dashboard-cards {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 20px;\r\n}\r\n\r\n.small-card {\r\n  padding: 20px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 8px;\r\n  margin: 0;\r\n}\r\n\r\n.small-card p {\r\n  font-size: 13px;\r\n  color: #9aa6cb;\r\n}\r\n\r\n.small-card h3 {\r\n  font-size: 22px;\r\n  color: #ffffff;\r\n  margin-top: 2px;\r\n}\r\n\r\n.small-card span {\r\n  font-size: 12px;\r\n  color: #8e99bb;\r\n}\r\n\r\n/* ===== FILTER PANEL ===== */\r\n\r\n.transactions-filter-panel {\r\n  margin: 0;\r\n}\r\n\r\n.transaction-filter-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(5, 1fr);\r\n  gap: 20px;\r\n  margin-top: 10px;\r\n}\r\n\r\n.filter-search-wide {\r\n  grid-column: span 2;\r\n}\r\n\r\n/* ===== FORM FIELDS ===== */\r\n\r\n.form-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 6px;\r\n}\r\n\r\n.form-group label {\r\n  font-size: 12px;\r\n  color: #9aa6cb;\r\n}\r\n\r\n.form-group input,\r\n.form-group select {\r\n  padding: 10px 12px;\r\n  border-radius: 10px;\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n/* ===== HISTORY PANEL ===== */\r\n\r\n.transactions-history-panel {\r\n  margin: 0;\r\n}\r\n\r\n.full-transaction-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 16px;\r\n  margin-top: 12px;\r\n}\r\n\r\n/* ===== TRANSACTION CARD ===== */\r\n\r\n.transaction-card {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 20px 22px;\r\n  border-radius: 20px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.transaction-card:hover {\r\n  transform: translateY(-4px);\r\n  background: rgba(255, 255, 255, 0.06);\r\n}\r\n\r\n.transaction-main-info {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 8px;\r\n  max-width: 72%;\r\n}\r\n\r\n.transaction-main-info h4 {\r\n  font-size: 16px;\r\n  font-weight: 700;\r\n  color: #ffffff;\r\n}\r\n\r\n.transaction-main-info p {\r\n  font-size: 13px;\r\n  color: #b6c0de;\r\n  line-height: 1.6;\r\n}\r\n\r\n.transaction-meta {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  gap: 8px;\r\n  margin-top: 4px;\r\n}\r\n\r\n.transaction-meta span {\r\n  font-size: 11px;\r\n  padding: 6px 12px;\r\n  border-radius: 999px;\r\n  color: #94a2c6;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.06);\r\n}\r\n\r\n.transaction-card .positive {\r\n  color: #63f0b1;\r\n  font-weight: 700;\r\n  font-size: 18px;\r\n  min-width: 120px;\r\n  text-align: right;\r\n}\r\n\r\n.transaction-card .negative {\r\n  color: #ff7b7b;\r\n  font-weight: 700;\r\n  font-size: 18px;\r\n  min-width: 120px;\r\n  text-align: right;\r\n}\r\n\r\n/* ===== RESPONSIVE ===== */\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-cards {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .transaction-filter-grid {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .filter-search-wide {\r\n    grid-column: span 2;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .transaction-page {\r\n    gap: 22px;\r\n  }\r\n\r\n  .dashboard-cards,\r\n  .transaction-filter-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .filter-search-wide {\r\n    grid-column: span 1;\r\n  }\r\n\r\n  .transaction-card {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    gap: 12px;\r\n  }\r\n\r\n  .transaction-main-info {\r\n    max-width: 100%;\r\n  }\r\n\r\n  .transaction-meta {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .transaction-card .positive,\r\n  .transaction-card .negative {\r\n    text-align: left;\r\n  }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".transaction-page {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 28px;\r\n}\r\n\r\n/* hero */\r\n.transactions-hero {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: stretch;\r\n  gap: 20px;\r\n  padding: 24px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transactions-hero-left {\r\n  max-width: 520px;\r\n}\r\n\r\n.transactions-badge {\r\n  display: inline-block;\r\n  padding: 7px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(92, 103, 255, 0.14);\r\n  color: #cdd4ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.transactions-hero-left h2 {\r\n  font-size: 28px;\r\n  color: #ffffff;\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.transactions-hero-left p {\r\n  color: #9aa6cb;\r\n  line-height: 1.7;\r\n  font-size: 14px;\r\n}\r\n\r\n.transactions-hero-right {\r\n  display: grid;\r\n  grid-template-columns: repeat(3, 1fr);\r\n  gap: 14px;\r\n  min-width: 420px;\r\n}\r\n\r\n.transactions-stat-card {\r\n  padding: 18px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transactions-stat-card span {\r\n  display: block;\r\n  color: #94a2c6;\r\n  font-size: 12px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.transactions-stat-card strong {\r\n  font-size: 22px;\r\n  color: #ffffff;\r\n}\r\n\r\n.positive-text {\r\n  color: #63f0b1 !important;\r\n}\r\n\r\n.negative-text {\r\n  color: #ff7b7b !important;\r\n}\r\n\r\n/* panels */\r\n.transactions-filter-panel,\r\n.transactions-table-panel {\r\n  padding: 24px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transactions-filter-header,\r\n.transactions-table-header {\r\n  margin-bottom: 18px;\r\n}\r\n\r\n.transactions-filter-header h3,\r\n.transactions-table-header h3 {\r\n  color: #ffffff;\r\n  font-size: 20px;\r\n}\r\n\r\n/* filter */\r\n.transactions-filter-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 18px;\r\n}\r\n\r\n.transactions-form-group {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 8px;\r\n}\r\n\r\n.transactions-form-group label {\r\n  font-size: 13px;\r\n  color: #9aa6cb;\r\n}\r\n\r\n.transactions-form-group input,\r\n.transactions-form-group select {\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.1);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  outline: none;\r\n}\r\n\r\n.transactions-form-group input::-moz-placeholder {\r\n  color: #7f8cb2;\r\n}\r\n\r\n.transactions-form-group input::placeholder {\r\n  color: #7f8cb2;\r\n}\r\n\r\n.search-wide {\r\n  grid-column: span 1;\r\n}\r\n\r\n/* table */\r\n.transactions-table-wrapper {\r\n  overflow-x: auto;\r\n}\r\n\r\n.transactions-table {\r\n  width: 100%;\r\n  border-collapse: collapse;\r\n  min-width: 980px;\r\n}\r\n\r\n.transactions-table thead th {\r\n  text-align: left;\r\n  font-size: 12px;\r\n  color: #94a2c6;\r\n  font-weight: 700;\r\n  padding: 14px 12px;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n  letter-spacing: 0.4px;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.transactions-table tbody tr {\r\n  transition: background 0.2s ease;\r\n}\r\n\r\n.transactions-table tbody tr:hover {\r\n  background: rgba(255, 255, 255, 0.03);\r\n}\r\n\r\n.transactions-table tbody td {\r\n  padding: 18px 12px;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.06);\r\n  vertical-align: middle;\r\n}\r\n\r\n.txn-ref {\r\n  color: #ffffff;\r\n  font-weight: 600;\r\n  font-size: 13px;\r\n}\r\n\r\n.txn-description,\r\n.txn-date {\r\n  color: #b8c2e0;\r\n  font-size: 13px;\r\n  line-height: 1.6;\r\n}\r\n\r\n.txn-type,\r\n.txn-status {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 7px 12px;\r\n  border-radius: 999px;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  white-space: nowrap;\r\n}\r\n\r\n/* type badges */\r\n.txn-type.deposit {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.txn-type.transfer {\r\n  background: rgba(92, 103, 255, 0.15);\r\n  color: #c9ceff;\r\n}\r\n\r\n.txn-type.received {\r\n  background: rgba(0, 207, 255, 0.14);\r\n  color: #8ad8ff;\r\n}\r\n\r\n.txn-type.bill {\r\n  background: rgba(255, 193, 7, 0.14);\r\n  color: #ffd76a;\r\n}\r\n\r\n.txn-type.default {\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #d7def6;\r\n}\r\n\r\n/* status badges */\r\n.txn-status.completed {\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n}\r\n\r\n.txn-status.pending {\r\n  background: rgba(255, 193, 7, 0.14);\r\n  color: #ffd76a;\r\n}\r\n\r\n.txn-status.failed {\r\n  background: rgba(255, 107, 107, 0.14);\r\n  color: #ff8b8b;\r\n}\r\n\r\n.txn-status.default {\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #d7def6;\r\n}\r\n\r\n.amount-col {\r\n  text-align: right;\r\n}\r\n\r\n.txn-amount {\r\n  font-weight: 700;\r\n  font-size: 14px;\r\n}\r\n\r\n.txn-amount.positive {\r\n  color: #63f0b1;\r\n}\r\n\r\n.txn-amount.negative {\r\n  color: #ff7b7b;\r\n}\r\n\r\n/* states */\r\n.transactions-state {\r\n  padding: 30px 10px;\r\n  text-align: center;\r\n  color: #9aa6cb;\r\n  font-size: 14px;\r\n}\r\n\r\n/* responsive */\r\n@media (max-width: 1100px) {\r\n  .transactions-hero {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .transactions-hero-right {\r\n    min-width: 100%;\r\n  }\r\n\r\n  .transactions-filter-grid {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .transactions-hero-right {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .transactions-filter-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/TransferMoney.css"
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/TransferMoney.css ***!
+  \****************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".transfer-page {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 28px;\r\n}\r\n\r\n/* hero */\r\n.transfer-hero {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: stretch;\r\n  gap: 20px;\r\n  padding: 28px;\r\n  border-radius: 24px;\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.10)),\r\n    rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transfer-hero-left {\r\n  max-width: 620px;\r\n}\r\n\r\n.transfer-badge {\r\n  display: inline-block;\r\n  padding: 8px 14px;\r\n  border-radius: 999px;\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #dce6ff;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n  margin-bottom: 14px;\r\n}\r\n\r\n.transfer-hero-left h2 {\r\n  font-size: 32px;\r\n  color: #ffffff;\r\n  margin-bottom: 12px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.transfer-hero-left p {\r\n  font-size: 15px;\r\n  line-height: 1.8;\r\n  color: #a9b4d4;\r\n}\r\n\r\n.transfer-hero-right {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.transfer-balance-card {\r\n  min-width: 280px;\r\n  padding: 24px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.07);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transfer-balance-card span {\r\n  display: block;\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.transfer-balance-card h1 {\r\n  color: #ffffff;\r\n  font-size: 36px;\r\n  margin-bottom: 8px;\r\n}\r\n\r\n.transfer-balance-card p {\r\n  color: #8ad8ff;\r\n  font-size: 13px;\r\n}\r\n\r\n/* top stats */\r\n.transfer-summary-grid {\r\n  display: grid;\r\n  grid-template-columns: repeat(4, 1fr);\r\n  gap: 20px;\r\n}\r\n\r\n.transfer-stat-card {\r\n  padding: 22px;\r\n  border-radius: 22px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.transfer-stat-card.highlight {\r\n  background:\r\n    linear-gradient(135deg, rgba(92, 103, 255, 0.18), rgba(0, 207, 255, 0.08)),\r\n    rgba(255, 255, 255, 0.05);\r\n}\r\n\r\n.transfer-stat-card span {\r\n  color: #9aa6cb;\r\n  font-size: 13px;\r\n}\r\n\r\n.transfer-stat-card h3 {\r\n  color: #ffffff;\r\n  font-size: 22px;\r\n}\r\n\r\n.transfer-stat-card p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n/* content */\r\n.transfer-grid {\r\n  display: grid;\r\n  grid-template-columns: 1.2fr 0.8fr;\r\n  gap: 24px;\r\n}\r\n\r\n.transfer-panel,\r\n.transfer-side-panel {\r\n  padding: 24px;\r\n  border-radius: 24px;\r\n}\r\n\r\n.transfer-form {\r\n  display: grid;\r\n  gap: 16px;\r\n}\r\n\r\n.transfer-form .form-group {\r\n  display: grid;\r\n  gap: 8px;\r\n}\r\n\r\n.transfer-form .form-group label {\r\n  color: #b6c0de;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.transfer-form .form-group input,\r\n.transfer-form .form-group select {\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  outline: none;\r\n}\r\n\r\n.transfer-form .form-group input::-moz-placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.transfer-form .form-group input::placeholder {\r\n  color: #94a2c6;\r\n}\r\n\r\n.transfer-submit-btn {\r\n  padding: 14px 16px;\r\n  border: none;\r\n  border-radius: 16px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.transfer-submit-btn:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.18);\r\n}\r\n\r\n/* recipient */\r\n.recipient-preview {\r\n  margin-top: 6px;\r\n  padding: 16px;\r\n  border-radius: 16px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.recipient-preview-top {\r\n  margin-bottom: 10px;\r\n}\r\n\r\n.recipient-chip {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  padding: 6px 12px;\r\n  border-radius: 999px;\r\n  background: rgba(99, 240, 177, 0.12);\r\n  color: #63f0b1;\r\n  font-size: 12px;\r\n  font-weight: 700;\r\n}\r\n\r\n.recipient-preview p {\r\n  color: #b6c0de;\r\n  font-size: 13px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.recipient-preview p:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.recipient-preview strong {\r\n  color: #ffffff;\r\n}\r\n\r\n/* accounts side list */\r\n.transfer-account-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 14px;\r\n}\r\n\r\n.transfer-account-item {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 16px;\r\n  padding: 16px 0;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.transfer-account-item:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.transfer-account-info h4 {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.transfer-account-info p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n}\r\n\r\n.transfer-account-amount {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: flex-end;\r\n  gap: 8px;\r\n}\r\n\r\n.transfer-account-amount strong {\r\n  color: #ffffff;\r\n  font-size: 15px;\r\n}\r\n\r\n.transfer-account-amount span {\r\n  color: #8ad8ff;\r\n  font-size: 12px;\r\n}\r\n\r\n.transfer-note-box {\r\n  margin-top: 18px;\r\n  padding: 16px;\r\n  border-radius: 18px;\r\n  background: rgba(255, 255, 255, 0.04);\r\n}\r\n\r\n.transfer-note-box p {\r\n  color: #94a2c6;\r\n  font-size: 13px;\r\n  line-height: 1.7;\r\n}\r\n\r\n/* toast */\r\n.custom-toast {\r\n  position: fixed;\r\n  top: 24px;\r\n  right: 24px;\r\n  z-index: 9999;\r\n  min-width: 260px;\r\n  max-width: 360px;\r\n  padding: 14px 18px;\r\n  border-radius: 14px;\r\n  color: #fff;\r\n  font-weight: 600;\r\n  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);\r\n  animation: slideInToast 0.3s ease;\r\n}\r\n\r\n.custom-toast.success {\r\n  background: linear-gradient(135deg, #16c997, #12b886);\r\n}\r\n\r\n.custom-toast.error {\r\n  background: linear-gradient(135deg, #ff6b6b, #fa5252);\r\n}\r\n\r\n@keyframes slideInToast {\r\n  from {\r\n    opacity: 0;\r\n    transform: translateY(-12px) translateX(20px);\r\n  }\r\n  to {\r\n    opacity: 1;\r\n    transform: translateY(0) translateX(0);\r\n  }\r\n}\r\n\r\n/* responsive */\r\n@media (max-width: 1200px) {\r\n  .transfer-summary-grid {\r\n    grid-template-columns: repeat(2, 1fr);\r\n  }\r\n\r\n  .transfer-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n@media (max-width: 900px) {\r\n  .transfer-hero {\r\n    flex-direction: column;\r\n  }\r\n\r\n  .transfer-hero-right {\r\n    justify-content: flex-start;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .transfer-summary-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .transfer-balance-card {\r\n    width: 100%;\r\n  }\r\n\r\n  .transfer-account-item {\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n  }\r\n\r\n  .transfer-account-amount {\r\n    align-items: flex-start;\r\n  }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -42121,6 +42760,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ },
 
+/***/ "./resources/css/DashboardPage/components/Accounts.css"
+/*!*************************************************************!*\
+  !*** ./resources/css/DashboardPage/components/Accounts.css ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Accounts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Accounts.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Accounts.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Accounts_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Accounts_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
 /***/ "./resources/css/DashboardPage/components/DashboardMain.css"
 /*!******************************************************************!*\
   !*** ./resources/css/DashboardPage/components/DashboardMain.css ***!
@@ -42211,6 +42880,66 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ },
 
+/***/ "./resources/css/DashboardPage/components/PayBills.css"
+/*!*************************************************************!*\
+  !*** ./resources/css/DashboardPage/components/PayBills.css ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_PayBills_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./PayBills.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/PayBills.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_PayBills_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_PayBills_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/DashboardPage/components/Profile.css"
+/*!************************************************************!*\
+  !*** ./resources/css/DashboardPage/components/Profile.css ***!
+  \************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Profile_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Profile.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Profile.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Profile_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Profile_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
 /***/ "./resources/css/DashboardPage/components/Sidebar.css"
 /*!************************************************************!*\
   !*** ./resources/css/DashboardPage/components/Sidebar.css ***!
@@ -42268,6 +42997,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Transactions_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/DashboardPage/components/TransferMoney.css"
+/*!******************************************************************!*\
+  !*** ./resources/css/DashboardPage/components/TransferMoney.css ***!
+  \******************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_TransferMoney_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./TransferMoney.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/TransferMoney.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_TransferMoney_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_TransferMoney_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ },
 

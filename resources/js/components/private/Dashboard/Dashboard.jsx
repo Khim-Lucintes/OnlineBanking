@@ -70,7 +70,7 @@ function Dashboard() {
       case "profile":
         return <Profile {...sharedProps} />;
       default:
-        return <DashboardMain {...sharedProps} />;
+        return <DashboardMain {...sharedProps} setActivePage={setActivePage} />;
     }
   };
 
