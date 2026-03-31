@@ -15,7 +15,7 @@ function Login() {
     setError("");
     setLoading(true);
 
-    try {
+     try {
       const response = await fetch("/api/login", {
         method: "POST",
         headers: {
@@ -29,21 +29,32 @@ function Login() {
 
       if (!response.ok) {
         setError(data.message || "Login failed");
-        setLoading(false);
         return;
       }
 
       localStorage.setItem("isAuth", "true");
       localStorage.setItem("user", JSON.stringify(data.user));
 
-      navigate("/dashboard");
+      const roleId = Number(data.user?.role_id);
+
+      if (roleId === 1) {
+        navigate("/dashboard");
+      } else if (roleId === 2) {
+        navigate("/admin/dashboard");
+      } else if (roleId === 3) {
+        navigate("/superadmin/dashboard");
+      } else {
+        setError("Unknown user role");
+        localStorage.removeItem("isAuth");
+        localStorage.removeItem("user");
+      }
     } catch (err) {
       setError("Server error. Please try again.");
     } finally {
       setLoading(false);
     }
   };
-
+  
   return (
     <div className="neo-page auth-page">
       <div className="neo-bg-shape neo-bg-one"></div>

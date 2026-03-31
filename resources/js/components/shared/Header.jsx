@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../../../css/DashboardPage/components/Header.css";
+import "../../../css/DashboardPage/components/Header.css";
 
 function Header({ activePage, dashboardData }) {
   const titles = {
@@ -19,6 +19,12 @@ function Header({ activePage, dashboardData }) {
         <h1>{titles[activePage] || "Dashboard"}</h1>
         <p>Welcome back, {username}</p>
       </div>
+
+      <h2>
+  {activePage === "dashboard"
+    ? "Dashboard"
+    : activePage.charAt(0).toUpperCase() + activePage.slice(1)}
+</h2>
 
       <div className="dashboard-header-right">
         <input

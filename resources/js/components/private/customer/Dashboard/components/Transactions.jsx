@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from "react";
-import "../../../../../css/DashboardPage/components/Transactions.css";
+import "../../../../../../css/DashboardPage/components/Transactions.css";
 
 function Transactions({ dashboardData }) {
   const [allTransactions, setAllTransactions] = useState([]);

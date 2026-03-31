@@ -1,16 +1,16 @@
 
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
-import "../../../../css/DashboardPage/Dashboard.css";
-import Sidebar from "./components/Sidebar";
-import Header from "./components/Header";
+import "../../../../../css/DashboardPage/Dashboard.css";
+import Sidebar from "../../../shared/Sidebar";
+import Header from "../../../shared/Header";
 import DashboardMain from "./components/DashboardMain";
 import Accounts from "./components/Accounts";
 import TransferMoney from "./components/TransferMoney";
 import PayBills from "./components/PayBills";
 import Transactions from "./components/Transactions";
 import Profile from "./components/Profile";
-import Footer from "./components/Footer";
+import Footer from "../../../shared/Footer";
 
 function Dashboard() {
   const [activePage, setActivePage] = useState("dashboard");

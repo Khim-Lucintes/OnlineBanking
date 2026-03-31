@@ -1,6 +1,6 @@
 import React from "react";
-import "../../../../../css/DashboardPage/components/Sidebar.css";
-import Sidebarlist from "./Sidebarlist";
+import "../../../css/DashboardPage/components/Sidebar.css";
+import Sidebarlist from "../private/customer/Dashboard/components/Sidebarlist";
 
 
 function Sidebar({ activePage, setActivePage }) {

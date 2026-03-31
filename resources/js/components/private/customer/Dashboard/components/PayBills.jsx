@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import "../../../../../css/DashboardPage/components/PayBills.css";
+import "../../../../../../css/DashboardPage/components/PayBills.css";
 
 function PayBills({ dashboardData, refreshDashboard }) {
   const accounts = dashboardData?.accounts || [];

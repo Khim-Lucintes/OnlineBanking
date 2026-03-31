@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../../../css/DashboardPage/components/Footer.css";
+import "../../../css/DashboardPage/components/Footer.css";
 
 function Footer() {
   return (

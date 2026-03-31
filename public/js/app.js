@@ -5149,10 +5149,10 @@ root.render(/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/Dashboard.jsx"
-/*!*****************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/Dashboard.jsx ***!
-  \*****************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/Dashboard.jsx"
+/*!**************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/Dashboard.jsx ***!
+  \**************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5163,16 +5163,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _css_DashboardPage_Dashboard_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../css/DashboardPage/Dashboard.css */ "./resources/css/DashboardPage/Dashboard.css");
-/* harmony import */ var _components_Sidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./components/Sidebar */ "./resources/js/components/private/Dashboard/components/Sidebar.jsx");
-/* harmony import */ var _components_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/Header */ "./resources/js/components/private/Dashboard/components/Header.jsx");
-/* harmony import */ var _components_DashboardMain__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/DashboardMain */ "./resources/js/components/private/Dashboard/components/DashboardMain.jsx");
-/* harmony import */ var _components_Accounts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Accounts */ "./resources/js/components/private/Dashboard/components/Accounts.jsx");
-/* harmony import */ var _components_TransferMoney__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/TransferMoney */ "./resources/js/components/private/Dashboard/components/TransferMoney.jsx");
-/* harmony import */ var _components_PayBills__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/PayBills */ "./resources/js/components/private/Dashboard/components/PayBills.jsx");
-/* harmony import */ var _components_Transactions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Transactions */ "./resources/js/components/private/Dashboard/components/Transactions.jsx");
-/* harmony import */ var _components_Profile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Profile */ "./resources/js/components/private/Dashboard/components/Profile.jsx");
-/* harmony import */ var _components_Footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/Footer */ "./resources/js/components/private/Dashboard/components/Footer.jsx");
+/* harmony import */ var _css_DashboardPage_Dashboard_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../css/DashboardPage/Dashboard.css */ "./resources/css/DashboardPage/Dashboard.css");
+/* harmony import */ var _shared_Sidebar__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../shared/Sidebar */ "./resources/js/components/shared/Sidebar.jsx");
+/* harmony import */ var _shared_Header__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../shared/Header */ "./resources/js/components/shared/Header.jsx");
+/* harmony import */ var _components_DashboardMain__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/DashboardMain */ "./resources/js/components/private/customer/Dashboard/components/DashboardMain.jsx");
+/* harmony import */ var _components_Accounts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Accounts */ "./resources/js/components/private/customer/Dashboard/components/Accounts.jsx");
+/* harmony import */ var _components_TransferMoney__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/TransferMoney */ "./resources/js/components/private/customer/Dashboard/components/TransferMoney.jsx");
+/* harmony import */ var _components_PayBills__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/PayBills */ "./resources/js/components/private/customer/Dashboard/components/PayBills.jsx");
+/* harmony import */ var _components_Transactions__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Transactions */ "./resources/js/components/private/customer/Dashboard/components/Transactions.jsx");
+/* harmony import */ var _components_Profile__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/Profile */ "./resources/js/components/private/customer/Dashboard/components/Profile.jsx");
+/* harmony import */ var _shared_Footer__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../../shared/Footer */ "./resources/js/components/shared/Footer.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
@@ -5307,15 +5307,15 @@ function Dashboard() {
   }
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "dashboard-page",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Sidebar__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_shared_Sidebar__WEBPACK_IMPORTED_MODULE_3__["default"], {
       activePage: activePage,
       setActivePage: setActivePage
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
       className: "dashboard-content-wrapper",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_shared_Header__WEBPACK_IMPORTED_MODULE_4__["default"], {
         activePage: activePage,
         dashboardData: dashboardData
-      }), renderPage(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_Footer__WEBPACK_IMPORTED_MODULE_11__["default"], {})]
+      }), renderPage(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_shared_Footer__WEBPACK_IMPORTED_MODULE_11__["default"], {})]
     })]
   });
 }
@@ -5323,10 +5323,10 @@ function Dashboard() {
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/components/Accounts.jsx"
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/Accounts.jsx ***!
-  \***************************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/components/Accounts.jsx"
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/components/Accounts.jsx ***!
+  \************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5336,7 +5336,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_Accounts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Accounts.css */ "./resources/css/DashboardPage/components/Accounts.css");
+/* harmony import */ var _css_DashboardPage_components_Accounts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/Accounts.css */ "./resources/css/DashboardPage/components/Accounts.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -5569,10 +5569,10 @@ function Accounts(_ref) {
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/components/DashboardMain.jsx"
-/*!********************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/DashboardMain.jsx ***!
-  \********************************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/components/DashboardMain.jsx"
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/components/DashboardMain.jsx ***!
+  \*****************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5582,8 +5582,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_DashboardMain_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/DashboardMain.css */ "./resources/css/DashboardPage/components/DashboardMain.css");
-/* harmony import */ var _QuickAction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickAction */ "./resources/js/components/private/Dashboard/components/QuickAction.jsx");
+/* harmony import */ var _css_DashboardPage_components_DashboardMain_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/DashboardMain.css */ "./resources/css/DashboardPage/components/DashboardMain.css");
+/* harmony import */ var _QuickAction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickAction */ "./resources/js/components/private/customer/Dashboard/components/QuickAction.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -5736,10 +5736,10 @@ function DashboardMain(_ref) {
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/components/Footer.jsx"
-/*!*************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/Footer.jsx ***!
-  \*************************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/components/PayBills.jsx"
+/*!************************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/components/PayBills.jsx ***!
+  \************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -5749,94 +5749,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_Footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Footer.css */ "./resources/css/DashboardPage/components/Footer.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-function Footer() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("footer", {
-    className: "dashboard-footer",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-      children: "\xA9 2026 MyBank. All rights reserved."
-    })
-  });
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
-
-/***/ },
-
-/***/ "./resources/js/components/private/Dashboard/components/Header.jsx"
-/*!*************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/Header.jsx ***!
-  \*************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_Header_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Header.css */ "./resources/css/DashboardPage/components/Header.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-function Header(_ref) {
-  var _dashboardData$user;
-  var activePage = _ref.activePage,
-    dashboardData = _ref.dashboardData;
-  var titles = {
-    dashboard: "Dashboard",
-    accounts: "Accounts",
-    transfer: "Transfer Money",
-    paybills: "Pay Bills",
-    transactions: "Transactions",
-    profile: "Profile"
-  };
-  var username = (dashboardData === null || dashboardData === void 0 || (_dashboardData$user = dashboardData.user) === null || _dashboardData$user === void 0 ? void 0 : _dashboardData$user.username) || "Customer";
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("header", {
-    className: "dashboard-header",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "dashboard-header-left",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
-        children: titles[activePage] || "Dashboard"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-        children: ["Welcome back, ", username]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
-      className: "dashboard-header-right",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
-        type: "text",
-        placeholder: "Search...",
-        className: "dashboard-search"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
-        className: "dashboard-avatar",
-        children: username.charAt(0).toUpperCase()
-      })]
-    })]
-  });
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
-
-/***/ },
-
-/***/ "./resources/js/components/private/Dashboard/components/PayBills.jsx"
-/*!***************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/PayBills.jsx ***!
-  \***************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_PayBills_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/PayBills.css */ "./resources/css/DashboardPage/components/PayBills.css");
+/* harmony import */ var _css_DashboardPage_components_PayBills_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/PayBills.css */ "./resources/css/DashboardPage/components/PayBills.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
@@ -6219,10 +6132,10 @@ function PayBills(_ref) {
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/components/Profile.jsx"
-/*!**************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/Profile.jsx ***!
-  \**************************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/components/Profile.jsx"
+/*!***********************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/components/Profile.jsx ***!
+  \***********************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6232,7 +6145,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_Profile_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Profile.css */ "./resources/css/DashboardPage/components/Profile.css");
+/* harmony import */ var _css_DashboardPage_components_Profile_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/Profile.css */ "./resources/css/DashboardPage/components/Profile.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -6449,10 +6362,10 @@ function Profile(_ref) {
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/components/QuickAction.jsx"
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/QuickAction.jsx ***!
-  \******************************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/components/QuickAction.jsx"
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/components/QuickAction.jsx ***!
+  \***************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6498,57 +6411,10 @@ function QuickAction(_ref) {
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/components/Sidebar.jsx"
-/*!**************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/Sidebar.jsx ***!
-  \**************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_Sidebar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Sidebar.css */ "./resources/css/DashboardPage/components/Sidebar.css");
-/* harmony import */ var _Sidebarlist__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Sidebarlist */ "./resources/js/components/private/Dashboard/components/Sidebarlist.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-function Sidebar(_ref) {
-  var activePage = _ref.activePage,
-    setActivePage = _ref.setActivePage;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("aside", {
-    className: "dashboard-sidebar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-      className: "dashboard-brand",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-        className: "dashboard-brand-icon",
-        children: "MB"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
-          children: "MyBank"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-          children: "Online Banking"
-        })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_Sidebarlist__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      activePage: activePage,
-      setActivePage: setActivePage
-    })]
-  });
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);
-
-/***/ },
-
-/***/ "./resources/js/components/private/Dashboard/components/Sidebarlist.jsx"
-/*!******************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/Sidebarlist.jsx ***!
-  \******************************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/components/Sidebarlist.jsx"
+/*!***************************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/components/Sidebarlist.jsx ***!
+  \***************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6625,10 +6491,10 @@ function Sidebarlist(_ref) {
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/components/Transactions.jsx"
-/*!*******************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/Transactions.jsx ***!
-  \*******************************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/components/Transactions.jsx"
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/components/Transactions.jsx ***!
+  \****************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6638,7 +6504,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_Transactions_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/Transactions.css */ "./resources/css/DashboardPage/components/Transactions.css");
+/* harmony import */ var _css_DashboardPage_components_Transactions_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/Transactions.css */ "./resources/css/DashboardPage/components/Transactions.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
@@ -6965,10 +6831,10 @@ function Transactions(_ref) {
 
 /***/ },
 
-/***/ "./resources/js/components/private/Dashboard/components/TransferMoney.jsx"
-/*!********************************************************************************!*\
-  !*** ./resources/js/components/private/Dashboard/components/TransferMoney.jsx ***!
-  \********************************************************************************/
+/***/ "./resources/js/components/private/customer/Dashboard/components/TransferMoney.jsx"
+/*!*****************************************************************************************!*\
+  !*** ./resources/js/components/private/customer/Dashboard/components/TransferMoney.jsx ***!
+  \*****************************************************************************************/
 (__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -6978,7 +6844,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_TransferMoney_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../css/DashboardPage/components/TransferMoney.css */ "./resources/css/DashboardPage/components/TransferMoney.css");
+/* harmony import */ var _css_DashboardPage_components_TransferMoney_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/TransferMoney.css */ "./resources/css/DashboardPage/components/TransferMoney.css");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
@@ -7787,7 +7653,7 @@ function Login() {
     setLoading = _useState8[1];
   var handleLogin = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee(e) {
-      var response, data, _t;
+      var _data$user, response, data, roleId, _t;
       return _regenerator().w(function (_context) {
         while (1) switch (_context.p = _context.n) {
           case 0:
@@ -7818,12 +7684,22 @@ function Login() {
               break;
             }
             setError(data.message || "Login failed");
-            setLoading(false);
             return _context.a(2);
           case 4:
             localStorage.setItem("isAuth", "true");
             localStorage.setItem("user", JSON.stringify(data.user));
-            navigate("/dashboard");
+            roleId = Number((_data$user = data.user) === null || _data$user === void 0 ? void 0 : _data$user.role_id);
+            if (roleId === 1) {
+              navigate("/dashboard");
+            } else if (roleId === 2) {
+              navigate("/admin/dashboard");
+            } else if (roleId === 3) {
+              navigate("/superadmin/dashboard");
+            } else {
+              setError("Unknown user role");
+              localStorage.removeItem("isAuth");
+              localStorage.removeItem("user");
+            }
             _context.n = 6;
             break;
           case 5:
@@ -8184,6 +8060,142 @@ function Register() {
 
 /***/ },
 
+/***/ "./resources/js/components/shared/Footer.jsx"
+/*!***************************************************!*\
+  !*** ./resources/js/components/shared/Footer.jsx ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_DashboardPage_components_Footer_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../css/DashboardPage/components/Footer.css */ "./resources/css/DashboardPage/components/Footer.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function Footer() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("footer", {
+    className: "dashboard-footer",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+      children: "\xA9 2026 MyBank. All rights reserved."
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Footer);
+
+/***/ },
+
+/***/ "./resources/js/components/shared/Header.jsx"
+/*!***************************************************!*\
+  !*** ./resources/js/components/shared/Header.jsx ***!
+  \***************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_DashboardPage_components_Header_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../css/DashboardPage/components/Header.css */ "./resources/css/DashboardPage/components/Header.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function Header(_ref) {
+  var _dashboardData$user;
+  var activePage = _ref.activePage,
+    dashboardData = _ref.dashboardData;
+  var titles = {
+    dashboard: "Dashboard",
+    accounts: "Accounts",
+    transfer: "Transfer Money",
+    paybills: "Pay Bills",
+    transactions: "Transactions",
+    profile: "Profile"
+  };
+  var username = (dashboardData === null || dashboardData === void 0 || (_dashboardData$user = dashboardData.user) === null || _dashboardData$user === void 0 ? void 0 : _dashboardData$user.username) || "Customer";
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("header", {
+    className: "dashboard-header",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "dashboard-header-left",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h1", {
+        children: titles[activePage] || "Dashboard"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+        children: ["Welcome back, ", username]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: activePage === "dashboard" ? "Dashboard" : activePage.charAt(0).toUpperCase() + activePage.slice(1)
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "dashboard-header-right",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+        type: "text",
+        placeholder: "Search...",
+        className: "dashboard-search"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "dashboard-avatar",
+        children: username.charAt(0).toUpperCase()
+      })]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Header);
+
+/***/ },
+
+/***/ "./resources/js/components/shared/Sidebar.jsx"
+/*!****************************************************!*\
+  !*** ./resources/js/components/shared/Sidebar.jsx ***!
+  \****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_DashboardPage_components_Sidebar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../css/DashboardPage/components/Sidebar.css */ "./resources/css/DashboardPage/components/Sidebar.css");
+/* harmony import */ var _private_customer_Dashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../private/customer/Dashboard/components/Sidebarlist */ "./resources/js/components/private/customer/Dashboard/components/Sidebarlist.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function Sidebar(_ref) {
+  var activePage = _ref.activePage,
+    setActivePage = _ref.setActivePage;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("aside", {
+    className: "dashboard-sidebar",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "dashboard-brand",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "dashboard-brand-icon",
+        children: "MB"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+          children: "MyBank"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+          children: "Online Banking"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_private_customer_Dashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      activePage: activePage,
+      setActivePage: setActivePage
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);
+
+/***/ },
+
 /***/ "./resources/js/main.js"
 /*!******************************!*\
   !*** ./resources/js/main.js ***!
@@ -8203,7 +8215,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_public_LandingPage_About__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/public/LandingPage/About */ "./resources/js/components/public/LandingPage/About.jsx");
 /* harmony import */ var _components_public_LandingPage_Login__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/public/LandingPage/Login */ "./resources/js/components/public/LandingPage/Login.jsx");
 /* harmony import */ var _components_public_LandingPage_Register__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/public/LandingPage/Register */ "./resources/js/components/public/LandingPage/Register.jsx");
-/* harmony import */ var _components_private_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/private/Dashboard/Dashboard */ "./resources/js/components/private/Dashboard/Dashboard.jsx");
+/* harmony import */ var _components_private_customer_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/private/customer/Dashboard/Dashboard */ "./resources/js/components/private/customer/Dashboard/Dashboard.jsx");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -8240,7 +8252,7 @@ function Main() {
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
         path: "/dashboard",
         element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(PrivateRoute, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_private_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_8__.jsx)(_components_private_customer_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_7__["default"], {})
         })
       })]
     })

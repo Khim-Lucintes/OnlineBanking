@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../../../css/DashboardPage/components/Accounts.css";
+import "../../../../../../css/DashboardPage/components/Accounts.css";
 
 function Accounts({ dashboardData }) {
   const accounts = dashboardData?.accounts || [];

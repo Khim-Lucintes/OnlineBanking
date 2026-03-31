@@ -1,5 +1,5 @@
 import React from "react";
-import "../../../../../css/DashboardPage/components/DashboardMain.css";
+import "../../../../../../css/DashboardPage/components/DashboardMain.css";
 import QuickAction from "./QuickAction";
 
 function DashboardMain({ dashboardData, setActivePage }) {

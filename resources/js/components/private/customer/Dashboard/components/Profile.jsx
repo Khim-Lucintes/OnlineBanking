@@ -1,6 +1,6 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import "../../../../../css/DashboardPage/components/Profile.css";
+import "../../../../../../css/DashboardPage/components/Profile.css";
 
 function Profile({ dashboardData }) {
   const user = dashboardData?.user || {};

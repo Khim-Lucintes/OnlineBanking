@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import "../../../../../css/DashboardPage/components/TransferMoney.css";
+import "../../../../../../css/DashboardPage/components/TransferMoney.css";
 
 function TransferMoney({ dashboardData, refreshDashboard }) {
   const accounts = dashboardData?.accounts || [];
