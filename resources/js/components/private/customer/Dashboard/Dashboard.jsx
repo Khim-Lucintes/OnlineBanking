@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "../../../../../css/DashboardPage/Dashboard.css";
@@ -10,7 +9,7 @@ import TransferMoney from "./components/TransferMoney";
 import PayBills from "./components/PayBills";
 import Transactions from "./components/Transactions";
 import Profile from "./components/Profile";
-import Footer from "../../../shared/Footer";
+import Footer from "../../../shared/Footer";                 
 
 function Dashboard() {
   const [activePage, setActivePage] = useState("dashboard");

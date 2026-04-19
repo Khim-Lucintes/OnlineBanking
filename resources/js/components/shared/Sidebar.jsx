@@ -1,9 +1,22 @@
 import React from "react";
 import "../../../css/DashboardPage/components/Sidebar.css";
-import Sidebarlist from "../private/customer/Dashboard/components/Sidebarlist";
 
+import CustomerSidebar from "../private/customer/Dashboard/components/Sidebarlist";
+import AdminSidebar from "../private/admin/AdminDashboard/components/Sidebarlist";
 
 function Sidebar({ activePage, setActivePage }) {
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const roleId = Number(user?.role_id);
+
+  let SidebarComponent;
+
+  if (roleId === 2) {
+    SidebarComponent = AdminSidebar;
+  } else {
+    SidebarComponent = CustomerSidebar;
+  }
+
   return (
     <aside className="dashboard-sidebar">
       <div className="dashboard-brand">
@@ -14,7 +27,10 @@ function Sidebar({ activePage, setActivePage }) {
         </div>
       </div>
 
-      <Sidebarlist activePage={activePage} setActivePage={setActivePage} />
+      <SidebarComponent
+        activePage={activePage}
+        setActivePage={setActivePage}
+      />
     </aside>
   );
 }

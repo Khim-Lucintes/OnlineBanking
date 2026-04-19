@@ -70,44 +70,54 @@ class AuthController extends Controller
 
     public function login(Request $request)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string',
-        ]);
+         $request->validate([
+        'email' => 'required|email',
+        'password' => 'required|string',
+    ]);
 
-        $user = DB::table('users_table')
-            ->where('email', $request->email)
-            ->where('role_id', 1) // Customer only
-            ->first();
+    $user = DB::table('users_table')
+        ->where('email', $request->email)
+        ->first();
 
-        if (!$user) {
-            return response()->json([
-                'message' => 'Customer account not found'
-            ], 401);
-        }
-
-        if ($user->status !== 'Active') {
-            return response()->json([
-                'message' => 'Account is not active'
-            ], 403);
-        }
-
-        if (!Hash::check($request->password, $user->password_hash)) {
-            return response()->json([
-                'message' => 'Invalid email or password'
-            ], 401);
-        }
-
+    if (!$user) {
         return response()->json([
-            'message' => 'Login successful',
-            'user' => [
-                'user_id' => $user->user_id,
-                'role_id' => $user->role_id,
-                'username' => $user->username,
-                'email' => $user->email,
-                'status' => $user->status,
-            ]
-        ]);
+            'message' => 'Invalid email or password'
+        ], 401);
+    }
+
+    if (!Hash::check($request->password, $user->password_hash)) {
+        return response()->json([
+            'message' => 'Invalid email or password'
+        ], 401);
+    }
+
+    if ($user->status !== 'Active') {
+        return response()->json([
+            'message' => 'Your account is not active'
+        ], 403);
+    }
+
+    // audit only for admin and superadmin
+    if (in_array((int) $user->role_id, [2, 3])) {
+        $this->createAuditLog(
+            $user->user_id,
+            'Login',
+            'User',
+            $user->user_id,
+            'Admin user logged into the system'
+        );
+    }
+
+    return response()->json([
+        'message' => 'Login successful',
+        'user' => [
+            'user_id' => $user->user_id,
+            'role_id' => $user->role_id,
+            'username' => $user->username,
+            'email' => $user->email,
+            'status' => $user->status,
+        ]
+    ]);
     }
 
     public function customer($id)
@@ -447,6 +457,402 @@ public function getRecipient($accountNumber)
 
     return response()->json([
         'recipient' => $account
+    ]);
+}
+
+public function getAllUsers()
+{
+    $users = DB::table('users_table as u')
+        ->leftJoin('roles_table as r', 'u.role_id', '=', 'r.role_id')
+        ->select(
+            'u.user_id',
+            'u.username',
+            'u.email',
+            'u.status',
+            'u.email_verified',
+            'u.created_at',
+            'u.role_id',
+            'r.role_name'
+        )
+        ->orderBy('u.user_id', 'desc')
+        ->get();
+
+    return response()->json([
+        'users' => $users
+    ]);
+}
+
+    private function getActingAdminId(Request $request)
+{
+    return (int) $request->header('X-Admin-User-Id', 0);
+}
+public function updateUserStatus(Request $request, $id)
+{
+    $request->validate([
+        'status' => 'required|string|in:Active,Suspended'
+    ]);
+
+    $user = DB::table('users_table')
+        ->where('user_id', $id)
+        ->first();
+
+    if (!$user) {
+        return response()->json([
+            'message' => 'User not found'
+        ], 404);
+    }
+
+    DB::table('users_table')
+        ->where('user_id', $id)
+        ->update([
+            'status' => $request->status
+        ]);
+
+    $adminUserId = $this->getActingAdminId($request);
+
+    if ($adminUserId > 0) {
+        $this->createAuditLog(
+            $adminUserId,
+            'Update User Status',
+            'User',
+            $id,
+            'Changed user status to ' . $request->status . ' for username ' . $user->username
+        );
+    }
+
+    return response()->json([
+        'message' => 'User status updated successfully'
+    ]);
+}
+
+public function getPendingApprovals()
+{
+    $users = DB::table('users_table as u')
+        ->leftJoin('roles_table as r', 'u.role_id', '=', 'r.role_id')
+        ->select(
+            'u.user_id',
+            'u.username',
+            'u.email',
+            'u.status',
+            'u.email_verified',
+            'u.created_at',
+            'u.role_id',
+            'r.role_name'
+        )
+        ->where('u.role_id', 1) // customer only
+        ->where('u.status', 'Pending')
+        ->orderBy('u.created_at', 'desc')
+        ->get();
+
+    return response()->json([
+        'users' => $users
+    ]);
+}
+
+public function handleAccountApproval(Request $request, $id)
+{
+    $request->validate([
+        'action' => 'required|string|in:approve,reject'
+    ]);
+
+    $user = DB::table('users_table')
+        ->where('user_id', $id)
+        ->where('role_id', 1)
+        ->first();
+
+    if (!$user) {
+        return response()->json([
+            'message' => 'Pending user not found'
+        ], 404);
+    }
+
+    $newStatus = $request->action === 'approve' ? 'Active' : 'Rejected';
+
+    DB::table('users_table')
+        ->where('user_id', $id)
+        ->update([
+            'status' => $newStatus
+        ]);
+
+    return response()->json([
+        'message' => $request->action === 'approve'
+            ? 'User approved successfully'
+            : 'User rejected successfully'
+    ]);
+}
+
+public function getAdminTransactions(Request $request)
+{
+    $query = DB::table('transactions_table as t')
+        ->leftJoin('accounts_table as a', 't.account_id', '=', 'a.account_id')
+        ->leftJoin('users_table as u', 'a.user_id', '=', 'u.user_id')
+        ->select(
+            't.transaction_id',
+            't.account_id',
+            't.transaction_type',
+            't.amount',
+            't.transaction_date',
+            't.reference_no',
+            't.status',
+            't.description',
+            'a.account_number',
+            'a.account_type',
+            'u.user_id',
+            'u.username',
+            'u.email'
+        );
+
+    if ($request->filled('type')) {
+        $query->where('t.transaction_type', $request->type);
+    }
+
+    if ($request->filled('status')) {
+        $query->where('t.status', $request->status);
+    }
+
+    if ($request->filled('date_from')) {
+        $query->whereDate('t.transaction_date', '>=', $request->date_from);
+    }
+
+    if ($request->filled('date_to')) {
+        $query->whereDate('t.transaction_date', '<=', $request->date_to);
+    }
+
+    $transactions = $query
+        ->orderBy('t.transaction_date', 'desc')
+        ->get();
+
+    $adminUserId = $this->getActingAdminId($request);
+
+    if ($adminUserId > 0) {
+        $this->createAuditLog(
+            $adminUserId,
+            'View Transactions',
+            'Transaction',
+            null,
+            'Viewed admin transactions page'
+        );
+    }
+
+    return response()->json([
+        'transactions' => $transactions
+    ]);
+}
+public function getAdminReportSummary(Request $request)
+{
+    $totalUsers = DB::table('users_table')->count();
+    $activeUsers = DB::table('users_table')->where('status', 'Active')->count();
+    $suspendedUsers = DB::table('users_table')->where('status', 'Suspended')->count();
+    $pendingUsers = DB::table('users_table')->where('status', 'Pending')->count();
+
+    $totalAccounts = DB::table('accounts_table')->count();
+    $totalTransactions = DB::table('transactions_table')->count();
+    $completedTransactions = DB::table('transactions_table')->where('status', 'Completed')->count();
+    $failedTransactions = DB::table('transactions_table')->where('status', 'Failed')->count();
+
+    $totalBalance = DB::table('accounts_table')->sum('balance');
+
+    $adminUserId = $this->getActingAdminId($request);
+
+    if ($adminUserId > 0) {
+        $this->createAuditLog(
+            $adminUserId,
+            'View Reports',
+            'Report',
+            null,
+            'Viewed admin reports summary'
+        );
+    }
+
+    return response()->json([
+        'summary' => [
+            'total_users' => $totalUsers,
+            'active_users' => $activeUsers,
+            'suspended_users' => $suspendedUsers,
+            'pending_users' => $pendingUsers,
+            'total_accounts' => $totalAccounts,
+            'total_transactions' => $totalTransactions,
+            'completed_transactions' => $completedTransactions,
+            'failed_transactions' => $failedTransactions,
+            'total_balance' => $totalBalance,
+        ]
+    ]);
+}
+
+
+public function exportAuditLogs(Request $request)
+{
+    $query = DB::table('audit_logs_table as a')
+        ->leftJoin('users_table as u', 'a.user_id', '=', 'u.user_id')
+        ->select(
+            'a.log_id',
+            'u.username',
+            'u.email',
+            'a.action',
+            'a.target_type',
+            'a.target_id',
+            'a.description',
+            'a.ip_address',
+            'a.log_date'
+        );
+
+    if ($request->filled('search')) {
+        $search = $request->search;
+
+        $query->where(function ($q) use ($search) {
+            $q->where('a.action', 'like', "%{$search}%")
+              ->orWhere('a.target_type', 'like', "%{$search}%")
+              ->orWhere('a.description', 'like', "%{$search}%")
+              ->orWhere('a.ip_address', 'like', "%{$search}%")
+              ->orWhere('u.username', 'like', "%{$search}%")
+              ->orWhere('u.email', 'like', "%{$search}%")
+              ->orWhere('a.log_id', 'like', "%{$search}%")
+              ->orWhere('a.target_id', 'like', "%{$search}%");
+        });
+    }
+
+    if ($request->filled('action')) {
+        $query->where('a.action', $request->action);
+    }
+
+    if ($request->filled('date_from')) {
+        $query->whereDate('a.log_date', '>=', $request->date_from);
+    }
+
+    if ($request->filled('date_to')) {
+        $query->whereDate('a.log_date', '<=', $request->date_to);
+    }
+
+    $logs = $query->orderBy('a.log_date', 'desc')->get();
+
+    $filename = 'audit_logs_' . now()->format('Y_m_d_H_i_s') . '.csv';
+
+    $headers = [
+        'Content-Type' => 'text/csv',
+        'Content-Disposition' => "attachment; filename={$filename}",
+    ];
+
+    $callback = function () use ($logs) {
+        $file = fopen('php://output', 'w');
+
+        fputcsv($file, [
+            'Log ID',
+            'Username',
+            'Email',
+            'Action',
+            'Target Type',
+            'Target ID',
+            'Description',
+            'IP Address',
+            'Log Date'
+        ]);
+
+        foreach ($logs as $log) {
+            fputcsv($file, [
+                $log->log_id,
+                $log->username,
+                $log->email,
+                $log->action,
+                $log->target_type,
+                $log->target_id,
+                $log->description,
+                $log->ip_address,
+                $log->log_date,
+            ]);
+        }
+
+        fclose($file);
+    };
+
+    return response()->stream($callback, 200, $headers);
+}
+
+public function getAuditLogs(Request $request)
+{
+    $query = DB::table('audit_logs_table as a')
+        ->leftJoin('users_table as u', 'a.user_id', '=', 'u.user_id')
+        ->select(
+            'a.log_id',
+            'a.user_id',
+            'a.action',
+            'a.target_type',
+            'a.target_id',
+            'a.description',
+            'a.log_date',
+            'a.ip_address',
+            'u.username',
+            'u.email',
+            'u.role_id'
+        );
+
+    if ($request->filled('search')) {
+        $search = $request->search;
+
+        $query->where(function ($q) use ($search) {
+            $q->where('a.action', 'like', "%{$search}%")
+              ->orWhere('a.target_type', 'like', "%{$search}%")
+              ->orWhere('a.description', 'like', "%{$search}%")
+              ->orWhere('a.ip_address', 'like', "%{$search}%")
+              ->orWhere('u.username', 'like', "%{$search}%")
+              ->orWhere('u.email', 'like', "%{$search}%")
+              ->orWhere('a.log_id', 'like', "%{$search}%")
+              ->orWhere('a.target_id', 'like', "%{$search}%");
+        });
+    }
+
+    if ($request->filled('action')) {
+        $query->where('a.action', $request->action);
+    }
+
+    if ($request->filled('date_from')) {
+        $query->whereDate('a.log_date', '>=', $request->date_from);
+    }
+
+    if ($request->filled('date_to')) {
+        $query->whereDate('a.log_date', '<=', $request->date_to);
+    }
+
+    $logs = $query
+        ->orderBy('a.log_date', 'desc')
+        ->get();
+
+    return response()->json([
+        'logs' => $logs
+    ]);
+}
+
+private function createAuditLog(
+    $userId,
+    $action,
+    $targetType = null,
+    $targetId = null,
+    $description = null,
+    $ipAddress = null
+) {
+    DB::table('audit_logs_table')->insert([
+        'user_id' => $userId,
+        'action' => $action,
+        'target_type' => $targetType,
+        'target_id' => $targetId,
+        'description' => $description,
+        'log_date' => now(),
+        'ip_address' => $ipAddress ?? request()->ip(),
+    ]);
+}
+
+        public function getTransactionTrends(Request $request)
+{
+    $trends = DB::table('transactions_table')
+        ->select(
+            DB::raw('DATE(transaction_date) as date'),
+            DB::raw('COUNT(*) as total')
+        )
+        ->groupBy(DB::raw('DATE(transaction_date)'))
+        ->orderBy('date', 'asc')
+        ->get();
+
+    return response()->json([
+        'trends' => $trends
     ]);
 }
 }

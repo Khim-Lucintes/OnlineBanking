@@ -1,0 +1,232 @@
+.glass-panel {
+  background:
+    radial-gradient(circle at top right, rgba(108, 99, 255, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(12, 18, 40, 0.96), rgba(9, 14, 34, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.22);
+  border-radius: 24px;
+}
+
+.admin-chart-panel {
+  overflow: hidden;
+}
+
+.chart-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 18px;
+  margin-bottom: 18px;
+}
+
+.chart-kicker {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #8fa2d8;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.chart-panel-header h3 {
+  color: #ffffff;
+  font-size: 22px;
+  margin: 0 0 4px;
+}
+
+.chart-panel-header p {
+  color: #8ea0c9;
+  font-size: 13px;
+  margin: 0;
+}
+
+.chart-badge {
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(0, 209, 255, 0.12);
+  color: #00d1ff;
+  font-size: 11px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.chart-badge.alt {
+  background: rgba(255, 95, 162, 0.12);
+  color: #ff5fa2;
+}
+
+.chart-link-btn {
+  border: none;
+  background: transparent;
+  color: #7c5cff;
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+.chart-shell {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.chart-shell-inner {
+  width: 100%;
+  min-height: 290px;
+}
+
+.chart-legend-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.legend-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.legend-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #d8e0ff;
+  font-size: 13px;
+}
+
+.legend-card strong {
+  color: #ffffff;
+}
+
+.legend-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.metric-mini-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.metric-mini-card {
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.metric-mini-card span {
+  display: block;
+  color: #8ea0c9;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.metric-mini-card strong {
+  font-size: 22px;
+}
+
+.recent-activity-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.recent-activity-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.recent-activity-item:last-child {
+  border-bottom: none;
+}
+
+.recent-activity-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.recent-activity-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.recent-activity-icon.success {
+  background: linear-gradient(135deg, #00d1ff, #6c63ff);
+}
+
+.recent-activity-icon.danger {
+  background: linear-gradient(135deg, #ff5fa2, #ff8a5b);
+}
+
+.recent-activity-meta h4 {
+  color: #ffffff;
+  font-size: 15px;
+  margin: 0 0 4px;
+}
+
+.recent-activity-meta p {
+  color: #8ea0c9;
+  font-size: 13px;
+  margin: 0;
+}
+
+.recent-activity-right {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.recent-activity-right strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.recent-activity-right span {
+  color: #8ea0c9;
+  font-size: 12px;
+}
+
+@media (max-width: 1200px) {
+  .chart-legend-grid,
+  .metric-mini-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .chart-panel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recent-activity-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .recent-activity-right {
+    text-align: left;
+  }
+}

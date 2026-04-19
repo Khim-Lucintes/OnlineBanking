@@ -2,39 +2,63 @@ import React from "react";
 import "../../../css/DashboardPage/components/Header.css";
 
 function Header({ activePage, dashboardData }) {
-  const titles = {
+  const user = JSON.parse(localStorage.getItem("user") || "null");
+
+  // 🔥 FIX: Clean page titles
+  const pageTitles = {
     dashboard: "Dashboard",
     accounts: "Accounts",
     transfer: "Transfer Money",
     paybills: "Pay Bills",
     transactions: "Transactions",
     profile: "Profile",
+
+    "manage-users": "Manage Users",
+    "account-approvals": "Account Approvals",
+    reports: "Reports",
+    "audit-logs": "Audit Logs",
   };
 
-  const username = dashboardData?.user?.username || "Customer";
+  // 🔥 FIX: Role label dynamic
+  const roleLabels = {
+    1: "Customer",
+    2: "Admin",
+    3: "SuperAdmin",
+  };
+
+  const title = pageTitles[activePage] || "Dashboard";
+  const role = roleLabels[Number(user?.role_id)] || "User";
 
   return (
-    <header className="dashboard-header">
-      <div className="dashboard-header-left">
-        <h1>{titles[activePage] || "Dashboard"}</h1>
-        <p>Welcome back, {username}</p>
+    <header className="header">
+      <div className="header-left">
+        <h2 className="header-title">{title}</h2>
+        <p className="header-subtitle">
+          Welcome back, {user?.username || "User"}
+        </p>
       </div>
 
-      <h2>
-  {activePage === "dashboard"
-    ? "Dashboard"
-    : activePage.charAt(0).toUpperCase() + activePage.slice(1)}
-</h2>
+      <div className="header-right">
+        <div className="header-user">
+          <div className="header-avatar">
+            {user?.username?.charAt(0)?.toUpperCase() || "U"}
+          </div>
 
-      <div className="dashboard-header-right">
-        <input
-          type="text"
-          placeholder="Search..."
-          className="dashboard-search"
-        />
-        <div className="dashboard-avatar">
-          {username.charAt(0).toUpperCase()}
+          <div className="header-user-info">
+            <h4>{user?.username || "User"}</h4>
+            <p>{role}</p> {/* 🔥 dynamic role */}
+          </div>
         </div>
+
+        <button
+          className="header-action-btn"
+          onClick={() => {
+            localStorage.clear();
+            window.location.href = "/login";
+          }}
+        >
+          Logout
+        </button>
       </div>
     </header>
   );

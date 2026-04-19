@@ -73,3 +73,21 @@
 .recipient-preview strong {
   color: #ffffff;
 }
+
+.dashboard-page {
+  display: flex;
+  min-height: 100vh;
+  background: #081224;
+}
+
+.dashboard-content-wrapper {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.dashboard-main {
+  flex: 1;
+  min-width: 0;
+}

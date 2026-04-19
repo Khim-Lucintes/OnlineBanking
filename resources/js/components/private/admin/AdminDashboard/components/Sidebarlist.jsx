@@ -1,23 +1,23 @@
 import React from "react";
 import { useNavigate, Link } from "react-router-dom";
-import "../../../../../../css/DashboardPage/components/Sidebarlist.css";
+import "../../../../../../css/Admin/components/Sidebarlist.css";
 
 function Sidebarlist({ activePage, setActivePage }) {
   const navigate = useNavigate();
 
   const handleLogout = () => {
-  localStorage.removeItem("isAuth");
-  localStorage.removeItem("user");
-  navigate("/login");
-};
+    localStorage.removeItem("isAuth");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
 
   const menuItems = [
-    { key: "dashboard", label: "Dashboard" },
-    { key: "accounts", label: "Accounts" },
-    { key: "transfer", label: "Transfer Money" },
-    { key: "paybills", label: "Pay Bills" },
-    { key: "transactions", label: "Transactions" },
-    { key: "profile", label: "Profile" },
+    { key: "dashboard", label: "Dashboard", icon: "🏠" },
+    { key: "manage-users", label: "Manage Users", icon: "👥" },
+    { key: "account-approvals", label: "Account Approvals", icon: "✔" },
+    { key: "transactions", label: "Transactions", icon: "📄" },
+    { key: "reports", label: "Reports", icon: "📊" },
+    { key: "audit-logs", label: "Audit Logs", icon: "🧾" },
   ];
 
   return (
@@ -32,21 +32,21 @@ function Sidebarlist({ activePage, setActivePage }) {
             }`}
             onClick={() => setActivePage(item.key)}
           >
-            {item.label}
+            <span className="menu-icon">{item.icon}</span>
+            <span className="menu-text">{item.label}</span>
           </button>
         ))}
 
-        {/* 🔴 Logout placed UNDER profile */}
         <button
           type="button"
           className="dashboard-menu-btn logout-menu"
           onClick={handleLogout}
         >
-          Logout
+          <span className="menu-icon">⏻</span>
+          <span className="menu-text">Logout</span>
         </button>
       </nav>
 
-      {/* Optional: keep landing button below */}
       <div className="dashboard-sidebar-footer">
         <Link to="/" className="logout-btn secondary-btn">
           Back to Landing Page

@@ -30,3 +30,15 @@ Route::post('/pay-bill', [AuthController::class, 'payBill']);
 Route::get('/bills', [AuthController::class, 'getBills']);
 Route::get('/transactions/{id}', [AuthController::class, 'allTransactions']);
 Route::get('/recipient/{accountNumber}', [AuthController::class, 'getRecipient']);
+
+Route::get('/admin/users', [AuthController::class, 'getAllUsers']);
+Route::post('/admin/users/{id}/status', [AuthController::class, 'updateUserStatus']);
+Route::get('/admin/account-approvals', [AuthController::class, 'getPendingApprovals']);
+Route::post('/admin/account-approvals/{id}', [AuthController::class, 'handleAccountApproval']);
+Route::get('/admin/transactions', [AuthController::class, 'getAdminTransactions']);
+Route::get('/admin/reports/summary', [AuthController::class, 'getAdminReportSummary']);
+Route::get('/admin/audit-logs', [AuthController::class, 'getAuditLogs']);
+
+Route::get('/admin/reports/trends', [AuthController::class, 'getTransactionTrends']);
+Route::get('/admin/audit-logs', [AuthController::class, 'getAuditLogs']);
+Route::get('/admin/audit-logs/export', [AuthController::class, 'exportAuditLogs']);

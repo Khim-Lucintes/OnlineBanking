@@ -1,0 +1,288 @@
+/* =========================================
+   ADMIN OVERVIEW - FULL CLEANED CSS
+========================================= */
+
+/* ---------- SUMMARY CARDS ---------- */
+.dashboard-grid.admin-summary-cards {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  width: 100%;
+  align-items: stretch;
+}
+
+.dashboard-grid.admin-summary-cards > .admin-summary-card {
+  min-width: 0;
+  min-height: 120px;
+  height: 120px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  padding: 14px 16px;
+  border-radius: 16px;
+
+  background: linear-gradient(180deg, #0b173a 0%, #0a1533 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: 0.25s ease;
+}
+
+.dashboard-grid.admin-summary-cards > .admin-summary-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 28px rgba(0, 0, 0, 0.22);
+}
+
+/* ---------- SUMMARY CARD CONTENT ---------- */
+.admin-stat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.admin-stat-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.admin-stat-icon {
+  font-size: 13px;
+  line-height: 1;
+}
+
+.admin-stat-title {
+  color: #8ea0c8;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-stat-more {
+  border: none;
+  background: transparent;
+  color: #7f90ba;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0;
+  line-height: 1;
+}
+
+.admin-stat-body {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.admin-stat-body h3 {
+  color: #ffffff;
+  font-size: 24px;
+  line-height: 1;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.admin-stat-trend {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 18px;
+  padding: 2px 7px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.positive-trend {
+  background: rgba(17, 217, 197, 0.14);
+  color: #11d9c5;
+}
+
+.negative-trend {
+  background: rgba(255, 107, 138, 0.14);
+  color: #ff6b8a;
+}
+
+.admin-stat-subtext {
+  color: #7f90ba;
+  font-size: 11px;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* ---------- OVERVIEW LAYOUT ---------- */
+.admin-overview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+/* ---------- ANALYTICS PANELS ---------- */
+.admin-analytics-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: 0.3s ease;
+}
+
+.admin-analytics-panel:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------- CHART AREA ---------- */
+.chart-container {
+  width: 100%;
+  height: 280px;
+  padding: 10px;
+}
+
+/* ---------- MINI STATS ---------- */
+.admin-mini-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.mini-stat-card {
+  padding: 16px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.mini-stat-card span {
+  color: #94a2c6;
+  font-size: 13px;
+}
+
+.mini-stat-card h4 {
+  color: #ffffff;
+  font-size: 22px;
+  margin-top: 8px;
+}
+
+.admin-overview-actions {
+  margin-top: 2px;
+}
+
+/* ---------- RECHARTS ---------- */
+.recharts-tooltip-wrapper {
+  outline: none;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1200px) {
+  .dashboard-grid.admin-summary-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .admin-overview-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .dashboard-grid.admin-summary-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid.admin-summary-cards > .admin-summary-card {
+    height: auto;
+    min-height: unset;
+  }
+
+  .admin-mini-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================================
+   FORCE ONE ROW ADMIN SUMMARY (FINAL)
+========================================= */
+.dashboard-main {
+  width: 100%;
+}
+
+
+.dashboard-grid.admin-summary-cards {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-auto-flow: column !important;
+  gap: 14px !important;
+
+  width: 100% !important;
+  overflow-x: auto; /* fallback if screen small */
+}
+
+/* FORCE cards to behave as grid items */
+.dashboard-grid.admin-summary-cards > .admin-summary-card {
+  all: unset; /* 🔥 reset ALL inherited styles */
+
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+
+  min-width: 220px; /* ensures horizontal layout */
+  height: 110px;
+
+  padding: 12px 14px;
+  border-radius: 14px;
+
+  background: linear-gradient(180deg, #0b173a 0%, #0a1533 100%);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+
+  box-sizing: border-box;
+}
+
+/* restore inner styles after reset */
+.admin-stat-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.admin-stat-title {
+  font-size: 11px;
+  color: #8ea0c8;
+}
+
+.admin-stat-body {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.admin-stat-body h3 {
+  font-size: 20px;
+  margin: 0;
+  color: #fff;
+}
+
+.admin-stat-trend {
+  font-size: 10px;
+  padding: 2px 6px;
+  border-radius: 999px;
+  background: rgba(17, 217, 197, 0.14);
+  color: #11d9c5;
+}
+
+.admin-stat-subtext {
+  font-size: 10px;
+  color: #7f90ba;
+}
