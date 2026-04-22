@@ -163,3 +163,127 @@
   color: #dce6ff;
   border: 1px solid rgba(255,255,255,0.08);
 }
+
+/* ================= FILTERS ================= */
+.admin-table-controls {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.admin-table-search,
+.admin-table-select {
+  height: 40px;
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: rgba(255,255,255,0.04);
+  color: #ffffff;
+  padding: 0 12px;
+  outline: none;
+}
+
+.admin-table-search {
+  min-width: 220px;
+  flex: 1;
+}
+
+.admin-table-search::placeholder {
+  color: #8ea0c9;
+}
+
+.admin-table-select option {
+  color: #000;
+}
+
+/* ================= ROW CLICK ================= */
+.admin-table tbody tr {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.admin-table tbody tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* ================= MODAL ================= */
+.admin-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(4, 8, 20, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 9999;
+}
+
+.admin-modal {
+  width: 100%;
+  max-width: 720px;
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(108, 99, 255, 0.10), transparent 30%),
+    linear-gradient(180deg, rgba(12, 18, 40, 0.98), rgba(9, 14, 34, 0.98));
+  border: 1px solid rgba(255,255,255,0.08);
+  box-shadow: 0 22px 48px rgba(0,0,0,0.28);
+  overflow: hidden;
+}
+
+.admin-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 20px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+
+.admin-modal-header h3 {
+  color: #ffffff;
+  font-size: 18px;
+  margin: 0;
+}
+
+.admin-modal-close {
+  border: none;
+  background: transparent;
+  color: #dce6ff;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.admin-modal-body {
+  padding: 20px;
+}
+
+.admin-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.admin-detail-card {
+  padding: 14px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.admin-detail-card span {
+  display: block;
+  color: #8ea0c9;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.admin-detail-card strong {
+  color: #ffffff;
+  font-size: 14px;
+  word-break: break-word;
+}
+
+@media (max-width: 768px) {
+  .admin-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}

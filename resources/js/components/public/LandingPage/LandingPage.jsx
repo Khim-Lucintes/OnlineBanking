@@ -31,6 +31,7 @@ function Home() {
           </nav>
         </div>
       </header>
+      
 
       <section className="neo-hero">
         <div className="neo-container neo-hero-grid">

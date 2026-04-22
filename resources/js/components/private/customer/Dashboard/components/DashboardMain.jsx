@@ -2,6 +2,8 @@ import React from "react";
 import "../../../../../../css/DashboardPage/components/DashboardMain.css";
 import QuickAction from "./QuickAction";
 
+import "../../../../../../css/Admin/components/AdminSummaryCards.css";
+
 function DashboardMain({ dashboardData, setActivePage }) {
   const user = dashboardData?.user || {};
   const accounts = dashboardData?.accounts || [];
@@ -12,37 +14,67 @@ function DashboardMain({ dashboardData, setActivePage }) {
 
   return (
     <main className="dashboard-main banking-dashboard">
-      <section className="dashboard-cards dashboard-cards-enhanced">
-  <div className="balance-card featured-balance-card">
-    <div className="featured-balance-top">
-      <div>
-        <p>Total Balance</p>
-        <h2>₱{totalBalance.toLocaleString()}</h2>
-        <span>{accounts.length} linked account(s)</span>
-      </div>
+      <section className="admin-summary-row" style={{ marginBottom: "24px" }}>
+        <div className="admin-summary-box">
+          <div className="admin-summary-head">
+            <div className="admin-summary-title-wrap">
+              <span className="admin-summary-icon">💰</span>
+              <span className="admin-summary-title">Total Balance</span>
+            </div>
+          </div>
+          <div className="admin-summary-body">
+            <h3>₱{totalBalance.toLocaleString()}</h3>
+            <span className="admin-summary-trend positive-trend">Active</span>
+          </div>
+          <p className="admin-summary-subtext">Combined account balance</p>
+        </div>
 
-      <div className="featured-balance-chip">
-        {primaryAccount?.account_type || "Savings"}
-      </div>
-    </div>
+        <div className="admin-summary-box">
+          <div className="admin-summary-head">
+            <div className="admin-summary-title-wrap">
+              <span className="admin-summary-icon">🏦</span>
+              <span className="admin-summary-title">Linked Accounts</span>
+            </div>
+          </div>
+          <div className="admin-summary-body">
+            <h3>{accounts.length}</h3>
+            <span className="admin-summary-trend positive-trend">Verified</span>
+          </div>
+          <p className="admin-summary-subtext">Active accounts</p>
+        </div>
 
-    <div className="featured-balance-meta">
-      <div className="featured-meta-box">
-        <p>Primary Account</p>
-        <h4>{primaryAccount?.account_number || "N/A"}</h4>
-      </div>
+        <div className="admin-summary-box">
+          <div className="admin-summary-head">
+            <div className="admin-summary-title-wrap">
+              <span className="admin-summary-icon">⭐</span>
+              <span className="admin-summary-title">Primary Account</span>
+            </div>
+          </div>
+          <div className="admin-summary-body">
+            <h3 style={{ fontSize: "16px" }}>{primaryAccount?.account_number || "N/A"}</h3>
+            <span className="admin-summary-trend positive-trend">{primaryAccount?.account_type || "Savings"}</span>
+          </div>
+          <p className="admin-summary-subtext">Main account</p>
+        </div>
 
-      <div className="featured-meta-box">
-        <p>Status</p>
-        <h4>{primaryAccount?.status || "Active"}</h4>
-      </div>
-    </div>
+        <div className="admin-summary-box">
+          <div className="admin-summary-head">
+            <div className="admin-summary-title-wrap">
+              <span className="admin-summary-icon">⚡</span>
+              <span className="admin-summary-title">Quick Status</span>
+            </div>
+          </div>
+          <div className="admin-summary-body">
+            <h3 style={{ fontSize: "16px", color: "#63f0b1" }}>System Online</h3>
+            <span className="admin-summary-trend positive-trend">Secure</span>
+          </div>
+          <p className="admin-summary-subtext">All services are operating normally</p>
+        </div>
+      </section>
 
-    <div className="featured-balance-actions">
-      <QuickAction setActivePage={setActivePage} />
-    </div>
-  </div>
-</section>
+      <section style={{ marginBottom: "24px" }}>
+        <QuickAction setActivePage={setActivePage} />
+      </section>
 
       <section className="dashboard-grid dashboard-grid-single">
   <div className="dashboard-panel premium-transactions-panel">

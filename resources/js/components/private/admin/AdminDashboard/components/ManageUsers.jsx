@@ -1,8 +1,11 @@
 import React, { useEffect, useState ,useMemo} from "react";
 import "../../../../../../css/DashboardPage/components/DashboardMain.css";
+import "../../../../../../css/admin/AdminShared.css";
 
 import AdminTableControls from "./AdminTableControls";
 import AdminPagination from "./AdminPagination";
+import AdminFilters from "./AdminFilters";
+import AdminModal from "./AdminModal";
 
 
 function ManageUsers() {
@@ -11,9 +14,13 @@ function ManageUsers() {
   const [message, setMessage] = useState("");
 
   const [search, setSearch] = useState("");
-  const [sortKey, setSortKey] = useState("username");
-  const [sortOrder, setSortOrder] = useState("asc");
+  const [filterValues, setFilterValues] = useState({
+    status: "",
+    role: "",
+  });
+
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedUser, setSelectedUser] = useState(null);
 
   const rowsPerPage = 8;
 
@@ -79,8 +86,8 @@ function ManageUsers() {
   const filteredUsers = useMemo(() => {
     const keyword = search.toLowerCase().trim();
 
-    let result = users.filter((user) =>
-      [
+    return users.filter((user) => {
+      const matchesSearch = [
         user.username,
         user.email,
         user.role_name,
@@ -89,20 +96,17 @@ function ManageUsers() {
       ]
         .join(" ")
         .toLowerCase()
-        .includes(keyword)
-    );
+        .includes(keyword);
 
-    result.sort((a, b) => {
-      const aVal = String(a[sortKey] ?? "").toLowerCase();
-      const bVal = String(b[sortKey] ?? "").toLowerCase();
+      const matchesStatus =
+        !filterValues.status || user.status === filterValues.status;
 
-      if (aVal < bVal) return sortOrder === "asc" ? -1 : 1;
-      if (aVal > bVal) return sortOrder === "asc" ? 1 : -1;
-      return 0;
+      const matchesRole =
+        !filterValues.role || user.role_name === filterValues.role;
+
+      return matchesSearch && matchesStatus && matchesRole;
     });
-
-    return result;
-  }, [users, search, sortKey, sortOrder]);
+  }, [users, search, filterValues]);
 
   const totalPages = Math.ceil(filteredUsers.length / rowsPerPage);
   const paginatedUsers = filteredUsers.slice(
@@ -112,7 +116,22 @@ function ManageUsers() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [search, sortKey, sortOrder]);
+  }, [search, filterValues]);
+
+  const handleFilterChange = (e) => {
+    setFilterValues({
+      ...filterValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleClearFilters = () => {
+    setSearch("");
+    setFilterValues({
+      status: "",
+      role: "",
+    });
+  };
 
   return (
     <main className="admin-page">
@@ -124,18 +143,30 @@ function ManageUsers() {
           </div>
         </div>
 
-        <AdminTableControls
+        <AdminFilters
           search={search}
           setSearch={setSearch}
-          sortKey={sortKey}
-          setSortKey={setSortKey}
-          sortOrder={sortOrder}
-          setSortOrder={setSortOrder}
-          sortOptions={[
-            { value: "username", label: "Username" },
-            { value: "email", label: "Email" },
-            { value: "status", label: "Status" },
-            { value: "role_name", label: "Role" },
+          values={filterValues}
+          onChange={handleFilterChange}
+          onClear={handleClearFilters}
+          filters={[
+            {
+              name: "status",
+              options: [
+                { value: "", label: "All Status" },
+                { value: "Active", label: "Active" },
+                { value: "Suspended", label: "Suspended" },
+              ],
+            },
+            {
+              name: "role",
+              options: [
+                { value: "", label: "All Roles" },
+                { value: "Customer", label: "Customer" },
+                { value: "Admin", label: "Admin" },
+                { value: "SuperAdmin", label: "SuperAdmin" },
+              ],
+            },
           ]}
         />
 
@@ -160,7 +191,7 @@ function ManageUsers() {
 
                 <tbody>
                   {paginatedUsers.map((user) => (
-                    <tr key={user.user_id}>
+                    <tr key={user.user_id} onClick={() => setSelectedUser(user)}>
                       <td>{user.user_id}</td>
                       <td>{user.username}</td>
                       <td>{user.email}</td>
@@ -174,7 +205,7 @@ function ManageUsers() {
                           {user.status}
                         </span>
                       </td>
-                      <td>
+                      <td onClick={(e) => e.stopPropagation()}>
                         <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                           <button
                             className="admin-btn primary"
@@ -208,6 +239,45 @@ function ManageUsers() {
 
         {message && <div className="admin-empty">{message}</div>}
       </section>
+
+      <AdminModal
+        open={!!selectedUser}
+        title="User Details"
+        onClose={() => setSelectedUser(null)}
+      >
+        {selectedUser && (
+          <div className="admin-detail-grid">
+            <div className="admin-detail-card">
+              <span>User ID</span>
+              <strong>{selectedUser.user_id}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Username</span>
+              <strong>{selectedUser.username}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Email</span>
+              <strong>{selectedUser.email}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Role</span>
+              <strong>{selectedUser.role_name || "N/A"}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Status</span>
+              <strong>{selectedUser.status}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Email Verified</span>
+              <strong>{Number(selectedUser.email_verified) === 1 ? "Yes" : "No"}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Created At</span>
+              <strong>{selectedUser.created_at || "-"}</strong>
+            </div>
+          </div>
+        )}
+      </AdminModal>
     </main>
   );
 }

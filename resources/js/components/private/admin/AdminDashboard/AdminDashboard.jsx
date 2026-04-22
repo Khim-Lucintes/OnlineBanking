@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Sidebar from "../../../shared/Sidebar";
 import Header from "../../../shared/Header";
 import Footer from "../../../shared/Footer";
+import { hasPermission } from "../../../utils/permission";
 
 
 import AdminOverview from "./components/AdminOverview";
@@ -31,6 +32,21 @@ function AdminDashboard() {
         return <AdminOverview setActivePage={setActivePage} />;
     }
   };
+
+  useEffect(() => {
+    const allowedPages = [
+      hasPermission("dashboard") && "dashboard",
+      hasPermission("manage_users") && "manage-users",
+      hasPermission("account_approvals") && "account-approvals",
+      hasPermission("transactions") && "transactions",
+      hasPermission("reports") && "reports",
+      hasPermission("full_audit_logs") && "audit-logs",
+    ].filter(Boolean);
+
+    if (!allowedPages.includes(activePage)) {
+      setActivePage(allowedPages[0] || "dashboard");
+    }
+  }, [activePage]);
 
   return (
     <div className="dashboard-page">

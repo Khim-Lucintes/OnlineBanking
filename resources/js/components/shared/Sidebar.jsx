@@ -3,6 +3,7 @@ import "../../../css/DashboardPage/components/Sidebar.css";
 
 import CustomerSidebar from "../private/customer/Dashboard/components/Sidebarlist";
 import AdminSidebar from "../private/admin/AdminDashboard/components/Sidebarlist";
+import SuperAdminSidebar from "../private/superadmin/SuperAdminDashboard/components/Sidebarlist";
 
 function Sidebar({ activePage, setActivePage }) {
   const user = JSON.parse(localStorage.getItem("user"));
@@ -11,7 +12,9 @@ function Sidebar({ activePage, setActivePage }) {
 
   let SidebarComponent;
 
-  if (roleId === 2) {
+  if (roleId === 3) {
+    SidebarComponent = SuperAdminSidebar;
+  } else if (roleId === 2) {
     SidebarComponent = AdminSidebar;
   } else {
     SidebarComponent = CustomerSidebar;

@@ -5165,19 +5165,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/Sidebar */ "./resources/js/components/shared/Sidebar.jsx");
 /* harmony import */ var _shared_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared/Header */ "./resources/js/components/shared/Header.jsx");
 /* harmony import */ var _shared_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../shared/Footer */ "./resources/js/components/shared/Footer.jsx");
-/* harmony import */ var _components_AdminOverview__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./components/AdminOverview */ "./resources/js/components/private/admin/AdminDashboard/components/AdminOverview.jsx");
-/* harmony import */ var _components_ManageUsers__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/ManageUsers */ "./resources/js/components/private/admin/AdminDashboard/components/ManageUsers.jsx");
-/* harmony import */ var _components_Transactions__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/Transactions */ "./resources/js/components/private/admin/AdminDashboard/components/Transactions.jsx");
-/* harmony import */ var _components_AccountApprovals__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/AccountApprovals */ "./resources/js/components/private/admin/AdminDashboard/components/AccountApprovals.jsx");
-/* harmony import */ var _components_Reports__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/Reports */ "./resources/js/components/private/admin/AdminDashboard/components/Reports.jsx");
-/* harmony import */ var _components_AuditLogs__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/AuditLogs */ "./resources/js/components/private/admin/AdminDashboard/components/AuditLogs.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _utils_permission__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utils/permission */ "./resources/js/components/utils/permission.js");
+/* harmony import */ var _components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/AdminOverview */ "./resources/js/components/private/admin/AdminDashboard/components/AdminOverview.jsx");
+/* harmony import */ var _components_ManageUsers__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ManageUsers */ "./resources/js/components/private/admin/AdminDashboard/components/ManageUsers.jsx");
+/* harmony import */ var _components_Transactions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/Transactions */ "./resources/js/components/private/admin/AdminDashboard/components/Transactions.jsx");
+/* harmony import */ var _components_AccountApprovals__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/AccountApprovals */ "./resources/js/components/private/admin/AdminDashboard/components/AccountApprovals.jsx");
+/* harmony import */ var _components_Reports__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/Reports */ "./resources/js/components/private/admin/AdminDashboard/components/Reports.jsx");
+/* harmony import */ var _components_AuditLogs__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/AuditLogs */ "./resources/js/components/private/admin/AdminDashboard/components/AuditLogs.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
@@ -5197,31 +5199,37 @@ function AdminDashboard() {
   var renderPage = function renderPage() {
     switch (activePage) {
       case "manage-users":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_ManageUsers__WEBPACK_IMPORTED_MODULE_5__["default"], {});
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ManageUsers__WEBPACK_IMPORTED_MODULE_6__["default"], {});
       case "account-approvals":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_AccountApprovals__WEBPACK_IMPORTED_MODULE_7__["default"], {});
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AccountApprovals__WEBPACK_IMPORTED_MODULE_8__["default"], {});
       case "transactions":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Transactions__WEBPACK_IMPORTED_MODULE_6__["default"], {});
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Transactions__WEBPACK_IMPORTED_MODULE_7__["default"], {});
       case "reports":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_Reports__WEBPACK_IMPORTED_MODULE_8__["default"], {});
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Reports__WEBPACK_IMPORTED_MODULE_9__["default"], {});
       case "audit-logs":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_AuditLogs__WEBPACK_IMPORTED_MODULE_9__["default"], {});
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AuditLogs__WEBPACK_IMPORTED_MODULE_10__["default"], {});
       default:
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
           setActivePage: setActivePage
         });
     }
   };
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var allowedPages = [(0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") && "dashboard", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("manage_users") && "manage-users", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("account_approvals") && "account-approvals", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("transactions") && "transactions", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("reports") && "reports", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("full_audit_logs") && "audit-logs"].filter(Boolean);
+    if (!allowedPages.includes(activePage)) {
+      setActivePage(allowedPages[0] || "dashboard");
+    }
+  }, [activePage]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     className: "dashboard-page",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_shared_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_shared_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
       activePage: activePage,
       setActivePage: setActivePage
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
       className: "dashboard-content-wrapper",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_shared_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_shared_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
         activePage: activePage
-      }), renderPage(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_shared_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+      }), renderPage(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_shared_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
     })]
   });
 }
@@ -5459,6 +5467,117 @@ function AccountApprovals() {
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AccountApprovals);
+
+/***/ },
+
+/***/ "./resources/js/components/private/admin/AdminDashboard/components/AdminFilters.jsx"
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/private/admin/AdminDashboard/components/AdminFilters.jsx ***!
+  \******************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function AdminFilters(_ref) {
+  var search = _ref.search,
+    setSearch = _ref.setSearch,
+    _ref$filters = _ref.filters,
+    filters = _ref$filters === void 0 ? [] : _ref$filters,
+    _ref$values = _ref.values,
+    values = _ref$values === void 0 ? {} : _ref$values,
+    onChange = _ref.onChange,
+    onClear = _ref.onClear;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "admin-table-controls",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+      type: "text",
+      className: "admin-table-search",
+      placeholder: "Search...",
+      value: search,
+      onChange: function onChange(e) {
+        return setSearch(e.target.value);
+      }
+    }), filters.map(function (filter) {
+      return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("select", {
+        className: "admin-table-select",
+        name: filter.name,
+        value: values[filter.name] || "",
+        onChange: onChange,
+        children: filter.options.map(function (option) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("option", {
+            value: option.value,
+            children: option.label
+          }, option.value);
+        })
+      }, filter.name);
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+      type: "button",
+      className: "admin-btn secondary",
+      onClick: onClear,
+      children: "Clear Filters"
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AdminFilters);
+
+/***/ },
+
+/***/ "./resources/js/components/private/admin/AdminDashboard/components/AdminModal.jsx"
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/private/admin/AdminDashboard/components/AdminModal.jsx ***!
+  \****************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function AdminModal(_ref) {
+  var open = _ref.open,
+    title = _ref.title,
+    onClose = _ref.onClose,
+    children = _ref.children;
+  if (!open) return null;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "admin-modal-overlay",
+    onClick: onClose,
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "admin-modal",
+      onClick: function onClick(e) {
+        return e.stopPropagation();
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "admin-modal-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+          children: title
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          type: "button",
+          className: "admin-modal-close",
+          onClick: onClose,
+          children: "\u2715"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "admin-modal-body",
+        children: children
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (AdminModal);
 
 /***/ },
 
@@ -6304,9 +6423,18 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_DashboardPage_components_DashboardMain_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/DashboardMain.css */ "./resources/css/DashboardPage/components/DashboardMain.css");
-/* harmony import */ var _AdminTableControls__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./AdminTableControls */ "./resources/js/components/private/admin/AdminDashboard/components/AdminTableControls.jsx");
-/* harmony import */ var _AdminPagination__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AdminPagination */ "./resources/js/components/private/admin/AdminDashboard/components/AdminPagination.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_admin_AdminShared_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/admin/AdminShared.css */ "./resources/css/admin/AdminShared.css");
+/* harmony import */ var _AdminTableControls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AdminTableControls */ "./resources/js/components/private/admin/AdminDashboard/components/AdminTableControls.jsx");
+/* harmony import */ var _AdminPagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AdminPagination */ "./resources/js/components/private/admin/AdminDashboard/components/AdminPagination.jsx");
+/* harmony import */ var _AdminFilters__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AdminFilters */ "./resources/js/components/private/admin/AdminDashboard/components/AdminFilters.jsx");
+/* harmony import */ var _AdminModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AdminModal */ "./resources/js/components/private/admin/AdminDashboard/components/AdminModal.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -6317,6 +6445,9 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
 
 
 
@@ -6339,18 +6470,21 @@ function ManageUsers() {
     _useState8 = _slicedToArray(_useState7, 2),
     search = _useState8[0],
     setSearch = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("username"),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      status: "",
+      role: ""
+    }),
     _useState0 = _slicedToArray(_useState9, 2),
-    sortKey = _useState0[0],
-    setSortKey = _useState0[1];
-  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("asc"),
+    filterValues = _useState0[0],
+    setFilterValues = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
     _useState10 = _slicedToArray(_useState1, 2),
-    sortOrder = _useState10[0],
-    setSortOrder = _useState10[1];
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+    currentPage = _useState10[0],
+    setCurrentPage = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState12 = _slicedToArray(_useState11, 2),
-    currentPage = _useState12[0],
-    setCurrentPage = _useState12[1];
+    selectedUser = _useState12[0],
+    setSelectedUser = _useState12[1];
   var rowsPerPage = 8;
   var storedUser = JSON.parse(localStorage.getItem("user") || "null");
   var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
@@ -6456,115 +6590,139 @@ function ManageUsers() {
   }, []);
   var filteredUsers = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
     var keyword = search.toLowerCase().trim();
-    var result = users.filter(function (user) {
-      return [user.username, user.email, user.role_name, user.status, String(user.user_id)].join(" ").toLowerCase().includes(keyword);
+    return users.filter(function (user) {
+      var matchesSearch = [user.username, user.email, user.role_name, user.status, String(user.user_id)].join(" ").toLowerCase().includes(keyword);
+      var matchesStatus = !filterValues.status || user.status === filterValues.status;
+      var matchesRole = !filterValues.role || user.role_name === filterValues.role;
+      return matchesSearch && matchesStatus && matchesRole;
     });
-    result.sort(function (a, b) {
-      var _a$sortKey, _b$sortKey;
-      var aVal = String((_a$sortKey = a[sortKey]) !== null && _a$sortKey !== void 0 ? _a$sortKey : "").toLowerCase();
-      var bVal = String((_b$sortKey = b[sortKey]) !== null && _b$sortKey !== void 0 ? _b$sortKey : "").toLowerCase();
-      if (aVal < bVal) return sortOrder === "asc" ? -1 : 1;
-      if (aVal > bVal) return sortOrder === "asc" ? 1 : -1;
-      return 0;
-    });
-    return result;
-  }, [users, search, sortKey, sortOrder]);
+  }, [users, search, filterValues]);
   var totalPages = Math.ceil(filteredUsers.length / rowsPerPage);
   var paginatedUsers = filteredUsers.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setCurrentPage(1);
-  }, [search, sortKey, sortOrder]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("main", {
+  }, [search, filterValues]);
+  var handleFilterChange = function handleFilterChange(e) {
+    setFilterValues(_objectSpread(_objectSpread({}, filterValues), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+  var handleClearFilters = function handleClearFilters() {
+    setSearch("");
+    setFilterValues({
+      status: "",
+      role: ""
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("main", {
     className: "admin-page",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("section", {
       className: "admin-panel",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "admin-panel-header",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
             children: "Manage Users"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
             children: "Control customer accounts"
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AdminTableControls__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AdminFilters__WEBPACK_IMPORTED_MODULE_5__["default"], {
         search: search,
         setSearch: setSearch,
-        sortKey: sortKey,
-        setSortKey: setSortKey,
-        sortOrder: sortOrder,
-        setSortOrder: setSortOrder,
-        sortOptions: [{
-          value: "username",
-          label: "Username"
+        values: filterValues,
+        onChange: handleFilterChange,
+        onClear: handleClearFilters,
+        filters: [{
+          name: "status",
+          options: [{
+            value: "",
+            label: "All Status"
+          }, {
+            value: "Active",
+            label: "Active"
+          }, {
+            value: "Suspended",
+            label: "Suspended"
+          }]
         }, {
-          value: "email",
-          label: "Email"
-        }, {
-          value: "status",
-          label: "Status"
-        }, {
-          value: "role_name",
-          label: "Role"
+          name: "role",
+          options: [{
+            value: "",
+            label: "All Roles"
+          }, {
+            value: "Customer",
+            label: "Customer"
+          }, {
+            value: "Admin",
+            label: "Admin"
+          }, {
+            value: "SuperAdmin",
+            label: "SuperAdmin"
+          }]
         }]
-      }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "admin-empty",
         children: "Loading users..."
-      }) : paginatedUsers.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      }) : paginatedUsers.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "admin-empty",
         children: "No users found."
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "admin-table-wrapper",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("table", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
             className: "admin-table",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("thead", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "ID"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "User"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Email"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Role"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Status"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Actions"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("tbody", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
               children: paginatedUsers.map(function (user) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("tr", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                  onClick: function onClick() {
+                    return setSelectedUser(user);
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: user.user_id
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: user.username
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: user.email
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: user.role_name || "N/A"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                       className: "admin-status ".concat(user.status === "Active" ? "active" : "suspended"),
                       children: user.status
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("td", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    onClick: function onClick(e) {
+                      return e.stopPropagation();
+                    },
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
                       style: {
                         display: "flex",
                         gap: "8px",
                         flexWrap: "wrap"
                       },
-                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                         className: "admin-btn primary",
                         type: "button",
                         onClick: function onClick() {
                           return updateStatus(user.user_id, "Active");
                         },
                         children: "Activate"
-                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
                         className: "admin-btn danger",
                         type: "button",
                         onClick: function onClick() {
@@ -6578,16 +6736,75 @@ function ManageUsers() {
               })
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_AdminPagination__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AdminPagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
           currentPage: currentPage,
           totalPages: totalPages,
           onPageChange: setCurrentPage
         })]
-      }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "admin-empty",
         children: message
       })]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AdminModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      open: !!selectedUser,
+      title: "User Details",
+      onClose: function onClose() {
+        return setSelectedUser(null);
+      },
+      children: selectedUser && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "admin-detail-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "User ID"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedUser.user_id
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Username"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedUser.username
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Email"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedUser.email
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Role"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedUser.role_name || "N/A"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Status"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedUser.status
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Email Verified"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: Number(selectedUser.email_verified) === 1 ? "Yes" : "No"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Created At"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedUser.created_at || "-"
+          })]
+        })]
+      })
+    })]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ManageUsers);
@@ -7455,7 +7672,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_admin_AdminShared_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/admin/AdminShared.css */ "./resources/css/admin/AdminShared.css");
 /* harmony import */ var _AdminTableControls__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./AdminTableControls */ "./resources/js/components/private/admin/AdminDashboard/components/AdminTableControls.jsx");
 /* harmony import */ var _AdminPagination__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./AdminPagination */ "./resources/js/components/private/admin/AdminDashboard/components/AdminPagination.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _AdminFilters__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./AdminFilters */ "./resources/js/components/private/admin/AdminDashboard/components/AdminFilters.jsx");
+/* harmony import */ var _AdminModal__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./AdminModal */ "./resources/js/components/private/admin/AdminDashboard/components/AdminModal.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
 function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
 function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
@@ -7466,6 +7691,8 @@ function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) 
 function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
 function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
 function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
 
 
 
@@ -7489,18 +7716,21 @@ function Transactions() {
     _useState8 = _slicedToArray(_useState7, 2),
     search = _useState8[0],
     setSearch = _useState8[1];
-  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("transaction_date"),
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      status: "",
+      type: ""
+    }),
     _useState0 = _slicedToArray(_useState9, 2),
-    sortKey = _useState0[0],
-    setSortKey = _useState0[1];
-  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("desc"),
+    filterValues = _useState0[0],
+    setFilterValues = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
     _useState10 = _slicedToArray(_useState1, 2),
-    sortOrder = _useState10[0],
-    setSortOrder = _useState10[1];
-  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(1),
+    currentPage = _useState10[0],
+    setCurrentPage = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
     _useState12 = _slicedToArray(_useState11, 2),
-    currentPage = _useState12[0],
-    setCurrentPage = _useState12[1];
+    selectedTransaction = _useState12[0],
+    setSelectedTransaction = _useState12[1];
   var rowsPerPage = 8;
   var storedUser = JSON.parse(localStorage.getItem("user") || "null");
   var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
@@ -7556,117 +7786,217 @@ function Transactions() {
   }, []);
   var filteredTransactions = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
     var keyword = search.toLowerCase().trim();
-    var result = transactions.filter(function (txn) {
-      return [txn.username, txn.transaction_type, txn.status, txn.account_number, txn.reference_no, String(txn.transaction_id)].join(" ").toLowerCase().includes(keyword);
+    return transactions.filter(function (txn) {
+      var matchesSearch = [txn.username, txn.transaction_type, txn.status, txn.account_number, txn.reference_no, String(txn.transaction_id)].join(" ").toLowerCase().includes(keyword);
+      var matchesStatus = !filterValues.status || txn.status === filterValues.status;
+      var matchesType = !filterValues.type || txn.transaction_type === filterValues.type;
+      return matchesSearch && matchesStatus && matchesType;
     });
-    result.sort(function (a, b) {
-      var _a$sortKey, _b$sortKey;
-      var aVal = String((_a$sortKey = a[sortKey]) !== null && _a$sortKey !== void 0 ? _a$sortKey : "").toLowerCase();
-      var bVal = String((_b$sortKey = b[sortKey]) !== null && _b$sortKey !== void 0 ? _b$sortKey : "").toLowerCase();
-      if (aVal < bVal) return sortOrder === "asc" ? -1 : 1;
-      if (aVal > bVal) return sortOrder === "asc" ? 1 : -1;
-      return 0;
-    });
-    return result;
-  }, [transactions, search, sortKey, sortOrder]);
+  }, [transactions, search, filterValues]);
   var totalPages = Math.ceil(filteredTransactions.length / rowsPerPage);
   var paginatedTransactions = filteredTransactions.slice((currentPage - 1) * rowsPerPage, currentPage * rowsPerPage);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     setCurrentPage(1);
-  }, [search, sortKey, sortOrder]);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("main", {
+  }, [search, filterValues]);
+  var handleFilterChange = function handleFilterChange(e) {
+    setFilterValues(_objectSpread(_objectSpread({}, filterValues), {}, _defineProperty({}, e.target.name, e.target.value)));
+  };
+  var handleClearFilters = function handleClearFilters() {
+    setSearch("");
+    setFilterValues({
+      status: "",
+      type: ""
+    });
+  };
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("main", {
     className: "admin-page",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("section", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("section", {
       className: "admin-panel",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "admin-panel-header",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h3", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h3", {
             children: "Transactions"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
             children: "Monitor all system activity"
           })]
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_AdminTableControls__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AdminFilters__WEBPACK_IMPORTED_MODULE_5__["default"], {
         search: search,
         setSearch: setSearch,
-        sortKey: sortKey,
-        setSortKey: setSortKey,
-        sortOrder: sortOrder,
-        setSortOrder: setSortOrder,
-        sortOptions: [{
-          value: "transaction_date",
-          label: "Date"
+        values: filterValues,
+        onChange: handleFilterChange,
+        onClear: handleClearFilters,
+        filters: [{
+          name: "status",
+          options: [{
+            value: "",
+            label: "All Status"
+          }, {
+            value: "Completed",
+            label: "Completed"
+          }, {
+            value: "Pending",
+            label: "Pending"
+          }, {
+            value: "Failed",
+            label: "Failed"
+          }]
         }, {
-          value: "username",
-          label: "User"
-        }, {
-          value: "transaction_type",
-          label: "Type"
-        }, {
-          value: "status",
-          label: "Status"
+          name: "type",
+          options: [{
+            value: "",
+            label: "All Types"
+          }, {
+            value: "Deposit",
+            label: "Deposit"
+          }, {
+            value: "Withdrawal",
+            label: "Withdrawal"
+          }, {
+            value: "Transfer",
+            label: "Transfer"
+          }, {
+            value: "Bill Payment",
+            label: "Bill Payment"
+          }]
         }]
-      }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), loading ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "admin-empty",
         children: "Loading transactions..."
-      }) : paginatedTransactions.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }) : paginatedTransactions.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "admin-empty",
         children: "No transactions found."
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.Fragment, {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
           className: "admin-table-wrapper",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("table", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("table", {
             className: "admin-table",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("thead", {
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "ID"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "User"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Type"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Amount"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Status"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("th", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("th", {
                   children: "Date"
                 })]
               })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("tbody", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("tbody", {
               children: paginatedTransactions.map(function (txn) {
-                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("tr", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("tr", {
+                  onClick: function onClick() {
+                    return setSelectedTransaction(txn);
+                  },
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: txn.transaction_id
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: txn.username
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: txn.transaction_type
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("td", {
                     children: ["\u20B1", Number(txn.amount).toLocaleString()]
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
-                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
                       className: "admin-status ".concat(txn.status === "Completed" ? "active" : "suspended"),
                       children: txn.status
                     })
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("td", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("td", {
                     children: txn.transaction_date
                   })]
                 }, txn.transaction_id);
               })
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_AdminPagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AdminPagination__WEBPACK_IMPORTED_MODULE_4__["default"], {
           currentPage: currentPage,
           totalPages: totalPages,
           onPageChange: setCurrentPage
         })]
-      }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
+      }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("div", {
         className: "admin-empty",
         children: message
       })]
-    })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_AdminModal__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      open: !!selectedTransaction,
+      title: "Transaction Details",
+      onClose: function onClose() {
+        return setSelectedTransaction(null);
+      },
+      children: selectedTransaction && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+        className: "admin-detail-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Transaction ID"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedTransaction.transaction_id
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "User"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedTransaction.username || "-"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Type"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedTransaction.transaction_type || "-"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Amount"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("strong", {
+            children: ["\u20B1", Number(selectedTransaction.amount || 0).toLocaleString()]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Status"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedTransaction.status || "-"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Account Number"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedTransaction.account_number || "-"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Reference No"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedTransaction.reference_no || "-"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Date"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedTransaction.transaction_date || "-"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
+          className: "admin-detail-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("span", {
+            children: "Description"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("strong", {
+            children: selectedTransaction.description || "-"
+          })]
+        })]
+      })
+    })]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Transactions);
@@ -8108,7 +8438,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_DashboardPage_components_DashboardMain_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/DashboardMain.css */ "./resources/css/DashboardPage/components/DashboardMain.css");
 /* harmony import */ var _QuickAction__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./QuickAction */ "./resources/js/components/private/customer/Dashboard/components/QuickAction.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_Admin_components_AdminSummaryCards_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/Admin/components/AdminSummaryCards.css */ "./resources/css/Admin/components/AdminSummaryCards.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -8121,102 +8453,184 @@ function DashboardMain(_ref) {
   var totalBalance = Number((dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.total_balance) || 0);
   var transactions = (dashboardData === null || dashboardData === void 0 ? void 0 : dashboardData.recent_transactions) || [];
   var primaryAccount = accounts[0] || null;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("main", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("main", {
     className: "dashboard-main banking-dashboard",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
-      className: "dashboard-cards dashboard-cards-enhanced",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-        className: "balance-card featured-balance-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "featured-balance-top",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("section", {
+      className: "admin-summary-row",
+      style: {
+        marginBottom: "24px"
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "admin-summary-box",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "admin-summary-head",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "admin-summary-title-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "admin-summary-icon",
+              children: "\uD83D\uDCB0"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "admin-summary-title",
               children: "Total Balance"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h2", {
-              children: ["\u20B1", totalBalance.toLocaleString()]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
-              children: [accounts.length, " linked account(s)"]
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-            className: "featured-balance-chip",
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "admin-summary-body",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h3", {
+            children: ["\u20B1", totalBalance.toLocaleString()]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "admin-summary-trend positive-trend",
+            children: "Active"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "admin-summary-subtext",
+          children: "Combined account balance"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "admin-summary-box",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "admin-summary-head",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "admin-summary-title-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "admin-summary-icon",
+              children: "\uD83C\uDFE6"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "admin-summary-title",
+              children: "Linked Accounts"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "admin-summary-body",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+            children: accounts.length
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "admin-summary-trend positive-trend",
+            children: "Verified"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "admin-summary-subtext",
+          children: "Active accounts"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "admin-summary-box",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "admin-summary-head",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "admin-summary-title-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "admin-summary-icon",
+              children: "\u2B50"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "admin-summary-title",
+              children: "Primary Account"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "admin-summary-body",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+            style: {
+              fontSize: "16px"
+            },
+            children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_number) || "N/A"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "admin-summary-trend positive-trend",
             children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_type) || "Savings"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-          className: "featured-balance-meta",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "featured-meta-box",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-              children: "Primary Account"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
-              children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.account_number) || "N/A"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            className: "featured-meta-box",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
-              children: "Status"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
-              children: (primaryAccount === null || primaryAccount === void 0 ? void 0 : primaryAccount.status) || "Active"
-            })]
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
-          className: "featured-balance-actions",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_QuickAction__WEBPACK_IMPORTED_MODULE_2__["default"], {
-            setActivePage: setActivePage
-          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "admin-summary-subtext",
+          children: "Main account"
         })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+        className: "admin-summary-box",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+          className: "admin-summary-head",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "admin-summary-title-wrap",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "admin-summary-icon",
+              children: "\u26A1"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              className: "admin-summary-title",
+              children: "Quick Status"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+          className: "admin-summary-body",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
+            style: {
+              fontSize: "16px",
+              color: "#63f0b1"
+            },
+            children: "System Online"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "admin-summary-trend positive-trend",
+            children: "Secure"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+          className: "admin-summary-subtext",
+          children: "All services are operating normally"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
+      style: {
+        marginBottom: "24px"
+      },
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_QuickAction__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        setActivePage: setActivePage
       })
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("section", {
       className: "dashboard-grid dashboard-grid-single",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "dashboard-panel premium-transactions-panel",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "panel-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
               children: "Recent Transactions"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
               className: "panel-subtitle",
               children: "Latest activity"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
             className: "panel-action-btn",
             onClick: function onClick() {
               return setActivePage("transactions");
             },
             children: "View All"
           })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
           className: "transaction-list enhanced",
           children: transactions.length > 0 ? transactions.map(function (txn) {
-            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
               className: "transaction-item enhanced",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                 className: "transaction-left",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
                   className: "transaction-icon ".concat(Number(txn.amount) >= 0 ? "in" : "out"),
                   children: Number(txn.amount) >= 0 ? "↓" : "↑"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
                     children: txn.transaction_type
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
                     children: txn.description || "No description"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                     className: "transaction-date",
                     children: txn.transaction_date
                   })]
                 })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
                 className: "transaction-right",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("strong", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("strong", {
                   className: Number(txn.amount) >= 0 ? "positive" : "negative",
                   children: ["\u20B1", Number(txn.amount).toLocaleString()]
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
                   className: "transaction-status",
                   children: txn.status || "Completed"
                 })]
               })]
             }, txn.transaction_id);
-          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
             className: "empty-state",
             children: "No transactions yet."
           })
@@ -9742,6 +10156,3443 @@ function TransferMoney(_ref) {
 
 /***/ },
 
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/SuperAdminDashboard.jsx"
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/SuperAdminDashboard.jsx ***!
+  \************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _shared_Sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../shared/Sidebar */ "./resources/js/components/shared/Sidebar.jsx");
+/* harmony import */ var _shared_Header__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../shared/Header */ "./resources/js/components/shared/Header.jsx");
+/* harmony import */ var _shared_Footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../shared/Footer */ "./resources/js/components/shared/Footer.jsx");
+/* harmony import */ var _utils_permission__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../../utils/permission */ "./resources/js/components/utils/permission.js");
+/* harmony import */ var _components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./components/SuperAdminOverview */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperAdminOverview.jsx");
+/* harmony import */ var _components_ManageAdmin__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/ManageAdmin */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/ManageAdmin.jsx");
+/* harmony import */ var _components_RolesPermissions__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/RolesPermissions */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/RolesPermissions.jsx");
+/* harmony import */ var _components_SystemConfiguration__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/SystemConfiguration */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SystemConfiguration.jsx");
+/* harmony import */ var _components_SecuritySettings__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/SecuritySettings */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SecuritySettings.jsx");
+/* harmony import */ var _components_BackupRestore__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/BackupRestore */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/BackupRestore.jsx");
+/* harmony import */ var _components_FullAuditLogs__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/FullAuditLogs */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/FullAuditLogs.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+function SuperAdminDashboard() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)("dashboard"),
+    _useState2 = _slicedToArray(_useState, 2),
+    activePage = _useState2[0],
+    setActivePage = _useState2[1];
+  var renderContent = function renderContent() {
+    switch (activePage) {
+      case "dashboard":
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        });
+      case "manage-admins":
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_ManageAdmin__WEBPACK_IMPORTED_MODULE_6__["default"], {});
+      case "roles-permissions":
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_RolesPermissions__WEBPACK_IMPORTED_MODULE_7__["default"], {});
+      case "system-configuration":
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SystemConfiguration__WEBPACK_IMPORTED_MODULE_8__["default"], {});
+      case "security-settings":
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SecuritySettings__WEBPACK_IMPORTED_MODULE_9__["default"], {});
+      case "backup-restore":
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_BackupRestore__WEBPACK_IMPORTED_MODULE_10__["default"], {});
+      case "full-audit-logs":
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_FullAuditLogs__WEBPACK_IMPORTED_MODULE_11__["default"], {});
+      default:
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        });
+    }
+  };
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var allowedPages = [(0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") && "dashboard", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("manage_admins") && "manage-admins", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("roles_permissions") && "roles-permissions", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("system_configuration") && "system-configuration", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("security_settings") && "security-settings", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("backup_restore") && "backup-restore", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("full_audit_logs") && "full-audit-logs"].filter(Boolean);
+    if (!allowedPages.includes(activePage)) {
+      setActivePage(allowedPages[0] || "dashboard");
+    }
+  }, [activePage]);
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+    className: "dashboard-page",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_shared_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      activePage: activePage,
+      setActivePage: setActivePage
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
+      className: "dashboard-content-wrapper",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_shared_Header__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        activePage: activePage
+      }), renderContent(), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_shared_Footer__WEBPACK_IMPORTED_MODULE_3__["default"], {})]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SuperAdminDashboard);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/BackupRestore.jsx"
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/BackupRestore.jsx ***!
+  \*****************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_SuperAdmin_components_BackupRestore_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/BackupRestore.css */ "./resources/css/SuperAdmin/components/BackupRestore.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+function BackupRestore() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    loadingBackup = _useState2[0],
+    setLoadingBackup = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loadingRestore = _useState4[0],
+    setLoadingRestore = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState6 = _slicedToArray(_useState5, 2),
+    file = _useState6[0],
+    setFile = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState8 = _slicedToArray(_useState7, 2),
+    message = _useState8[0],
+    setMessage = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState0 = _slicedToArray(_useState9, 2),
+    error = _useState0[0],
+    setError = _useState0[1];
+  var user = JSON.parse(localStorage.getItem("user") || "null");
+  var headers = {
+    "X-Admin-User-Id": user === null || user === void 0 ? void 0 : user.user_id
+  };
+  var handleBackup = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, blob, url, a, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            setLoadingBackup(true);
+            setMessage("");
+            setError("");
+            _context.n = 1;
+            return fetch("/api/superadmin/backup", {
+              method: "POST",
+              headers: headers
+            });
+          case 1:
+            response = _context.v;
+            if (response.ok) {
+              _context.n = 2;
+              break;
+            }
+            throw new Error("Backup failed");
+          case 2:
+            _context.n = 3;
+            return response.blob();
+          case 3:
+            blob = _context.v;
+            url = window.URL.createObjectURL(blob);
+            a = document.createElement("a");
+            a.href = url;
+            a.download = "backup.sql";
+            a.click();
+            setMessage("Backup downloaded successfully");
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            setError("Backup failed");
+          case 5:
+            _context.p = 5;
+            setLoadingBackup(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 4, 5, 6]]);
+    }));
+    return function handleBackup() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  var handleRestore = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var formData, response, data, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            if (file) {
+              _context2.n = 1;
+              break;
+            }
+            setError("Please select a file");
+            return _context2.a(2);
+          case 1:
+            _context2.p = 1;
+            setLoadingRestore(true);
+            setMessage("");
+            setError("");
+            formData = new FormData();
+            formData.append("backup_file", file);
+            _context2.n = 2;
+            return fetch("/api/superadmin/restore", {
+              method: "POST",
+              headers: headers,
+              body: formData
+            });
+          case 2:
+            response = _context2.v;
+            _context2.n = 3;
+            return response.json();
+          case 3:
+            data = _context2.v;
+            if (response.ok) {
+              _context2.n = 4;
+              break;
+            }
+            setError(data.message || "Restore failed");
+            return _context2.a(2);
+          case 4:
+            setMessage(data.message);
+            _context2.n = 6;
+            break;
+          case 5:
+            _context2.p = 5;
+            _t2 = _context2.v;
+            setError("Restore failed");
+          case 6:
+            _context2.p = 6;
+            setLoadingRestore(false);
+            return _context2.f(6);
+          case 7:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[1, 5, 6, 7]]);
+    }));
+    return function handleRestore() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+    className: "dashboard-main banking-dashboard",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "dashboard-panel",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "panel-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: "Backup & Restore"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "panel-subtitle",
+          children: "Manage database backups and recovery"
+        })]
+      }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "br-success",
+        children: message
+      }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "br-error",
+        children: error
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "br-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "br-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+            children: "Backup Database"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Create a full backup of the system database."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: handleBackup,
+            disabled: loadingBackup,
+            children: loadingBackup ? "Backing up..." : "Download Backup"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "br-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+            children: "Restore Database"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Upload a backup file to restore the system."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+            type: "file",
+            accept: ".sql",
+            onChange: function onChange(e) {
+              return setFile(e.target.files[0]);
+            }
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            onClick: handleRestore,
+            disabled: loadingRestore,
+            children: loadingRestore ? "Restoring..." : "Restore Database"
+          })]
+        })]
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (BackupRestore);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/CreateAdminModal.jsx"
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/CreateAdminModal.jsx ***!
+  \********************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+function CreateAdminModal(_ref) {
+  var show = _ref.show,
+    onClose = _ref.onClose,
+    formData = _ref.formData,
+    onChange = _ref.onChange,
+    onSubmit = _ref.onSubmit,
+    loading = _ref.loading;
+  if (!show) return null;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "manage-admins-modal-overlay",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "manage-admins-create-modal",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "manage-admins-create-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+            children: "Create Admin"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+            children: "Add a new administrator account"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+          type: "button",
+          className: "manage-admins-close-btn",
+          onClick: onClose,
+          children: "\u2715"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("form", {
+        onSubmit: onSubmit,
+        className: "manage-admins-form",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "manage-admins-form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            htmlFor: "username",
+            children: "Username"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            id: "username",
+            name: "username",
+            type: "text",
+            value: formData.username,
+            onChange: onChange,
+            placeholder: "Enter username",
+            required: true
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "manage-admins-form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            htmlFor: "email",
+            children: "Email"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            id: "email",
+            name: "email",
+            type: "email",
+            value: formData.email,
+            onChange: onChange,
+            placeholder: "Enter email",
+            required: true
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "manage-admins-form-group",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("label", {
+            htmlFor: "password",
+            children: "Password"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("input", {
+            id: "password",
+            name: "password",
+            type: "password",
+            value: formData.password,
+            onChange: onChange,
+            placeholder: "Enter password",
+            required: true
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "manage-admins-form-actions",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            type: "button",
+            className: "manage-admins-clear-btn",
+            onClick: onClose,
+            children: "Cancel"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+            type: "submit",
+            className: "manage-admins-create-btn",
+            disabled: loading,
+            children: loading ? "Creating..." : "Create Admin"
+          })]
+        })]
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (CreateAdminModal);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/FullAuditLogs.jsx"
+/*!*****************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/FullAuditLogs.jsx ***!
+  \*****************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_SuperAdmin_components_FullAuditLogs_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/FullAuditLogs.css */ "./resources/css/SuperAdmin/components/FullAuditLogs.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+function FullAuditLogs() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    logs = _useState2[0],
+    setLogs = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    tableLoading = _useState6[0],
+    setTableLoading = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState8 = _slicedToArray(_useState7, 2),
+    toast = _useState8[0],
+    setToast = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState0 = _slicedToArray(_useState9, 2),
+    search = _useState0[0],
+    setSearch = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState10 = _slicedToArray(_useState1, 2),
+    actionFilter = _useState10[0],
+    setActionFilter = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState12 = _slicedToArray(_useState11, 2),
+    dateFrom = _useState12[0],
+    setDateFrom = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState14 = _slicedToArray(_useState13, 2),
+    dateTo = _useState14[0],
+    setDateTo = _useState14[1];
+  var storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
+  var requestHeaders = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      Accept: "application/json",
+      "X-Admin-User-Id": adminUserId
+    };
+  }, [adminUserId]);
+  var buildQueryString = function buildQueryString() {
+    var params = new URLSearchParams();
+    if (search.trim()) params.append("search", search.trim());
+    if (actionFilter.trim()) params.append("action", actionFilter.trim());
+    if (dateFrom) params.append("date_from", dateFrom);
+    if (dateTo) params.append("date_to", dateTo);
+    return params.toString();
+  };
+  var fetchLogs = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var query, url, res, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            setTableLoading(true);
+            query = buildQueryString();
+            url = query ? "/api/superadmin/audit-logs?".concat(query) : "/api/superadmin/audit-logs";
+            _context.n = 1;
+            return fetch(url, {
+              method: "GET",
+              headers: requestHeaders
+            });
+          case 1:
+            res = _context.v;
+            _context.n = 2;
+            return res.json();
+          case 2:
+            data = _context.v;
+            if (res.ok) {
+              _context.n = 3;
+              break;
+            }
+            setToast({
+              type: "error",
+              message: data.message || "Failed to load audit logs"
+            });
+            setLogs([]);
+            return _context.a(2);
+          case 3:
+            setLogs(data.logs || []);
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            setToast({
+              type: "error",
+              message: "Server error while loading audit logs"
+            });
+            setLogs([]);
+          case 5:
+            _context.p = 5;
+            setLoading(false);
+            setTableLoading(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 4, 5, 6]]);
+    }));
+    return function fetchLogs() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetchLogs();
+  }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!toast) return;
+    var timer = setTimeout(function () {
+      return setToast(null);
+    }, 3000);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [toast]);
+  var handleApplyFilters = function handleApplyFilters() {
+    fetchLogs();
+  };
+  var handleClearFilters = function handleClearFilters() {
+    setSearch("");
+    setActionFilter("");
+    setDateFrom("");
+    setDateTo("");
+    setTimeout(function () {
+      fetchLogs();
+    }, 0);
+  };
+  var handleExport = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var query, url, response, errorMessage, errorData, blob, downloadUrl, link, _t2, _t3;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            _context2.p = 0;
+            setToast(null);
+            query = buildQueryString();
+            url = query ? "/api/superadmin/audit-logs/export?".concat(query) : "/api/superadmin/audit-logs/export";
+            _context2.n = 1;
+            return fetch(url, {
+              method: "GET",
+              headers: {
+                Accept: "text/csv",
+                "X-Admin-User-Id": adminUserId
+              }
+            });
+          case 1:
+            response = _context2.v;
+            if (response.ok) {
+              _context2.n = 6;
+              break;
+            }
+            errorMessage = "Failed to export audit logs";
+            _context2.p = 2;
+            _context2.n = 3;
+            return response.json();
+          case 3:
+            errorData = _context2.v;
+            errorMessage = errorData.message || errorMessage;
+            _context2.n = 5;
+            break;
+          case 4:
+            _context2.p = 4;
+            _t2 = _context2.v;
+          case 5:
+            setToast({
+              type: "error",
+              message: errorMessage
+            });
+            return _context2.a(2);
+          case 6:
+            _context2.n = 7;
+            return response.blob();
+          case 7:
+            blob = _context2.v;
+            downloadUrl = window.URL.createObjectURL(blob);
+            link = document.createElement("a");
+            link.href = downloadUrl;
+            link.download = "superadmin_audit_logs_".concat(new Date().toISOString().slice(0, 19).replace(/[:T]/g, "_"), ".csv");
+            document.body.appendChild(link);
+            link.click();
+            link.remove();
+            window.URL.revokeObjectURL(downloadUrl);
+            setToast({
+              type: "success",
+              message: "Audit logs exported successfully"
+            });
+            _context2.n = 9;
+            break;
+          case 8:
+            _context2.p = 8;
+            _t3 = _context2.v;
+            setToast({
+              type: "error",
+              message: "Server error while exporting audit logs"
+            });
+          case 9:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[2, 4], [0, 8]]);
+    }));
+    return function handleExport() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var uniqueActions = _toConsumableArray(new Set(logs.map(function (log) {
+    return log.action;
+  }).filter(Boolean)));
+  if (loading) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+      className: "dashboard-main banking-dashboard full-audit-logs-page",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+        className: "dashboard-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Loading audit logs..."
+          })
+        })
+      })
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("main", {
+    className: "dashboard-main banking-dashboard full-audit-logs-page",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "dashboard-panel",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "panel-header fal-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            children: "Full Audit Logs"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "panel-subtitle",
+            children: "View all system and user activity logs for compliance and investigations"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "fal-header-actions",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: "fal-btn fal-btn-light",
+            onClick: fetchLogs,
+            disabled: tableLoading,
+            children: tableLoading ? "Refreshing..." : "Refresh"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: "fal-btn fal-btn-primary",
+            onClick: handleExport,
+            children: "Export CSV"
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "fal-filter-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "text",
+          className: "fal-input",
+          placeholder: "Search logs, user, action, description...",
+          value: search,
+          onChange: function onChange(e) {
+            return setSearch(e.target.value);
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("select", {
+          className: "fal-select",
+          value: actionFilter,
+          onChange: function onChange(e) {
+            return setActionFilter(e.target.value);
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+            value: "",
+            children: "All Actions"
+          }), uniqueActions.map(function (action) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("option", {
+              value: action,
+              children: action
+            }, action);
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "date",
+          className: "fal-input",
+          value: dateFrom,
+          onChange: function onChange(e) {
+            return setDateFrom(e.target.value);
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+          type: "date",
+          className: "fal-input",
+          value: dateTo,
+          onChange: function onChange(e) {
+            return setDateTo(e.target.value);
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: "fal-btn fal-btn-primary",
+          onClick: handleApplyFilters,
+          children: "Apply"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: "fal-btn fal-btn-light",
+          onClick: handleClearFilters,
+          children: "Clear"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "fal-table-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "fal-table-wrap",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("table", {
+            className: "fal-table",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                  children: "Log ID"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                  children: "User"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                  children: "Action"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                  children: "Target"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                  children: "Description"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                  children: "IP Address"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("th", {
+                  children: "Date"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tbody", {
+              children: logs.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("tr", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                  colSpan: "7",
+                  className: "fal-empty",
+                  children: "No audit logs found."
+                })
+              }) : logs.map(function (log) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("tr", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("td", {
+                    children: ["#", log.log_id]
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      className: "fal-user-cell",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                        className: "fal-user-name",
+                        children: log.username || "System"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+                        className: "fal-user-email",
+                        children: log.email || "N/A"
+                      })]
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                      className: "fal-action-badge",
+                      children: log.action || "N/A"
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                      className: "fal-target-cell",
+                      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                        children: log.target_type || "N/A"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("small", {
+                        children: log.target_id !== null && log.target_id !== undefined ? "#".concat(log.target_id) : "—"
+                      })]
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                    className: "fal-description",
+                    children: log.description || "No description"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                    children: log.ip_address || "N/A"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("td", {
+                    children: log.log_date || "N/A"
+                  })]
+                }, log.log_id);
+              })
+            })]
+          })
+        })
+      })]
+    }), toast && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+      className: "fal-toast ".concat(toast.type === "success" ? "success" : "error"),
+      children: toast.message
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (FullAuditLogs);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/ManageAdmin.jsx"
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/ManageAdmin.jsx ***!
+  \***************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _CreateAdminModal__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./CreateAdminModal */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/CreateAdminModal.jsx");
+/* harmony import */ var _css_SuperAdmin_components_ManageAdmins_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/ManageAdmins.css */ "./resources/css/SuperAdmin/components/ManageAdmins.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+function ManageAdmins() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    admins = _useState2[0],
+    setAdmins = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    tableLoading = _useState6[0],
+    setTableLoading = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState8 = _slicedToArray(_useState7, 2),
+    showModal = _useState8[0],
+    setShowModal = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState0 = _slicedToArray(_useState9, 2),
+    confirmModal = _useState0[0],
+    setConfirmModal = _useState0[1];
+  var _useState1 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState10 = _slicedToArray(_useState1, 2),
+    toast = _useState10[0],
+    setToast = _useState10[1];
+  var _useState11 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState12 = _slicedToArray(_useState11, 2),
+    search = _useState12[0],
+    setSearch = _useState12[1];
+  var _useState13 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      username: "",
+      email: "",
+      password: ""
+    }),
+    _useState14 = _slicedToArray(_useState13, 2),
+    formData = _useState14[0],
+    setFormData = _useState14[1];
+  var _useState15 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState16 = _slicedToArray(_useState15, 2),
+    formLoading = _useState16[0],
+    setFormLoading = _useState16[1];
+  var storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
+  var requestHeaders = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "X-Admin-User-Id": adminUserId
+    };
+  }, [adminUserId]);
+  var fetchAdmins = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var res, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            setTableLoading(true);
+            _context.n = 1;
+            return fetch("/api/superadmin/admins", {
+              headers: requestHeaders
+            });
+          case 1:
+            res = _context.v;
+            _context.n = 2;
+            return res.json();
+          case 2:
+            data = _context.v;
+            if (res.ok) {
+              _context.n = 3;
+              break;
+            }
+            setToast({
+              type: "error",
+              message: data.message || "Failed to load admins"
+            });
+            setAdmins([]);
+            return _context.a(2);
+          case 3:
+            setAdmins(data.admins || []);
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            setToast({
+              type: "error",
+              message: "Failed to load admins"
+            });
+          case 5:
+            _context.p = 5;
+            setLoading(false);
+            setTableLoading(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 4, 5, 6]]);
+    }));
+    return function fetchAdmins() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetchAdmins();
+  }, []);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!toast) return;
+    var timer = setTimeout(function () {
+      return setToast(null);
+    }, 3000);
+    return function () {
+      return clearTimeout(timer);
+    };
+  }, [toast]);
+  var handleInputChange = function handleInputChange(e) {
+    setFormData(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, e.target.name, e.target.value));
+    });
+  };
+  var resetForm = function resetForm() {
+    setFormData({
+      username: "",
+      email: "",
+      password: ""
+    });
+  };
+  var handleCreateAdmin = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(e) {
+      var res, data, firstError, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            e.preventDefault();
+            setFormLoading(true);
+            _context2.p = 1;
+            _context2.n = 2;
+            return fetch("/api/superadmin/create-admin", {
+              method: "POST",
+              headers: requestHeaders,
+              body: JSON.stringify(formData)
+            });
+          case 2:
+            res = _context2.v;
+            _context2.n = 3;
+            return res.json();
+          case 3:
+            data = _context2.v;
+            if (res.ok) {
+              _context2.n = 4;
+              break;
+            }
+            if (data.errors) {
+              firstError = Object.values(data.errors)[0][0];
+              setToast({
+                type: "error",
+                message: firstError
+              });
+            } else {
+              setToast({
+                type: "error",
+                message: data.message || "Failed to create admin"
+              });
+            }
+            return _context2.a(2);
+          case 4:
+            setToast({
+              type: "success",
+              message: data.message || "Admin created successfully"
+            });
+            setShowModal(false);
+            resetForm();
+            fetchAdmins();
+            _context2.n = 6;
+            break;
+          case 5:
+            _context2.p = 5;
+            _t2 = _context2.v;
+            setToast({
+              type: "error",
+              message: "Server error while creating admin"
+            });
+          case 6:
+            _context2.p = 6;
+            setFormLoading(false);
+            return _context2.f(6);
+          case 7:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[1, 5, 6, 7]]);
+    }));
+    return function handleCreateAdmin(_x) {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var executeAction = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
+      var type, admin, url, res, data, _t3;
+      return _regenerator().w(function (_context3) {
+        while (1) switch (_context3.p = _context3.n) {
+          case 0:
+            if (confirmModal) {
+              _context3.n = 1;
+              break;
+            }
+            return _context3.a(2);
+          case 1:
+            type = confirmModal.type, admin = confirmModal.admin;
+            url = "";
+            if (type === "deactivate") {
+              url = "/api/superadmin/admins/".concat(admin.user_id, "/deactivate");
+            } else if (type === "activate") {
+              url = "/api/superadmin/admins/".concat(admin.user_id, "/activate");
+            } else if (type === "demote") {
+              url = "/api/superadmin/demote/".concat(admin.user_id);
+            }
+            _context3.p = 2;
+            _context3.n = 3;
+            return fetch(url, {
+              method: "PUT",
+              headers: requestHeaders
+            });
+          case 3:
+            res = _context3.v;
+            _context3.n = 4;
+            return res.json();
+          case 4:
+            data = _context3.v;
+            if (res.ok) {
+              _context3.n = 5;
+              break;
+            }
+            setToast({
+              type: "error",
+              message: data.message || "Action failed"
+            });
+            return _context3.a(2);
+          case 5:
+            setToast({
+              type: "success",
+              message: data.message || "Action completed"
+            });
+            fetchAdmins();
+            _context3.n = 7;
+            break;
+          case 6:
+            _context3.p = 6;
+            _t3 = _context3.v;
+            setToast({
+              type: "error",
+              message: "Server error"
+            });
+          case 7:
+            _context3.p = 7;
+            setConfirmModal(null);
+            return _context3.f(7);
+          case 8:
+            return _context3.a(2);
+        }
+      }, _callee3, null, [[2, 6, 7, 8]]);
+    }));
+    return function executeAction() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  var filteredAdmins = admins.filter(function (admin) {
+    var _admin$username, _admin$email;
+    var q = search.toLowerCase();
+    return ((_admin$username = admin.username) === null || _admin$username === void 0 ? void 0 : _admin$username.toLowerCase().includes(q)) || ((_admin$email = admin.email) === null || _admin$email === void 0 ? void 0 : _admin$email.toLowerCase().includes(q));
+  });
+  if (loading) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("main", {
+      className: "dashboard-main banking-dashboard",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("section", {
+        className: "dashboard-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            children: "Loading admin management..."
+          })
+        })
+      })
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("main", {
+    className: "dashboard-main banking-dashboard manage-admins-page",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("section", {
+      className: "dashboard-panel",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "panel-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h3", {
+            children: "Manage Admins"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "panel-subtitle",
+            children: "Control administrator accounts"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          type: "button",
+          className: "manage-admins-create-btn",
+          onClick: function onClick() {
+            return setShowModal(true);
+          },
+          children: "+ Create Admin"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "manage-admins-toolbar",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("input", {
+          type: "text",
+          className: "manage-admins-search",
+          placeholder: "Search...",
+          value: search,
+          onChange: function onChange(e) {
+            return setSearch(e.target.value);
+          }
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          type: "button",
+          className: "manage-admins-clear-btn",
+          onClick: function onClick() {
+            return setSearch("");
+          },
+          children: "Clear"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+          type: "button",
+          className: "manage-admins-clear-btn",
+          onClick: fetchAdmins,
+          disabled: tableLoading,
+          children: tableLoading ? "Refreshing..." : "Refresh"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "manage-admins-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "manage-admins-table-wrap",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("table", {
+            className: "manage-admins-table",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("thead", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                  children: "ID"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                  children: "User"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                  children: "Email"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                  children: "Status"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                  children: "Created At"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("th", {
+                  children: "Actions"
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tbody", {
+              children: filteredAdmins.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("tr", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                  colSpan: "6",
+                  className: "manage-admins-empty",
+                  children: "No admins found."
+                })
+              }) : filteredAdmins.map(function (admin) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("tr", {
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                    children: admin.user_id
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                    children: admin.username
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                    children: admin.email
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+                      className: "manage-admins-status ".concat(admin.status === "Active" ? "status-active" : "status-suspended"),
+                      children: admin.status
+                    })
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                    children: admin.created_at
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("td", {
+                    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                      className: "manage-admins-actions",
+                      children: [admin.status === "Active" ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                        type: "button",
+                        className: "manage-admins-activate-btn",
+                        onClick: function onClick() {
+                          return setConfirmModal({
+                            type: "deactivate",
+                            admin: admin
+                          });
+                        },
+                        children: "Deactivate"
+                      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                        type: "button",
+                        className: "manage-admins-activate-btn",
+                        onClick: function onClick() {
+                          return setConfirmModal({
+                            type: "activate",
+                            admin: admin
+                          });
+                        },
+                        children: "Activate"
+                      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                        type: "button",
+                        className: "manage-admins-suspend-btn",
+                        onClick: function onClick() {
+                          return setConfirmModal({
+                            type: "demote",
+                            admin: admin
+                          });
+                        },
+                        children: "Demote"
+                      })]
+                    })
+                  })]
+                }, admin.user_id);
+              })
+            })]
+          })
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_CreateAdminModal__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      show: showModal,
+      onClose: function onClose() {
+        setShowModal(false);
+        resetForm();
+      },
+      formData: formData,
+      onChange: handleInputChange,
+      onSubmit: handleCreateAdmin,
+      loading: formLoading
+    }), confirmModal && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "manage-admins-modal-overlay",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "manage-admins-confirm-modal",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("h3", {
+          children: [confirmModal.type === "deactivate" && "Deactivate Admin", confirmModal.type === "activate" && "Activate Admin", confirmModal.type === "demote" && "Demote Admin"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+          children: ["Are you sure you want to", " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+            children: confirmModal.type
+          }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("strong", {
+            children: confirmModal.admin.username
+          }), "?"]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "manage-admins-confirm-actions",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            className: "manage-admins-clear-btn",
+            onClick: function onClick() {
+              return setConfirmModal(null);
+            },
+            children: "Cancel"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+            type: "button",
+            className: "manage-admins-suspend-btn",
+            onClick: executeAction,
+            children: "Confirm"
+          })]
+        })]
+      })
+    }), toast && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "manage-admins-toast ".concat(toast.type === "success" ? "success" : "error"),
+      children: toast.message
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ManageAdmins);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/RolesPermissions.jsx"
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/RolesPermissions.jsx ***!
+  \********************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_SuperAdmin_components_RolesPermissions_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/RolesPermissions.css */ "./resources/css/SuperAdmin/components/RolesPermissions.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+function RolesPermissions() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    roles = _useState2[0],
+    setRoles = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    saving = _useState6[0],
+    setSaving = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState8 = _slicedToArray(_useState7, 2),
+    message = _useState8[0],
+    setMessage = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState0 = _slicedToArray(_useState9, 2),
+    error = _useState0[0],
+    setError = _useState0[1];
+  var storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
+  var requestHeaders = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "X-Admin-User-Id": adminUserId
+    };
+  }, [adminUserId]);
+  var permissionLabels = {
+    dashboard: "Dashboard",
+    manage_admins: "Manage Admins",
+    roles_permissions: "Roles & Permissions",
+    system_configuration: "System Configuration",
+    security_settings: "Security Settings",
+    backup_restore: "Backup / Restore",
+    full_audit_logs: "Full Audit Logs",
+    manage_users: "Manage Users",
+    account_approvals: "Account Approvals",
+    transactions: "Transactions",
+    reports: "Reports"
+  };
+  var fetchRolesPermissions = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            setLoading(true);
+            setError("");
+            _context.n = 1;
+            return fetch("/api/superadmin/roles-permissions", {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+                "X-Admin-User-Id": adminUserId
+              }
+            });
+          case 1:
+            response = _context.v;
+            _context.n = 2;
+            return response.json();
+          case 2:
+            data = _context.v;
+            if (response.ok) {
+              _context.n = 3;
+              break;
+            }
+            setError(data.message || "Failed to load roles and permissions");
+            return _context.a(2);
+          case 3:
+            setRoles(data.roles || []);
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            console.error(_t);
+            setError("Server error while loading roles and permissions");
+          case 5:
+            _context.p = 5;
+            setLoading(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 4, 5, 6]]);
+    }));
+    return function fetchRolesPermissions() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetchRolesPermissions();
+  }, []);
+  var handleToggle = function handleToggle(roleIndex, permissionKey) {
+    setRoles(function (prevRoles) {
+      return prevRoles.map(function (roleItem, index) {
+        if (index !== roleIndex) return roleItem;
+        return _objectSpread(_objectSpread({}, roleItem), {}, {
+          permissions: _objectSpread(_objectSpread({}, roleItem.permissions), {}, _defineProperty({}, permissionKey, !roleItem.permissions[permissionKey]))
+        });
+      });
+    });
+  };
+  var handleSave = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var response, data, firstError, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            _context2.p = 0;
+            setSaving(true);
+            setMessage("");
+            setError("");
+            _context2.n = 1;
+            return fetch("/api/superadmin/roles-permissions", {
+              method: "PUT",
+              headers: requestHeaders,
+              body: JSON.stringify({
+                roles: roles
+              })
+            });
+          case 1:
+            response = _context2.v;
+            _context2.n = 2;
+            return response.json();
+          case 2:
+            data = _context2.v;
+            if (response.ok) {
+              _context2.n = 3;
+              break;
+            }
+            if (data.errors) {
+              firstError = Object.values(data.errors)[0][0];
+              setError(firstError);
+            } else {
+              setError(data.message || "Failed to update roles and permissions");
+            }
+            return _context2.a(2);
+          case 3:
+            setMessage(data.message || "Roles and permissions updated successfully");
+            _context2.n = 5;
+            break;
+          case 4:
+            _context2.p = 4;
+            _t2 = _context2.v;
+            console.error(_t2);
+            setError("Server error while saving roles and permissions");
+          case 5:
+            _context2.p = 5;
+            setSaving(false);
+            return _context2.f(5);
+          case 6:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[0, 4, 5, 6]]);
+    }));
+    return function handleSave() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  if (loading) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+      className: "dashboard-main banking-dashboard roles-page",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+        className: "dashboard-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Loading roles and permissions..."
+          })
+        })
+      })
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+    className: "dashboard-main banking-dashboard roles-page",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "dashboard-panel",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "panel-header roles-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            children: "Roles & Permissions"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "panel-subtitle",
+            children: "Define access levels and control feature visibility per role"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: "roles-save-btn",
+          onClick: handleSave,
+          disabled: saving,
+          children: saving ? "Saving..." : "Save Changes"
+        })]
+      }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "roles-message",
+        children: message
+      }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "roles-error",
+        children: error
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "roles-grid",
+        children: roles.map(function (roleItem, roleIndex) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "roles-card",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "roles-card-header",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+                children: roleItem.role_name
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+                children: [roleItem.role_name === "SuperAdmin" && "Full system control and access", roleItem.role_name === "Admin" && "Operational management access", roleItem.role_name === "Customer" && "Customer-facing account access"]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+              className: "roles-permission-list",
+              children: Object.keys(roleItem.permissions).map(function (permissionKey) {
+                return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+                  className: "roles-permission-row",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                    children: permissionLabels[permissionKey] || permissionKey
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                    className: "roles-switch",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                      type: "checkbox",
+                      checked: roleItem.permissions[permissionKey],
+                      onChange: function onChange() {
+                        return handleToggle(roleIndex, permissionKey);
+                      }
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                      className: "roles-slider"
+                    })]
+                  })]
+                }, permissionKey);
+              })
+            })]
+          }, roleItem.role_id);
+        })
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (RolesPermissions);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SecuritySettings.jsx"
+/*!********************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/SecuritySettings.jsx ***!
+  \********************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_SuperAdmin_components_SecuritySettings_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/SecuritySettings.css */ "./resources/css/SuperAdmin/components/SecuritySettings.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+function SecuritySettings() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      minPasswordLength: 8,
+      requireUppercase: true,
+      requireNumber: true,
+      requireSpecialChar: false,
+      maxLoginAttempts: 5,
+      lockoutDuration: 15,
+      enableTwoFactor: false,
+      forcePasswordReset: false,
+      singleSessionOnly: false,
+      autoLogoutMinutes: 15,
+      allowRememberMe: true,
+      restrictByIp: false
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    settings = _useState2[0],
+    setSettings = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    saving = _useState6[0],
+    setSaving = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState8 = _slicedToArray(_useState7, 2),
+    message = _useState8[0],
+    setMessage = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState0 = _slicedToArray(_useState9, 2),
+    error = _useState0[0],
+    setError = _useState0[1];
+  var storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
+  var requestHeaders = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "X-Admin-User-Id": adminUserId
+    };
+  }, [adminUserId]);
+  var fetchSettings = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            setLoading(true);
+            setError("");
+            _context.n = 1;
+            return fetch("/api/superadmin/security-settings", {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+                "X-Admin-User-Id": adminUserId
+              }
+            });
+          case 1:
+            response = _context.v;
+            _context.n = 2;
+            return response.json();
+          case 2:
+            data = _context.v;
+            if (response.ok) {
+              _context.n = 3;
+              break;
+            }
+            setError(data.message || "Failed to load security settings");
+            return _context.a(2);
+          case 3:
+            setSettings(data.settings);
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            console.error(_t);
+            setError("Server error while loading security settings");
+          case 5:
+            _context.p = 5;
+            setLoading(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 4, 5, 6]]);
+    }));
+    return function fetchSettings() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetchSettings();
+  }, []);
+  var handleChange = function handleChange(e) {
+    var _e$target = e.target,
+      name = _e$target.name,
+      value = _e$target.value,
+      type = _e$target.type,
+      checked = _e$target.checked;
+    setSettings(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, type === "checkbox" ? checked : Number(value)));
+    });
+  };
+  var handleSave = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var response, data, firstError, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            _context2.p = 0;
+            setSaving(true);
+            setMessage("");
+            setError("");
+            _context2.n = 1;
+            return fetch("/api/superadmin/security-settings", {
+              method: "PUT",
+              headers: requestHeaders,
+              body: JSON.stringify(settings)
+            });
+          case 1:
+            response = _context2.v;
+            _context2.n = 2;
+            return response.json();
+          case 2:
+            data = _context2.v;
+            if (response.ok) {
+              _context2.n = 3;
+              break;
+            }
+            if (data.errors) {
+              firstError = Object.values(data.errors)[0][0];
+              setError(firstError);
+            } else {
+              setError(data.message || "Failed to update security settings");
+            }
+            return _context2.a(2);
+          case 3:
+            setMessage(data.message || "Security settings updated successfully");
+            _context2.n = 5;
+            break;
+          case 4:
+            _context2.p = 4;
+            _t2 = _context2.v;
+            console.error(_t2);
+            setError("Server error while saving security settings");
+          case 5:
+            _context2.p = 5;
+            setSaving(false);
+            return _context2.f(5);
+          case 6:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[0, 4, 5, 6]]);
+    }));
+    return function handleSave() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var handleReset = function handleReset() {
+    fetchSettings();
+    setMessage("");
+    setError("");
+  };
+  if (loading) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+      className: "dashboard-main banking-dashboard security-settings-page",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+        className: "dashboard-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Loading security settings..."
+          })
+        })
+      })
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+    className: "dashboard-main banking-dashboard security-settings-page",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "dashboard-panel",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "panel-header security-settings-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            children: "Security Settings"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "panel-subtitle",
+            children: "Configure authentication policies, password rules, and access controls"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "security-settings-actions",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: "ss-btn ss-btn-light",
+            onClick: handleReset,
+            disabled: saving,
+            children: "Reset"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: "ss-btn ss-btn-primary",
+            onClick: handleSave,
+            disabled: saving,
+            children: saving ? "Saving..." : "Save Changes"
+          })]
+        })]
+      }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "security-settings-message",
+        children: message
+      }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "security-settings-error",
+        children: error
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "security-settings-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "security-settings-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-card-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: "Password Policy"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Control password complexity and reset rules"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              htmlFor: "minPasswordLength",
+              children: "Minimum Password Length"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              id: "minPasswordLength",
+              name: "minPasswordLength",
+              type: "number",
+              value: settings.minPasswordLength,
+              onChange: handleChange
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-toggle-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Require Uppercase Letter"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "security-settings-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "requireUppercase",
+                  checked: settings.requireUppercase,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "security-settings-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Require Number"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "security-settings-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "requireNumber",
+                  checked: settings.requireNumber,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "security-settings-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Require Special Character"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "security-settings-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "requireSpecialChar",
+                  checked: settings.requireSpecialChar,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "security-settings-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Force Password Reset"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "security-settings-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "forcePasswordReset",
+                  checked: settings.forcePasswordReset,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "security-settings-slider"
+                })]
+              })]
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "security-settings-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-card-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: "Login Protection"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Protect against unauthorized access attempts"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              htmlFor: "maxLoginAttempts",
+              children: "Maximum Login Attempts"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              id: "maxLoginAttempts",
+              name: "maxLoginAttempts",
+              type: "number",
+              value: settings.maxLoginAttempts,
+              onChange: handleChange
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              htmlFor: "lockoutDuration",
+              children: "Lockout Duration (minutes)"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              id: "lockoutDuration",
+              name: "lockoutDuration",
+              type: "number",
+              value: settings.lockoutDuration,
+              onChange: handleChange
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-toggle-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Enable Two-Factor Authentication"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "security-settings-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "enableTwoFactor",
+                  checked: settings.enableTwoFactor,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "security-settings-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Restrict Access by IP"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "security-settings-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "restrictByIp",
+                  checked: settings.restrictByIp,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "security-settings-slider"
+                })]
+              })]
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "security-settings-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "security-settings-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-card-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: "Session Controls"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Manage user session behavior and timeout policies"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              htmlFor: "autoLogoutMinutes",
+              children: "Auto Logout (minutes)"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              id: "autoLogoutMinutes",
+              name: "autoLogoutMinutes",
+              type: "number",
+              value: settings.autoLogoutMinutes,
+              onChange: handleChange
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-toggle-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Single Session Only"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "security-settings-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "singleSessionOnly",
+                  checked: settings.singleSessionOnly,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "security-settings-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Allow Remember Me"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "security-settings-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "allowRememberMe",
+                  checked: settings.allowRememberMe,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "security-settings-slider"
+                })]
+              })]
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "security-settings-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-card-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: "Security Overview"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Quick status summary of your current security posture"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "security-settings-overview-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-overview-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Password Length"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+                children: [settings.minPasswordLength, " characters"]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-overview-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Max Login Attempts"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+                children: settings.maxLoginAttempts
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-overview-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Lockout Duration"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+                children: [settings.lockoutDuration, " mins"]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-overview-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Two-Factor Authentication"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+                children: settings.enableTwoFactor ? "Enabled" : "Disabled"
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-overview-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Auto Logout"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("strong", {
+                children: [settings.autoLogoutMinutes, " mins"]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "security-settings-overview-item",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "IP Restriction"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("strong", {
+                children: settings.restrictByIp ? "Enabled" : "Disabled"
+              })]
+            })]
+          })]
+        })]
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SecuritySettings);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/Sidebarlist.jsx"
+/*!***************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/Sidebarlist.jsx ***!
+  \***************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
+/* harmony import */ var _css_SuperAdmin_components_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/Sidebarlist.css */ "./resources/css/SuperAdmin/components/Sidebarlist.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Sidebarlist = function Sidebarlist(_ref) {
+  var activePage = _ref.activePage,
+    setActivePage = _ref.setActivePage;
+  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
+  var handleLogout = function handleLogout() {
+    localStorage.removeItem("isAuth");
+    localStorage.removeItem("user");
+    navigate("/login");
+  };
+  var menuItems = [{
+    key: "dashboard",
+    label: "Dashboard",
+    icon: "🏠"
+  }, {
+    key: "manage-admins",
+    label: "Manage Admins",
+    icon: "👥"
+  }, {
+    key: "roles-permissions",
+    label: "Roles & Permissions",
+    icon: "🔑"
+  }, {
+    key: "system-configuration",
+    label: "System Configuration",
+    icon: "⚙️"
+  }, {
+    key: "security-settings",
+    label: "Security Settings",
+    icon: "🛡️"
+  }, {
+    key: "backup-restore",
+    label: "Backup / Restore",
+    icon: "💾"
+  }, {
+    key: "full-audit-logs",
+    label: "Full Audit Logs",
+    icon: "🧾"
+  }];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    className: "dashboard-sidebar-menu",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("nav", {
+      className: "dashboard-menu",
+      children: [menuItems.map(function (item) {
+        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
+          type: "button",
+          className: "dashboard-menu-btn ".concat(activePage === item.key ? "active" : ""),
+          onClick: function onClick() {
+            return setActivePage(item.key);
+          },
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "menu-icon",
+            children: item.icon
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+            className: "menu-text",
+            children: item.label
+          })]
+        }, item.key);
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
+        type: "button",
+        className: "dashboard-menu-btn logout-menu",
+        onClick: handleLogout,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+          className: "menu-icon",
+          children: "\u23FB"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+          className: "menu-text",
+          children: "Logout"
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "dashboard-sidebar-footer",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
+        to: "/",
+        className: "logout-btn secondary-btn",
+        children: "Back to Landing Page"
+      })
+    })]
+  });
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebarlist);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperAdminOverview.jsx"
+/*!**********************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperAdminOverview.jsx ***!
+  \**********************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _SuperadminSummaryCards__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./SuperadminSummaryCards */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperadminSummaryCards.jsx");
+/* harmony import */ var _css_SuperAdmin_components_SuperAdmindashboard_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/SuperAdmindashboard.css */ "./resources/css/SuperAdmin/components/SuperAdmindashboard.css");
+/* harmony import */ var _css_SuperAdmin_SuperAdminOverview_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/SuperAdminOverview.css */ "./resources/css/SuperAdmin/SuperAdminOverview.css");
+/* harmony import */ var _SuperAdminOverviewCharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./SuperAdminOverviewCharts */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperAdminOverviewCharts.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function _toConsumableArray(r) { return _arrayWithoutHoles(r) || _iterableToArray(r) || _unsupportedIterableToArray(r) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArray(r) { if ("undefined" != typeof Symbol && null != r[Symbol.iterator] || null != r["@@iterator"]) return Array.from(r); }
+function _arrayWithoutHoles(r) { if (Array.isArray(r)) return _arrayLikeToArray(r); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+
+
+function SuperAdminOverview(_ref) {
+  var setActivePage = _ref.setActivePage;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(null),
+    _useState2 = _slicedToArray(_useState, 2),
+    summary = _useState2[0],
+    setSummary = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    history = _useState4[0],
+    setHistory = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState6 = _slicedToArray(_useState5, 2),
+    loading = _useState6[0],
+    setLoading = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState8 = _slicedToArray(_useState7, 2),
+    message = _useState8[0],
+    setMessage = _useState8[1];
+  var storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
+  var fetchOverview = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, nextSummary, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            _context.n = 1;
+            return fetch("/api/superadmin/overview", {
+              headers: {
+                Accept: "application/json",
+                "X-Admin-User-Id": adminUserId
+              }
+            });
+          case 1:
+            response = _context.v;
+            _context.n = 2;
+            return response.json();
+          case 2:
+            data = _context.v;
+            if (response.ok) {
+              _context.n = 3;
+              break;
+            }
+            setMessage(data.message || "Failed to load overview");
+            return _context.a(2);
+          case 3:
+            nextSummary = data.summary || null;
+            setSummary(nextSummary);
+            if (nextSummary) {
+              setHistory(function (prev) {
+                var point = {
+                  time: new Date().toLocaleTimeString([], {
+                    hour: "2-digit",
+                    minute: "2-digit"
+                  }),
+                  alerts: Number(nextSummary.active_alerts || 0),
+                  admins: Number(nextSummary.active_admins || 0),
+                  pending: Number(nextSummary.pending_approvals || 0)
+                };
+                var updated = [].concat(_toConsumableArray(prev), [point]);
+                return updated.slice(-8);
+              });
+            }
+            setMessage("");
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            console.error(_t);
+            setMessage("Server error while loading super admin overview");
+          case 5:
+            _context.p = 5;
+            setLoading(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 4, 5, 6]]);
+    }));
+    return function fetchOverview() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetchOverview();
+    var interval = setInterval(function () {
+      fetchOverview();
+    }, 15000);
+    return function () {
+      return clearInterval(interval);
+    };
+  }, []);
+  var totalAdmins = Number((summary === null || summary === void 0 ? void 0 : summary.total_admins) || 0);
+  var activeAdmins = Number((summary === null || summary === void 0 ? void 0 : summary.active_admins) || 0);
+  var activeAlerts = Number((summary === null || summary === void 0 ? void 0 : summary.active_alerts) || 0);
+  var suspendedUsers = Number((summary === null || summary === void 0 ? void 0 : summary.suspended_users) || 0);
+  var failedTransactions = Number((summary === null || summary === void 0 ? void 0 : summary.failed_transactions) || 0);
+  var pendingApprovals = Number((summary === null || summary === void 0 ? void 0 : summary.pending_approvals) || 0);
+  var systemHealth = (summary === null || summary === void 0 ? void 0 : summary.system_health) || "Healthy";
+  var systemUptime = (summary === null || summary === void 0 ? void 0 : summary.system_uptime) || "Online";
+  var riskData = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    var score = 0;
+    score += activeAlerts * 20;
+    score += failedTransactions * 10;
+    score += suspendedUsers * 8;
+    score += pendingApprovals * 4;
+    if (score >= 80) {
+      return {
+        score: Math.min(score, 100),
+        label: "Critical Risk",
+        className: "risk-critical",
+        advice: "Immediate admin review is recommended."
+      };
+    }
+    if (score >= 40) {
+      return {
+        score: Math.min(score, 100),
+        label: "Moderate Risk",
+        className: "risk-warning",
+        advice: "Monitor alerts and investigate unusual activity."
+      };
+    }
+    return {
+      score: Math.min(score, 100),
+      label: "Low Risk",
+      className: "risk-safe",
+      advice: "System is stable with manageable activity."
+    };
+  }, [activeAlerts, failedTransactions, suspendedUsers, pendingApprovals]);
+  var alertChartData = [{
+    name: "Suspended",
+    value: suspendedUsers
+  }, {
+    name: "Failed TX",
+    value: failedTransactions
+  }, {
+    name: "Pending",
+    value: pendingApprovals
+  }];
+  var adminChartData = [{
+    name: "Total Admins",
+    value: totalAdmins
+  }, {
+    name: "Active Admins",
+    value: activeAdmins
+  }];
+  var healthChartData = [{
+    name: "System",
+    healthScore: systemHealth === "Healthy" ? 100 : systemHealth === "Warning" ? 65 : 30
+  }];
+  var notifications = [activeAlerts > 0 ? "".concat(activeAlerts, " active alert(s) require review.") : "No active alerts detected.", failedTransactions > 0 ? "".concat(failedTransactions, " failed transaction(s) recorded.") : "No failed transactions recorded.", pendingApprovals > 0 ? "".concat(pendingApprovals, " pending approval request(s) waiting.") : "No pending approvals at the moment.", systemHealth === "Healthy" ? "System health is stable." : "System health is currently ".concat(systemHealth, ".")];
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("main", {
+    className: "dashboard-main banking-dashboard superadmin-overview-page",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_SuperadminSummaryCards__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      totalAdmins: totalAdmins,
+      activeAdmins: activeAdmins,
+      activeAlerts: activeAlerts,
+      systemHealth: systemHealth,
+      systemUptime: systemUptime,
+      onManageAdmins: function onManageAdmins() {
+        return setActivePage("manage-admins");
+      }
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(_SuperAdminOverviewCharts__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      loading: loading,
+      message: message,
+      riskData: riskData,
+      notifications: notifications,
+      alertChartData: alertChartData,
+      adminChartData: adminChartData,
+      history: history,
+      healthChartData: healthChartData,
+      systemHealth: systemHealth
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SuperAdminOverview);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperAdminOverviewCharts.jsx"
+/*!****************************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperAdminOverviewCharts.jsx ***!
+  \****************************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_SuperAdmin_components_SuperAdminOverviewCharts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/SuperAdminOverviewCharts.css */ "./resources/css/SuperAdmin/components/SuperAdminOverviewCharts.css");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Legend.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Tooltip.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/ResponsiveContainer.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Cell.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/polar/Pie.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/CartesianGrid.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/Line.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/Bar.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/XAxis.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/YAxis.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/LineChart.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/BarChart.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/PieChart.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+function SuperAdminOverviewCharts(_ref) {
+  var loading = _ref.loading,
+    message = _ref.message,
+    riskData = _ref.riskData,
+    notifications = _ref.notifications,
+    alertChartData = _ref.alertChartData,
+    adminChartData = _ref.adminChartData,
+    history = _ref.history,
+    healthChartData = _ref.healthChartData,
+    systemHealth = _ref.systemHealth;
+  if (loading) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("section", {
+      className: "sa-chart-grid",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+        className: "dashboard-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("p", {
+            children: "Loading analytics..."
+          })
+        })
+      })
+    });
+  }
+  if (message) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("section", {
+      className: "sa-chart-grid",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+        className: "dashboard-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("p", {
+            className: "sa-error-text",
+            children: message
+          })
+        })
+      })
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("section", {
+      className: "sa-chart-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+        className: "dashboard-panel sa-panel-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
+              children: "AI Risk Indicator"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Smart system risk estimation based on alerts and failures"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+            className: "sa-risk-card",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+              className: "sa-risk-top",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h4", {
+                children: riskData.label
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("span", {
+                className: "sa-risk-pill ".concat(riskData.className),
+                children: ["Score: ", riskData.score, "%"]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+              className: "sa-risk-bar",
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+                className: "sa-risk-fill ".concat(riskData.className),
+                style: {
+                  width: "".concat(riskData.score, "%")
+                }
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("p", {
+              className: "sa-risk-advice",
+              children: riskData.advice
+            })]
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+        className: "dashboard-panel sa-panel-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-header",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
+              children: "Alert Notification Center"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Latest alert and operational notifications"
+            })]
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("ul", {
+            className: "sa-alert-list",
+            children: notifications.map(function (item, index) {
+              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("li", {
+                className: "sa-alert-item",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+                  className: "sa-alert-dot"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+                  children: item
+                })]
+              }, index);
+            })
+          })
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("section", {
+      className: "sa-chart-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+        className: "dashboard-panel sa-panel-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+          className: "panel-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
+              children: "Security Alerts Overview"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Suspended users, failed transactions, and pending approvals"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+            className: "sa-panel-badge",
+            children: "Overview"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-content sa-chart-box",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
+            width: "100%",
+            height: 320,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_14__.PieChart, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, {
+                data: alertChartData,
+                dataKey: "value",
+                nameKey: "name",
+                outerRadius: 105,
+                innerRadius: 62,
+                label: true,
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_5__.Cell, {
+                  fill: "#6c63ff"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_5__.Cell, {
+                  fill: "#19d1c3"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_5__.Cell, {
+                  fill: "#3b82f6"
+                })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_2__.Legend, {})]
+            })
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+        className: "dashboard-panel sa-panel-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+          className: "panel-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
+              children: "Admin Capacity"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Total admins versus active admins"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+            className: "sa-panel-badge",
+            children: "Capacity"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-content sa-chart-box",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
+            width: "100%",
+            height: 320,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_13__.BarChart, {
+              data: adminChartData,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_7__.CartesianGrid, {
+                strokeDasharray: "3 3",
+                stroke: "rgba(255,255,255,0.06)"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_10__.XAxis, {
+                dataKey: "name",
+                stroke: "#8ea0c8"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_11__.YAxis, {
+                stroke: "#8ea0c8"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_2__.Legend, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_9__.Bar, {
+                dataKey: "value",
+                fill: "url(#adminBarGradient)",
+                radius: [10, 10, 0, 0]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("defs", {
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("linearGradient", {
+                  id: "adminBarGradient",
+                  x1: "0",
+                  y1: "0",
+                  x2: "0",
+                  y2: "1",
+                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("stop", {
+                    offset: "0%",
+                    stopColor: "#22c1ff"
+                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("stop", {
+                    offset: "100%",
+                    stopColor: "#6c63ff"
+                  })]
+                })
+              })]
+            })
+          })
+        })]
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("section", {
+      className: "sa-chart-grid",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+        className: "dashboard-panel sa-panel-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+          className: "panel-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
+              children: "Live Activity Trend"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Auto-refreshing operational trends"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+            className: "sa-panel-badge",
+            children: "Realtime"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-content sa-chart-box",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
+            width: "100%",
+            height: 320,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_12__.LineChart, {
+              data: history,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_7__.CartesianGrid, {
+                strokeDasharray: "3 3",
+                stroke: "rgba(255,255,255,0.06)"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_10__.XAxis, {
+                dataKey: "time",
+                stroke: "#8ea0c8"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_11__.YAxis, {
+                stroke: "#8ea0c8"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_2__.Legend, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_8__.Line, {
+                type: "monotone",
+                dataKey: "alerts",
+                stroke: "#19d1c3",
+                strokeWidth: 3,
+                name: "Alerts"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_8__.Line, {
+                type: "monotone",
+                dataKey: "admins",
+                stroke: "#6c63ff",
+                strokeWidth: 3,
+                name: "Active Admins"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_8__.Line, {
+                type: "monotone",
+                dataKey: "pending",
+                stroke: "#3b82f6",
+                strokeWidth: 3,
+                name: "Pending"
+              })]
+            })
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+        className: "dashboard-panel sa-panel-card",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+          className: "panel-header",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
+              children: "System Health Score"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+              className: "panel-subtitle",
+              children: "Health condition of the platform and services"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+            className: "sa-panel-badge",
+            children: systemHealth
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+          className: "panel-content sa-chart-box",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
+            width: "100%",
+            height: 320,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_13__.BarChart, {
+              data: healthChartData,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_7__.CartesianGrid, {
+                strokeDasharray: "3 3",
+                stroke: "rgba(255,255,255,0.06)"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_10__.XAxis, {
+                dataKey: "name",
+                stroke: "#8ea0c8"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_11__.YAxis, {
+                domain: [0, 100],
+                stroke: "#8ea0c8"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_9__.Bar, {
+                dataKey: "healthScore",
+                fill: systemHealth === "Healthy" ? "#19d1c3" : systemHealth === "Warning" ? "#f59e0b" : "#ef4444",
+                radius: [10, 10, 0, 0]
+              })]
+            })
+          })
+        })]
+      })]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SuperAdminOverviewCharts);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperadminSummaryCards.jsx"
+/*!**************************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperadminSummaryCards.jsx ***!
+  \**************************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_SuperAdmin_components_SuperAdminSummaryCards_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/SuperAdminSummaryCards.css */ "./resources/css/SuperAdmin/components/SuperAdminSummaryCards.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+function SuperAdminSummaryCards(_ref) {
+  var totalAdmins = _ref.totalAdmins,
+    activeAdmins = _ref.activeAdmins,
+    activeAlerts = _ref.activeAlerts,
+    systemHealth = _ref.systemHealth,
+    systemUptime = _ref.systemUptime,
+    onManageAdmins = _ref.onManageAdmins;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+    className: "sa-summary-row",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "sa-summary-box",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "sa-summary-head",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "sa-summary-title-wrap",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "sa-summary-icon",
+            children: "\uD83D\uDC65"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "sa-summary-title",
+            children: "Admins"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: "sa-summary-more",
+          children: "\u2022\u2022\u2022"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "sa-summary-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: totalAdmins
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("span", {
+          className: "sa-summary-trend sa-positive-trend",
+          children: [activeAdmins, " active"]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        className: "sa-summary-subtext",
+        children: "System administrators"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "sa-summary-box",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "sa-summary-head",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "sa-summary-title-wrap",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "sa-summary-icon",
+            children: "\uD83D\uDEA8"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "sa-summary-title",
+            children: "Alerts"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: "sa-summary-more",
+          children: "\u2022\u2022\u2022"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "sa-summary-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: activeAlerts
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "sa-summary-trend ".concat(activeAlerts > 0 ? "sa-warning-trend" : "sa-positive-trend"),
+          children: activeAlerts > 0 ? "Review needed" : "Stable"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        className: "sa-summary-subtext",
+        children: "Security and ops alerts"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "sa-summary-box",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "sa-summary-head",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "sa-summary-title-wrap",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "sa-summary-icon",
+            children: "\uD83D\uDEE1\uFE0F"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "sa-summary-title",
+            children: "Health"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: "sa-summary-more",
+          children: "\u2022\u2022\u2022"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "sa-summary-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: systemHealth
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "sa-summary-trend sa-positive-trend",
+          children: systemUptime
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        className: "sa-summary-subtext",
+        children: "Service status"
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      className: "sa-summary-box sa-summary-action-box",
+      onClick: onManageAdmins,
+      role: "button",
+      tabIndex: 0,
+      onKeyDown: function onKeyDown(e) {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          onManageAdmins === null || onManageAdmins === void 0 || onManageAdmins();
+        }
+      },
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "sa-summary-head",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "sa-summary-title-wrap",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "sa-summary-icon",
+            children: "\u2699\uFE0F"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "sa-summary-title",
+            children: "Manage"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+          type: "button",
+          className: "sa-summary-more",
+          children: "\u2192"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "sa-summary-body",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+          children: "Admins"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+          className: "sa-summary-trend sa-positive-trend",
+          children: "Open panel"
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+        className: "sa-summary-subtext",
+        children: "Admin tools"
+      })]
+    })]
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SuperAdminSummaryCards);
+
+/***/ },
+
+/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SystemConfiguration.jsx"
+/*!***********************************************************************************************************!*\
+  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/SystemConfiguration.jsx ***!
+  \***********************************************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _css_SuperAdmin_components_SystemConfiguration_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/SystemConfiguration.css */ "./resources/css/SuperAdmin/components/SystemConfiguration.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
+
+
+
+function SystemConfiguration() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)({
+      dailyTransferLimit: 50000,
+      maxBillPayment: 20000,
+      minPasswordLength: 8,
+      sessionTimeout: 15,
+      accountApprovalRequired: true,
+      allowRegistration: true,
+      enableTransfers: true,
+      enableBillPayments: true,
+      enableReportsModule: true,
+      enableAuditLogs: true,
+      maintenanceMode: false
+    }),
+    _useState2 = _slicedToArray(_useState, 2),
+    config = _useState2[0],
+    setConfig = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(true),
+    _useState4 = _slicedToArray(_useState3, 2),
+    loading = _useState4[0],
+    setLoading = _useState4[1];
+  var _useState5 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState6 = _slicedToArray(_useState5, 2),
+    saving = _useState6[0],
+    setSaving = _useState6[1];
+  var _useState7 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState8 = _slicedToArray(_useState7, 2),
+    message = _useState8[0],
+    setMessage = _useState8[1];
+  var _useState9 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(""),
+    _useState0 = _slicedToArray(_useState9, 2),
+    error = _useState0[0],
+    setError = _useState0[1];
+  var storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
+  var requestHeaders = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+      "X-Admin-User-Id": adminUserId
+    };
+  }, [adminUserId]);
+  var fetchConfig = /*#__PURE__*/function () {
+    var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            setLoading(true);
+            setError("");
+            _context.n = 1;
+            return fetch("/api/superadmin/system-config", {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+                "X-Admin-User-Id": adminUserId
+              }
+            });
+          case 1:
+            response = _context.v;
+            _context.n = 2;
+            return response.json();
+          case 2:
+            data = _context.v;
+            if (response.ok) {
+              _context.n = 3;
+              break;
+            }
+            setError(data.message || "Failed to load system configuration");
+            return _context.a(2);
+          case 3:
+            setConfig(data.config);
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            console.error(_t);
+            setError("Server error while loading system configuration");
+          case 5:
+            _context.p = 5;
+            setLoading(false);
+            return _context.f(5);
+          case 6:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 4, 5, 6]]);
+    }));
+    return function fetchConfig() {
+      return _ref.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetchConfig();
+  }, []);
+  var handleChange = function handleChange(e) {
+    var _e$target = e.target,
+      name = _e$target.name,
+      value = _e$target.value,
+      type = _e$target.type,
+      checked = _e$target.checked;
+    setConfig(function (prev) {
+      return _objectSpread(_objectSpread({}, prev), {}, _defineProperty({}, name, type === "checkbox" ? checked : Number(value)));
+    });
+  };
+  var handleSave = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var response, data, firstError, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            _context2.p = 0;
+            setSaving(true);
+            setMessage("");
+            setError("");
+            _context2.n = 1;
+            return fetch("/api/superadmin/system-config", {
+              method: "PUT",
+              headers: requestHeaders,
+              body: JSON.stringify(config)
+            });
+          case 1:
+            response = _context2.v;
+            _context2.n = 2;
+            return response.json();
+          case 2:
+            data = _context2.v;
+            if (response.ok) {
+              _context2.n = 3;
+              break;
+            }
+            if (data.errors) {
+              firstError = Object.values(data.errors)[0][0];
+              setError(firstError);
+            } else {
+              setError(data.message || "Failed to update system configuration");
+            }
+            return _context2.a(2);
+          case 3:
+            setMessage(data.message || "System configuration updated successfully");
+            _context2.n = 5;
+            break;
+          case 4:
+            _context2.p = 4;
+            _t2 = _context2.v;
+            console.error(_t2);
+            setError("Server error while saving system configuration");
+          case 5:
+            _context2.p = 5;
+            setSaving(false);
+            return _context2.f(5);
+          case 6:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[0, 4, 5, 6]]);
+    }));
+    return function handleSave() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var handleReset = function handleReset() {
+    fetchConfig();
+    setMessage("");
+    setError("");
+  };
+  if (loading) {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+      className: "dashboard-main banking-dashboard system-config-page",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("section", {
+        className: "dashboard-panel",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+          className: "panel-content",
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+            children: "Loading system configuration..."
+          })
+        })
+      })
+    });
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("main", {
+    className: "dashboard-main banking-dashboard system-config-page",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("section", {
+      className: "dashboard-panel",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "panel-header system-config-header",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h3", {
+            children: "System Configuration"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+            className: "panel-subtitle",
+            children: "Manage system settings, limits, rules, and modules"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "system-config-actions",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: "sc-btn sc-btn-light",
+            onClick: handleReset,
+            disabled: saving,
+            children: "Reset"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
+            type: "button",
+            className: "sc-btn sc-btn-primary",
+            onClick: handleSave,
+            disabled: saving,
+            children: saving ? "Saving..." : "Save Changes"
+          })]
+        })]
+      }), message && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "system-config-message",
+        children: message
+      }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        className: "system-config-error",
+        children: error
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "system-config-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "system-config-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-card-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: "Transaction Limits"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Control financial thresholds across the system"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              htmlFor: "dailyTransferLimit",
+              children: "Daily Transfer Limit"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              id: "dailyTransferLimit",
+              name: "dailyTransferLimit",
+              type: "number",
+              value: config.dailyTransferLimit,
+              onChange: handleChange
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              htmlFor: "maxBillPayment",
+              children: "Maximum Bill Payment"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              id: "maxBillPayment",
+              name: "maxBillPayment",
+              type: "number",
+              value: config.maxBillPayment,
+              onChange: handleChange
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "system-config-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-card-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: "Security Rules"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Set password and session requirements"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              htmlFor: "minPasswordLength",
+              children: "Minimum Password Length"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              id: "minPasswordLength",
+              name: "minPasswordLength",
+              type: "number",
+              value: config.minPasswordLength,
+              onChange: handleChange
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-form-group",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("label", {
+              htmlFor: "sessionTimeout",
+              children: "Session Timeout (minutes)"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+              id: "sessionTimeout",
+              name: "sessionTimeout",
+              type: "number",
+              value: config.sessionTimeout,
+              onChange: handleChange
+            })]
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        className: "system-config-grid",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "system-config-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-card-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: "Access & Approval Rules"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Manage registration and account approval behavior"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-toggle-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "system-config-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Account Approval Required"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "system-config-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "accountApprovalRequired",
+                  checked: config.accountApprovalRequired,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "system-config-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "system-config-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Allow New Registration"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "system-config-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "allowRegistration",
+                  checked: config.allowRegistration,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "system-config-slider"
+                })]
+              })]
+            })]
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+          className: "system-config-card",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-card-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+              children: "Module Controls"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+              children: "Enable or disable major system modules"
+            })]
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+            className: "system-config-toggle-list",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "system-config-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Enable Transfers"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "system-config-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "enableTransfers",
+                  checked: config.enableTransfers,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "system-config-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "system-config-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Enable Bill Payments"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "system-config-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "enableBillPayments",
+                  checked: config.enableBillPayments,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "system-config-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "system-config-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Enable Reports Module"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "system-config-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "enableReportsModule",
+                  checked: config.enableReportsModule,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "system-config-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "system-config-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Enable Audit Logs"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "system-config-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "enableAuditLogs",
+                  checked: config.enableAuditLogs,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "system-config-slider"
+                })]
+              })]
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+              className: "system-config-toggle-row",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                children: "Maintenance Mode"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("label", {
+                className: "system-config-switch",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("input", {
+                  type: "checkbox",
+                  name: "maintenanceMode",
+                  checked: config.maintenanceMode,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("span", {
+                  className: "system-config-slider"
+                })]
+              })]
+            })]
+          })]
+        })]
+      })]
+    })
+  });
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SystemConfiguration);
+
+/***/ },
+
 /***/ "./resources/js/components/public/LandingPage/About.jsx"
 /*!**************************************************************!*\
   !*** ./resources/js/components/public/LandingPage/About.jsx ***!
@@ -10688,7 +14539,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_DashboardPage_components_Sidebar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../css/DashboardPage/components/Sidebar.css */ "./resources/css/DashboardPage/components/Sidebar.css");
 /* harmony import */ var _private_customer_Dashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../private/customer/Dashboard/components/Sidebarlist */ "./resources/js/components/private/customer/Dashboard/components/Sidebarlist.jsx");
 /* harmony import */ var _private_admin_AdminDashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../private/admin/AdminDashboard/components/Sidebarlist */ "./resources/js/components/private/admin/AdminDashboard/components/Sidebarlist.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _private_superadmin_SuperAdminDashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../private/superadmin/SuperAdminDashboard/components/Sidebarlist */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/Sidebarlist.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -10700,32 +14553,62 @@ function Sidebar(_ref) {
   var user = JSON.parse(localStorage.getItem("user"));
   var roleId = Number(user === null || user === void 0 ? void 0 : user.role_id);
   var SidebarComponent;
-  if (roleId === 2) {
+  if (roleId === 3) {
+    SidebarComponent = _private_superadmin_SuperAdminDashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_4__["default"];
+  } else if (roleId === 2) {
     SidebarComponent = _private_admin_AdminDashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_3__["default"];
   } else {
     SidebarComponent = _private_customer_Dashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_2__["default"];
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("aside", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("aside", {
     className: "dashboard-sidebar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
       className: "dashboard-brand",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
         className: "dashboard-brand-icon",
         children: "MB"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
           children: "MyBank"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
           children: "Online Banking"
         })]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(SidebarComponent, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(SidebarComponent, {
       activePage: activePage,
       setActivePage: setActivePage
     })]
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebar);
+
+/***/ },
+
+/***/ "./resources/js/components/utils/permission.js"
+/*!*****************************************************!*\
+  !*** ./resources/js/components/utils/permission.js ***!
+  \*****************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getUser: () => (/* binding */ getUser),
+/* harmony export */   hasPermission: () => (/* binding */ hasPermission)
+/* harmony export */ });
+var getUser = function getUser() {
+  try {
+    var stored = localStorage.getItem("user");
+    return stored ? JSON.parse(stored) : null;
+  } catch (error) {
+    return null;
+  }
+};
+var hasPermission = function hasPermission(permissionKey) {
+  var user = getUser();
+  var permissions = (user === null || user === void 0 ? void 0 : user.permissions) || [];
+  return permissions.includes(permissionKey);
+};
 
 /***/ },
 
@@ -10750,7 +14633,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_public_LandingPage_Register__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./components/public/LandingPage/Register */ "./resources/js/components/public/LandingPage/Register.jsx");
 /* harmony import */ var _components_private_customer_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/private/customer/Dashboard/Dashboard */ "./resources/js/components/private/customer/Dashboard/Dashboard.jsx");
 /* harmony import */ var _components_private_admin_AdminDashboard_AdminDashboard__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/private/admin/AdminDashboard/AdminDashboard */ "./resources/js/components/private/admin/AdminDashboard/AdminDashboard.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_private_superadmin_SuperAdminDashboard_SuperAdminDashboard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/private/superadmin/SuperAdminDashboard/SuperAdminDashboard */ "./resources/js/components/private/superadmin/SuperAdminDashboard/SuperAdminDashboard.jsx");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -10763,7 +14647,7 @@ __webpack_require__.r(__webpack_exports__);
 // Private pages
 
 
-// import SuperAdminDashboard from "./components/private/superadmin/SuperAdminDashboard/SuperAdminDashboard";
+
 
 // AUTH HELPERS
 
@@ -10776,62 +14660,70 @@ var isAuthenticated = function isAuthenticated() {
 };
 var PrivateRoute = function PrivateRoute(_ref) {
   var children = _ref.children;
-  return isAuthenticated() ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
+  return isAuthenticated() ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
     to: "/login"
   });
 };
 var CustomerRoute = function CustomerRoute(_ref2) {
   var children = _ref2.children;
   var user = getUser();
-  return Number(user === null || user === void 0 ? void 0 : user.role_id) === 1 ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
+  return Number(user === null || user === void 0 ? void 0 : user.role_id) === 1 ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
     to: "/login"
   });
 };
 var AdminRoute = function AdminRoute(_ref3) {
   var children = _ref3.children;
   var user = getUser();
-  return Number(user === null || user === void 0 ? void 0 : user.role_id) === 2 ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
+  return Number(user === null || user === void 0 ? void 0 : user.role_id) === 2 ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
     to: "/login"
   });
 };
-
-// const SuperAdminRoute = ({ children }) => {
-//   const user = getUser();
-//   return Number(user?.role_id) === 3 ? children : <Navigate to="/login" />;
-// };
-
+var SuperAdminRoute = function SuperAdminRoute(_ref4) {
+  var children = _ref4.children;
+  var user = getUser();
+  return Number(user === null || user === void 0 ? void 0 : user.role_id) === 3 ? children : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
+    to: "/login"
+  });
+};
 function Main() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.BrowserRouter, {
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Routes, {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.BrowserRouter, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Routes, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
         path: "/",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_public_LandingPage_LandingPage__WEBPACK_IMPORTED_MODULE_3__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_public_LandingPage_LandingPage__WEBPACK_IMPORTED_MODULE_3__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
         path: "/about",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_public_LandingPage_About__WEBPACK_IMPORTED_MODULE_4__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_public_LandingPage_About__WEBPACK_IMPORTED_MODULE_4__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
         path: "/login",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_public_LandingPage_Login__WEBPACK_IMPORTED_MODULE_5__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_public_LandingPage_Login__WEBPACK_IMPORTED_MODULE_5__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
         path: "/register",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_public_LandingPage_Register__WEBPACK_IMPORTED_MODULE_6__["default"], {})
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_public_LandingPage_Register__WEBPACK_IMPORTED_MODULE_6__["default"], {})
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
         path: "/dashboard",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(PrivateRoute, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(CustomerRoute, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_private_customer_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_7__["default"], {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(PrivateRoute, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(CustomerRoute, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_private_customer_Dashboard_Dashboard__WEBPACK_IMPORTED_MODULE_7__["default"], {})
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
         path: "/admin/dashboard",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(PrivateRoute, {
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(AdminRoute, {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(_components_private_admin_AdminDashboard_AdminDashboard__WEBPACK_IMPORTED_MODULE_8__["default"], {})
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(PrivateRoute, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(AdminRoute, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_private_admin_AdminDashboard_AdminDashboard__WEBPACK_IMPORTED_MODULE_8__["default"], {})
           })
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
+        path: "/superadmin/dashboard",
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(PrivateRoute, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(SuperAdminRoute, {
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(_components_private_superadmin_SuperAdminDashboard_SuperAdminDashboard__WEBPACK_IMPORTED_MODULE_9__["default"], {})
+          })
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Route, {
         path: "*",
-        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_9__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
+        element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_10__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_2__.Navigate, {
           to: "/"
         })
       })]
@@ -12964,7 +16856,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-page {\r\n  min-height: 100vh;\r\n  display: grid;\r\n  grid-template-columns: 260px 1fr;\r\n  background: #0b1020;\r\n  color: #fff;\r\n}\r\n\r\n.dashboard-content-wrapper {\r\n  display: flex;\r\n  flex-direction: column;\r\n  min-height: 100vh;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-page {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.custom-toast {\r\n  position: fixed;\r\n  top: 24px;\r\n  right: 24px;\r\n  z-index: 9999;\r\n  min-width: 260px;\r\n  max-width: 360px;\r\n  padding: 14px 18px;\r\n  border-radius: 14px;\r\n  color: #fff;\r\n  font-weight: 600;\r\n  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);\r\n  animation: slideInToast 0.3s ease;\r\n}\r\n\r\n.custom-toast.success {\r\n  background: linear-gradient(135deg, #16c997, #12b886);\r\n}\r\n\r\n.custom-toast.error {\r\n  background: linear-gradient(135deg, #ff6b6b, #fa5252);\r\n}\r\n\r\n@keyframes slideInToast {\r\n  from {\r\n    opacity: 0;\r\n    transform: translateY(-12px) translateX(20px);\r\n  }\r\n  to {\r\n    opacity: 1;\r\n    transform: translateY(0) translateX(0);\r\n  }\r\n}\r\n\r\n.recipient-preview {\r\n  margin-top: 10px;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.recipient-preview p {\r\n  color: #b6c0de;\r\n  font-size: 13px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.recipient-preview p:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.recipient-preview strong {\r\n  color: #ffffff;\r\n}\r\n\r\n.dashboard-page {\r\n  display: flex;\r\n  min-height: 100vh;\r\n  background: #081224;\r\n}\r\n\r\n.dashboard-content-wrapper {\r\n  flex: 1;\r\n  min-width: 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.dashboard-main {\r\n  flex: 1;\r\n  min-width: 0;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-page {\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  display: grid;\r\n  grid-template-columns: 260px 1fr;\r\n  background: #0b1020;\r\n  color: #fff;\r\n}\r\n\r\n.dashboard-content-wrapper {\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100vh;\r\n  overflow-y: auto;\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n  .dashboard-page {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}\r\n\r\n.custom-toast {\r\n  position: fixed;\r\n  top: 24px;\r\n  right: 24px;\r\n  z-index: 9999;\r\n  min-width: 260px;\r\n  max-width: 360px;\r\n  padding: 14px 18px;\r\n  border-radius: 14px;\r\n  color: #fff;\r\n  font-weight: 600;\r\n  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.25);\r\n  animation: slideInToast 0.3s ease;\r\n}\r\n\r\n.custom-toast.success {\r\n  background: linear-gradient(135deg, #16c997, #12b886);\r\n}\r\n\r\n.custom-toast.error {\r\n  background: linear-gradient(135deg, #ff6b6b, #fa5252);\r\n}\r\n\r\n@keyframes slideInToast {\r\n  from {\r\n    opacity: 0;\r\n    transform: translateY(-12px) translateX(20px);\r\n  }\r\n  to {\r\n    opacity: 1;\r\n    transform: translateY(0) translateX(0);\r\n  }\r\n}\r\n\r\n.recipient-preview {\r\n  margin-top: 10px;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.recipient-preview p {\r\n  color: #b6c0de;\r\n  font-size: 13px;\r\n  margin-bottom: 4px;\r\n}\r\n\r\n.recipient-preview p:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.recipient-preview strong {\r\n  color: #ffffff;\r\n}\r\n\r\n.dashboard-page {\r\n  display: flex;\r\n  height: 100vh;\r\n  overflow: hidden;\r\n  background: #081224;\r\n}\r\n\r\n.dashboard-content-wrapper {\r\n  flex: 1;\r\n  min-width: 0;\r\n  display: flex;\r\n  flex-direction: column;\r\n  height: 100vh;\r\n  overflow-y: auto;\r\n}\r\n\r\n.dashboard-main {\r\n  flex: 1;\r\n  min-width: 0;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13132,7 +17024,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-sidebar {\r\n  width: 280px;\r\n  min-width: 280px;\r\n  min-height: 100vh;\r\n  padding: 22px 18px;\r\n  background:\r\n    linear-gradient(180deg, rgba(11, 16, 32, 0.97), rgba(17, 22, 42, 0.97)),\r\n    rgba(255, 255, 255, 0.03);\r\n  border-right: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 22px;\r\n  position: relative;\r\n  box-sizing: border-box;\r\n  overflow-y: auto;\r\n}\r\n\r\n.dashboard-sidebar-top {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 16px;\r\n}\r\n\r\n.dashboard-brand {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding-bottom: 18px;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-brand-icon {\r\n  width: 46px;\r\n  height: 46px;\r\n  border-radius: 15px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  font-weight: 800;\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.2);\r\n  flex-shrink: 0;\r\n}\r\n\r\n.dashboard-brand-text h2 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 4px;\r\n  line-height: 1.1;\r\n}\r\n\r\n.dashboard-brand-text span {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n\r\n.dashboard-sidebar-profile {\r\n  margin-top: auto;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 16px 12px 0;\r\n  border-top: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-sidebar-avatar {\r\n  width: 42px;\r\n  height: 42px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 14px;\r\n  font-weight: 800;\r\n  flex-shrink: 0;\r\n}\r\n\r\n.dashboard-sidebar-userinfo h4 {\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  margin-bottom: 3px;\r\n}\r\n\r\n.dashboard-sidebar-userinfo p {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n@media (max-width: 1024px) {\r\n  .dashboard-sidebar {\r\n    width: 240px;\r\n  }\r\n\r\n  .dashboard-brand-text h2 {\r\n    font-size: 22px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .dashboard-sidebar {\r\n    width: 100%;\r\n    min-height: auto;\r\n    position: relative;\r\n    border-right: none;\r\n    border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n    padding: 16px;\r\n  }\r\n\r\n  .dashboard-sidebar-profile {\r\n    display: none;\r\n  }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-sidebar {\r\n  width: 280px;\r\n  min-width: 280px;\r\n  min-height: 100vh;\r\n  padding: 22px 18px;\r\n  background:\r\n    linear-gradient(180deg, rgba(11, 16, 32, 0.97), rgba(17, 22, 42, 0.97)),\r\n    rgba(255, 255, 255, 0.03);\r\n  border-right: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 22px;\r\n  position: relative;\r\n  box-sizing: border-box;\r\n  overflow-y: auto;\r\n}\r\n\r\n.dashboard-sidebar-top {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 16px;\r\n}\r\n\r\n.dashboard-brand {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding-bottom: 18px;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-brand-icon {\r\n  width: 46px;\r\n  height: 46px;\r\n  border-radius: 15px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  font-weight: 800;\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.2);\r\n  flex-shrink: 0;\r\n}\r\n\r\n.dashboard-brand-text h2 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 4px;\r\n  line-height: 1.1;\r\n}\r\n\r\n.dashboard-brand-text span {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n\r\n.dashboard-sidebar-profile {\r\n  margin-top: auto;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 16px 12px 0;\r\n  border-top: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-sidebar-avatar {\r\n  width: 42px;\r\n  height: 42px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 14px;\r\n  font-weight: 800;\r\n  flex-shrink: 0;\r\n}\r\n\r\n.dashboard-sidebar-userinfo h4 {\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  margin-bottom: 3px;\r\n}\r\n\r\n.dashboard-sidebar-userinfo p {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n@media (max-width: 1024px) {\r\n  .dashboard-sidebar {\r\n    width: 240px;\r\n  }\r\n\r\n  .dashboard-brand-text h2 {\r\n    font-size: 22px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .dashboard-sidebar {\r\n    width: 100%;\r\n    min-height: auto;\r\n    position: relative;\r\n    border-right: none;\r\n    border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n    padding: 16px;\r\n  }\r\n\r\n  .dashboard-sidebar-profile {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.dashboard-menu-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.dashboard-menu-item {\r\n  width: 100%;\r\n  border: 1px solid transparent;\r\n  background: transparent;\r\n  color: #c7d2f2;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 14px 14px;\r\n  border-radius: 14px;\r\n  cursor: pointer;\r\n  transition: all 0.2s ease;\r\n  text-align: left;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.dashboard-menu-item:hover {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n.dashboard-menu-item.active {\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.22), rgba(0, 207, 255, 0.16));\r\n  border-color: rgba(92, 103, 255, 0.35);\r\n  color: #ffffff;\r\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n.dashboard-menu-icon {\r\n  width: 18px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  flex-shrink: 0;\r\n  font-size: 15px;\r\n}\r\n\r\n.dashboard-menu-label {\r\n  flex: 1;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -13286,6 +17178,270 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".auth-right h2 {\r\n  font-size: 28px;
 
 /***/ },
 
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/SuperAdminOverview.css"
+/*!*******************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/SuperAdminOverview.css ***!
+  \*******************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".sa-grid-2 {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n  gap: 20px;\n  margin-bottom: 20px;\n}\n\n.sa-overview-header-panel {\n  margin-bottom: 20px;\n}\n\n.sa-live-badge-wrap {\n  display: flex;\n  flex-direction: column;\n  align-items: flex-end;\n  gap: 4px;\n}\n\n.sa-live-badge {\n  color: #22c55e;\n  font-weight: 700;\n}\n\n.sa-last-updated {\n  font-size: 13px;\n  color: #8ea0c8;\n}\n\n.sa-risk-card {\n  display: flex;\n  flex-direction: column;\n  gap: 14px;\n}\n\n.sa-risk-top {\n  display: flex;\n  align-items: center;\n  justify-content: space-between;\n}\n\n.sa-risk-pill {\n  padding: 6px 12px;\n  border-radius: 999px;\n  font-size: 13px;\n  font-weight: 600;\n}\n\n.sa-risk-bar {\n  width: 100%;\n  height: 14px;\n  background: rgba(255, 255, 255, 0.08);\n  border-radius: 999px;\n  overflow: hidden;\n}\n\n.sa-risk-fill {\n  height: 100%;\n  border-radius: 999px;\n}\n\n.risk-safe {\n  background: #22c55e;\n  color: white;\n}\n\n.risk-warning {\n  background: #f59e0b;\n  color: white;\n}\n\n.risk-critical {\n  background: #ef4444;\n  color: white;\n}\n\n.sa-risk-advice {\n  margin: 0;\n  color: #8ea0c8;\n}\n\n.sa-alert-list {\n  list-style: none;\n  padding: 0;\n  margin: 0;\n  display: grid;\n  gap: 12px;\n}\n\n.sa-alert-item {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  color: #8ea0c8;\n}\n\n.sa-alert-dot {\n  width: 10px;\n  height: 10px;\n  border-radius: 50%;\n  background: #f59e0b;\n  flex-shrink: 0;\n}\n\n.sa-chart-box {\n  width: 100%;\n  min-height: 300px;\n}\n\n.sa-overview-list {\n  margin: 0;\n  padding-left: 18px;\n  line-height: 1.9;\n  color: #8ea0c8;\n}\n\n.sa-error-text {\n  color: #ef4444;\n}\n\n@media (max-width: 992px) {\n  .sa-grid-2 {\n    grid-template-columns: 1fr;\n  }\n\n  .sa-live-badge-wrap {\n    align-items: flex-start;\n    margin-top: 10px;\n  }\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/BackupRestore.css"
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/BackupRestore.css ***!
+  \*************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".br-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 20px;\n    margin-top: 20px;\n}\n\n.br-card {\n    padding: 20px;\n    border-radius: 16px;\n    background: radial-gradient(circle at top right, rgba(108, 99, 255, 0.18), transparent 28%),\n        linear-gradient(180deg, rgba(12, 18, 40, 0.96), rgba(9, 14, 34, 0.98));\n    border: 1px solid rgba(255, 255, 255, 0.08);\n}\n\n.br-card h4 {\n    margin-bottom: 10px;\n}\n\n.br-card p {\n    color: #8ea0c8;\n    font-size: 13px;\n}\n\n.br-card button {\n    margin-top: 12px;\n    padding: 10px 14px;\n    border-radius: 10px;\n    border: none;\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n    color: white;\n    cursor: pointer;\n}\n\n.br-success {\n    color: #00f5a0;\n    margin-top: 10px;\n}\n\n.br-error {\n    color: #ff4d6d;\n    margin-top: 10px;\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/FullAuditLogs.css"
+/*!*************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/FullAuditLogs.css ***!
+  \*************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".full-audit-logs-page {\n    color: #ffffff;\n}\n\n.fal-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    gap: 16px;\n}\n\n.fal-header-actions {\n    display: flex;\n    gap: 10px;\n    flex-wrap: wrap;\n}\n\n.fal-filter-grid {\n    display: grid;\n    grid-template-columns: 2fr 1fr 1fr 1fr auto auto;\n    gap: 12px;\n    margin: 18px 0 22px;\n}\n\n.fal-input,\n.fal-select {\n    width: 100%;\n    height: 42px;\n    padding: 0 14px;\n    border-radius: 12px;\n    border: 1px solid rgba(255, 255, 255, 0.08);\n    background: rgba(12, 22, 46, 0.72);\n    color: #ffffff;\n    outline: none;\n    box-sizing: border-box;\n}\n\n.fal-input::-moz-placeholder {\n    color: #8ea0c8;\n}\n\n.fal-input::placeholder {\n    color: #8ea0c8;\n}\n\n.fal-input:focus,\n.fal-select:focus {\n    border-color: rgba(59, 130, 246, 0.4);\n    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);\n}\n\n.fal-btn {\n    height: 42px;\n    padding: 0 16px;\n    border: none;\n    border-radius: 12px;\n    font-size: 13px;\n    font-weight: 600;\n    cursor: pointer;\n    transition: 0.2s ease;\n}\n\n.fal-btn:hover {\n    transform: translateY(-1px);\n}\n\n.fal-btn-primary {\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n    color: #ffffff;\n}\n\n.fal-btn-light {\n    background: rgba(255, 255, 255, 0.08);\n    color: #dbeafe;\n}\n\n.fal-table-panel {\n    background: radial-gradient(circle at top right,\n            rgba(108, 99, 255, 0.18),\n            transparent 28%),\n        linear-gradient(180deg,\n            rgba(12, 18, 40, 0.96),\n            rgba(9, 14, 34, 0.98));\n    border: 1px solid rgba(66, 133, 244, 0.14);\n    border-radius: 18px;\n    padding: 0;\n    overflow: hidden;\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);\n}\n\n.fal-table-wrap {\n    overflow-x: auto;\n}\n\n.fal-table {\n    width: 100%;\n    border-collapse: collapse;\n}\n\n.fal-table th,\n.fal-table td {\n    padding: 15px 14px;\n    text-align: left;\n    font-size: 14px;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n    vertical-align: middle;\n}\n\n.fal-table th {\n    color: #8fb3ff;\n    font-weight: 600;\n}\n\n.fal-table td {\n    color: #ffffff;\n}\n\n.fal-table tr:hover {\n    background: rgba(255, 255, 255, 0.03);\n}\n\n.fal-user-cell {\n    display: grid;\n    gap: 4px;\n}\n\n.fal-user-name {\n    font-weight: 600;\n    color: #ffffff;\n}\n\n.fal-user-email {\n    font-size: 12px;\n    color: #8ea0c8;\n}\n\n.fal-target-cell {\n    display: grid;\n    gap: 4px;\n}\n\n.fal-target-cell span {\n    color: #ffffff;\n}\n\n.fal-target-cell small {\n    color: #8ea0c8;\n    font-size: 12px;\n}\n\n.fal-action-badge {\n    display: inline-flex;\n    align-items: center;\n    padding: 6px 12px;\n    border-radius: 999px;\n    background: rgba(59, 130, 246, 0.16);\n    color: #8fd3ff;\n    font-size: 12px;\n    font-weight: 700;\n}\n\n.fal-description {\n    min-width: 220px;\n    color: #dbeafe;\n}\n\n.fal-empty {\n    text-align: center;\n    color: #8ea0c8;\n    padding: 24px !important;\n}\n\n.fal-toast {\n    position: fixed;\n    right: 20px;\n    bottom: 20px;\n    padding: 14px 18px;\n    border-radius: 12px;\n    color: #ffffff;\n    font-size: 13px;\n    font-weight: 600;\n    z-index: 1100;\n    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);\n}\n\n.fal-toast.success {\n    background: #00c98d;\n}\n\n.fal-toast.error {\n    background: #ff4d6d;\n}\n\n@media (max-width: 1100px) {\n    .fal-filter-grid {\n        grid-template-columns: 1fr 1fr;\n    }\n}\n\n@media (max-width: 768px) {\n    .fal-header {\n        flex-direction: column;\n        align-items: stretch;\n    }\n\n    .fal-header-actions {\n        flex-direction: column;\n    }\n\n    .fal-filter-grid {\n        grid-template-columns: 1fr;\n    }\n\n    .fal-btn {\n        width: 100%;\n    }\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/ManageAdmins.css"
+/*!************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/ManageAdmins.css ***!
+  \************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".manage-admins-page {\n    color: #ffffff;\n}\n\n.manage-admins-toolbar {\n    display: flex;\n    gap: 12px;\n    margin: 18px 0 22px;\n    flex-wrap: wrap;\n    align-items: center;\n}\n\n.manage-admins-search {\n    flex: 1;\n    min-width: 240px;\n    height: 40px;\n    padding: 0 14px;\n    border-radius: 12px;\n    border: 1px solid rgba(255, 255, 255, 0.08);\n    background: rgba(20, 30, 60, 0.45);\n    color: #ffffff;\n    outline: none;\n}\n\n.manage-admins-search::-moz-placeholder {\n    color: #8ea0c8;\n}\n\n.manage-admins-search::placeholder {\n    color: #8ea0c8;\n}\n\n.manage-admins-create-btn,\n.manage-admins-clear-btn,\n.manage-admins-activate-btn,\n.manage-admins-suspend-btn {\n    height: 40px;\n    padding: 0 16px;\n    border: none;\n    border-radius: 12px;\n    font-size: 13px;\n    font-weight: 600;\n    cursor: pointer;\n    transition: 0.2s ease;\n}\n\n.manage-admins-create-btn {\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n    color: #ffffff;\n}\n\n.manage-admins-clear-btn {\n    background: rgba(255, 255, 255, 0.08);\n    color: #dbeafe;\n}\n\n.manage-admins-activate-btn {\n    background: linear-gradient(90deg, #4facfe, #00f2fe);\n    color: #fff;\n}\n\n.manage-admins-suspend-btn {\n    background: linear-gradient(90deg, #ff416c, #ff4b2b);\n    color: #fff;\n}\n\n.manage-admins-create-btn:hover,\n.manage-admins-clear-btn:hover,\n.manage-admins-activate-btn:hover,\n.manage-admins-suspend-btn:hover {\n    transform: translateY(-1px);\n}\n\n.manage-admins-table-wrap {\n    overflow-x: auto;\n}\n\n.manage-admins-table {\n    width: 100%;\n    border-collapse: collapse;\n}\n\n.manage-admins-table th,\n.manage-admins-table td {\n    padding: 16px 12px;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n    text-align: left;\n    font-size: 14px;\n}\n\n.manage-admins-table th {\n    color: #8fb3ff;\n    font-weight: 600;\n    font-size: 13px;\n}\n\n.manage-admins-table td {\n    color: #e6edff;\n    font-size: 14px;\n}\n\n.manage-admins-table tr:hover {\n    background: rgba(255, 255, 255, 0.04);\n}\n\n.manage-admins-empty {\n    text-align: center;\n    color: #8ea0c8;\n}\n\n.manage-admins-status {\n    display: inline-flex;\n    align-items: center;\n    padding: 6px 12px;\n    border-radius: 999px;\n    font-size: 12px;\n    font-weight: 700;\n}\n\n.status-active {\n    background: rgba(0, 255, 163, 0.15);\n    color: #00ffa6;\n}\n\n.status-suspended {\n    background: rgba(255, 77, 109, 0.15);\n    color: #ff4d6d;\n}\n\n.manage-admins-actions {\n    display: flex;\n    gap: 10px;\n    flex-wrap: wrap;\n}\n\n.manage-admins-modal-overlay {\n    position: fixed;\n    inset: 0;\n    background: rgba(3, 8, 20, 0.72);\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    z-index: 1000;\n    padding: 20px;\n}\n\n.manage-admins-create-modal,\n.manage-admins-confirm-modal {\n    width: 100%;\n    max-width: 460px;\n    background: radial-gradient(circle at top right,\n            rgba(108, 99, 255, 0.18),\n            transparent 28%),\n        linear-gradient(180deg,\n            rgba(12, 18, 40, 0.96),\n            rgba(9, 14, 34, 0.98));\n    border: 1px solid #32354a;\n    border-radius: 18px;\n    padding: 22px;\n    box-shadow: 0 25px 70px rgba(0, 0, 0, 0.45);\n}\n\n.manage-admins-create-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    margin-bottom: 18px;\n    gap: 12px;\n}\n\n.manage-admins-create-header h3,\n.manage-admins-confirm-modal h3 {\n    margin: 0 0 6px;\n    font-size: 22px;\n    color: #ffffff;\n}\n\n.manage-admins-create-header p,\n.manage-admins-confirm-modal p {\n    margin: 0;\n    color: #8ea0c8;\n    font-size: 13px;\n    line-height: 1.5;\n}\n\n.manage-admins-close-btn {\n    width: 34px;\n    height: 34px;\n    border: none;\n    border-radius: 10px;\n    background: rgba(255, 255, 255, 0.08);\n    color: #ffffff;\n    cursor: pointer;\n}\n\n.manage-admins-form {\n    display: grid;\n    gap: 16px;\n}\n\n.manage-admins-form-group {\n    display: grid;\n    gap: 8px;\n}\n\n.manage-admins-form-group label {\n    font-size: 13px;\n    font-weight: 600;\n    color: #d7e6ff;\n}\n\n.manage-admins-form-group input {\n    width: 100%;\n    height: 48px;\n    padding: 0 16px;\n    border-radius: 12px;\n    border: 1px solid rgba(143, 179, 255, 0.18);\n    background: rgba(8, 16, 38, 0.88);\n    color: #ffffff;\n    outline: none;\n    font-size: 14px;\n    line-height: 1;\n    transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;\n    box-sizing: border-box;\n}\n\n.manage-admins-form-group input,\n.manage-admins-search {\n    background: rgba(12, 22, 46, 0.85);\n    border: 1px solid rgba(255, 255, 255, 0.08);\n}\n\n.manage-admins-form-group input::-moz-placeholder {\n    color: rgba(142, 160, 200, 0.78);\n}\n\n.manage-admins-form-group input::placeholder {\n    color: rgba(142, 160, 200, 0.78);\n}\n\ns .manage-admins-form-group input:focus,\n.manage-admins-search:focus {\n    border-color: rgba(34, 193, 255, 0.65);\n    box-shadow: 0 0 0 3px rgba(34, 193, 255, 0.14);\n    background: rgba(10, 20, 44, 0.96);\n}\n\n.manage-admins-form-actions,\n.manage-admins-confirm-actions {\n    display: flex;\n    justify-content: flex-end;\n    gap: 10px;\n    margin-top: 8px;\n}\n\n.manage-admins-confirm-modal {\n    text-align: center;\n}\n\n.manage-admins-toast {\n    position: fixed;\n    right: 20px;\n    bottom: 20px;\n    padding: 14px 18px;\n    border-radius: 12px;\n    color: #ffffff;\n    font-size: 13px;\n    font-weight: 600;\n    z-index: 1100;\n    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.3);\n}\n\n.manage-admins-toast.success {\n    background: #00c98d;\n}\n\n.manage-admins-toast.error {\n    background: #ff4d6d;\n}\n\n@media (max-width: 768px) {\n\n    .manage-admins-toolbar,\n    .manage-admins-actions,\n    .manage-admins-form-actions,\n    .manage-admins-confirm-actions {\n        flex-direction: column;\n    }\n\n    .manage-admins-create-btn,\n    .manage-admins-clear-btn,\n    .manage-admins-activate-btn,\n    .manage-admins-suspend-btn {\n        width: 100%;\n    }\n}\n\n.manage-admins-panel {\n    background: radial-gradient(circle at top right,\n            rgba(108, 99, 255, 0.18),\n            transparent 28%),\n        linear-gradient(180deg,\n            rgba(12, 18, 40, 0.96),\n            rgba(9, 14, 34, 0.98));\n    border: 1px solid rgba(66, 133, 244, 0.14);\n    border-radius: 18px;\n    padding: 20px;\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);\n}\n\n.dashboard-panel {\n    background: radial-gradient(circle at top right,\n            rgba(108, 99, 255, 0.18),\n            transparent 28%),\n        linear-gradient(180deg,\n            rgba(12, 18, 40, 0.96),\n            rgba(9, 14, 34, 0.98));\n\n    border: 1px solid rgba(66, 133, 244, 0.14);\n    border-radius: 20px;\n    padding: 20px;\n\n    box-shadow: 0 14px 35px rgba(0, 0, 0, 0.2);\n}\n\n.panel-header {\n    border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n    padding-bottom: 12px;\n    margin-bottom: 18px;\n}\n\n.premium-panel {\n    background: radial-gradient(circle at top right,\n            rgba(108, 99, 255, 0.18),\n            transparent 28%),\n        linear-gradient(180deg,\n            rgba(12, 18, 40, 0.96),\n            rgba(9, 14, 34, 0.98));\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/RolesPermissions.css"
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/RolesPermissions.css ***!
+  \****************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".roles-page {\n    color: #ffffff;\n}\n\n.roles-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    gap: 16px;\n}\n\n.roles-save-btn {\n    height: 42px;\n    padding: 0 16px;\n    border: none;\n    border-radius: 12px;\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n    color: #ffffff;\n    font-size: 13px;\n    font-weight: 600;\n    cursor: pointer;\n    transition: 0.2s ease;\n}\n\n.roles-save-btn:hover {\n    transform: translateY(-1px);\n}\n\n.roles-message,\n.roles-error {\n    margin: 18px 0;\n    padding: 12px 14px;\n    border-radius: 12px;\n    font-size: 13px;\n    font-weight: 600;\n}\n\n.roles-message {\n    background: rgba(0, 201, 141, 0.14);\n    border: 1px solid rgba(0, 201, 141, 0.2);\n    color: #00f5a0;\n}\n\n.roles-error {\n    background: rgba(241, 65, 108, 0.14);\n    border: 1px solid rgba(241, 65, 108, 0.2);\n    color: #ff4d6d;\n}\n\n.roles-grid {\n    display: grid;\n    grid-template-columns: repeat(3, minmax(0, 1fr));\n    gap: 20px;\n    margin-top: 18px;\n}\n\n.roles-card {\n    background: radial-gradient(circle at top right,\n            rgba(108, 99, 255, 0.18),\n            transparent 28%),\n        linear-gradient(180deg,\n            rgba(12, 18, 40, 0.96),\n            rgba(9, 14, 34, 0.98));\n    border: 1px solid rgba(66, 133, 244, 0.14);\n    border-radius: 18px;\n    padding: 18px;\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);\n}\n\n.roles-card-header {\n    margin-bottom: 18px;\n}\n\n.roles-card-header h4 {\n    margin: 0 0 6px;\n    font-size: 20px;\n    color: #ffffff;\n}\n\n.roles-card-header p {\n    margin: 0;\n    color: #8ea0c8;\n    font-size: 13px;\n    line-height: 1.5;\n}\n\n.roles-permission-list {\n    display: grid;\n    gap: 12px;\n}\n\n.roles-permission-row {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 12px;\n    padding: 10px 0;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n}\n\n.roles-permission-row:last-child {\n    border-bottom: none;\n}\n\n.roles-permission-row span {\n    font-size: 13px;\n    color: #dbeafe;\n}\n\n.roles-switch {\n    position: relative;\n    display: inline-block;\n    width: 46px;\n    height: 24px;\n    flex-shrink: 0;\n}\n\n.roles-switch input {\n    opacity: 0;\n    width: 0;\n    height: 0;\n}\n\n.roles-slider {\n    position: absolute;\n    inset: 0;\n    cursor: pointer;\n    background: rgba(255, 255, 255, 0.14);\n    border-radius: 999px;\n    transition: 0.25s ease;\n}\n\n.roles-slider::before {\n    content: \"\";\n    position: absolute;\n    width: 18px;\n    height: 18px;\n    left: 3px;\n    top: 3px;\n    background: #ffffff;\n    border-radius: 50%;\n    transition: 0.25s ease;\n}\n\n.roles-switch input:checked+.roles-slider {\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n}\n\n.roles-switch input:checked+.roles-slider::before {\n    transform: translateX(22px);\n}\n\n@media (max-width: 1100px) {\n    .roles-grid {\n        grid-template-columns: 1fr;\n    }\n}\n\n@media (max-width: 768px) {\n    .roles-header {\n        flex-direction: column;\n        align-items: stretch;\n    }\n\n    .roles-save-btn {\n        width: 100%;\n    }\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SecuritySettings.css"
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SecuritySettings.css ***!
+  \****************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".security-settings-page {\n    color: #ffffff;\n}\n\n.security-settings-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    gap: 16px;\n}\n\n.security-settings-actions {\n    display: flex;\n    gap: 10px;\n    flex-wrap: wrap;\n}\n\n.security-settings-message,\n.security-settings-error {\n    margin: 18px 0;\n    padding: 12px 14px;\n    border-radius: 12px;\n    font-size: 13px;\n    font-weight: 600;\n}\n\n.security-settings-message {\n    background: rgba(0, 201, 141, 0.14);\n    border: 1px solid rgba(0, 201, 141, 0.2);\n    color: #00f5a0;\n}\n\n.security-settings-error {\n    background: rgba(241, 65, 108, 0.14);\n    border: 1px solid rgba(241, 65, 108, 0.2);\n    color: #ff4d6d;\n}\n\n.security-settings-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 20px;\n    margin-top: 20px;\n}\n\n.security-settings-card {\n    background: radial-gradient(circle at top right,\n            rgba(108, 99, 255, 0.18),\n            transparent 28%),\n        linear-gradient(180deg,\n            rgba(12, 18, 40, 0.96),\n            rgba(9, 14, 34, 0.98));\n    border: 1px solid rgba(66, 133, 244, 0.14);\n    border-radius: 18px;\n    padding: 18px;\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);\n}\n\n.security-settings-card-header {\n    margin-bottom: 18px;\n}\n\n.security-settings-card-header h4 {\n    margin: 0 0 6px;\n    font-size: 20px;\n    color: #ffffff;\n}\n\n.security-settings-card-header p {\n    margin: 0;\n    color: #8ea0c8;\n    font-size: 13px;\n    line-height: 1.5;\n}\n\n.security-settings-form-group {\n    display: grid;\n    gap: 8px;\n    margin-bottom: 16px;\n}\n\n.security-settings-form-group label {\n    font-size: 13px;\n    font-weight: 600;\n    color: #d7e6ff;\n}\n\n.security-settings-form-group input {\n    width: 100%;\n    height: 44px;\n    padding: 0 14px;\n    border-radius: 12px;\n    border: 1px solid rgba(255, 255, 255, 0.08);\n    background: rgba(12, 22, 46, 0.85);\n    color: #ffffff;\n    outline: none;\n    box-sizing: border-box;\n}\n\n.security-settings-form-group input:focus {\n    border-color: rgba(59, 130, 246, 0.4);\n    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);\n}\n\n.security-settings-toggle-list {\n    display: grid;\n    gap: 14px;\n}\n\n.security-settings-toggle-row {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 14px;\n    padding: 10px 0;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n}\n\n.security-settings-toggle-row:last-child {\n    border-bottom: none;\n}\n\n.security-settings-toggle-row span {\n    font-size: 13px;\n    color: #dbeafe;\n}\n\n.security-settings-switch {\n    position: relative;\n    display: inline-block;\n    width: 46px;\n    height: 24px;\n    flex-shrink: 0;\n}\n\n.security-settings-switch input {\n    opacity: 0;\n    width: 0;\n    height: 0;\n}\n\n.security-settings-slider {\n    position: absolute;\n    inset: 0;\n    cursor: pointer;\n    background: rgba(255, 255, 255, 0.14);\n    border-radius: 999px;\n    transition: 0.25s ease;\n}\n\n.security-settings-slider::before {\n    content: \"\";\n    position: absolute;\n    width: 18px;\n    height: 18px;\n    left: 3px;\n    top: 3px;\n    background: #ffffff;\n    border-radius: 50%;\n    transition: 0.25s ease;\n}\n\n.security-settings-switch input:checked+.security-settings-slider {\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n}\n\n.security-settings-switch input:checked+.security-settings-slider::before {\n    transform: translateX(22px);\n}\n\n.security-settings-overview-list {\n    display: grid;\n    gap: 14px;\n}\n\n.security-settings-overview-item {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 12px;\n    padding: 12px 0;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n}\n\n.security-settings-overview-item:last-child {\n    border-bottom: none;\n}\n\n.security-settings-overview-item span {\n    color: #8ea0c8;\n    font-size: 13px;\n}\n\n.security-settings-overview-item strong {\n    color: #ffffff;\n    font-size: 13px;\n    font-weight: 700;\n}\n\n.ss-btn {\n    height: 42px;\n    padding: 0 16px;\n    border: none;\n    border-radius: 12px;\n    font-size: 13px;\n    font-weight: 600;\n    cursor: pointer;\n    transition: 0.2s ease;\n}\n\n.ss-btn:hover {\n    transform: translateY(-1px);\n}\n\n.ss-btn-primary {\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n    color: #ffffff;\n}\n\n.ss-btn-light {\n    background: rgba(255, 255, 255, 0.08);\n    color: #dbeafe;\n}\n\n@media (max-width: 992px) {\n    .security-settings-grid {\n        grid-template-columns: 1fr;\n    }\n}\n\n@media (max-width: 768px) {\n    .security-settings-header {\n        flex-direction: column;\n        align-items: stretch;\n    }\n\n    .security-settings-actions {\n        flex-direction: column;\n    }\n\n    .ss-btn {\n        width: 100%;\n    }\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/Sidebarlist.css"
+/*!***********************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/Sidebarlist.css ***!
+  \***********************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* SECTION TITLE */\r\n.sidebar-section-title {\r\n  font-size: 11px;\r\n  text-transform: uppercase;\r\n  letter-spacing: 1px;\r\n  color: #6f7da8;\r\n  margin: 18px 12px 8px;\r\n}\r\n\r\n/* MENU WRAPPER */\r\n.dashboard-menu {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 6px;\r\n}\r\n\r\n/* BUTTON */\r\n.dashboard-menu-btn {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n\r\n  background: transparent;\r\n  border: 1px solid transparent;\r\n\r\n  color: #a8b3d9;\r\n  font-size: 14px;\r\n  font-weight: 500;\r\n\r\n  cursor: pointer;\r\n  transition: all 0.25s ease;\r\n}\r\n\r\n/* ICON */\r\n.menu-icon {\r\n  font-size: 16px;\r\n  width: 20px;\r\n  text-align: center;\r\n}\r\n\r\n/* TEXT */\r\n.menu-text {\r\n  flex: 1;\r\n  text-align: left;\r\n}\r\n\r\n/* HOVER */\r\n.dashboard-menu-btn:hover {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n/* ACTIVE */\r\n.dashboard-menu-btn.active {\r\n  background: linear-gradient(135deg, #1e2b4d, #243566);\r\n  color: #ffffff;\r\n  border: 1px solid rgba(0, 207, 255, 0.2);\r\n  box-shadow: 0 6px 18px rgba(0, 207, 255, 0.15);\r\n}\r\n\r\n/* LOGOUT */\r\n.logout-menu {\r\n  margin-top: 10px;\r\n  color: #ff6b6b;\r\n  border: 1px solid rgba(255, 107, 107, 0.2);\r\n}\r\n\r\n.logout-menu:hover {\r\n  background: rgba(255, 107, 107, 0.1);\r\n  color: #ff8787;\r\n}\r\n\r\n/* FOOTER */\r\n.dashboard-sidebar-footer {\r\n  margin-top: auto;\r\n  padding: 16px 10px;\r\n}\r\n\r\n.logout-btn.secondary-btn {\r\n  display: block;\r\n  text-align: center;\r\n  padding: 10px;\r\n  border-radius: 10px;\r\n\r\n  background: rgba(255,255,255,0.05);\r\n  color: #8f9bc1;\r\n\r\n  text-decoration: none;\r\n  font-size: 13px;\r\n\r\n  transition: 0.2s ease;\r\n}\r\n\r\n.logout-btn.secondary-btn:hover {\r\n  background: rgba(255,255,255,0.1);\r\n  color: #ffffff;\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdminOverviewCharts.css"
+/*!************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdminOverviewCharts.css ***!
+  \************************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".sa-chart-grid {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    gap: 20px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.sa-panel-card {\r\n    background: radial-gradient(circle at top right,\r\n            rgba(108, 99, 255, 0.18),\r\n            transparent 28%),\r\n        linear-gradient(180deg,\r\n            rgba(12, 18, 40, 0.96),\r\n            rgba(9, 14, 34, 0.98));\r\n    border: 1px solid rgba(66, 133, 244, 0.14);\r\n    border-radius: 22px;\r\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);\r\n}\r\n\r\n.sa-panel-badge {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    min-width: 86px;\r\n    height: 30px;\r\n    padding: 0 12px;\r\n    border-radius: 999px;\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    color: #ffffff;\r\n    background: rgba(59, 130, 246, 0.18);\r\n}\r\n\r\n.sa-chart-box {\r\n    width: 100%;\r\n    min-height: 300px;\r\n}\r\n\r\n.sa-risk-card {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 14px;\r\n}\r\n\r\n.sa-risk-top {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n}\r\n\r\n.sa-risk-top h4 {\r\n    margin: 0;\r\n    font-size: 22px;\r\n    color: #ffffff;\r\n}\r\n\r\n.sa-risk-pill {\r\n    padding: 6px 12px;\r\n    border-radius: 999px;\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    color: #ffffff;\r\n}\r\n\r\n.sa-risk-bar {\r\n    width: 100%;\r\n    height: 14px;\r\n    background: rgba(255, 255, 255, 0.08);\r\n    border-radius: 999px;\r\n    overflow: hidden;\r\n}\r\n\r\n.sa-risk-fill {\r\n    height: 100%;\r\n    border-radius: 999px;\r\n}\r\n\r\n.risk-safe {\r\n    background: #19d1c3;\r\n}\r\n\r\n.risk-warning {\r\n    background: #f59e0b;\r\n}\r\n\r\n.risk-critical {\r\n    background: #ef4444;\r\n}\r\n\r\n.sa-risk-advice {\r\n    margin: 0;\r\n    color: #8ea0c8;\r\n    line-height: 1.7;\r\n}\r\n\r\n.sa-alert-list {\r\n    list-style: none;\r\n    padding: 0;\r\n    margin: 0;\r\n    display: grid;\r\n    gap: 12px;\r\n}\r\n\r\n.sa-alert-item {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    gap: 10px;\r\n    color: #8ea0c8;\r\n    line-height: 1.6;\r\n}\r\n\r\n.sa-alert-dot {\r\n    width: 10px;\r\n    height: 10px;\r\n    margin-top: 7px;\r\n    border-radius: 50%;\r\n    background: #19d1c3;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.sa-error-text {\r\n    color: #ef4444;\r\n}\r\n\r\n@media (max-width: 992px) {\r\n    .sa-chart-grid {\r\n        grid-template-columns: 1fr;\r\n    }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdminSummaryCards.css"
+/*!**********************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdminSummaryCards.css ***!
+  \**********************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".sa-summary-row {\r\n    display: grid;\r\n    grid-template-columns: repeat(4, minmax(0, 1fr));\r\n    gap: 16px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.sa-summary-box {\r\n    background: radial-gradient(circle at top right,\r\n            rgba(108, 99, 255, 0.18),\r\n            transparent 28%),\r\n        linear-gradient(180deg,\r\n            rgba(12, 18, 40, 0.96),\r\n            rgba(9, 14, 34, 0.98));\r\n    border: 1px solid rgba(66, 133, 244, 0.14);\r\n    border-radius: 18px;\r\n    padding: 16px;\r\n    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n.sa-summary-head {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    margin-bottom: 12px;\r\n}\r\n\r\n.sa-summary-title-wrap {\r\n    display: flex;\r\n    align-items: center;\r\n    gap: 8px;\r\n}\r\n\r\n.sa-summary-icon {\r\n    font-size: 15px;\r\n}\r\n\r\n.sa-summary-title {\r\n    font-size: 13px;\r\n    color: #8fb3ff;\r\n}\r\n\r\n.sa-summary-more {\r\n    border: none;\r\n    background: transparent;\r\n    color: #8ea0c8;\r\n    font-size: 15px;\r\n    cursor: pointer;\r\n}\r\n\r\n.sa-summary-body h3 {\r\n    margin: 0 0 6px;\r\n    font-size: 32px;\r\n    line-height: 1.1;\r\n    color: #ffffff;\r\n}\r\n\r\n.sa-summary-trend {\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n}\r\n\r\n.sa-positive-trend {\r\n    color: #00d7b9;\r\n}\r\n\r\n.sa-warning-trend {\r\n    color: #f59e0b;\r\n}\r\n\r\n.sa-danger-trend {\r\n    color: #ef4444;\r\n}\r\n\r\n.sa-summary-subtext {\r\n    margin-top: 10px;\r\n    font-size: 12px;\r\n    color: #8ea0c8;\r\n}\r\n\r\n.sa-summary-action-box {\r\n    cursor: pointer;\r\n    background: linear-gradient(180deg, #16244d 0%, #0f1a3b 100%);\r\n}\r\n\r\n@media (max-width: 1100px) {\r\n    .sa-summary-row {\r\n        grid-template-columns: repeat(2, minmax(0, 1fr));\r\n    }\r\n}\r\n\r\n@media (max-width: 640px) {\r\n    .sa-summary-row {\r\n        grid-template-columns: 1fr;\r\n    }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdmindashboard.css"
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdmindashboard.css ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "/* =========================================\r\n   SUPERADMIN OVERVIEW\r\n========================================= */\r\n\r\n/* ---------- SUMMARY CARDS ---------- */\r\n.sa-summary-row {\r\n  width: 100%;\r\n  display: grid;\r\n  grid-template-columns: repeat(4, minmax(220px, 1fr));\r\n  gap: 14px;\r\n  align-items: stretch;\r\n}\r\n\r\n.sa-summary-box {\r\n  min-width: 0;\r\n  height: 110px;\r\n  min-height: 110px;\r\n  padding: 12px 14px;\r\n  border-radius: 14px;\r\n  box-sizing: border-box;\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n\r\n  background: linear-gradient(180deg, #0b173a 0%, #0a1533 100%);\r\n  border: 1px solid rgba(255, 255, 255, 0.06);\r\n  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);\r\n}\r\n\r\n.sa-summary-head {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 10px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.sa-summary-title-wrap {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 8px;\r\n  min-width: 0;\r\n}\r\n\r\n.sa-summary-icon {\r\n  font-size: 13px;\r\n  line-height: 1;\r\n}\r\n\r\n.sa-summary-title {\r\n  color: #8ea0c8;\r\n  font-size: 11px;\r\n  white-space: nowrap;\r\n  overflow: hidden;\r\n  text-overflow: ellipsis;\r\n}\r\n\r\n.sa-summary-more {\r\n  border: none;\r\n  background: transparent;\r\n  color: #7f90ba;\r\n  font-size: 14px;\r\n  cursor: pointer;\r\n  padding: 0;\r\n  line-height: 1;\r\n}\r\n\r\n.sa-summary-body {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 6px;\r\n  flex-wrap: wrap;\r\n}\r\n\r\n.sa-summary-body h3 {\r\n  margin: 0;\r\n  color: #ffffff;\r\n  font-size: 20px;\r\n  line-height: 1;\r\n  white-space: nowrap;\r\n}\r\n\r\n.sa-summary-trend {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 18px;\r\n  padding: 2px 6px;\r\n  border-radius: 999px;\r\n  font-size: 10px;\r\n  font-weight: 700;\r\n}\r\n\r\n.sa-positive-trend {\r\n  background: rgba(17, 217, 197, 0.14);\r\n  color: #11d9c5;\r\n}\r\n\r\n.sa-negative-trend {\r\n  background: rgba(255, 107, 138, 0.14);\r\n  color: #ff6b8a;\r\n}\r\n\r\n.sa-summary-subtext {\r\n  margin: 0;\r\n  color: #7f90ba;\r\n  font-size: 10px;\r\n  line-height: 1.4;\r\n}\r\n\r\n@media (max-width: 1200px) {\r\n  .sa-summary-row {\r\n    grid-template-columns: repeat(2, minmax(220px, 1fr));\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .sa-summary-row {\r\n    grid-template-columns: 1fr;\r\n  }\r\n\r\n  .sa-summary-box {\r\n    height: auto;\r\n    min-height: unset;\r\n  }\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SystemConfiguration.css"
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SystemConfiguration.css ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".system-config-page {\n    color: #ffffff;\n}\n\n.system-config-header {\n    display: flex;\n    justify-content: space-between;\n    align-items: flex-start;\n    gap: 16px;\n}\n\n.system-config-actions {\n    display: flex;\n    gap: 10px;\n    flex-wrap: wrap;\n}\n\n.system-config-message,\n.system-config-error {\n    margin: 18px 0;\n    padding: 12px 14px;\n    border-radius: 12px;\n    font-size: 13px;\n    font-weight: 600;\n}\n\n.system-config-message {\n    background: rgba(0, 201, 141, 0.14);\n    border: 1px solid rgba(0, 201, 141, 0.2);\n    color: #00f5a0;\n}\n\n.system-config-error {\n    background: rgba(241, 65, 108, 0.14);\n    border: 1px solid rgba(241, 65, 108, 0.2);\n    color: #ff4d6d;\n}\n\n.system-config-grid {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 20px;\n    margin-top: 20px;\n}\n\n.system-config-card {\n    background: radial-gradient(circle at top right,\n            rgba(108, 99, 255, 0.18),\n            transparent 28%),\n        linear-gradient(180deg,\n            rgba(12, 18, 40, 0.96),\n            rgba(9, 14, 34, 0.98));\n    border: 1px solid rgba(66, 133, 244, 0.14);\n    border-radius: 18px;\n    padding: 18px;\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);\n}\n\n.system-config-card-header {\n    margin-bottom: 18px;\n}\n\n.system-config-card-header h4 {\n    margin: 0 0 6px;\n    font-size: 20px;\n    color: #ffffff;\n}\n\n.system-config-card-header p {\n    margin: 0;\n    color: #8ea0c8;\n    font-size: 13px;\n    line-height: 1.5;\n}\n\n.system-config-form-group {\n    display: grid;\n    gap: 8px;\n    margin-bottom: 16px;\n}\n\n.system-config-form-group:last-child {\n    margin-bottom: 0;\n}\n\n.system-config-form-group label {\n    font-size: 13px;\n    font-weight: 600;\n    color: #d7e6ff;\n}\n\n.system-config-form-group input {\n    width: 100%;\n    height: 44px;\n    padding: 0 14px;\n    border-radius: 12px;\n    border: 1px solid rgba(255, 255, 255, 0.08);\n    background: rgba(12, 22, 46, 0.85);\n    color: #ffffff;\n    outline: none;\n    box-sizing: border-box;\n}\n\n.system-config-form-group input:focus {\n    border-color: rgba(59, 130, 246, 0.4);\n    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.12);\n}\n\n.system-config-toggle-list {\n    display: grid;\n    gap: 14px;\n}\n\n.system-config-toggle-row {\n    display: flex;\n    justify-content: space-between;\n    align-items: center;\n    gap: 14px;\n    padding: 10px 0;\n    border-bottom: 1px solid rgba(255, 255, 255, 0.05);\n}\n\n.system-config-toggle-row:last-child {\n    border-bottom: none;\n}\n\n.system-config-toggle-row span {\n    font-size: 13px;\n    color: #dbeafe;\n}\n\n.system-config-switch {\n    position: relative;\n    display: inline-block;\n    width: 46px;\n    height: 24px;\n    flex-shrink: 0;\n}\n\n.system-config-switch input {\n    opacity: 0;\n    width: 0;\n    height: 0;\n}\n\n.system-config-slider {\n    position: absolute;\n    inset: 0;\n    cursor: pointer;\n    background: rgba(255, 255, 255, 0.14);\n    border-radius: 999px;\n    transition: 0.25s ease;\n}\n\n.system-config-slider::before {\n    content: \"\";\n    position: absolute;\n    width: 18px;\n    height: 18px;\n    left: 3px;\n    top: 3px;\n    background: #ffffff;\n    border-radius: 50%;\n    transition: 0.25s ease;\n}\n\n.system-config-switch input:checked+.system-config-slider {\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n}\n\n.system-config-switch input:checked+.system-config-slider::before {\n    transform: translateX(22px);\n}\n\n.sc-btn {\n    height: 42px;\n    padding: 0 16px;\n    border: none;\n    border-radius: 12px;\n    font-size: 13px;\n    font-weight: 600;\n    cursor: pointer;\n    transition: 0.2s ease;\n}\n\n.sc-btn:hover {\n    transform: translateY(-1px);\n}\n\n.sc-btn-primary {\n    background: linear-gradient(90deg, #3b82f6, #06b6d4);\n    color: #ffffff;\n}\n\n.sc-btn-light {\n    background: rgba(255, 255, 255, 0.08);\n    color: #dbeafe;\n}\n\n@media (max-width: 992px) {\n    .system-config-grid {\n        grid-template-columns: 1fr;\n    }\n}\n\n@media (max-width: 768px) {\n    .system-config-header {\n        flex-direction: column;\n        align-items: stretch;\n    }\n\n    .system-config-actions {\n        flex-direction: column;\n    }\n\n    .sc-btn {\n        width: 100%;\n    }\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/admin/AdminShared.css"
 /*!*******************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/admin/AdminShared.css ***!
@@ -13303,7 +17459,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* ================= PAGE LAYOUT ================= */\r\n.admin-page {\r\n  padding: 24px 28px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 24px;\r\n  width: 100%;\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* ================= PANEL ================= */\r\n.admin-panel {\r\n  border-radius: 20px;\r\n  padding: 22px;\r\n  background:\r\n    radial-gradient(circle at top right, rgba(108, 99, 255, 0.10), transparent 30%),\r\n    linear-gradient(180deg, rgba(12, 18, 40, 0.96), rgba(9, 14, 34, 0.98));\r\n  border: 1px solid rgba(255, 255, 255, 0.07);\r\n  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n/* ================= HEADER ================= */\r\n.admin-panel-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n.admin-panel-header h3 {\r\n  color: #ffffff;\r\n  font-size: 18px;\r\n}\r\n\r\n.admin-panel-header span {\r\n  color: #8ea0c9;\r\n  font-size: 13px;\r\n}\r\n\r\n/* ================= TABLE ================= */\r\n.admin-table-wrapper {\r\n  width: 100%;\r\n  overflow-x: auto;\r\n}\r\n\r\n.admin-table {\r\n  width: 100%;\r\n  border-collapse: collapse;\r\n}\r\n\r\n.admin-table th {\r\n  text-align: left;\r\n  padding: 12px;\r\n  font-size: 12px;\r\n  color: #8ea0c9;\r\n  border-bottom: 1px solid rgba(255,255,255,0.08);\r\n}\r\n\r\n.admin-table td {\r\n  padding: 14px 12px;\r\n  font-size: 13px;\r\n  color: #ffffff;\r\n  border-bottom: 1px solid rgba(255,255,255,0.05);\r\n}\r\n\r\n.admin-table tr:hover {\r\n  background: rgba(255,255,255,0.03);\r\n}\r\n\r\n/* ================= STATUS ================= */\r\n.admin-status {\r\n  padding: 4px 10px;\r\n  border-radius: 10px;\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n}\r\n\r\n.admin-status.active {\r\n  background: rgba(46, 213, 115, 0.15);\r\n  color: #2ed573;\r\n}\r\n\r\n.admin-status.suspended {\r\n  background: rgba(255, 71, 87, 0.15);\r\n  color: #ff4757;\r\n}\r\n\r\n/* ================= BUTTONS ================= */\r\n.admin-btn {\r\n  padding: 6px 12px;\r\n  border-radius: 10px;\r\n  border: none;\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n}\r\n\r\n.admin-btn.primary {\r\n  background: linear-gradient(135deg, #7c5cff, #00d1ff);\r\n  color: #fff;\r\n}\r\n\r\n.admin-btn.danger {\r\n  background: rgba(255, 71, 87, 0.15);\r\n  color: #ff4757;\r\n}\r\n\r\n/* ================= EMPTY ================= */\r\n.admin-empty {\r\n  text-align: center;\r\n  color: #8ea0c9;\r\n  padding: 20px;\r\n}\r\n\r\n/* ================= TABLE CONTROLS ================= */\r\n.admin-table-controls {\r\n  display: flex;\r\n  gap: 12px;\r\n  flex-wrap: wrap;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n.admin-table-search,\r\n.admin-table-select {\r\n  height: 40px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255,255,255,0.08);\r\n  background: rgba(255,255,255,0.04);\r\n  color: #ffffff;\r\n  padding: 0 12px;\r\n  outline: none;\r\n}\r\n\r\n.admin-table-search {\r\n  min-width: 220px;\r\n  flex: 1;\r\n}\r\n\r\n.admin-table-search::-moz-placeholder {\r\n  color: #8ea0c9;\r\n}\r\n\r\n.admin-table-search::placeholder {\r\n  color: #8ea0c9;\r\n}\r\n\r\n.admin-table-select option {\r\n  color: #000;\r\n}\r\n\r\n/* ================= PAGINATION ================= */\r\n.admin-pagination {\r\n  margin-top: 18px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 12px;\r\n}\r\n\r\n.admin-pagination-info {\r\n  color: #8ea0c9;\r\n  font-size: 13px;\r\n}\r\n\r\n.admin-btn.secondary {\r\n  background: rgba(255,255,255,0.06);\r\n  color: #dce6ff;\r\n  border: 1px solid rgba(255,255,255,0.08);\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* ================= PAGE LAYOUT ================= */\r\n.admin-page {\r\n  padding: 24px 28px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 24px;\r\n  width: 100%;\r\n  box-sizing: border-box;\r\n}\r\n\r\n/* ================= PANEL ================= */\r\n.admin-panel {\r\n  border-radius: 20px;\r\n  padding: 22px;\r\n  background:\r\n    radial-gradient(circle at top right, rgba(108, 99, 255, 0.10), transparent 30%),\r\n    linear-gradient(180deg, rgba(12, 18, 40, 0.96), rgba(9, 14, 34, 0.98));\r\n  border: 1px solid rgba(255, 255, 255, 0.07);\r\n  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n/* ================= HEADER ================= */\r\n.admin-panel-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n.admin-panel-header h3 {\r\n  color: #ffffff;\r\n  font-size: 18px;\r\n}\r\n\r\n.admin-panel-header span {\r\n  color: #8ea0c9;\r\n  font-size: 13px;\r\n}\r\n\r\n/* ================= TABLE ================= */\r\n.admin-table-wrapper {\r\n  width: 100%;\r\n  overflow-x: auto;\r\n}\r\n\r\n.admin-table {\r\n  width: 100%;\r\n  border-collapse: collapse;\r\n}\r\n\r\n.admin-table th {\r\n  text-align: left;\r\n  padding: 12px;\r\n  font-size: 12px;\r\n  color: #8ea0c9;\r\n  border-bottom: 1px solid rgba(255,255,255,0.08);\r\n}\r\n\r\n.admin-table td {\r\n  padding: 14px 12px;\r\n  font-size: 13px;\r\n  color: #ffffff;\r\n  border-bottom: 1px solid rgba(255,255,255,0.05);\r\n}\r\n\r\n.admin-table tr:hover {\r\n  background: rgba(255,255,255,0.03);\r\n}\r\n\r\n/* ================= STATUS ================= */\r\n.admin-status {\r\n  padding: 4px 10px;\r\n  border-radius: 10px;\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n}\r\n\r\n.admin-status.active {\r\n  background: rgba(46, 213, 115, 0.15);\r\n  color: #2ed573;\r\n}\r\n\r\n.admin-status.suspended {\r\n  background: rgba(255, 71, 87, 0.15);\r\n  color: #ff4757;\r\n}\r\n\r\n/* ================= BUTTONS ================= */\r\n.admin-btn {\r\n  padding: 6px 12px;\r\n  border-radius: 10px;\r\n  border: none;\r\n  font-size: 12px;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n}\r\n\r\n.admin-btn.primary {\r\n  background: linear-gradient(135deg, #7c5cff, #00d1ff);\r\n  color: #fff;\r\n}\r\n\r\n.admin-btn.danger {\r\n  background: rgba(255, 71, 87, 0.15);\r\n  color: #ff4757;\r\n}\r\n\r\n/* ================= EMPTY ================= */\r\n.admin-empty {\r\n  text-align: center;\r\n  color: #8ea0c9;\r\n  padding: 20px;\r\n}\r\n\r\n/* ================= TABLE CONTROLS ================= */\r\n.admin-table-controls {\r\n  display: flex;\r\n  gap: 12px;\r\n  flex-wrap: wrap;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n.admin-table-search,\r\n.admin-table-select {\r\n  height: 40px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255,255,255,0.08);\r\n  background: rgba(255,255,255,0.04);\r\n  color: #ffffff;\r\n  padding: 0 12px;\r\n  outline: none;\r\n}\r\n\r\n.admin-table-search {\r\n  min-width: 220px;\r\n  flex: 1;\r\n}\r\n\r\n.admin-table-search::-moz-placeholder {\r\n  color: #8ea0c9;\r\n}\r\n\r\n.admin-table-search::placeholder {\r\n  color: #8ea0c9;\r\n}\r\n\r\n.admin-table-select option {\r\n  color: #000;\r\n}\r\n\r\n/* ================= PAGINATION ================= */\r\n.admin-pagination {\r\n  margin-top: 18px;\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  gap: 12px;\r\n}\r\n\r\n.admin-pagination-info {\r\n  color: #8ea0c9;\r\n  font-size: 13px;\r\n}\r\n\r\n.admin-btn.secondary {\r\n  background: rgba(255,255,255,0.06);\r\n  color: #dce6ff;\r\n  border: 1px solid rgba(255,255,255,0.08);\r\n}\r\n\r\n/* ================= FILTERS ================= */\r\n.admin-table-controls {\r\n  display: flex;\r\n  gap: 12px;\r\n  flex-wrap: wrap;\r\n  margin-bottom: 16px;\r\n}\r\n\r\n.admin-table-search,\r\n.admin-table-select {\r\n  height: 40px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255,255,255,0.08);\r\n  background: rgba(255,255,255,0.04);\r\n  color: #ffffff;\r\n  padding: 0 12px;\r\n  outline: none;\r\n}\r\n\r\n.admin-table-search {\r\n  min-width: 220px;\r\n  flex: 1;\r\n}\r\n\r\n.admin-table-search::-moz-placeholder {\r\n  color: #8ea0c9;\r\n}\r\n\r\n.admin-table-search::placeholder {\r\n  color: #8ea0c9;\r\n}\r\n\r\n.admin-table-select option {\r\n  color: #000;\r\n}\r\n\r\n/* ================= ROW CLICK ================= */\r\n.admin-table tbody tr {\r\n  cursor: pointer;\r\n  transition: 0.2s ease;\r\n}\r\n\r\n.admin-table tbody tr:hover {\r\n  background: rgba(255,255,255,0.03);\r\n}\r\n\r\n/* ================= MODAL ================= */\r\n.admin-modal-overlay {\r\n  position: fixed;\r\n  inset: 0;\r\n  background: rgba(4, 8, 20, 0.72);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  padding: 20px;\r\n  z-index: 9999;\r\n}\r\n\r\n.admin-modal {\r\n  width: 100%;\r\n  max-width: 720px;\r\n  border-radius: 20px;\r\n  background:\r\n    radial-gradient(circle at top right, rgba(108, 99, 255, 0.10), transparent 30%),\r\n    linear-gradient(180deg, rgba(12, 18, 40, 0.98), rgba(9, 14, 34, 0.98));\r\n  border: 1px solid rgba(255,255,255,0.08);\r\n  box-shadow: 0 22px 48px rgba(0,0,0,0.28);\r\n  overflow: hidden;\r\n}\r\n\r\n.admin-modal-header {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n  padding: 18px 20px;\r\n  border-bottom: 1px solid rgba(255,255,255,0.06);\r\n}\r\n\r\n.admin-modal-header h3 {\r\n  color: #ffffff;\r\n  font-size: 18px;\r\n  margin: 0;\r\n}\r\n\r\n.admin-modal-close {\r\n  border: none;\r\n  background: transparent;\r\n  color: #dce6ff;\r\n  font-size: 18px;\r\n  cursor: pointer;\r\n}\r\n\r\n.admin-modal-body {\r\n  padding: 20px;\r\n}\r\n\r\n.admin-detail-grid {\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  gap: 14px;\r\n}\r\n\r\n.admin-detail-card {\r\n  padding: 14px;\r\n  border-radius: 14px;\r\n  background: rgba(255,255,255,0.04);\r\n  border: 1px solid rgba(255,255,255,0.06);\r\n}\r\n\r\n.admin-detail-card span {\r\n  display: block;\r\n  color: #8ea0c9;\r\n  font-size: 12px;\r\n  margin-bottom: 6px;\r\n}\r\n\r\n.admin-detail-card strong {\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  word-break: break-word;\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .admin-detail-grid {\r\n    grid-template-columns: 1fr;\r\n  }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -56924,6 +61080,200 @@ function Cursor(props) {
 
 /***/ },
 
+/***/ "./node_modules/recharts/es6/component/DefaultLegendContent.js"
+/*!*********************************************************************!*\
+  !*** ./node_modules/recharts/es6/component/DefaultLegendContent.js ***!
+  \*********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   DefaultLegendContent: () => (/* binding */ DefaultLegendContent),
+/* harmony export */   defaultLegendContentDefaultProps: () => (/* binding */ defaultLegendContentDefaultProps)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.mjs");
+/* harmony import */ var _container_Surface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../container/Surface */ "./node_modules/recharts/es6/container/Surface.js");
+/* harmony import */ var _shape_Symbols__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shape/Symbols */ "./node_modules/recharts/es6/shape/Symbols.js");
+/* harmony import */ var _util_types__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/types */ "./node_modules/recharts/es6/util/types.js");
+/* harmony import */ var _util_resolveDefaultProps__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../util/resolveDefaultProps */ "./node_modules/recharts/es6/util/resolveDefaultProps.js");
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+
+
+
+
+
+
+var SIZE = 32;
+var defaultLegendContentDefaultProps = {
+  align: 'center',
+  iconSize: 14,
+  inactiveColor: '#ccc',
+  layout: 'horizontal',
+  verticalAlign: 'middle',
+  labelStyle: {}
+};
+function getStrokeDasharray(input) {
+  if (typeof input === 'object' && input !== null && 'strokeDasharray' in input) {
+    return String(input.strokeDasharray);
+  }
+  return undefined;
+}
+function Icon(_ref) {
+  var {
+    data,
+    iconType,
+    inactiveColor
+  } = _ref;
+  var halfSize = SIZE / 2;
+  var sixthSize = SIZE / 6;
+  var thirdSize = SIZE / 3;
+  var color = data.inactive ? inactiveColor : data.color;
+  var preferredIcon = iconType !== null && iconType !== void 0 ? iconType : data.type;
+  if (preferredIcon === 'none') {
+    return null;
+  }
+  if (preferredIcon === 'plainline') {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("line", {
+      strokeWidth: 4,
+      fill: "none",
+      stroke: color,
+      strokeDasharray: getStrokeDasharray(data.payload),
+      x1: 0,
+      y1: halfSize,
+      x2: SIZE,
+      y2: halfSize,
+      className: "recharts-legend-icon"
+    });
+  }
+  if (preferredIcon === 'line') {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+      strokeWidth: 4,
+      fill: "none",
+      stroke: color,
+      d: "M0,".concat(halfSize, "h").concat(thirdSize, "\n            A").concat(sixthSize, ",").concat(sixthSize, ",0,1,1,").concat(2 * thirdSize, ",").concat(halfSize, "\n            H").concat(SIZE, "M").concat(2 * thirdSize, ",").concat(halfSize, "\n            A").concat(sixthSize, ",").concat(sixthSize, ",0,1,1,").concat(thirdSize, ",").concat(halfSize),
+      className: "recharts-legend-icon"
+    });
+  }
+  if (preferredIcon === 'rect') {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("path", {
+      stroke: "none",
+      fill: color,
+      d: "M0,".concat(SIZE / 8, "h").concat(SIZE, "v").concat(SIZE * 3 / 4, "h").concat(-SIZE, "z"),
+      className: "recharts-legend-icon"
+    });
+  }
+  if (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(data.legendIcon)) {
+    var iconProps = _objectSpread({}, data);
+    delete iconProps.legendIcon;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(data.legendIcon, iconProps);
+  }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_shape_Symbols__WEBPACK_IMPORTED_MODULE_3__.Symbols, {
+    fill: color,
+    cx: halfSize,
+    cy: halfSize,
+    size: SIZE,
+    sizeType: "diameter",
+    type: preferredIcon
+  });
+}
+function Items(props) {
+  var {
+    payload,
+    iconSize,
+    layout,
+    formatter,
+    inactiveColor,
+    iconType,
+    labelStyle
+  } = props;
+  var viewBox = {
+    x: 0,
+    y: 0,
+    width: SIZE,
+    height: SIZE
+  };
+  var itemStyle = {
+    display: layout === 'horizontal' ? 'inline-block' : 'block',
+    marginRight: 10
+  };
+  var svgStyle = {
+    display: 'inline-block',
+    verticalAlign: 'middle',
+    marginRight: 4
+  };
+  return payload.map((entry, i) => {
+    var finalFormatter = entry.formatter || formatter;
+    var className = (0,clsx__WEBPACK_IMPORTED_MODULE_1__.clsx)({
+      'recharts-legend-item': true,
+      ["legend-item-".concat(i)]: true,
+      inactive: entry.inactive
+    });
+    if (entry.type === 'none') {
+      return null;
+    }
+    var finalLabelStyle = typeof labelStyle === 'object' ? _objectSpread({}, labelStyle) : {};
+    finalLabelStyle.color = entry.inactive ? inactiveColor : finalLabelStyle.color || entry.color;
+    var finalValue = finalFormatter ? finalFormatter(entry.value, entry, i) : entry.value;
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("li", _extends({
+      className: className,
+      style: itemStyle,
+      key: "legend-item-".concat(i)
+    }, (0,_util_types__WEBPACK_IMPORTED_MODULE_4__.adaptEventsOfChild)(props, entry, i)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_container_Surface__WEBPACK_IMPORTED_MODULE_2__.Surface, {
+      width: iconSize,
+      height: iconSize,
+      viewBox: viewBox,
+      style: svgStyle,
+      "aria-label": "".concat(entry.value, " legend icon")
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Icon, {
+      data: entry,
+      iconType: iconType,
+      inactiveColor: inactiveColor
+    })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("span", {
+      className: "recharts-legend-item-text",
+      style: finalLabelStyle
+    }, finalValue));
+  });
+}
+
+/**
+ * This component is by default rendered inside the {@link Legend} component. You would not use it directly.
+ *
+ * You can use this component to customize the content of the legend,
+ * or you can provide your own completely independent content.
+ */
+var DefaultLegendContent = outsideProps => {
+  var props = (0,_util_resolveDefaultProps__WEBPACK_IMPORTED_MODULE_5__.resolveDefaultProps)(outsideProps, defaultLegendContentDefaultProps);
+  var {
+    payload,
+    layout,
+    align
+  } = props;
+  if (!payload || !payload.length) {
+    return null;
+  }
+  var finalStyle = {
+    padding: 0,
+    margin: 0,
+    textAlign: layout === 'horizontal' ? align : 'left'
+  };
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("ul", {
+    className: "recharts-default-legend",
+    style: finalStyle
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(Items, _extends({}, props, {
+    payload: payload
+  })));
+};
+
+/***/ },
+
 /***/ "./node_modules/recharts/es6/component/DefaultTooltipContent.js"
 /*!**********************************************************************!*\
   !*** ./node_modules/recharts/es6/component/DefaultTooltipContent.js ***!
@@ -57830,6 +62180,210 @@ function LabelListFromLabelProp(_ref2) {
   }
   return null;
 }
+
+/***/ },
+
+/***/ "./node_modules/recharts/es6/component/Legend.js"
+/*!*******************************************************!*\
+  !*** ./node_modules/recharts/es6/component/Legend.js ***!
+  \*******************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   Legend: () => (/* binding */ Legend),
+/* harmony export */   legendDefaultProps: () => (/* binding */ legendDefaultProps)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _context_legendPortalContext__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../context/legendPortalContext */ "./node_modules/recharts/es6/context/legendPortalContext.js");
+/* harmony import */ var _DefaultLegendContent__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./DefaultLegendContent */ "./node_modules/recharts/es6/component/DefaultLegendContent.js");
+/* harmony import */ var _util_payload_getUniqPayload__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../util/payload/getUniqPayload */ "./node_modules/recharts/es6/util/payload/getUniqPayload.js");
+/* harmony import */ var _context_legendPayloadContext__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../context/legendPayloadContext */ "./node_modules/recharts/es6/context/legendPayloadContext.js");
+/* harmony import */ var _util_useElementOffset__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../util/useElementOffset */ "./node_modules/recharts/es6/util/useElementOffset.js");
+/* harmony import */ var _context_chartLayoutContext__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../context/chartLayoutContext */ "./node_modules/recharts/es6/context/chartLayoutContext.js");
+/* harmony import */ var _state_legendSlice__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../state/legendSlice */ "./node_modules/recharts/es6/state/legendSlice.js");
+/* harmony import */ var _state_hooks__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../state/hooks */ "./node_modules/recharts/es6/state/hooks.js");
+/* harmony import */ var _util_resolveDefaultProps__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../util/resolveDefaultProps */ "./node_modules/recharts/es6/util/resolveDefaultProps.js");
+/* harmony import */ var _util_propsAreEqual__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../util/propsAreEqual */ "./node_modules/recharts/es6/util/propsAreEqual.js");
+var _excluded = ["contextPayload"];
+function _extends() { return _extends = Object.assign ? Object.assign.bind() : function (n) { for (var e = 1; e < arguments.length; e++) { var t = arguments[e]; for (var r in t) ({}).hasOwnProperty.call(t, r) && (n[r] = t[r]); } return n; }, _extends.apply(null, arguments); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == typeof i ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != typeof t || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != typeof i) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _objectWithoutProperties(e, t) { if (null == e) return {}; var o, r, i = _objectWithoutPropertiesLoose(e, t); if (Object.getOwnPropertySymbols) { var n = Object.getOwnPropertySymbols(e); for (r = 0; r < n.length; r++) o = n[r], -1 === t.indexOf(o) && {}.propertyIsEnumerable.call(e, o) && (i[o] = e[o]); } return i; }
+function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t = {}; for (var n in r) if ({}.hasOwnProperty.call(r, n)) { if (-1 !== e.indexOf(n)) continue; t[n] = r[n]; } return t; }
+
+
+
+
+
+
+
+
+
+
+
+
+
+function defaultUniqBy(entry) {
+  return entry.value;
+}
+function LegendContent(props) {
+  var {
+      contextPayload
+    } = props,
+    otherProps = _objectWithoutProperties(props, _excluded);
+  var finalPayload = (0,_util_payload_getUniqPayload__WEBPACK_IMPORTED_MODULE_4__.getUniqPayload)(contextPayload, props.payloadUniqBy, defaultUniqBy);
+  var contentProps = _objectSpread(_objectSpread({}, otherProps), {}, {
+    payload: finalPayload
+  });
+  if (/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.isValidElement(props.content)) {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.cloneElement(props.content, contentProps);
+  }
+  if (typeof props.content === 'function') {
+    return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(props.content, contentProps);
+  }
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_DefaultLegendContent__WEBPACK_IMPORTED_MODULE_3__.DefaultLegendContent, contentProps);
+}
+function getDefaultPosition(style, props, margin, chartWidth, chartHeight, box) {
+  var {
+    layout,
+    align,
+    verticalAlign
+  } = props;
+  var hPos, vPos;
+  if (!style || (style.left === undefined || style.left === null) && (style.right === undefined || style.right === null)) {
+    if (align === 'center' && layout === 'vertical') {
+      hPos = {
+        left: ((chartWidth || 0) - box.width) / 2
+      };
+    } else {
+      hPos = align === 'right' ? {
+        right: margin && margin.right || 0
+      } : {
+        left: margin && margin.left || 0
+      };
+    }
+  }
+  if (!style || (style.top === undefined || style.top === null) && (style.bottom === undefined || style.bottom === null)) {
+    if (verticalAlign === 'middle') {
+      vPos = {
+        top: ((chartHeight || 0) - box.height) / 2
+      };
+    } else {
+      vPos = verticalAlign === 'bottom' ? {
+        bottom: margin && margin.bottom || 0
+      } : {
+        top: margin && margin.top || 0
+      };
+    }
+  }
+  return _objectSpread(_objectSpread({}, hPos), vPos);
+}
+function LegendSettingsDispatcher(props) {
+  var dispatch = (0,_state_hooks__WEBPACK_IMPORTED_MODULE_9__.useAppDispatch)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    dispatch((0,_state_legendSlice__WEBPACK_IMPORTED_MODULE_8__.setLegendSettings)(props));
+  }, [dispatch, props]);
+  return null;
+}
+function LegendSizeDispatcher(props) {
+  var dispatch = (0,_state_hooks__WEBPACK_IMPORTED_MODULE_9__.useAppDispatch)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(() => {
+    dispatch((0,_state_legendSlice__WEBPACK_IMPORTED_MODULE_8__.setLegendSize)(props));
+    return () => {
+      dispatch((0,_state_legendSlice__WEBPACK_IMPORTED_MODULE_8__.setLegendSize)({
+        width: 0,
+        height: 0
+      }));
+    };
+  }, [dispatch, props]);
+  return null;
+}
+function getWidthOrHeight(layout, height, width, maxWidth) {
+  if (layout === 'vertical' && height != null) {
+    return {
+      height
+    };
+  }
+  if (layout === 'horizontal') {
+    return {
+      width: width || maxWidth
+    };
+  }
+  return null;
+}
+var legendDefaultProps = {
+  align: 'center',
+  iconSize: 14,
+  inactiveColor: '#ccc',
+  itemSorter: 'value',
+  layout: 'horizontal',
+  verticalAlign: 'bottom'
+};
+
+/**
+ * @consumes CartesianChartContext
+ * @consumes PolarChartContext
+ */
+function LegendImpl(outsideProps) {
+  var props = (0,_util_resolveDefaultProps__WEBPACK_IMPORTED_MODULE_10__.resolveDefaultProps)(outsideProps, legendDefaultProps);
+  var contextPayload = (0,_context_legendPayloadContext__WEBPACK_IMPORTED_MODULE_5__.useLegendPayload)();
+  var legendPortalFromContext = (0,_context_legendPortalContext__WEBPACK_IMPORTED_MODULE_2__.useLegendPortal)();
+  var margin = (0,_context_chartLayoutContext__WEBPACK_IMPORTED_MODULE_7__.useMargin)();
+  var {
+    width: widthFromProps,
+    height: heightFromProps,
+    wrapperStyle,
+    portal: portalFromProps
+  } = props;
+  // The contextPayload is not used directly inside the hook, but we need the onBBoxUpdate call
+  // when the payload changes, therefore it's here as a dependency.
+  var [lastBoundingBox, updateBoundingBox] = (0,_util_useElementOffset__WEBPACK_IMPORTED_MODULE_6__.useElementOffset)([contextPayload]);
+  var chartWidth = (0,_context_chartLayoutContext__WEBPACK_IMPORTED_MODULE_7__.useChartWidth)();
+  var chartHeight = (0,_context_chartLayoutContext__WEBPACK_IMPORTED_MODULE_7__.useChartHeight)();
+  if (chartWidth == null || chartHeight == null) {
+    return null;
+  }
+  var maxWidth = chartWidth - ((margin === null || margin === void 0 ? void 0 : margin.left) || 0) - ((margin === null || margin === void 0 ? void 0 : margin.right) || 0);
+  var widthOrHeight = getWidthOrHeight(props.layout, heightFromProps, widthFromProps, maxWidth);
+  // if the user supplies their own portal, only use their defined wrapper styles
+  var outerStyle = portalFromProps ? wrapperStyle : _objectSpread(_objectSpread({
+    position: 'absolute',
+    width: (widthOrHeight === null || widthOrHeight === void 0 ? void 0 : widthOrHeight.width) || widthFromProps || 'auto',
+    height: (widthOrHeight === null || widthOrHeight === void 0 ? void 0 : widthOrHeight.height) || heightFromProps || 'auto'
+  }, getDefaultPosition(wrapperStyle, props, margin, chartWidth, chartHeight, lastBoundingBox)), wrapperStyle);
+  var legendPortal = portalFromProps !== null && portalFromProps !== void 0 ? portalFromProps : legendPortalFromContext;
+  if (legendPortal == null || contextPayload == null) {
+    return null;
+  }
+  var legendElement = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("div", {
+    className: "recharts-legend-wrapper",
+    style: outerStyle,
+    ref: updateBoundingBox
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(LegendSettingsDispatcher, {
+    layout: props.layout,
+    align: props.align,
+    verticalAlign: props.verticalAlign,
+    itemSorter: props.itemSorter
+  }), !portalFromProps && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(LegendSizeDispatcher, {
+    width: lastBoundingBox.width,
+    height: lastBoundingBox.height
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(LegendContent, _extends({}, props, widthOrHeight, {
+    margin: margin,
+    chartWidth: chartWidth,
+    chartHeight: chartHeight,
+    contextPayload: contextPayload
+  })));
+  return /*#__PURE__*/(0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)(legendElement, legendPortal);
+}
+var Legend = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.memo(LegendImpl, _util_propsAreEqual__WEBPACK_IMPORTED_MODULE_11__.propsAreEqual);
+Legend.displayName = 'Legend';
 
 /***/ },
 
@@ -59663,6 +64217,32 @@ var ReportChartMargin = _ref => {
   }, [dispatch, margin]);
   return null;
 };
+
+/***/ },
+
+/***/ "./node_modules/recharts/es6/context/legendPayloadContext.js"
+/*!*******************************************************************!*\
+  !*** ./node_modules/recharts/es6/context/legendPayloadContext.js ***!
+  \*******************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   useLegendPayload: () => (/* binding */ useLegendPayload)
+/* harmony export */ });
+/* harmony import */ var _state_hooks__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../state/hooks */ "./node_modules/recharts/es6/state/hooks.js");
+/* harmony import */ var _state_selectors_legendSelectors__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../state/selectors/legendSelectors */ "./node_modules/recharts/es6/state/selectors/legendSelectors.js");
+
+
+
+/**
+ * Use this hook in Legend, or anywhere else where you want to read the current Legend items.
+ * @return all Legend items ready to be rendered
+ */
+function useLegendPayload() {
+  return (0,_state_hooks__WEBPACK_IMPORTED_MODULE_0__.useAppSelector)(_state_selectors_legendSelectors__WEBPACK_IMPORTED_MODULE_1__.selectLegendPayload);
+}
 
 /***/ },
 
@@ -75938,6 +80518,336 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Register_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/SuperAdminOverview.css"
+/*!*********************************************************!*\
+  !*** ./resources/css/SuperAdmin/SuperAdminOverview.css ***!
+  \*********************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminOverview_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./SuperAdminOverview.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/SuperAdminOverview.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminOverview_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminOverview_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/BackupRestore.css"
+/*!***************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/BackupRestore.css ***!
+  \***************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_BackupRestore_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./BackupRestore.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/BackupRestore.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_BackupRestore_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_BackupRestore_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/FullAuditLogs.css"
+/*!***************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/FullAuditLogs.css ***!
+  \***************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_FullAuditLogs_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./FullAuditLogs.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/FullAuditLogs.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_FullAuditLogs_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_FullAuditLogs_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/ManageAdmins.css"
+/*!**************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/ManageAdmins.css ***!
+  \**************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ManageAdmins_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./ManageAdmins.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/ManageAdmins.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ManageAdmins_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_ManageAdmins_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/RolesPermissions.css"
+/*!******************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/RolesPermissions.css ***!
+  \******************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_RolesPermissions_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./RolesPermissions.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/RolesPermissions.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_RolesPermissions_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_RolesPermissions_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/SecuritySettings.css"
+/*!******************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/SecuritySettings.css ***!
+  \******************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SecuritySettings_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./SecuritySettings.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SecuritySettings.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SecuritySettings_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SecuritySettings_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/Sidebarlist.css"
+/*!*************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/Sidebarlist.css ***!
+  \*************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Sidebarlist.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/Sidebarlist.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/SuperAdminOverviewCharts.css"
+/*!**************************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/SuperAdminOverviewCharts.css ***!
+  \**************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminOverviewCharts_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./SuperAdminOverviewCharts.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdminOverviewCharts.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminOverviewCharts_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminOverviewCharts_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/SuperAdminSummaryCards.css"
+/*!************************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/SuperAdminSummaryCards.css ***!
+  \************************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminSummaryCards_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./SuperAdminSummaryCards.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdminSummaryCards.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminSummaryCards_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdminSummaryCards_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/SuperAdmindashboard.css"
+/*!*********************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/SuperAdmindashboard.css ***!
+  \*********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdmindashboard_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./SuperAdmindashboard.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdmindashboard.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdmindashboard_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SuperAdmindashboard_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
+/***/ "./resources/css/SuperAdmin/components/SystemConfiguration.css"
+/*!*********************************************************************!*\
+  !*** ./resources/css/SuperAdmin/components/SystemConfiguration.css ***!
+  \*********************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SystemConfiguration_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./SystemConfiguration.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SystemConfiguration.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SystemConfiguration_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SystemConfiguration_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ },
 

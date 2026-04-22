@@ -10,7 +10,7 @@ import Register from "./components/public/LandingPage/Register";
 // Private pages
 import Dashboard from "./components/private/customer/Dashboard/Dashboard";
 import AdminDashboard from "./components/private/admin/AdminDashboard/AdminDashboard";
-// import SuperAdminDashboard from "./components/private/superadmin/SuperAdminDashboard/SuperAdminDashboard";
+import SuperAdminDashboard from "./components/private/superadmin/SuperAdminDashboard/SuperAdminDashboard";
 
 // AUTH HELPERS
 const getUser = () => {
@@ -36,10 +36,10 @@ const AdminRoute = ({ children }) => {
   return Number(user?.role_id) === 2 ? children : <Navigate to="/login" />;
 };
 
-// const SuperAdminRoute = ({ children }) => {
-//   const user = getUser();
-//   return Number(user?.role_id) === 3 ? children : <Navigate to="/login" />;
-// };
+const SuperAdminRoute = ({ children }) => {
+  const user = getUser();
+  return Number(user?.role_id) === 3 ? children : <Navigate to="/login" />;
+};
 
 function Main() {
   return (
@@ -73,7 +73,6 @@ function Main() {
         />
 
         {/* Uncomment later when your superadmin dashboard exists */}
-        {/*
         <Route
           path="/superadmin/dashboard"
           element={
@@ -84,7 +83,6 @@ function Main() {
             </PrivateRoute>
           }
         />
-        */}
 
         <Route path="*" element={<Navigate to="/" />} />
       </Routes>

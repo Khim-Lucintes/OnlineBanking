@@ -1,0 +1,96 @@
+.sa-summary-row {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.sa-summary-box {
+    background: radial-gradient(circle at top right,
+            rgba(108, 99, 255, 0.18),
+            transparent 28%),
+        linear-gradient(180deg,
+            rgba(12, 18, 40, 0.96),
+            rgba(9, 14, 34, 0.98));
+    border: 1px solid rgba(66, 133, 244, 0.14);
+    border-radius: 18px;
+    padding: 16px;
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+}
+
+.sa-summary-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.sa-summary-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sa-summary-icon {
+    font-size: 15px;
+}
+
+.sa-summary-title {
+    font-size: 13px;
+    color: #8fb3ff;
+}
+
+.sa-summary-more {
+    border: none;
+    background: transparent;
+    color: #8ea0c8;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.sa-summary-body h3 {
+    margin: 0 0 6px;
+    font-size: 32px;
+    line-height: 1.1;
+    color: #ffffff;
+}
+
+.sa-summary-trend {
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.sa-positive-trend {
+    color: #00d7b9;
+}
+
+.sa-warning-trend {
+    color: #f59e0b;
+}
+
+.sa-danger-trend {
+    color: #ef4444;
+}
+
+.sa-summary-subtext {
+    margin-top: 10px;
+    font-size: 12px;
+    color: #8ea0c8;
+}
+
+.sa-summary-action-box {
+    cursor: pointer;
+    background: linear-gradient(180deg, #16244d 0%, #0f1a3b 100%);
+}
+
+@media (max-width: 1100px) {
+    .sa-summary-row {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .sa-summary-row {
+        grid-template-columns: 1fr;
+    }
+}

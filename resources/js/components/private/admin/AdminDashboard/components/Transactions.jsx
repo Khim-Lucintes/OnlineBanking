@@ -3,6 +3,9 @@ import "../../../../../../css/DashboardPage/components/DashboardMain.css";
 import "../../../../../../css/admin/AdminShared.css";
 import AdminTableControls from "./AdminTableControls";
 import AdminPagination from "./AdminPagination";
+import AdminFilters from "./AdminFilters";
+import AdminModal from "./AdminModal";
+
 
 function Transactions() {
   const [transactions, setTransactions] = useState([]);
@@ -10,9 +13,13 @@ function Transactions() {
   const [message, setMessage] = useState("");
 
   const [search, setSearch] = useState("");
-  const [sortKey, setSortKey] = useState("transaction_date");
-  const [sortOrder, setSortOrder] = useState("desc");
+  const [filterValues, setFilterValues] = useState({
+    status: "",
+    type: "",
+  });
+
   const [currentPage, setCurrentPage] = useState(1);
+  const [selectedTransaction, setSelectedTransaction] = useState(null);
 
   const rowsPerPage = 8;
 
@@ -50,8 +57,8 @@ function Transactions() {
   const filteredTransactions = useMemo(() => {
     const keyword = search.toLowerCase().trim();
 
-    let result = transactions.filter((txn) =>
-      [
+    return transactions.filter((txn) => {
+      const matchesSearch = [
         txn.username,
         txn.transaction_type,
         txn.status,
@@ -61,20 +68,17 @@ function Transactions() {
       ]
         .join(" ")
         .toLowerCase()
-        .includes(keyword)
-    );
+        .includes(keyword);
 
-    result.sort((a, b) => {
-      const aVal = String(a[sortKey] ?? "").toLowerCase();
-      const bVal = String(b[sortKey] ?? "").toLowerCase();
+      const matchesStatus =
+        !filterValues.status || txn.status === filterValues.status;
 
-      if (aVal < bVal) return sortOrder === "asc" ? -1 : 1;
-      if (aVal > bVal) return sortOrder === "asc" ? 1 : -1;
-      return 0;
+      const matchesType =
+        !filterValues.type || txn.transaction_type === filterValues.type;
+
+      return matchesSearch && matchesStatus && matchesType;
     });
-
-    return result;
-  }, [transactions, search, sortKey, sortOrder]);
+  }, [transactions, search, filterValues]);
 
   const totalPages = Math.ceil(filteredTransactions.length / rowsPerPage);
   const paginatedTransactions = filteredTransactions.slice(
@@ -84,7 +88,22 @@ function Transactions() {
 
   useEffect(() => {
     setCurrentPage(1);
-  }, [search, sortKey, sortOrder]);
+  }, [search, filterValues]);
+
+  const handleFilterChange = (e) => {
+    setFilterValues({
+      ...filterValues,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleClearFilters = () => {
+    setSearch("");
+    setFilterValues({
+      status: "",
+      type: "",
+    });
+  };
 
   return (
     <main className="admin-page">
@@ -96,18 +115,32 @@ function Transactions() {
           </div>
         </div>
 
-        <AdminTableControls
+        <AdminFilters
           search={search}
           setSearch={setSearch}
-          sortKey={sortKey}
-          setSortKey={setSortKey}
-          sortOrder={sortOrder}
-          setSortOrder={setSortOrder}
-          sortOptions={[
-            { value: "transaction_date", label: "Date" },
-            { value: "username", label: "User" },
-            { value: "transaction_type", label: "Type" },
-            { value: "status", label: "Status" },
+          values={filterValues}
+          onChange={handleFilterChange}
+          onClear={handleClearFilters}
+          filters={[
+            {
+              name: "status",
+              options: [
+                { value: "", label: "All Status" },
+                { value: "Completed", label: "Completed" },
+                { value: "Pending", label: "Pending" },
+                { value: "Failed", label: "Failed" },
+              ],
+            },
+            {
+              name: "type",
+              options: [
+                { value: "", label: "All Types" },
+                { value: "Deposit", label: "Deposit" },
+                { value: "Withdrawal", label: "Withdrawal" },
+                { value: "Transfer", label: "Transfer" },
+                { value: "Bill Payment", label: "Bill Payment" },
+              ],
+            },
           ]}
         />
 
@@ -132,7 +165,10 @@ function Transactions() {
 
                 <tbody>
                   {paginatedTransactions.map((txn) => (
-                    <tr key={txn.transaction_id}>
+                    <tr
+                      key={txn.transaction_id}
+                      onClick={() => setSelectedTransaction(txn)}
+                    >
                       <td>{txn.transaction_id}</td>
                       <td>{txn.username}</td>
                       <td>{txn.transaction_type}</td>
@@ -163,6 +199,53 @@ function Transactions() {
 
         {message && <div className="admin-empty">{message}</div>}
       </section>
+
+      <AdminModal
+        open={!!selectedTransaction}
+        title="Transaction Details"
+        onClose={() => setSelectedTransaction(null)}
+      >
+        {selectedTransaction && (
+          <div className="admin-detail-grid">
+            <div className="admin-detail-card">
+              <span>Transaction ID</span>
+              <strong>{selectedTransaction.transaction_id}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>User</span>
+              <strong>{selectedTransaction.username || "-"}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Type</span>
+              <strong>{selectedTransaction.transaction_type || "-"}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Amount</span>
+              <strong>₱{Number(selectedTransaction.amount || 0).toLocaleString()}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Status</span>
+              <strong>{selectedTransaction.status || "-"}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Account Number</span>
+              <strong>{selectedTransaction.account_number || "-"}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Reference No</span>
+              <strong>{selectedTransaction.reference_no || "-"}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Date</span>
+              <strong>{selectedTransaction.transaction_date || "-"}</strong>
+            </div>
+            <div className="admin-detail-card">
+              <span>Description</span>
+              <strong>{selectedTransaction.description || "-"}</strong>
+            </div>
+          </div>
+        )}
+      </AdminModal>
     </main>
   );
 }

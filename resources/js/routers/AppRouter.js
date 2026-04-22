@@ -1,5 +1,6 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
+import ProtectedRoute from "../components/shared/ProtectedRoute";
 
 // Public pages
 import Home from "../components/public/LandingPage/LandingPage";
@@ -10,54 +11,45 @@ import Register from "../components/public/LandingPage/Register";
 // Private pages
 import Dashboard from "../components/private/Dashboard/Dashboard";
 import AdminDashboard from "../components/private/admin/AdminDashboard/AdminDashboard";
-import SuperAdminDashboard from "../components/private/SuperAdminDashboard/SuperAdminDashboard";
+import SuperAdminDashboard from "../components/private/superadmin/SuperAdminDashboard/SuperAdminDashboard";
 
-
-// AUTH HELPERS
 const getUser = () => {
-  const stored = localStorage.getItem("user");
-  return stored ? JSON.parse(stored) : null;
+  try {
+    const stored = localStorage.getItem("user");
+    return stored ? JSON.parse(stored) : null;
+  } catch (error) {
+    return null;
+  }
 };
 
-const isAuthenticated = () => {
-  return !!getUser();
-};
-
-
-// PRIVATE ROUTE (GENERAL)
 function PrivateRoute({ children }) {
-  return isAuthenticated() ? children : <Navigate to="/login" />;
+  const user = getUser();
+  return user ? children : <Navigate to="/login" replace />;
 }
 
-
-// ROLE-BASED ROUTES
 function CustomerRoute({ children }) {
   const user = getUser();
-  return Number(user?.role_id) === 1 ? children : <Navigate to="/login" />;
+  return Number(user?.role_id) === 1 ? children : <Navigate to="/login" replace />;
 }
 
 function AdminRoute({ children }) {
   const user = getUser();
-  return Number(user?.role_id) === 2 ? children : <Navigate to="/login" />;
+  return Number(user?.role_id) === 2 ? children : <Navigate to="/login" replace />;
 }
 
 function SuperAdminRoute({ children }) {
   const user = getUser();
-  return Number(user?.role_id) === 3 ? children : <Navigate to="/login" />;
+  return Number(user?.role_id) === 3 ? children : <Navigate to="/login" replace />;
 }
 
-
-// ROUTER
 function AppRouter() {
   return (
     <Routes>
-      {/* ================= PUBLIC ================= */}
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/login" element={<Login />} />
       <Route path="/register" element={<Register />} />
 
-      {/* ================= CUSTOMER ================= */}
       <Route
         path="/dashboard"
         element={
@@ -69,7 +61,6 @@ function AppRouter() {
         }
       />
 
-      {/* ================= ADMIN ================= */}
       <Route
         path="/admin/dashboard"
         element={
@@ -81,7 +72,6 @@ function AppRouter() {
         }
       />
 
-      {/* ================= SUPERADMIN ================= */}
       <Route
         path="/superadmin/dashboard"
         element={
@@ -93,8 +83,35 @@ function AppRouter() {
         }
       />
 
-      {/* ================= FALLBACK ================= */}
-      <Route path="*" element={<Navigate to="/" />} />
+      {/* SUPERADMIN FEATURES */}
+
+      <Route
+        path="/superadmin/audit-logs"
+        element={
+          <PrivateRoute>
+            <SuperAdminRoute>
+              <ProtectedRoute permission="full_audit_logs">
+                <AuditLogs />
+              </ProtectedRoute>
+            </SuperAdminRoute>
+          </PrivateRoute>
+        }
+      />
+
+      <Route
+        path="/superadmin/backup"
+        element={
+          <PrivateRoute>
+            <SuperAdminRoute>
+              <ProtectedRoute permission="backup_restore">
+                <BackupRestore />
+              </ProtectedRoute>
+            </SuperAdminRoute>
+          </PrivateRoute>
+        }
+      />
+
+      <Route path="*" element={<Navigate to="/" replace />} />
     </Routes>
   );
 }
