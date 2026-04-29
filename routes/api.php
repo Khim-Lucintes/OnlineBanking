@@ -50,8 +50,12 @@ Route::prefix('admin')->group(function () {
     Route::get('/users', [AuthController::class, 'getAllUsers']);
     Route::post('/users/{id}/status', [AuthController::class, 'updateUserStatus']);
 
-    Route::get('/account-approvals', [AuthController::class, 'getPendingApprovals']);
-    Route::post('/account-approvals/{id}', [AuthController::class, 'handleAccountApproval']);
+     Route::prefix('account-approvals')->group(function () {
+        Route::get('/', [AuthController::class, 'getPendingApprovals']);
+
+        Route::post('/{id}/approve', [AuthController::class, 'approveAccount']);
+        Route::post('/{id}/reject', [AuthController::class, 'rejectAccount']);
+    });
 
     Route::get('/transactions', [AuthController::class, 'getAdminTransactions']);
 
@@ -62,6 +66,8 @@ Route::prefix('admin')->group(function () {
     Route::get('/audit-logs/export', [AuthController::class, 'exportAuditLogs']);
 });
 
+Route::get('/notifications', [AuthController::class, 'getNotifications']);
+Route::post('/notifications/read-all', [AuthController::class, 'markNotificationsAsRead']);
 /*
 |--------------------------------------------------------------------------
 | Super Admin Routes
@@ -90,4 +96,6 @@ Route::prefix('superadmin')->group(function () {
 
     Route::post('/backup', [AuthController::class, 'backupDatabase']);
     Route::post('/restore', [AuthController::class, 'restoreDatabase']);
+
+    Route::get('/superadmin/notifications', [AuthController::class, 'getNotifications']);
 });

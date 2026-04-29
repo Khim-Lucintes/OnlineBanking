@@ -5196,30 +5196,41 @@ function AdminDashboard() {
     _useState2 = _slicedToArray(_useState, 2),
     activePage = _useState2[0],
     setActivePage = _useState2[1];
-  var renderPage = function renderPage() {
-    switch (activePage) {
-      case "manage-users":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ManageUsers__WEBPACK_IMPORTED_MODULE_6__["default"], {});
-      case "account-approvals":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AccountApprovals__WEBPACK_IMPORTED_MODULE_8__["default"], {});
-      case "transactions":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Transactions__WEBPACK_IMPORTED_MODULE_7__["default"], {});
-      case "reports":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Reports__WEBPACK_IMPORTED_MODULE_9__["default"], {});
-      case "audit-logs":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AuditLogs__WEBPACK_IMPORTED_MODULE_10__["default"], {});
-      default:
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          setActivePage: setActivePage
-        });
-    }
-  };
+  var allowedPages = [(0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") && "dashboard", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("manage_users") && "manage-users", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("account_approvals") && "account-approvals", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("transactions") && "transactions", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("reports") && "reports", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("full_audit_logs") && "audit-logs"].filter(Boolean);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var allowedPages = [(0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") && "dashboard", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("manage_users") && "manage-users", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("account_approvals") && "account-approvals", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("transactions") && "transactions", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("reports") && "reports", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("full_audit_logs") && "audit-logs"].filter(Boolean);
     if (!allowedPages.includes(activePage)) {
       setActivePage(allowedPages[0] || "dashboard");
     }
   }, [activePage]);
+  var renderPage = function renderPage() {
+    switch (activePage) {
+      case "manage-users":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("manage_users") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_ManageUsers__WEBPACK_IMPORTED_MODULE_6__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "account-approvals":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("account_approvals") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AccountApprovals__WEBPACK_IMPORTED_MODULE_8__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "transactions":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("transactions") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Transactions__WEBPACK_IMPORTED_MODULE_7__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "reports":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("reports") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_Reports__WEBPACK_IMPORTED_MODULE_9__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "audit-logs":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("full_audit_logs") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AuditLogs__WEBPACK_IMPORTED_MODULE_10__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "dashboard":
+      default:
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_components_AdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+    }
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsxs)("div", {
     className: "dashboard-page",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_11__.jsx)(_shared_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -5278,6 +5289,8 @@ function AccountApprovals() {
     _useState6 = _slicedToArray(_useState5, 2),
     message = _useState6[0],
     setMessage = _useState6[1];
+  var storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  var adminUserId = (storedUser === null || storedUser === void 0 ? void 0 : storedUser.user_id) || "";
   var fetchPendingUsers = /*#__PURE__*/function () {
     var _ref = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
       var response, data, _t;
@@ -5288,7 +5301,8 @@ function AccountApprovals() {
             _context.n = 1;
             return fetch("/api/admin/account-approvals", {
               headers: {
-                Accept: "application/json"
+                Accept: "application/json",
+                "X-Admin-User-Id": adminUserId
               }
             });
           case 1:
@@ -5321,7 +5335,7 @@ function AccountApprovals() {
       return _ref.apply(this, arguments);
     };
   }();
-  var handleApproval = /*#__PURE__*/function () {
+  var updateStatus = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2(userId, action) {
       var response, data, _t2;
       return _regenerator().w(function (_context2) {
@@ -5330,15 +5344,13 @@ function AccountApprovals() {
             setMessage("");
             _context2.p = 1;
             _context2.n = 2;
-            return fetch("/api/admin/account-approvals/".concat(userId), {
+            return fetch("/api/admin/account-approvals/".concat(userId, "/").concat(action), {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
-                Accept: "application/json"
-              },
-              body: JSON.stringify({
-                action: action
-              })
+                Accept: "application/json",
+                "X-Admin-User-Id": adminUserId
+              }
             });
           case 2:
             response = _context2.v;
@@ -5366,7 +5378,7 @@ function AccountApprovals() {
         }
       }, _callee2, null, [[1, 5]]);
     }));
-    return function handleApproval(_x, _x2) {
+    return function updateStatus(_x, _x2) {
       return _ref2.apply(this, arguments);
     };
   }();
@@ -5446,13 +5458,13 @@ function AccountApprovals() {
                     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
                       className: "panel-action-btn",
                       onClick: function onClick() {
-                        return handleApproval(user.user_id, "approve");
+                        return updateStatus(user.user_id, "approve");
                       },
                       children: "Approve"
                     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
                       className: "panel-action-btn",
                       onClick: function onClick() {
-                        return handleApproval(user.user_id, "reject");
+                        return updateStatus(user.user_id, "reject");
                       },
                       children: "Reject"
                     })]
@@ -7555,106 +7567,6 @@ function Reports() {
 
 /***/ },
 
-/***/ "./resources/js/components/private/admin/AdminDashboard/components/Sidebarlist.jsx"
-/*!*****************************************************************************************!*\
-  !*** ./resources/js/components/private/admin/AdminDashboard/components/Sidebarlist.jsx ***!
-  \*****************************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _css_Admin_components_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/Admin/components/Sidebarlist.css */ "./resources/css/Admin/components/Sidebarlist.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-function Sidebarlist(_ref) {
-  var activePage = _ref.activePage,
-    setActivePage = _ref.setActivePage;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
-  var handleLogout = function handleLogout() {
-    localStorage.removeItem("isAuth");
-    localStorage.removeItem("user");
-    navigate("/login");
-  };
-  var menuItems = [{
-    key: "dashboard",
-    label: "Dashboard",
-    icon: "🏠"
-  }, {
-    key: "manage-users",
-    label: "Manage Users",
-    icon: "👥"
-  }, {
-    key: "account-approvals",
-    label: "Account Approvals",
-    icon: "✔"
-  }, {
-    key: "transactions",
-    label: "Transactions",
-    icon: "📄"
-  }, {
-    key: "reports",
-    label: "Reports",
-    icon: "📊"
-  }, {
-    key: "audit-logs",
-    label: "Audit Logs",
-    icon: "🧾"
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "dashboard-sidebar-menu",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("nav", {
-      className: "dashboard-menu",
-      children: [menuItems.map(function (item) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
-          type: "button",
-          className: "dashboard-menu-btn ".concat(activePage === item.key ? "active" : ""),
-          onClick: function onClick() {
-            return setActivePage(item.key);
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "menu-icon",
-            children: item.icon
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "menu-text",
-            children: item.label
-          })]
-        }, item.key);
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
-        type: "button",
-        className: "dashboard-menu-btn logout-menu",
-        onClick: handleLogout,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "menu-icon",
-          children: "\u23FB"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "menu-text",
-          children: "Logout"
-        })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "dashboard-sidebar-footer",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        to: "/",
-        className: "logout-btn secondary-btn",
-        children: "Back to Landing Page"
-      })
-    })]
-  });
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebarlist);
-
-/***/ },
-
 /***/ "./resources/js/components/private/admin/AdminDashboard/components/Transactions.jsx"
 /*!******************************************************************************************!*\
   !*** ./resources/js/components/private/admin/AdminDashboard/components/Transactions.jsx ***!
@@ -9318,88 +9230,6 @@ function QuickAction(_ref) {
 
 /***/ },
 
-/***/ "./resources/js/components/private/customer/Dashboard/components/Sidebarlist.jsx"
-/*!***************************************************************************************!*\
-  !*** ./resources/js/components/private/customer/Dashboard/components/Sidebarlist.jsx ***!
-  \***************************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _css_DashboardPage_components_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/DashboardPage/components/Sidebarlist.css */ "./resources/css/DashboardPage/components/Sidebarlist.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-function Sidebarlist(_ref) {
-  var activePage = _ref.activePage,
-    setActivePage = _ref.setActivePage;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
-  var handleLogout = function handleLogout() {
-    localStorage.removeItem("isAuth");
-    localStorage.removeItem("user");
-    navigate("/login");
-  };
-  var menuItems = [{
-    key: "dashboard",
-    label: "Dashboard"
-  }, {
-    key: "accounts",
-    label: "Accounts"
-  }, {
-    key: "transfer",
-    label: "Transfer Money"
-  }, {
-    key: "paybills",
-    label: "Pay Bills"
-  }, {
-    key: "transactions",
-    label: "Transactions"
-  }, {
-    key: "profile",
-    label: "Profile"
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "dashboard-sidebar-menu",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("nav", {
-      className: "dashboard-menu",
-      children: [menuItems.map(function (item) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-          type: "button",
-          className: "dashboard-menu-btn ".concat(activePage === item.key ? "active" : ""),
-          onClick: function onClick() {
-            return setActivePage(item.key);
-          },
-          children: item.label
-        }, item.key);
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        type: "button",
-        className: "dashboard-menu-btn logout-menu",
-        onClick: handleLogout,
-        children: "Logout"
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "dashboard-sidebar-footer",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        to: "/",
-        className: "logout-btn secondary-btn",
-        children: "Back to Landing Page"
-      })
-    })]
-  });
-}
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebarlist);
-
-/***/ },
-
 /***/ "./resources/js/components/private/customer/Dashboard/components/Transactions.jsx"
 /*!****************************************************************************************!*\
   !*** ./resources/js/components/private/customer/Dashboard/components/Transactions.jsx ***!
@@ -10205,36 +10035,45 @@ function SuperAdminDashboard() {
     _useState2 = _slicedToArray(_useState, 2),
     activePage = _useState2[0],
     setActivePage = _useState2[1];
-  var renderContent = function renderContent() {
-    switch (activePage) {
-      case "dashboard":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          setActivePage: setActivePage
-        });
-      case "manage-admins":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_ManageAdmin__WEBPACK_IMPORTED_MODULE_6__["default"], {});
-      case "roles-permissions":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_RolesPermissions__WEBPACK_IMPORTED_MODULE_7__["default"], {});
-      case "system-configuration":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SystemConfiguration__WEBPACK_IMPORTED_MODULE_8__["default"], {});
-      case "security-settings":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SecuritySettings__WEBPACK_IMPORTED_MODULE_9__["default"], {});
-      case "backup-restore":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_BackupRestore__WEBPACK_IMPORTED_MODULE_10__["default"], {});
-      case "full-audit-logs":
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_FullAuditLogs__WEBPACK_IMPORTED_MODULE_11__["default"], {});
-      default:
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
-          setActivePage: setActivePage
-        });
-    }
-  };
+  var allowedPages = [(0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") && "dashboard", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("manage_admins") && "manage-admins", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("roles_permissions") && "roles-permissions", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("system_configuration") && "system-configuration", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("security_settings") && "security-settings", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("backup_restore") && "backup-restore", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("full_audit_logs") && "full-audit-logs"].filter(Boolean);
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    var allowedPages = [(0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") && "dashboard", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("manage_admins") && "manage-admins", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("roles_permissions") && "roles-permissions", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("system_configuration") && "system-configuration", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("security_settings") && "security-settings", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("backup_restore") && "backup-restore", (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("full_audit_logs") && "full-audit-logs"].filter(Boolean);
     if (!allowedPages.includes(activePage)) {
       setActivePage(allowedPages[0] || "dashboard");
     }
   }, [activePage]);
+  var renderContent = function renderContent() {
+    switch (activePage) {
+      case "manage-admins":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("manage_admins") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_ManageAdmin__WEBPACK_IMPORTED_MODULE_6__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "roles-permissions":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("roles_permissions") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_RolesPermissions__WEBPACK_IMPORTED_MODULE_7__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "system-configuration":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("system_configuration") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SystemConfiguration__WEBPACK_IMPORTED_MODULE_8__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "security-settings":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("security_settings") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SecuritySettings__WEBPACK_IMPORTED_MODULE_9__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "backup-restore":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("backup_restore") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_BackupRestore__WEBPACK_IMPORTED_MODULE_10__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "full-audit-logs":
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("full_audit_logs") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_FullAuditLogs__WEBPACK_IMPORTED_MODULE_11__["default"], {}) : (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+      case "dashboard":
+      default:
+        return (0,_utils_permission__WEBPACK_IMPORTED_MODULE_4__.hasPermission)("dashboard") ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_components_SuperAdminOverview__WEBPACK_IMPORTED_MODULE_5__["default"], {
+          setActivePage: setActivePage
+        }) : null;
+    }
+  };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsxs)("div", {
     className: "dashboard-page",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_12__.jsx)(_shared_Sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -12307,110 +12146,6 @@ function SecuritySettings() {
 
 /***/ },
 
-/***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/Sidebarlist.jsx"
-/*!***************************************************************************************************!*\
-  !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/Sidebarlist.jsx ***!
-  \***************************************************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/dist/index.js");
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router/dist/index.js");
-/* harmony import */ var _css_SuperAdmin_components_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../../../../css/SuperAdmin/components/Sidebarlist.css */ "./resources/css/SuperAdmin/components/Sidebarlist.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
-
-
-var Sidebarlist = function Sidebarlist(_ref) {
-  var activePage = _ref.activePage,
-    setActivePage = _ref.setActivePage;
-  var navigate = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_2__.useNavigate)();
-  var handleLogout = function handleLogout() {
-    localStorage.removeItem("isAuth");
-    localStorage.removeItem("user");
-    navigate("/login");
-  };
-  var menuItems = [{
-    key: "dashboard",
-    label: "Dashboard",
-    icon: "🏠"
-  }, {
-    key: "manage-admins",
-    label: "Manage Admins",
-    icon: "👥"
-  }, {
-    key: "roles-permissions",
-    label: "Roles & Permissions",
-    icon: "🔑"
-  }, {
-    key: "system-configuration",
-    label: "System Configuration",
-    icon: "⚙️"
-  }, {
-    key: "security-settings",
-    label: "Security Settings",
-    icon: "🛡️"
-  }, {
-    key: "backup-restore",
-    label: "Backup / Restore",
-    icon: "💾"
-  }, {
-    key: "full-audit-logs",
-    label: "Full Audit Logs",
-    icon: "🧾"
-  }];
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "dashboard-sidebar-menu",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("nav", {
-      className: "dashboard-menu",
-      children: [menuItems.map(function (item) {
-        return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
-          type: "button",
-          className: "dashboard-menu-btn ".concat(activePage === item.key ? "active" : ""),
-          onClick: function onClick() {
-            return setActivePage(item.key);
-          },
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "menu-icon",
-            children: item.icon
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "menu-text",
-            children: item.label
-          })]
-        }, item.key);
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
-        type: "button",
-        className: "dashboard-menu-btn logout-menu",
-        onClick: handleLogout,
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "menu-icon",
-          children: "\u23FB"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-          className: "menu-text",
-          children: "Logout"
-        })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "dashboard-sidebar-footer",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
-        to: "/",
-        className: "logout-btn secondary-btn",
-        children: "Back to Landing Page"
-      })
-    })]
-  });
-};
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Sidebarlist);
-
-/***/ },
-
 /***/ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperAdminOverview.jsx"
 /*!**********************************************************************************************************!*\
   !*** ./resources/js/components/private/superadmin/SuperAdminDashboard/components/SuperAdminOverview.jsx ***!
@@ -14035,16 +13770,9 @@ function Login() {
             localStorage.setItem("isAuth", "true");
             localStorage.setItem("user", JSON.stringify(data.user));
             roleId = Number((_data$user = data.user) === null || _data$user === void 0 ? void 0 : _data$user.role_id);
-            if (roleId === 1) {
-              navigate("/dashboard");
-            } else if (roleId === 2) {
-              navigate("/admin/dashboard");
-            } else if (roleId === 3) {
-              navigate("/superadmin/dashboard");
-            } else {
+            if (roleId === 1) navigate("/dashboard");else if (roleId === 2) navigate("/admin/dashboard");else if (roleId === 3) navigate("/superadmin/dashboard");else {
               setError("Unknown user role");
-              localStorage.removeItem("isAuth");
-              localStorage.removeItem("user");
+              localStorage.clear();
             }
             _context.n = 6;
             break;
@@ -14065,74 +13793,115 @@ function Login() {
       return _ref.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "neo-page auth-page",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "neo-bg-shape neo-bg-one"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "neo-bg-shape neo-bg-two"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "neo-bg-grid"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "neo-container auth-container",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "auth-page",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "auth-container",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "auth-card",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "auth-left",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "neo-pill",
+            className: "auth-badge",
             children: "Secure Access"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-            children: "Welcome back to MyBank"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h1", {
+            children: ["Welcome back to ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              children: "MyBank"
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
             children: "Sign in to access your account, manage transactions, and monitor your online banking dashboard securely."
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "auth-right",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
-            children: "Login"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-            className: "auth-subtext",
-            children: "Enter your credentials to continue"
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "auth-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "auth-logo",
+              children: "MB"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "auth-title",
+              children: "MyBank"
+            })]
           }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-            style: {
-              color: "#ff6b6b"
-            },
+            className: "auth-error",
             children: error
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
             className: "auth-form",
             onSubmit: handleLogin,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "auth-group",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                children: "Email Address"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                type: "email",
-                placeholder: "Enter your email",
-                value: email,
-                onChange: function onChange(e) {
-                  return setEmail(e.target.value);
-                }
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                className: "auth-input",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                  type: "email",
+                  placeholder: "Enter your email",
+                  value: email,
+                  onChange: function onChange(e) {
+                    return setEmail(e.target.value);
+                  }
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  className: "auth-input-icon",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                    width: "18",
+                    height: "18",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                      d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("circle", {
+                      cx: "12",
+                      cy: "7",
+                      r: "4"
+                    })]
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "auth-group",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                children: "Password"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                type: "password",
-                placeholder: "Enter your password",
-                value: password,
-                onChange: function onChange(e) {
-                  return setPassword(e.target.value);
-                }
-              })]
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                className: "auth-input",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                  type: "password",
+                  placeholder: "Enter your password",
+                  value: password,
+                  onChange: function onChange(e) {
+                    return setPassword(e.target.value);
+                  }
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  className: "auth-input-icon",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                    width: "18",
+                    height: "18",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("rect", {
+                      x: "3",
+                      y: "11",
+                      width: "18",
+                      height: "11",
+                      rx: "2",
+                      ry: "2"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                      d: "M7 11V7a5 5 0 0 1 10 0v4"
+                    })]
+                  })
+                })]
+              })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
               type: "submit",
-              className: "neo-btn neo-btn-primary neo-btn-lg auth-submit",
+              className: "auth-submit",
               disabled: loading,
               children: loading ? "Signing In..." : "Sign In"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "auth-switch",
+              className: "auth-footer",
               children: ["Don\u2019t have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
                 to: "/register",
                 children: "Create one"
@@ -14141,7 +13910,7 @@ function Login() {
           })]
         })]
       })
-    })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Login);
@@ -14298,99 +14067,207 @@ function Register() {
       return _ref.apply(this, arguments);
     };
   }();
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
-    className: "neo-page auth-page",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "neo-bg-shape neo-bg-one"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "neo-bg-shape neo-bg-two"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "neo-bg-grid"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
-      className: "neo-container auth-container",
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+    className: "auth-page",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+      className: "auth-container",
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "auth-card",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "auth-left",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            className: "neo-pill",
+            className: "auth-badge",
             children: "Create Account"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h1", {
-            children: "Start your digital banking journey"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("h1", {
+            children: ["Start your digital ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("br", {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+              children: "banking journey"
+            })]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-            children: "Register a customer account and access your banking dashboard."
+            children: "Register a customer account to access your banking dashboard, manage transactions, and monitor securely."
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("button", {
+            className: "auth-learn-btn",
+            type: "button",
+            onClick: function onClick() {
+              return navigate('/login');
+            },
+            children: ["Sign In Instead", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+              width: "16",
+              height: "16",
+              viewBox: "0 0 24 24",
+              fill: "none",
+              stroke: "currentColor",
+              strokeWidth: "2",
+              strokeLinecap: "round",
+              strokeLinejoin: "round",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("line", {
+                x1: "5",
+                y1: "12",
+                x2: "19",
+                y2: "12"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                points: "12 5 19 12 12 19"
+              })]
+            })]
           })]
         }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "auth-right",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h2", {
-            children: "Register"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-            className: "auth-subtext",
-            children: "Create your customer account"
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            className: "auth-header",
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "auth-logo",
+              children: "MB"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
+              className: "auth-title",
+              children: "Register"
+            })]
           }), error && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-            style: {
-              color: "#ff6b6b"
-            },
+            className: "auth-error",
             children: error
           }), success && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
+            className: "auth-error",
             style: {
-              color: "#63f0b1"
+              backgroundColor: 'rgba(99, 240, 177, 0.1)',
+              color: '#63f0b1'
             },
             children: success
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("form", {
             className: "auth-form",
             onSubmit: handleRegister,
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "auth-group",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                children: "Username"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                type: "text",
-                name: "username",
-                placeholder: "Enter username",
-                value: form.username,
-                onChange: handleChange
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                className: "auth-input",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                  type: "text",
+                  name: "username",
+                  placeholder: "Enter username",
+                  value: form.username,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  className: "auth-input-icon",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                    width: "18",
+                    height: "18",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                      d: "M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("circle", {
+                      cx: "12",
+                      cy: "7",
+                      r: "4"
+                    })]
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "auth-group",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                children: "Email Address"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                type: "email",
-                name: "email",
-                placeholder: "Enter email",
-                value: form.email,
-                onChange: handleChange
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                className: "auth-input",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                  type: "email",
+                  name: "email",
+                  placeholder: "Enter email",
+                  value: form.email,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  className: "auth-input-icon",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                    width: "18",
+                    height: "18",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                      d: "M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("polyline", {
+                      points: "22,6 12,13 2,6"
+                    })]
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "auth-group",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                children: "Password"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                type: "password",
-                name: "password",
-                placeholder: "Create password",
-                value: form.password,
-                onChange: handleChange
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                className: "auth-input",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                  type: "password",
+                  name: "password",
+                  placeholder: "Create password",
+                  value: form.password,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  className: "auth-input-icon",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                    width: "18",
+                    height: "18",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("rect", {
+                      x: "3",
+                      y: "11",
+                      width: "18",
+                      height: "11",
+                      rx: "2",
+                      ry: "2"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                      d: "M7 11V7a5 5 0 0 1 10 0v4"
+                    })]
+                  })
+                })]
+              })
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
               className: "auth-group",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("label", {
-                children: "Confirm Password"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
-                type: "password",
-                name: "confirmPassword",
-                placeholder: "Confirm password",
-                value: form.confirmPassword,
-                onChange: handleChange
-              })]
+              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
+                className: "auth-input",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("input", {
+                  type: "password",
+                  name: "confirmPassword",
+                  placeholder: "Confirm password",
+                  value: form.confirmPassword,
+                  onChange: handleChange
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
+                  className: "auth-input-icon",
+                  children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("svg", {
+                    width: "18",
+                    height: "18",
+                    viewBox: "0 0 24 24",
+                    fill: "none",
+                    stroke: "currentColor",
+                    strokeWidth: "2",
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("rect", {
+                      x: "3",
+                      y: "11",
+                      width: "18",
+                      height: "11",
+                      rx: "2",
+                      ry: "2"
+                    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("path", {
+                      d: "M7 11V7a5 5 0 0 1 10 0v4"
+                    })]
+                  })
+                })]
+              })
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
               type: "submit",
-              className: "neo-btn neo-btn-primary neo-btn-lg auth-submit",
+              className: "auth-submit",
               disabled: loading,
               children: loading ? "Creating..." : "Create Account"
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("p", {
-              className: "auth-switch",
+              className: "auth-footer",
               children: ["Already have an account? ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
                 to: "/login",
                 children: "Sign in"
@@ -14399,7 +14276,7 @@ function Register() {
           })]
         })]
       })
-    })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Register);
@@ -14450,17 +14327,40 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _css_DashboardPage_components_Header_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../css/DashboardPage/components/Header.css */ "./resources/css/DashboardPage/components/Header.css");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _css_DashboardPage_components_Notification_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../css/DashboardPage/components/Notification.css */ "./resources/css/DashboardPage/components/Notification.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function ownKeys(e, r) { var t = Object.keys(e); if (Object.getOwnPropertySymbols) { var o = Object.getOwnPropertySymbols(e); r && (o = o.filter(function (r) { return Object.getOwnPropertyDescriptor(e, r).enumerable; })), t.push.apply(t, o); } return t; }
+function _objectSpread(e) { for (var r = 1; r < arguments.length; r++) { var t = null != arguments[r] ? arguments[r] : {}; r % 2 ? ownKeys(Object(t), !0).forEach(function (r) { _defineProperty(e, r, t[r]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t)) : ownKeys(Object(t)).forEach(function (r) { Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r)); }); } return e; }
+function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+
 
 
 
 function Header(_ref) {
   var _user$username;
-  var activePage = _ref.activePage,
-    dashboardData = _ref.dashboardData;
+  var activePage = _ref.activePage;
   var user = JSON.parse(localStorage.getItem("user") || "null");
-
-  // 🔥 FIX: Clean page titles
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+    _useState2 = _slicedToArray(_useState, 2),
+    showNotif = _useState2[0],
+    setShowNotif = _useState2[1];
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState4 = _slicedToArray(_useState3, 2),
+    notifications = _useState4[0],
+    setNotifications = _useState4[1];
   var pageTitles = {
     dashboard: "Dashboard",
     accounts: "Accounts",
@@ -14471,10 +14371,14 @@ function Header(_ref) {
     "manage-users": "Manage Users",
     "account-approvals": "Account Approvals",
     reports: "Reports",
-    "audit-logs": "Audit Logs"
+    "audit-logs": "Audit Logs",
+    "manage-admins": "Manage Admins",
+    "roles-permissions": "Roles & Permissions",
+    "system-configuration": "System Configuration",
+    "security-settings": "Security Settings",
+    "backup-restore": "Backup / Restore",
+    "full-audit-logs": "Full Audit Logs"
   };
-
-  // 🔥 FIX: Role label dynamic
   var roleLabels = {
     1: "Customer",
     2: "Admin",
@@ -14482,39 +14386,190 @@ function Header(_ref) {
   };
   var title = pageTitles[activePage] || "Dashboard";
   var role = roleLabels[Number(user === null || user === void 0 ? void 0 : user.role_id)] || "User";
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("header", {
+  var unreadCount = notifications.filter(function (n) {
+    return Number(n.is_read) === 0;
+  }).length;
+  var fetchNotifications = /*#__PURE__*/function () {
+    var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+      var response, data, _t;
+      return _regenerator().w(function (_context) {
+        while (1) switch (_context.p = _context.n) {
+          case 0:
+            _context.p = 0;
+            _context.n = 1;
+            return fetch("/api/notifications", {
+              method: "GET",
+              headers: {
+                Accept: "application/json",
+                "X-Admin-User-Id": user === null || user === void 0 ? void 0 : user.user_id
+              }
+            });
+          case 1:
+            response = _context.v;
+            _context.n = 2;
+            return response.json();
+          case 2:
+            data = _context.v;
+            if (response.ok) {
+              _context.n = 3;
+              break;
+            }
+            console.error(data.message || "Failed to load notifications");
+            return _context.a(2);
+          case 3:
+            setNotifications(data.notifications || []);
+            _context.n = 5;
+            break;
+          case 4:
+            _context.p = 4;
+            _t = _context.v;
+            console.error("Failed to load notifications", _t);
+          case 5:
+            return _context.a(2);
+        }
+      }, _callee, null, [[0, 4]]);
+    }));
+    return function fetchNotifications() {
+      return _ref2.apply(this, arguments);
+    };
+  }();
+  var markAllAsRead = /*#__PURE__*/function () {
+    var _ref3 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee2() {
+      var response, data, _t2;
+      return _regenerator().w(function (_context2) {
+        while (1) switch (_context2.p = _context2.n) {
+          case 0:
+            _context2.p = 0;
+            _context2.n = 1;
+            return fetch("/api/notifications/read-all", {
+              method: "POST",
+              headers: {
+                Accept: "application/json",
+                "X-Admin-User-Id": user === null || user === void 0 ? void 0 : user.user_id
+              }
+            });
+          case 1:
+            response = _context2.v;
+            _context2.n = 2;
+            return response.json();
+          case 2:
+            data = _context2.v;
+            if (response.ok) {
+              _context2.n = 3;
+              break;
+            }
+            console.error(data.message || "Failed to mark notifications as read");
+            return _context2.a(2);
+          case 3:
+            setNotifications(function (prev) {
+              return prev.map(function (item) {
+                return _objectSpread(_objectSpread({}, item), {}, {
+                  is_read: 1
+                });
+              });
+            });
+            _context2.n = 5;
+            break;
+          case 4:
+            _context2.p = 4;
+            _t2 = _context2.v;
+            console.error("Failed to mark notifications as read", _t2);
+          case 5:
+            return _context2.a(2);
+        }
+      }, _callee2, null, [[0, 4]]);
+    }));
+    return function markAllAsRead() {
+      return _ref3.apply(this, arguments);
+    };
+  }();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!(user !== null && user !== void 0 && user.user_id)) return;
+    fetchNotifications();
+    var interval = setInterval(fetchNotifications, 10000);
+    return function () {
+      return clearInterval(interval);
+    };
+  }, [user === null || user === void 0 ? void 0 : user.user_id]);
+  var handleToggleNotifications = /*#__PURE__*/function () {
+    var _ref4 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee3() {
+      var nextState;
+      return _regenerator().w(function (_context3) {
+        while (1) switch (_context3.n) {
+          case 0:
+            nextState = !showNotif;
+            setShowNotif(nextState);
+            if (!(nextState && unreadCount > 0)) {
+              _context3.n = 1;
+              break;
+            }
+            _context3.n = 1;
+            return markAllAsRead();
+          case 1:
+            return _context3.a(2);
+        }
+      }, _callee3);
+    }));
+    return function handleToggleNotifications() {
+      return _ref4.apply(this, arguments);
+    };
+  }();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("header", {
     className: "header",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "header-left",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h2", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
         className: "header-title",
         children: title
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
         className: "header-subtitle",
         children: ["Welcome back, ", (user === null || user === void 0 ? void 0 : user.username) || "User"]
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
       className: "header-right",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "header-notification",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+          type: "button",
+          className: "header-bell",
+          onClick: handleToggleNotifications,
+          children: ["\uD83D\uDD14", unreadCount > 0 && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "notif-badge",
+            children: unreadCount
+          })]
+        }), showNotif && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "notif-dropdown",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
+            children: "Notifications"
+          }), notifications.length === 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
+            className: "notif-empty",
+            children: "No notifications"
+          }) : notifications.map(function (n) {
+            return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "notif-item notif-".concat(n.type || "info", " ").concat(Number(n.is_read) === 0 ? "notif-unread" : ""),
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "notif-message",
+                children: n.message
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "notif-time",
+                children: n.time
+              })]
+            }, n.id);
+          })]
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
         className: "header-user",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
           className: "header-avatar",
           children: (user === null || user === void 0 || (_user$username = user.username) === null || _user$username === void 0 || (_user$username = _user$username.charAt(0)) === null || _user$username === void 0 ? void 0 : _user$username.toUpperCase()) || "U"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
           className: "header-user-info",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("h4", {
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h4", {
             children: (user === null || user === void 0 ? void 0 : user.username) || "User"
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("p", {
             children: role
-          }), " "]
+          })]
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("button", {
-        className: "header-action-btn",
-        onClick: function onClick() {
-          localStorage.clear();
-          window.location.href = "/login";
-        },
-        children: "Logout"
       })]
     })]
   });
@@ -14536,13 +14591,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_DashboardPage_components_Sidebar_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../css/DashboardPage/components/Sidebar.css */ "./resources/css/DashboardPage/components/Sidebar.css");
-/* harmony import */ var _private_customer_Dashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../private/customer/Dashboard/components/Sidebarlist */ "./resources/js/components/private/customer/Dashboard/components/Sidebarlist.jsx");
-/* harmony import */ var _private_admin_AdminDashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../private/admin/AdminDashboard/components/Sidebarlist */ "./resources/js/components/private/admin/AdminDashboard/components/Sidebarlist.jsx");
-/* harmony import */ var _private_superadmin_SuperAdminDashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../private/superadmin/SuperAdminDashboard/components/Sidebarlist */ "./resources/js/components/private/superadmin/SuperAdminDashboard/components/Sidebarlist.jsx");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-
+/* harmony import */ var _utils_permission__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../utils/permission */ "./resources/js/components/utils/permission.js");
+/* harmony import */ var _css_DashboardPage_components_Sidebar_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../css/DashboardPage/components/Sidebar.css */ "./resources/css/DashboardPage/components/Sidebar.css");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
 
@@ -14550,33 +14601,146 @@ __webpack_require__.r(__webpack_exports__);
 function Sidebar(_ref) {
   var activePage = _ref.activePage,
     setActivePage = _ref.setActivePage;
-  var user = JSON.parse(localStorage.getItem("user"));
+  var user = (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.getUser)();
   var roleId = Number(user === null || user === void 0 ? void 0 : user.role_id);
-  var SidebarComponent;
-  if (roleId === 3) {
-    SidebarComponent = _private_superadmin_SuperAdminDashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_4__["default"];
+  var handleLogout = function handleLogout() {
+    localStorage.removeItem("user");
+    window.location.href = "/login";
+  };
+  var customerItems = [{
+    key: "dashboard",
+    label: "Dashboard",
+    icon: "🏠"
+  }, {
+    key: "accounts",
+    label: "Accounts",
+    icon: "🏦"
+  }, {
+    key: "transfer",
+    label: "Transfer Money",
+    icon: "💸"
+  }, {
+    key: "paybills",
+    label: "Pay Bills",
+    icon: "🧾"
+  }, {
+    key: "transactions",
+    label: "Transactions",
+    icon: "📄"
+  }, {
+    key: "profile",
+    label: "Profile",
+    icon: "👤"
+  }];
+  var adminItems = [(0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("dashboard") && {
+    key: "dashboard",
+    label: "Dashboard",
+    icon: "🏠"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("manage_users") && {
+    key: "manage-users",
+    label: "Manage Users",
+    icon: "👥"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("account_approvals") && {
+    key: "account-approvals",
+    label: "Account Approvals",
+    icon: "✅"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("transactions") && {
+    key: "transactions",
+    label: "Transactions",
+    icon: "📄"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("reports") && {
+    key: "reports",
+    label: "Reports",
+    icon: "📊"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("full_audit_logs") && {
+    key: "audit-logs",
+    label: "Audit Logs",
+    icon: "🧾"
+  }].filter(Boolean);
+  var superAdminItems = [(0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("dashboard") && {
+    key: "dashboard",
+    label: "Dashboard",
+    icon: "🏠"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("manage_admins") && {
+    key: "manage-admins",
+    label: "Manage Admins",
+    icon: "👥"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("roles_permissions") && {
+    key: "roles-permissions",
+    label: "Roles & Permissions",
+    icon: "🛡️"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("system_configuration") && {
+    key: "system-configuration",
+    label: "System Configuration",
+    icon: "⚙️"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("security_settings") && {
+    key: "security-settings",
+    label: "Security Settings",
+    icon: "🔒"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("backup_restore") && {
+    key: "backup-restore",
+    label: "Backup / Restore",
+    icon: "💾"
+  }, (0,_utils_permission__WEBPACK_IMPORTED_MODULE_1__.hasPermission)("full_audit_logs") && {
+    key: "full-audit-logs",
+    label: "Full Audit Logs",
+    icon: "📜"
+  }].filter(Boolean);
+  var menuItems = [];
+  if (roleId === 1) {
+    menuItems = customerItems;
   } else if (roleId === 2) {
-    SidebarComponent = _private_admin_AdminDashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_3__["default"];
-  } else {
-    SidebarComponent = _private_customer_Dashboard_components_Sidebarlist__WEBPACK_IMPORTED_MODULE_2__["default"];
+    menuItems = adminItems;
+  } else if (roleId === 3) {
+    menuItems = superAdminItems;
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("aside", {
+  var username = (user === null || user === void 0 ? void 0 : user.username) || "User";
+  var roleName = roleId === 3 ? "Super Admin" : roleId === 2 ? "Admin" : "Customer";
+  var initials = username.charAt(0).toUpperCase();
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("aside", {
     className: "dashboard-sidebar",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-      className: "dashboard-brand",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("div", {
-        className: "dashboard-brand-icon",
-        children: "MB"
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsxs)("div", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("h2", {
-          children: "MyBank"
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)("span", {
-          children: "Online Banking"
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+      className: "dashboard-sidebar-top",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+        className: "dashboard-brand",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+          className: "dashboard-brand-icon",
+          children: "MB"
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "dashboard-brand-text",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("h2", {
+            children: "MyBank"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            children: roleName
+          })]
         })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+        className: "dashboard-menu-list",
+        children: menuItems.map(function (item) {
+          return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("button", {
+            type: "button",
+            className: "dashboard-menu-item ".concat(activePage === item.key ? "active" : ""),
+            onClick: function onClick() {
+              return setActivePage(item.key);
+            },
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "dashboard-menu-icon",
+              children: item.icon
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+              className: "dashboard-menu-label",
+              children: item.label
+            })]
+          }, item.key);
+        })
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_5__.jsx)(SidebarComponent, {
-      activePage: activePage,
-      setActivePage: setActivePage
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+      className: "dashboard-sidebar-bottom",
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+        type: "button",
+        className: "dashboard-logout-btn",
+        onClick: handleLogout,
+        children: "Logout"
+      })
     })]
   });
 }
@@ -16815,30 +16979,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/* ===================================
 
 /***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/Admin/components/Sidebarlist.css"
-/*!******************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/Admin/components/Sidebarlist.css ***!
-  \******************************************************************************************************************************************************************************************************************/
-(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* SECTION TITLE */\r\n.sidebar-section-title {\r\n  font-size: 11px;\r\n  text-transform: uppercase;\r\n  letter-spacing: 1px;\r\n  color: #6f7da8;\r\n  margin: 18px 12px 8px;\r\n}\r\n\r\n/* MENU WRAPPER */\r\n.dashboard-menu {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 6px;\r\n}\r\n\r\n/* BUTTON */\r\n.dashboard-menu-btn {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n\r\n  background: transparent;\r\n  border: 1px solid transparent;\r\n\r\n  color: #a8b3d9;\r\n  font-size: 14px;\r\n  font-weight: 500;\r\n\r\n  cursor: pointer;\r\n  transition: all 0.25s ease;\r\n}\r\n\r\n/* ICON */\r\n.menu-icon {\r\n  font-size: 16px;\r\n  width: 20px;\r\n  text-align: center;\r\n}\r\n\r\n/* TEXT */\r\n.menu-text {\r\n  flex: 1;\r\n  text-align: left;\r\n}\r\n\r\n/* HOVER */\r\n.dashboard-menu-btn:hover {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n/* ACTIVE */\r\n.dashboard-menu-btn.active {\r\n  background: linear-gradient(135deg, #1e2b4d, #243566);\r\n  color: #ffffff;\r\n  border: 1px solid rgba(0, 207, 255, 0.2);\r\n  box-shadow: 0 6px 18px rgba(0, 207, 255, 0.15);\r\n}\r\n\r\n/* LOGOUT */\r\n.logout-menu {\r\n  margin-top: 10px;\r\n  color: #ff6b6b;\r\n  border: 1px solid rgba(255, 107, 107, 0.2);\r\n}\r\n\r\n.logout-menu:hover {\r\n  background: rgba(255, 107, 107, 0.1);\r\n  color: #ff8787;\r\n}\r\n\r\n/* FOOTER */\r\n.dashboard-sidebar-footer {\r\n  margin-top: auto;\r\n  padding: 16px 10px;\r\n}\r\n\r\n.logout-btn.secondary-btn {\r\n  display: block;\r\n  text-align: center;\r\n  padding: 10px;\r\n  border-radius: 10px;\r\n\r\n  background: rgba(255,255,255,0.05);\r\n  color: #8f9bc1;\r\n\r\n  text-decoration: none;\r\n  font-size: 13px;\r\n\r\n  transition: 0.2s ease;\r\n}\r\n\r\n.logout-btn.secondary-btn:hover {\r\n  background: rgba(255,255,255,0.1);\r\n  color: #ffffff;\r\n}", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ },
-
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/Dashboard.css"
 /*!*************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/Dashboard.css ***!
@@ -16952,7 +17092,31 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* ================================\r\n   HEADER (MATCHED TO YOUR CURRENT JSX)\r\n================================ */\r\n\r\n.header {\r\n  width: 100%;\r\n  padding: 18px 28px;\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 40;\r\n\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  gap: 18px;\r\n\r\n  background:\r\n    linear-gradient(180deg, rgba(11, 16, 32, 0.9), rgba(17, 22, 42, 0.9)),\r\n    rgba(255, 255, 255, 0.04);\r\n\r\n  backdrop-filter: blur(18px);\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);\r\n}\r\n\r\n/* LEFT SIDE */\r\n.header-left {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 4px;\r\n}\r\n\r\n.header-title {\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n  color: #ffffff;\r\n  letter-spacing: 0.3px;\r\n  line-height: 1.1;\r\n}\r\n\r\n.header-subtitle {\r\n  font-size: 13px;\r\n  color: #8f9bc1;\r\n  line-height: 1.4;\r\n}\r\n\r\n/* RIGHT SIDE */\r\n.header-right {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 16px;\r\n}\r\n\r\n/* SEARCH */\r\n.header-search {\r\n  padding: 10px 14px;\r\n  min-width: 220px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  outline: none;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.header-search::-moz-placeholder {\r\n  color: #8f9bc1;\r\n}\r\n\r\n.header-search::placeholder {\r\n  color: #8f9bc1;\r\n}\r\n\r\n.header-search:focus {\r\n  border-color: rgba(0, 207, 255, 0.28);\r\n  box-shadow: 0 0 0 3px rgba(0, 207, 255, 0.08);\r\n}\r\n\r\n/* USER BOX */\r\n.header-user {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 8px 12px;\r\n  border-radius: 16px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.header-user:hover {\r\n  background: rgba(255, 255, 255, 0.08);\r\n  border-color: rgba(255, 255, 255, 0.12);\r\n}\r\n\r\n/* AVATAR */\r\n.header-avatar {\r\n  width: 38px;\r\n  height: 38px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: #ffffff;\r\n  font-weight: 800;\r\n  font-size: 14px;\r\n  flex-shrink: 0;\r\n  box-shadow: 0 8px 20px rgba(0, 207, 255, 0.18);\r\n}\r\n\r\n/* USER INFO */\r\n.header-user-info {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.header-user-info h4 {\r\n  font-size: 13px;\r\n  color: #ffffff;\r\n  margin-bottom: 2px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.header-user-info p {\r\n  font-size: 11px;\r\n  color: #8f9bc1;\r\n  line-height: 1.2;\r\n}\r\n\r\n/* ACTION BUTTON */\r\n.header-action-btn {\r\n  padding: 11px 16px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.header-action-btn:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.25);\r\n}\r\n\r\n/* RESPONSIVE */\r\n@media (max-width: 900px) {\r\n  .header-search {\r\n    min-width: 160px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .header {\r\n    padding: 14px 16px;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    gap: 12px;\r\n  }\r\n\r\n  .header-right {\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    flex-wrap: wrap;\r\n  }\r\n\r\n  .header-user {\r\n    flex: 1;\r\n  }\r\n\r\n  .header-search {\r\n    width: 100%;\r\n    min-width: unset;\r\n  }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* ================================\r\n   HEADER (MATCHED TO YOUR CURRENT JSX)\r\n================================ */\r\n\r\n.header {\r\n  width: 100%;\r\n  padding: 18px 28px;\r\n  position: sticky;\r\n  top: 0;\r\n  z-index: 40;\r\n\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: space-between;\r\n  gap: 18px;\r\n\r\n  background:\r\n    linear-gradient(180deg, rgba(11, 16, 32, 0.9), rgba(17, 22, 42, 0.9)),\r\n    rgba(255, 255, 255, 0.04);\r\n\r\n  backdrop-filter: blur(18px);\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);\r\n}\r\n\r\n/* LEFT SIDE */\r\n.header-left {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 4px;\r\n}\r\n\r\n.header-title {\r\n  font-size: 24px;\r\n  font-weight: 800;\r\n  color: #ffffff;\r\n  letter-spacing: 0.3px;\r\n  line-height: 1.1;\r\n}\r\n\r\n.header-subtitle {\r\n  font-size: 13px;\r\n  color: #8f9bc1;\r\n  line-height: 1.4;\r\n}\r\n\r\n/* RIGHT SIDE */\r\n.header-right {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 16px;\r\n}\r\n\r\n/* SEARCH */\r\n.header-search {\r\n  padding: 10px 14px;\r\n  min-width: 220px;\r\n  border-radius: 12px;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  outline: none;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.header-search::-moz-placeholder {\r\n  color: #8f9bc1;\r\n}\r\n\r\n.header-search::placeholder {\r\n  color: #8f9bc1;\r\n}\r\n\r\n.header-search:focus {\r\n  border-color: rgba(0, 207, 255, 0.28);\r\n  box-shadow: 0 0 0 3px rgba(0, 207, 255, 0.08);\r\n}\r\n\r\n/* USER BOX */\r\n.header-user {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 8px 12px;\r\n  border-radius: 16px;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.header-user:hover {\r\n  background: rgba(255, 255, 255, 0.08);\r\n  border-color: rgba(255, 255, 255, 0.12);\r\n}\r\n\r\n/* AVATAR */\r\n.header-avatar {\r\n  width: 38px;\r\n  height: 38px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: #ffffff;\r\n  font-weight: 800;\r\n  font-size: 14px;\r\n  flex-shrink: 0;\r\n  box-shadow: 0 8px 20px rgba(0, 207, 255, 0.18);\r\n}\r\n\r\n/* USER INFO */\r\n.header-user-info {\r\n  display: flex;\r\n  flex-direction: column;\r\n}\r\n\r\n.header-user-info h4 {\r\n  font-size: 13px;\r\n  color: #ffffff;\r\n  margin-bottom: 2px;\r\n  line-height: 1.2;\r\n}\r\n\r\n.header-user-info p {\r\n  font-size: 11px;\r\n  color: #8f9bc1;\r\n  line-height: 1.2;\r\n}\r\n\r\n/* ACTION BUTTON */\r\n.header-action-btn {\r\n  padding: 11px 16px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: white;\r\n  font-weight: 700;\r\n  cursor: pointer;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.header-action-btn:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.25);\r\n}\r\n\r\n/* RESPONSIVE */\r\n@media (max-width: 900px) {\r\n  .header-search {\r\n    min-width: 160px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .header {\r\n    padding: 14px 16px;\r\n    flex-direction: column;\r\n    align-items: flex-start;\r\n    gap: 12px;\r\n  }\r\n\r\n  .header-right {\r\n    width: 100%;\r\n    justify-content: space-between;\r\n    flex-wrap: wrap;\r\n  }\r\n\r\n  .header-user {\r\n    flex: 1;\r\n  }\r\n\r\n  .header-search {\r\n    width: 100%;\r\n    min-width: unset;\r\n  }\r\n}\r\n\r\n/* 🔔 Notification */\r\n.header-notification {\r\n  position: relative;\r\n}\r\n\r\n.header-bell {\r\n  width: 42px;\r\n  height: 42px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: rgba(255,255,255,0.05);\r\n  color: #fff;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n  position: relative;\r\n}\r\n\r\n.header-bell:hover {\r\n  background: rgba(255,255,255,0.08);\r\n}\r\n\r\n/* 🔴 Badge */\r\n.notif-badge {\r\n  position: absolute;\r\n  top: 6px;\r\n  right: 6px;\r\n  background: #ff4d4d;\r\n  color: #fff;\r\n  font-size: 10px;\r\n  padding: 2px 6px;\r\n  border-radius: 999px;\r\n}\r\n\r\n/* 📦 Dropdown */\r\n.notif-dropdown {\r\n  position: absolute;\r\n  top: 52px;\r\n  right: 0;\r\n  width: 260px;\r\n  background: #0f1a3b;\r\n  border: 1px solid rgba(255,255,255,0.08);\r\n  border-radius: 12px;\r\n  padding: 12px;\r\n  box-shadow: 0 12px 30px rgba(0,0,0,0.3);\r\n  z-index: 100;\r\n}\r\n\r\n.notif-dropdown h4 {\r\n  margin-bottom: 10px;\r\n  font-size: 14px;\r\n  color: #fff;\r\n}\r\n\r\n.notif-item {\r\n  padding: 8px;\r\n  border-radius: 8px;\r\n  font-size: 13px;\r\n  color: #c7d2f2;\r\n  transition: 0.2s;\r\n}\r\n\r\n.notif-item:hover {\r\n  background: rgba(255,255,255,0.05);\r\n}\r\n\r\n.notif-empty {\r\n  font-size: 12px;\r\n  color: #8f9bc1;\r\n}\r\n\r\n.header-notification {\r\n  position: relative;\r\n}\r\n\r\n.header-bell {\r\n  width: 42px;\r\n  height: 42px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  font-size: 16px;\r\n  cursor: pointer;\r\n  position: relative;\r\n}\r\n\r\n.header-bell:hover {\r\n  background: rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.notif-badge {\r\n  position: absolute;\r\n  top: 5px;\r\n  right: 5px;\r\n  min-width: 18px;\r\n  height: 18px;\r\n  padding: 0 5px;\r\n  border-radius: 999px;\r\n  background: #ff4d6d;\r\n  color: #ffffff;\r\n  font-size: 10px;\r\n  font-weight: 700;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.notif-dropdown {\r\n  position: absolute;\r\n  top: 52px;\r\n  right: 0;\r\n  width: 300px;\r\n  max-height: 360px;\r\n  overflow-y: auto;\r\n  background: #0f1a3b;\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  border-radius: 12px;\r\n  padding: 12px;\r\n  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);\r\n  z-index: 200;\r\n}\r\n\r\n.notif-dropdown h4 {\r\n  margin: 0 0 10px;\r\n  font-size: 14px;\r\n  color: #ffffff;\r\n}\r\n\r\n.notif-empty {\r\n  font-size: 12px;\r\n  color: #8f9bc1;\r\n}\r\n\r\n.notif-item {\r\n  padding: 10px;\r\n  border-radius: 10px;\r\n  margin-bottom: 8px;\r\n  background: rgba(255, 255, 255, 0.03);\r\n}\r\n\r\n.notif-item:last-child {\r\n  margin-bottom: 0;\r\n}\r\n\r\n.notif-unread {\r\n  border-left: 3px solid #00cfff;\r\n}\r\n\r\n.notif-message {\r\n  font-size: 13px;\r\n  color: #d8e4ff;\r\n  line-height: 1.4;\r\n}\r\n\r\n.notif-time {\r\n  font-size: 11px;\r\n  color: #8f9bc1;\r\n  margin-top: 4px;\r\n}\r\n\r\n.notif-success {\r\n  background: rgba(0, 201, 141, 0.08);\r\n}\r\n\r\n.notif-info {\r\n  background: rgba(0, 207, 255, 0.08);\r\n}\r\n\r\n.notif-warning {\r\n  background: rgba(255, 193, 7, 0.08);\r\n}\r\n\r\n.notif-danger {\r\n  background: rgba(255, 77, 109, 0.08);\r\n}", ""]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ },
+
+/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Notification.css"
+/*!***************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Notification.css ***!
+  \***************************************************************************************************************************************************************************************************************************/
+(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
+// Imports
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".notif-time {\r\n  font-size: 11px;\r\n  color: #8f9bc1;\r\n  margin-top: 4px;\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17024,31 +17188,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-sidebar {\r\n  width: 280px;\r\n  min-width: 280px;\r\n  min-height: 100vh;\r\n  padding: 22px 18px;\r\n  background:\r\n    linear-gradient(180deg, rgba(11, 16, 32, 0.97), rgba(17, 22, 42, 0.97)),\r\n    rgba(255, 255, 255, 0.03);\r\n  border-right: 1px solid rgba(255, 255, 255, 0.08);\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 22px;\r\n  position: relative;\r\n  box-sizing: border-box;\r\n  overflow-y: auto;\r\n}\r\n\r\n.dashboard-sidebar-top {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 16px;\r\n}\r\n\r\n.dashboard-brand {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding-bottom: 18px;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-brand-icon {\r\n  width: 46px;\r\n  height: 46px;\r\n  border-radius: 15px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  font-weight: 800;\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.2);\r\n  flex-shrink: 0;\r\n}\r\n\r\n.dashboard-brand-text h2 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 4px;\r\n  line-height: 1.1;\r\n}\r\n\r\n.dashboard-brand-text span {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n\r\n.dashboard-sidebar-profile {\r\n  margin-top: auto;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 16px 12px 0;\r\n  border-top: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-sidebar-avatar {\r\n  width: 42px;\r\n  height: 42px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 14px;\r\n  font-weight: 800;\r\n  flex-shrink: 0;\r\n}\r\n\r\n.dashboard-sidebar-userinfo h4 {\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  margin-bottom: 3px;\r\n}\r\n\r\n.dashboard-sidebar-userinfo p {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n@media (max-width: 1024px) {\r\n  .dashboard-sidebar {\r\n    width: 240px;\r\n  }\r\n\r\n  .dashboard-brand-text h2 {\r\n    font-size: 22px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .dashboard-sidebar {\r\n    width: 100%;\r\n    min-height: auto;\r\n    position: relative;\r\n    border-right: none;\r\n    border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n    padding: 16px;\r\n  }\r\n\r\n  .dashboard-sidebar-profile {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.dashboard-menu-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.dashboard-menu-item {\r\n  width: 100%;\r\n  border: 1px solid transparent;\r\n  background: transparent;\r\n  color: #c7d2f2;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 14px 14px;\r\n  border-radius: 14px;\r\n  cursor: pointer;\r\n  transition: all 0.2s ease;\r\n  text-align: left;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.dashboard-menu-item:hover {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n.dashboard-menu-item.active {\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.22), rgba(0, 207, 255, 0.16));\r\n  border-color: rgba(92, 103, 255, 0.35);\r\n  color: #ffffff;\r\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n.dashboard-menu-icon {\r\n  width: 18px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  flex-shrink: 0;\r\n  font-size: 15px;\r\n}\r\n\r\n.dashboard-menu-label {\r\n  flex: 1;\r\n}", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ },
-
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Sidebarlist.css"
-/*!**************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Sidebarlist.css ***!
-  \**************************************************************************************************************************************************************************************************************************/
-(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* ================================\r\n   SIDEBAR LIST (CUSTOMER)\r\n================================ */\r\n\r\n.dashboard-sidebar-menu {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  flex: 1;\r\n  gap: 20px;\r\n}\r\n\r\n/* MENU LIST */\r\n.dashboard-menu {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n/* MENU BUTTON */\r\n.dashboard-menu-btn {\r\n  width: 100%;\r\n  padding: 14px 16px;\r\n  border: 1px solid transparent;\r\n  border-radius: 16px;\r\n  background: transparent;\r\n  color: #aeb9d8;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n  text-align: left;\r\n  cursor: pointer;\r\n  transition: all 0.25s ease;\r\n  -webkit-appearance: none;\r\n     -moz-appearance: none;\r\n          appearance: none;\r\n  outline: none;\r\n}\r\n\r\n/* HOVER */\r\n.dashboard-menu-btn:hover {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n  border-color: rgba(255, 255, 255, 0.06);\r\n  transform: translateX(4px);\r\n}\r\n\r\n/* ACTIVE PAGE */\r\n.dashboard-menu-btn.active {\r\n  background: linear-gradient(\r\n    135deg,\r\n    rgba(92, 103, 255, 0.24),\r\n    rgba(0, 207, 255, 0.14)\r\n  );\r\n  color: #ffffff;\r\n  border-color: rgba(0, 207, 255, 0.2);\r\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n/* LOGOUT BUTTON */\r\n.logout-menu {\r\n  margin-top: 6px;\r\n  background: rgba(255, 80, 80, 0.08);\r\n  color: #ff8f8f;\r\n  border-color: rgba(255, 80, 80, 0.12);\r\n}\r\n\r\n.logout-menu:hover {\r\n  background: rgba(255, 80, 80, 0.15);\r\n  color: #ffffff;\r\n  border-color: rgba(255, 80, 80, 0.2);\r\n}\r\n\r\n/* FOOTER */\r\n.dashboard-sidebar-footer {\r\n  margin-top: auto;\r\n  padding-top: 16px;\r\n  border-top: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n/* BACK BUTTON */\r\n.logout-btn.secondary-btn {\r\n  display: inline-block;\r\n  width: 100%;\r\n  padding: 12px 16px;\r\n  border-radius: 14px;\r\n  text-align: center;\r\n  text-decoration: none;\r\n  background: rgba(255, 255, 255, 0.05);\r\n  border: 1px solid rgba(255, 255, 255, 0.08);\r\n  color: #8ad8ff;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n  transition: 0.25s ease;\r\n}\r\n\r\n.logout-btn.secondary-btn:hover {\r\n  background: rgba(255, 255, 255, 0.08);\r\n  color: #ffffff;\r\n  border-color: rgba(255, 255, 255, 0.12);\r\n}\r\n\r\n/* ================================\r\n   MOBILE\r\n================================ */\r\n@media (max-width: 768px) {\r\n  .dashboard-menu {\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n  }\r\n\r\n  .dashboard-menu-btn {\r\n    flex: 1 1 calc(50% - 10px);\r\n    text-align: center;\r\n  }\r\n\r\n  .dashboard-sidebar-footer {\r\n    width: 100%;\r\n  }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".dashboard-sidebar {\r\n  width: 280px;\r\n  min-width: 280px;\r\n  min-height: 100vh;\r\n  padding: 22px 18px;\r\n  background:\r\n    linear-gradient(180deg, rgba(11, 16, 32, 0.97), rgba(17, 22, 42, 0.97)),\r\n    rgba(255, 255, 255, 0.03);\r\n  border-right: 1px solid rgba(255, 255, 255, 0.08);\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n\r\n  /* ❌ REMOVE this */\r\n  /* gap: 22px; */\r\n\r\n  position: relative;\r\n  box-sizing: border-box;\r\n  overflow-y: auto;\r\n}\r\n\r\n.dashboard-sidebar-top {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 16px;\r\n    /* 🔥 THIS IS THE KEY FIX */\r\n  flex: 1;\r\n}\r\n\r\n.dashboard-brand {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding-bottom: 18px;\r\n  border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-brand-icon {\r\n  width: 46px;\r\n  height: 46px;\r\n  border-radius: 15px;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  font-weight: 800;\r\n  box-shadow: 0 10px 24px rgba(0, 207, 255, 0.2);\r\n  flex-shrink: 0;\r\n}\r\n\r\n.dashboard-brand-text h2 {\r\n  color: #ffffff;\r\n  font-size: 24px;\r\n  margin-bottom: 4px;\r\n  line-height: 1.1;\r\n}\r\n\r\n.dashboard-brand-text span {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n\r\n.dashboard-sidebar-profile {\r\n  margin-top: auto;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 16px 12px 0;\r\n  border-top: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-sidebar-avatar {\r\n  width: 42px;\r\n  height: 42px;\r\n  border-radius: 50%;\r\n  background: linear-gradient(135deg, #5c67ff, #00cfff);\r\n  color: #ffffff;\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 14px;\r\n  font-weight: 800;\r\n  flex-shrink: 0;\r\n}\r\n\r\n.dashboard-sidebar-userinfo h4 {\r\n  color: #ffffff;\r\n  font-size: 14px;\r\n  margin-bottom: 3px;\r\n}\r\n\r\n.dashboard-sidebar-userinfo p {\r\n  color: #8f9bc1;\r\n  font-size: 12px;\r\n}\r\n\r\n@media (max-width: 1024px) {\r\n  .dashboard-sidebar {\r\n    width: 240px;\r\n  }\r\n\r\n  .dashboard-brand-text h2 {\r\n    font-size: 22px;\r\n  }\r\n}\r\n\r\n@media (max-width: 768px) {\r\n  .dashboard-sidebar {\r\n    width: 100%;\r\n    min-height: auto;\r\n    position: relative;\r\n    border-right: none;\r\n    border-bottom: 1px solid rgba(255, 255, 255, 0.08);\r\n    padding: 16px;\r\n  }\r\n\r\n  .dashboard-sidebar-profile {\r\n    display: none;\r\n  }\r\n}\r\n\r\n.dashboard-menu-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.dashboard-menu-item {\r\n  width: 100%;\r\n  border: 1px solid transparent;\r\n  background: transparent;\r\n  color: #c7d2f2;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 14px 14px;\r\n  border-radius: 14px;\r\n  cursor: pointer;\r\n  transition: all 0.2s ease;\r\n  text-align: left;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.dashboard-menu-item:hover {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n.dashboard-menu-item.active {\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.22), rgba(0, 207, 255, 0.16));\r\n  border-color: rgba(92, 103, 255, 0.35);\r\n  color: #ffffff;\r\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n.dashboard-menu-icon {\r\n  width: 18px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  flex-shrink: 0;\r\n  font-size: 15px;\r\n}\r\n\r\n.dashboard-menu-label {\r\n  flex: 1;\r\n}\r\n\r\n.dashboard-menu-list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n}\r\n\r\n.dashboard-menu-item {\r\n  width: 100%;\r\n  border: 1px solid transparent;\r\n  background: transparent;\r\n  color: #c7d2f2;\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n  padding: 14px 14px;\r\n  border-radius: 14px;\r\n  cursor: pointer;\r\n  transition: all 0.2s ease;\r\n  text-align: left;\r\n  font-size: 14px;\r\n  font-weight: 600;\r\n}\r\n\r\n.dashboard-menu-item:hover {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n.dashboard-menu-item.active {\r\n  background: linear-gradient(135deg, rgba(92, 103, 255, 0.22), rgba(0, 207, 255, 0.16));\r\n  border-color: rgba(92, 103, 255, 0.35);\r\n  color: #ffffff;\r\n  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);\r\n}\r\n\r\n.dashboard-menu-icon {\r\n  width: 18px;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  flex-shrink: 0;\r\n  font-size: 15px;\r\n}\r\n\r\n.dashboard-menu-label {\r\n  flex: 1;\r\n}\r\n\r\n.dashboard-sidebar-bottom {\r\n  margin-top: auto; /* 🔥 pushes to bottom */\r\n  padding-top: 16px;\r\n\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 10px;\r\n\r\n  border-top: 1px solid rgba(255, 255, 255, 0.08);\r\n}\r\n\r\n.dashboard-logout-btn {\r\n  width: 100%;\r\n  height: 44px;\r\n  border-radius: 12px;\r\n\r\n  border: 1px solid rgba(255, 80, 80, 0.25);\r\n  background: rgba(255, 80, 80, 0.08);\r\n\r\n  color: #ff6b6b;\r\n  font-size: 13px;\r\n  font-weight: 600;\r\n\r\n  cursor: pointer;\r\n  transition: all 0.18s ease;\r\n}\r\n\r\n.dashboard-logout-btn:hover {\r\n  background: rgba(255, 80, 80, 0.16);\r\n  border-color: rgba(255, 80, 80, 0.4);\r\n  color: #ffffff;\r\n}\r\n\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17144,7 +17284,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".auth-page {\r\n  display: flex;\r\n  align-items: center;\r\n  min-height: 100vh;\r\n  background: #0b1020;\r\n}\r\n\r\n.auth-container {\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.auth-card {\r\n  width: 100%;\r\n  max-width: 900px;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  border-radius: 24px;\r\n  overflow: hidden;\r\n  background: rgba(255,255,255,0.05);\r\n  backdrop-filter: blur(15px);\r\n}\r\n\r\n.auth-left {\r\n  padding: 40px;\r\n  background: linear-gradient(135deg, #5c67ff, #00e0ff);\r\n  color: white;\r\n}\r\n\r\n.auth-right {\r\n  padding: 40px;\r\n}\r\n\r\n.auth-group input {\r\n  width: 100%;\r\n  padding: 12px;\r\n  border-radius: 10px;\r\n  border: none;\r\n  margin-top: 5px;\r\n}\r\n\r\n.auth-submit {\r\n  width: 100%;\r\n  margin-top: 15px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* PAGE */\r\n.auth-page {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 100vh;\r\n  /* Match the dark blue gradient background from the image */\r\n  background: radial-gradient(circle at bottom left, #052670 0%, #020b1c 40%),\r\n              radial-gradient(circle at top left, #052670 0%, #020b1c 40%);\r\n  background-color: #020b1c;\r\n  font-family: 'Inter', 'Segoe UI', sans-serif;\r\n  color: #fff;\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n\r\n/* Optional abstract dots */\r\n.auth-page::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 10%;\r\n  left: 5%;\r\n  width: 100px;\r\n  height: 100px;\r\n  background-image: radial-gradient(#00e0ff 15%, transparent 15%);\r\n  background-size: 15px 15px;\r\n  opacity: 0.2;\r\n}\r\n\r\n/* CONTAINER */\r\n.auth-container {\r\n  width: 100%;\r\n  padding: 0 40px;\r\n  display: flex;\r\n  justify-content: center;\r\n  z-index: 1;\r\n}\r\n\r\n/* WRAPPER (was auth-card) */\r\n.auth-card {\r\n  width: 100%;\r\n  max-width: 1100px;\r\n  display: grid;\r\n  grid-template-columns: 1fr 450px;\r\n  gap: 80px;\r\n  align-items: center;\r\n}\r\n\r\n/* LEFT SIDE */\r\n.auth-left {\r\n  padding: 20px 0;\r\n}\r\n\r\n.auth-badge {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  gap: 8px;\r\n  padding: 6px 16px;\r\n  border-radius: 20px;\r\n  background: linear-gradient(90deg, #007bff, #00c6ff);\r\n  font-size: 13px;\r\n  font-weight: 500;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.auth-left h1 {\r\n  font-size: 42px;\r\n  margin-bottom: 20px;\r\n  line-height: 1.2;\r\n  font-weight: 700;\r\n}\r\n\r\n.auth-left h1 span {\r\n  color: #00c6ff; /* Cyan color from image */\r\n}\r\n\r\n.auth-left p {\r\n  color: rgba(255, 255, 255, 0.8);\r\n  font-size: 16px;\r\n  line-height: 1.6;\r\n  margin-bottom: 40px;\r\n  max-width: 450px;\r\n}\r\n\r\n.auth-learn-btn {\r\n  padding: 12px 28px;\r\n  border-radius: 30px;\r\n  border: 1px solid rgba(0, 198, 255, 0.3);\r\n  background: linear-gradient(90deg, #0056e0, #0088ff);\r\n  color: white;\r\n  font-size: 15px;\r\n  font-weight: 500;\r\n  cursor: pointer;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  gap: 10px;\r\n  box-shadow: 0 4px 15px rgba(0, 136, 255, 0.3);\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.auth-learn-btn:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 6px 20px rgba(0, 136, 255, 0.4);\r\n}\r\n\r\n/* RIGHT SIDE (THE FORM CARD) */\r\n.auth-right {\r\n  background: #041026; /* Dark navy card background */\r\n  border-radius: 24px;\r\n  padding: 40px;\r\n  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n/* HEADER */\r\n.auth-header {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 16px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.auth-logo {\r\n  width: 64px;\r\n  height: 64px;\r\n  border-radius: 16px;\r\n  background: linear-gradient(135deg, #0056e0, #00c6ff);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 24px;\r\n  font-weight: 700;\r\n  color: white;\r\n  box-shadow: 0 10px 20px rgba(0, 198, 255, 0.2);\r\n}\r\n\r\n.auth-title {\r\n  font-size: 32px;\r\n  font-weight: 700;\r\n}\r\n\r\n/* ERROR */\r\n.auth-error {\r\n  color: #ff4d4f;\r\n  margin-bottom: 20px;\r\n  font-size: 14px;\r\n  background: rgba(255, 77, 79, 0.1);\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n}\r\n\r\n/* FORM */\r\n.auth-group {\r\n  margin-bottom: 20px;\r\n}\r\n\r\n/* INPUT */\r\n.auth-input {\r\n  position: relative;\r\n}\r\n\r\n.auth-input input {\r\n  width: 100%;\r\n  padding: 16px 45px 16px 20px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: #ffffff; /* White inputs as in image */\r\n  color: #333;\r\n  font-size: 15px;\r\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);\r\n  outline: none;\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.auth-input input::-moz-placeholder {\r\n  color: #888;\r\n}\r\n\r\n.auth-input input::placeholder {\r\n  color: #888;\r\n}\r\n\r\n.auth-input input:focus {\r\n  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.4);\r\n}\r\n\r\n/* ICON */\r\n.auth-input-icon {\r\n  position: absolute;\r\n  right: 18px;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  color: #0056e0; /* Blue icons */\r\n  font-size: 18px;\r\n}\r\n\r\n/* BUTTON */\r\n.auth-submit {\r\n  width: 100%;\r\n  padding: 16px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: linear-gradient(90deg, #0056e0, #00c6ff);\r\n  color: white;\r\n  font-size: 16px;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n  margin-top: 10px;\r\n  box-shadow: 0 8px 20px rgba(0, 136, 255, 0.3);\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.auth-submit:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 10px 25px rgba(0, 136, 255, 0.4);\r\n}\r\n\r\n.auth-submit:disabled {\r\n  opacity: 0.7;\r\n  cursor: not-allowed;\r\n  transform: none;\r\n}\r\n\r\n/* FOOTER */\r\n.auth-footer {\r\n  margin-top: 24px;\r\n  text-align: left;\r\n  font-size: 14px;\r\n  color: rgba(255, 255, 255, 0.7);\r\n}\r\n\r\n.auth-footer a {\r\n  color: #0056e0;\r\n  text-decoration: none;\r\n  font-weight: 600;\r\n  margin-left: 5px;\r\n}\r\n\r\n.auth-footer a:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n/* RESPONSIVE */\r\n@media (max-width: 900px) {\r\n  .auth-card {\r\n    grid-template-columns: 1fr;\r\n    gap: 40px;\r\n  }\r\n  \r\n  .auth-left {\r\n    text-align: center;\r\n    padding: 0;\r\n  }\r\n  \r\n  .auth-left p {\r\n    margin: 0 auto 30px;\r\n  }\r\n  \r\n  .auth-right {\r\n    margin: 0 auto;\r\n    width: 100%;\r\n    max-width: 450px;\r\n  }\r\n}\r", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17171,7 +17311,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 ___CSS_LOADER_EXPORT___.i(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_Login_css__WEBPACK_IMPORTED_MODULE_1__["default"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".auth-right h2 {\r\n  font-size: 28px;\r\n}\r\n\r\n.auth-group {\r\n  margin-bottom: 10px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17322,30 +17462,6 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".security-settings-page {\n    color: 
 
 /***/ },
 
-/***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/Sidebarlist.css"
-/*!***********************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/Sidebarlist.css ***!
-  \***********************************************************************************************************************************************************************************************************************/
-(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0__);
-// Imports
-
-var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* SECTION TITLE */\r\n.sidebar-section-title {\r\n  font-size: 11px;\r\n  text-transform: uppercase;\r\n  letter-spacing: 1px;\r\n  color: #6f7da8;\r\n  margin: 18px 12px 8px;\r\n}\r\n\r\n/* MENU WRAPPER */\r\n.dashboard-menu {\r\n  display: flex;\r\n  flex-direction: column;\r\n  gap: 6px;\r\n}\r\n\r\n/* BUTTON */\r\n.dashboard-menu-btn {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 12px;\r\n\r\n  width: 100%;\r\n  padding: 12px 14px;\r\n  border-radius: 12px;\r\n\r\n  background: transparent;\r\n  border: 1px solid transparent;\r\n\r\n  color: #a8b3d9;\r\n  font-size: 14px;\r\n  font-weight: 500;\r\n\r\n  cursor: pointer;\r\n  transition: all 0.25s ease;\r\n}\r\n\r\n/* ICON */\r\n.menu-icon {\r\n  font-size: 16px;\r\n  width: 20px;\r\n  text-align: center;\r\n}\r\n\r\n/* TEXT */\r\n.menu-text {\r\n  flex: 1;\r\n  text-align: left;\r\n}\r\n\r\n/* HOVER */\r\n.dashboard-menu-btn:hover {\r\n  background: rgba(255, 255, 255, 0.05);\r\n  color: #ffffff;\r\n}\r\n\r\n/* ACTIVE */\r\n.dashboard-menu-btn.active {\r\n  background: linear-gradient(135deg, #1e2b4d, #243566);\r\n  color: #ffffff;\r\n  border: 1px solid rgba(0, 207, 255, 0.2);\r\n  box-shadow: 0 6px 18px rgba(0, 207, 255, 0.15);\r\n}\r\n\r\n/* LOGOUT */\r\n.logout-menu {\r\n  margin-top: 10px;\r\n  color: #ff6b6b;\r\n  border: 1px solid rgba(255, 107, 107, 0.2);\r\n}\r\n\r\n.logout-menu:hover {\r\n  background: rgba(255, 107, 107, 0.1);\r\n  color: #ff8787;\r\n}\r\n\r\n/* FOOTER */\r\n.dashboard-sidebar-footer {\r\n  margin-top: auto;\r\n  padding: 16px 10px;\r\n}\r\n\r\n.logout-btn.secondary-btn {\r\n  display: block;\r\n  text-align: center;\r\n  padding: 10px;\r\n  border-radius: 10px;\r\n\r\n  background: rgba(255,255,255,0.05);\r\n  color: #8f9bc1;\r\n\r\n  text-decoration: none;\r\n  font-size: 13px;\r\n\r\n  transition: 0.2s ease;\r\n}\r\n\r\n.logout-btn.secondary-btn:hover {\r\n  background: rgba(255,255,255,0.1);\r\n  color: #ffffff;\r\n}", ""]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ },
-
 /***/ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdminOverviewCharts.css"
 /*!************************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/SuperAdminOverviewCharts.css ***!
@@ -17483,7 +17599,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".auth-page {\r\n  display: flex;\r\n  align-items: center;\r\n  min-height: 100vh;\r\n  background: #0b1020;\r\n}\r\n\r\n.auth-container {\r\n  width: 100%;\r\n  display: flex;\r\n  justify-content: center;\r\n}\r\n\r\n.auth-card {\r\n  width: 100%;\r\n  max-width: 900px;\r\n  display: grid;\r\n  grid-template-columns: 1fr 1fr;\r\n  border-radius: 24px;\r\n  overflow: hidden;\r\n  background: rgba(255,255,255,0.05);\r\n  backdrop-filter: blur(15px);\r\n}\r\n\r\n.auth-left {\r\n  padding: 40px;\r\n  background: linear-gradient(135deg, #5c67ff, #00e0ff);\r\n  color: white;\r\n}\r\n\r\n.auth-right {\r\n  padding: 40px;\r\n}\r\n\r\n.auth-group input {\r\n  width: 100%;\r\n  padding: 12px;\r\n  border-radius: 10px;\r\n  border: none;\r\n  margin-top: 5px;\r\n}\r\n\r\n.auth-submit {\r\n  width: 100%;\r\n  margin-top: 15px;\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* PAGE */\r\n.auth-page {\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  min-height: 100vh;\r\n  /* Match the dark blue gradient background from the image */\r\n  background: radial-gradient(circle at bottom left, #052670 0%, #020b1c 40%),\r\n              radial-gradient(circle at top left, #052670 0%, #020b1c 40%);\r\n  background-color: #020b1c;\r\n  font-family: 'Inter', 'Segoe UI', sans-serif;\r\n  color: #fff;\r\n  position: relative;\r\n  overflow: hidden;\r\n}\r\n\r\n/* Optional abstract dots */\r\n.auth-page::before {\r\n  content: \"\";\r\n  position: absolute;\r\n  top: 10%;\r\n  left: 5%;\r\n  width: 100px;\r\n  height: 100px;\r\n  background-image: radial-gradient(#00e0ff 15%, transparent 15%);\r\n  background-size: 15px 15px;\r\n  opacity: 0.2;\r\n}\r\n\r\n/* CONTAINER */\r\n.auth-container {\r\n  width: 100%;\r\n  padding: 0 40px;\r\n  display: flex;\r\n  justify-content: center;\r\n  z-index: 1;\r\n}\r\n\r\n/* WRAPPER (was auth-card) */\r\n.auth-card {\r\n  width: 100%;\r\n  max-width: 1100px;\r\n  display: grid;\r\n  grid-template-columns: 1fr 450px;\r\n  gap: 80px;\r\n  align-items: center;\r\n}\r\n\r\n/* LEFT SIDE */\r\n.auth-left {\r\n  padding: 20px 0;\r\n}\r\n\r\n.auth-badge {\r\n  display: inline-flex;\r\n  align-items: center;\r\n  gap: 8px;\r\n  padding: 6px 16px;\r\n  border-radius: 20px;\r\n  background: linear-gradient(90deg, #007bff, #00c6ff);\r\n  font-size: 13px;\r\n  font-weight: 500;\r\n  margin-bottom: 24px;\r\n}\r\n\r\n.auth-left h1 {\r\n  font-size: 42px;\r\n  margin-bottom: 20px;\r\n  line-height: 1.2;\r\n  font-weight: 700;\r\n}\r\n\r\n.auth-left h1 span {\r\n  color: #00c6ff; /* Cyan color from image */\r\n}\r\n\r\n.auth-left p {\r\n  color: rgba(255, 255, 255, 0.8);\r\n  font-size: 16px;\r\n  line-height: 1.6;\r\n  margin-bottom: 40px;\r\n  max-width: 450px;\r\n}\r\n\r\n.auth-learn-btn {\r\n  padding: 12px 28px;\r\n  border-radius: 30px;\r\n  border: 1px solid rgba(0, 198, 255, 0.3);\r\n  background: linear-gradient(90deg, #0056e0, #0088ff);\r\n  color: white;\r\n  font-size: 15px;\r\n  font-weight: 500;\r\n  cursor: pointer;\r\n  display: inline-flex;\r\n  align-items: center;\r\n  gap: 10px;\r\n  box-shadow: 0 4px 15px rgba(0, 136, 255, 0.3);\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.auth-learn-btn:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 6px 20px rgba(0, 136, 255, 0.4);\r\n}\r\n\r\n/* RIGHT SIDE (THE FORM CARD) */\r\n.auth-right {\r\n  background: #041026; /* Dark navy card background */\r\n  border-radius: 24px;\r\n  padding: 40px;\r\n  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);\r\n}\r\n\r\n/* HEADER */\r\n.auth-header {\r\n  display: flex;\r\n  align-items: center;\r\n  gap: 16px;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.auth-logo {\r\n  width: 64px;\r\n  height: 64px;\r\n  border-radius: 16px;\r\n  background: linear-gradient(135deg, #0056e0, #00c6ff);\r\n  display: flex;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 24px;\r\n  font-weight: 700;\r\n  color: white;\r\n  box-shadow: 0 10px 20px rgba(0, 198, 255, 0.2);\r\n}\r\n\r\n.auth-title {\r\n  font-size: 32px;\r\n  font-weight: 700;\r\n}\r\n\r\n/* ERROR */\r\n.auth-error {\r\n  color: #ff4d4f;\r\n  margin-bottom: 20px;\r\n  font-size: 14px;\r\n  background: rgba(255, 77, 79, 0.1);\r\n  padding: 10px;\r\n  border-radius: 8px;\r\n}\r\n\r\n/* FORM */\r\n.auth-group {\r\n  margin-bottom: 20px;\r\n}\r\n\r\n/* INPUT */\r\n.auth-input {\r\n  position: relative;\r\n}\r\n\r\n.auth-input input {\r\n  width: 100%;\r\n  padding: 16px 45px 16px 20px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: #ffffff; /* White inputs as in image */\r\n  color: #333;\r\n  font-size: 15px;\r\n  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);\r\n  outline: none;\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.auth-input input::placeholder {\r\n  color: #888;\r\n}\r\n\r\n.auth-input input:focus {\r\n  box-shadow: 0 0 0 3px rgba(0, 198, 255, 0.4);\r\n}\r\n\r\n/* ICON */\r\n.auth-input-icon {\r\n  position: absolute;\r\n  right: 18px;\r\n  top: 50%;\r\n  transform: translateY(-50%);\r\n  color: #0056e0; /* Blue icons */\r\n  font-size: 18px;\r\n}\r\n\r\n/* BUTTON */\r\n.auth-submit {\r\n  width: 100%;\r\n  padding: 16px;\r\n  border-radius: 12px;\r\n  border: none;\r\n  background: linear-gradient(90deg, #0056e0, #00c6ff);\r\n  color: white;\r\n  font-size: 16px;\r\n  font-weight: 600;\r\n  cursor: pointer;\r\n  margin-top: 10px;\r\n  box-shadow: 0 8px 20px rgba(0, 136, 255, 0.3);\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n.auth-submit:hover {\r\n  transform: translateY(-2px);\r\n  box-shadow: 0 10px 25px rgba(0, 136, 255, 0.4);\r\n}\r\n\r\n.auth-submit:disabled {\r\n  opacity: 0.7;\r\n  cursor: not-allowed;\r\n  transform: none;\r\n}\r\n\r\n/* FOOTER */\r\n.auth-footer {\r\n  margin-top: 24px;\r\n  text-align: left;\r\n  font-size: 14px;\r\n  color: rgba(255, 255, 255, 0.7);\r\n}\r\n\r\n.auth-footer a {\r\n  color: #0056e0;\r\n  text-decoration: none;\r\n  font-weight: 600;\r\n  margin-left: 5px;\r\n}\r\n\r\n.auth-footer a:hover {\r\n  text-decoration: underline;\r\n}\r\n\r\n/* RESPONSIVE */\r\n@media (max-width: 900px) {\r\n  .auth-card {\r\n    grid-template-columns: 1fr;\r\n    gap: 40px;\r\n  }\r\n  \r\n  .auth-left {\r\n    text-align: center;\r\n    padding: 0;\r\n  }\r\n  \r\n  .auth-left p {\r\n    margin: 0 auto 30px;\r\n  }\r\n  \r\n  .auth-right {\r\n    margin: 0 auto;\r\n    width: 100%;\r\n    max-width: 450px;\r\n  }\r\n}\r", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -80071,36 +80187,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ },
 
-/***/ "./resources/css/Admin/components/Sidebarlist.css"
-/*!********************************************************!*\
-  !*** ./resources/css/Admin/components/Sidebarlist.css ***!
-  \********************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Sidebarlist.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/Admin/components/Sidebarlist.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ },
-
 /***/ "./resources/css/DashboardPage/Dashboard.css"
 /*!***************************************************!*\
   !*** ./resources/css/DashboardPage/Dashboard.css ***!
@@ -80251,6 +80337,36 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ },
 
+/***/ "./resources/css/DashboardPage/components/Notification.css"
+/*!*****************************************************************!*\
+  !*** ./resources/css/DashboardPage/components/Notification.css ***!
+  \*****************************************************************/
+(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Notification_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Notification.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Notification.css");
+
+            
+
+var options = {};
+
+options.insert = "head";
+options.singleton = false;
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Notification_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
+
+
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Notification_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
+
+/***/ },
+
 /***/ "./resources/css/DashboardPage/components/PayBills.css"
 /*!*************************************************************!*\
   !*** ./resources/css/DashboardPage/components/PayBills.css ***!
@@ -80338,36 +80454,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebar_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ },
-
-/***/ "./resources/css/DashboardPage/components/Sidebarlist.css"
-/*!****************************************************************!*\
-  !*** ./resources/css/DashboardPage/components/Sidebarlist.css ***!
-  \****************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Sidebarlist.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/DashboardPage/components/Sidebarlist.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ },
 
@@ -80698,36 +80784,6 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_SecuritySettings_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
-
-/***/ },
-
-/***/ "./resources/css/SuperAdmin/components/Sidebarlist.css"
-/*!*************************************************************!*\
-  !*** ./resources/css/SuperAdmin/components/Sidebarlist.css ***!
-  \*************************************************************/
-(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !!../../../../node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!../../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./Sidebarlist.css */ "./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[6].oneOf[1].use[2]!./resources/css/SuperAdmin/components/Sidebarlist.css");
-
-            
-
-var options = {};
-
-options.insert = "head";
-options.singleton = false;
-
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__["default"], options);
-
-
-
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_1_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_6_oneOf_1_use_2_Sidebarlist_css__WEBPACK_IMPORTED_MODULE_1__["default"].locals || {});
 
 /***/ },
 

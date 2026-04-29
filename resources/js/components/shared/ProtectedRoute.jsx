@@ -1,16 +1,19 @@
+import React from "react";
 import { Navigate } from "react-router-dom";
-import { hasPermission } from "../utils/permission";
+import { getUser, hasPermission } from "../../utils/permission";
 
-const ProtectedRoute = ({ children, permission }) => {
-    const user = JSON.parse(localStorage.getItem("user"));
+function ProtectedRoute({ children, permission }) {
+  const user = getUser();
 
-    if (!user) return <Navigate to="/login" />;
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
 
-    if (permission && !hasPermission(user, permission)) {
-        return <Navigate to="/unauthorized" />;
-    }
+  if (permission && !hasPermission(permission)) {
+    return <Navigate to="/login" replace />;
+  }
 
-    return children;
-};
+  return children;
+}
 
 export default ProtectedRoute;

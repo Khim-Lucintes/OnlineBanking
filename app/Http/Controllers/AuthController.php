@@ -50,7 +50,7 @@ class AuthController extends Controller
                 'password_hash' => Hash::make($request->password),
                 'email' => trim($request->email),
                 'email_verified' => 1,
-                'status' => self::STATUS_ACTIVE,
+                'status' => self::STATUS_PENDING,
                 'created_at' => now(),
             ]);
 
@@ -61,7 +61,7 @@ class AuthController extends Controller
                 'account_type' => 'Savings',
                 'account_number' => $accountNumber,
                 'balance' => 0.00,
-                'status' => self::STATUS_ACTIVE,
+                'status' => self::STATUS_PENDING,
                 'created_at' => now(),
             ]);
 
@@ -83,86 +83,104 @@ class AuthController extends Controller
     }
 
     public function login(Request $request): JsonResponse
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required|string',
+{
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required|string',
+    ]);
+
+    $email = trim($request->email);
+
+    $user = DB::table('users_table')
+        ->where('email', $email)
+        ->orderByDesc('user_id')
+        ->first();
+
+    // ❌ USER NOT FOUND
+    if (!$user) {
+        DB::table('notifications_table')->insert([
+            'user_id' => null,
+            'type' => 'danger',
+            'message' => 'Failed login attempt for email: ' . $email,
+            'is_read' => 0,
+            'created_at' => now(),
         ]);
-
-        $email = trim($request->email);
-
-        $user = DB::table('users_table')
-            ->where('email', $email)
-            ->orderByDesc('user_id')
-            ->first();
-
-        if (!$user) {
-            $this->createAuditLog(
-                null,
-                'Failed Login',
-                'User',
-                null,
-                'Failed login attempt for unknown email: ' . $email
-            );
-
-            return response()->json([
-                'message' => 'User not found',
-            ], 401);
-        }
-
-        if (!Hash::check($request->password, $user->password_hash)) {
-            $this->createAuditLog(
-                (int) $user->user_id,
-                'Failed Login',
-                'User',
-                (int) $user->user_id,
-                'Failed login attempt for ' . $email
-            );
-
-            return response()->json([
-                'message' => 'Invalid email or password',
-            ], 401);
-        }
-
-        if ($user->status !== self::STATUS_ACTIVE) {
-            $this->createAuditLog(
-                (int) $user->user_id,
-                'Blocked Login',
-                'User',
-                (int) $user->user_id,
-                'Blocked login because account is ' . $user->status
-            );
-
-            return response()->json([
-                'message' => 'Your account is not active',
-            ], 403);
-        }
-
-        $roleName = $this->getRoleNameById((int) $user->role_id);
-
-        $this->createAuditLog(
-            (int) $user->user_id,
-            'Login',
-            'User',
-            (int) $user->user_id,
-            ucfirst($roleName) . ' logged into the system'
-        );
-
-        $permissions = $this->getUserPermissions((int) $user->user_id);
 
         return response()->json([
-            'message' => 'Login successful',
-            'user' => [
-                'user_id' => $user->user_id,
-                'role_id' => $user->role_id,
-                'role_name' => $roleName,
-                'username' => $user->username,
-                'email' => $user->email,
-                'status' => $user->status,
-                'permissions' => $permissions,
-            ],
-        ]);
+            'message' => 'User not found',
+        ], 401);
     }
+
+    // ❌ WRONG PASSWORD
+    if (!Hash::check($request->password, $user->password_hash)) {
+        DB::table('notifications_table')->insert([
+            'user_id' => $user->user_id,
+            'type' => 'danger',
+            'message' => 'Failed login attempt',
+            'is_read' => 0,
+            'created_at' => now(),
+        ]);
+
+        return response()->json([
+            'message' => 'Invalid credentials',
+        ], 401);
+    }
+
+    // 🚫 BLOCK NON-ACTIVE ACCOUNTS
+    if ($user->status !== self::STATUS_ACTIVE) {
+
+        // 🧾 audit log
+        $this->createAuditLog(
+            (int) $user->user_id,
+            'Blocked Login',
+            'User',
+            (int) $user->user_id,
+            'Blocked login because account is ' . $user->status
+        );
+
+        return response()->json([
+            'message' =>
+                $user->status === self::STATUS_PENDING
+                    ? 'Your account is pending approval.'
+                    : 'Your account has been rejected or suspended.',
+        ], 403);
+    }
+
+    // ✅ SUCCESS LOGIN (ONLY HERE)
+    DB::table('notifications_table')->insert([
+        'user_id' => $user->user_id,
+        'type' => 'success',
+        'message' => 'Login successful',
+        'is_read' => 0,
+        'created_at' => now(),
+    ]);
+
+    // 🧾 audit log
+    $roleName = $this->getRoleNameById((int) $user->role_id);
+
+    $this->createAuditLog(
+        (int) $user->user_id,
+        'Login',
+        'User',
+        (int) $user->user_id,
+        ucfirst($roleName) . ' logged into the system'
+    );
+
+    $permissions = $this->getUserPermissions((int) $user->user_id);
+
+    return response()->json([
+        'message' => 'Login successful',
+        'user' => [
+            'user_id' => $user->user_id,
+            'role_id' => $user->role_id,
+            'role_name' => $roleName,
+            'username' => $user->username,
+            'email' => $user->email,
+            'status' => $user->status,
+            'permissions' => $permissions,
+        ],
+    ]);
+}
 
     /* =====================================================
      | SYSTEM CONFIGURATION
@@ -678,6 +696,23 @@ class AuthController extends Controller
                 'Created new admin: ' . trim($request->username)
             );
 
+            DB::table('notifications_table')->insert([
+    'user_id' => $superAdmin->user_id,
+    'type' => 'warning',
+    'message' => 'Admin deactivated',
+    'is_read' => 0,
+    'created_at' => now(),
+]);
+
+DB::table('notifications_table')->insert([
+    'user_id' => $superAdmin->user_id,
+    'type' => 'warning',
+    'message' => 'Admin deactivated',
+    'is_read' => 0,
+    'created_at' => now(),
+]);
+            
+
             DB::commit();
 
             return response()->json([
@@ -692,6 +727,7 @@ class AuthController extends Controller
                 'error' => $e->getMessage(),
             ], 500);
         }
+        
     }
 
     public function getSuperAdminAuditLogs(Request $request): JsonResponse
@@ -1135,6 +1171,56 @@ class AuthController extends Controller
         ]);
     }
 
+public function getNotifications(Request $request): JsonResponse
+{
+    $user = $this->requireAuthenticatedUser($request);
+
+    $notifications = DB::table('notifications_table')
+        ->where(function ($query) use ($user) {
+            $query->where('user_id', $user->user_id);
+
+            // 🔥 SuperAdmin sees system alerts too
+            if ($user->role_id == 3) {
+                $query->orWhereNull('user_id');
+            }
+        })
+        ->orderByDesc('created_at')
+        ->limit(15)
+        ->get([
+            'notification_id as id',
+            'type',
+            'message',
+            'is_read',
+            'created_at as time',
+        ]);
+
+    return response()->json([
+        'notifications' => $notifications,
+    ]);
+}
+
+public function markNotificationsAsRead(Request $request): JsonResponse
+{
+    $user = $this->requireAuthenticatedUser($request);
+
+    try {
+        DB::table('notifications_table')
+            ->where('user_id', $user->user_id)
+            ->update([
+                'is_read' => 1,
+            ]);
+
+        return response()->json([
+            'message' => 'Notifications marked as read',
+        ]);
+    } catch (\Throwable $e) {
+        return response()->json([
+            'message' => 'Failed to mark notifications as read',
+            'error' => $e->getMessage(),
+        ], 500);
+    }
+}
+
     /* =====================================================
      | CUSTOMER
      * ===================================================== */
@@ -1374,6 +1460,35 @@ class AuthController extends Controller
                 ' to account ' . $destinationAccount->account_number
             );
 
+            $senderUser = DB::table('users_table')
+    ->where('user_id', $fromAccount->user_id)
+    ->first();
+
+$receiverUser = DB::table('users_table')
+    ->where('user_id', $destinationAccount->user_id)
+    ->first();
+
+DB::table('notifications_table')->insert([
+    [
+        'user_id' => $fromAccount->user_id,
+        'type' => 'info',
+        'message' => 'You sent ₱' . number_format((float) $request->amount, 2) .
+            ' to ' . ($receiverUser->username ?? $destinationAccount->account_number),
+        'is_read' => 0,
+        'created_at' => now(),
+    ],
+    [
+        'user_id' => $destinationAccount->user_id,
+        'type' => 'success',
+        'message' => 'You received ₱' . number_format((float) $request->amount, 2) .
+            ' from ' . ($senderUser->username ?? $fromAccount->account_number),
+        'is_read' => 0,
+        'created_at' => now(),
+    ],
+]);
+
+
+
             DB::commit();
 
             return response()->json([
@@ -1467,6 +1582,17 @@ class AuthController extends Controller
                 'Paid ₱' . number_format((float) $request->amount, 2) .
                 ' to ' . $bill->biller_name
             );
+
+            DB::table('notifications_table')->insert([
+    'user_id' => $account->user_id,
+    'type' => 'info',
+    'message' => 'You paid ₱' . number_format((float) $request->amount, 2) .
+        ' to ' . $bill->biller_name,
+    'is_read' => 0,
+    'created_at' => now(),
+    
+]);
+
 
             DB::commit();
 
@@ -1574,13 +1700,9 @@ class AuthController extends Controller
         ]);
     }
 
-    public function handleAccountApproval(Request $request, int $id): JsonResponse
+    public function approveAccount(Request $request, int $id): JsonResponse
     {
         $admin = $this->requirePermission($request, 'account_approvals');
-
-        $request->validate([
-            'action' => 'required|string|in:approve,reject',
-        ]);
 
         $user = DB::table('users_table')
             ->where('user_id', $id)
@@ -1593,28 +1715,68 @@ class AuthController extends Controller
             ], 404);
         }
 
-        $newStatus = $request->action === 'approve'
-            ? self::STATUS_ACTIVE
-            : self::STATUS_REJECTED;
-
         DB::table('users_table')
             ->where('user_id', $id)
             ->update([
-                'status' => $newStatus,
+                'status' => self::STATUS_ACTIVE,
+            ]);
+
+        DB::table('accounts_table')
+            ->where('user_id', $id)
+            ->update([
+                'status' => self::STATUS_ACTIVE,
             ]);
 
         $this->createAuditLog(
             $admin->user_id,
-            $request->action === 'approve' ? 'Approve Account' : 'Reject Account',
+            'Approve Account',
             'User',
             $id,
-            ($request->action === 'approve' ? 'Approved' : 'Rejected') . ' pending account for username ' . $user->username
+            'Approved pending account for username ' . $user->username
         );
 
         return response()->json([
-            'message' => $request->action === 'approve'
-                ? 'User approved successfully'
-                : 'User rejected successfully',
+            'message' => 'User approved successfully',
+        ]);
+    }
+
+    public function rejectAccount(Request $request, int $id): JsonResponse
+    {
+        $admin = $this->requirePermission($request, 'account_approvals');
+
+        $user = DB::table('users_table')
+            ->where('user_id', $id)
+            ->where('role_id', self::ROLE_CUSTOMER)
+            ->first();
+
+        if (!$user) {
+            return response()->json([
+                'message' => 'Pending user not found',
+            ], 404);
+        }
+
+        DB::table('users_table')
+            ->where('user_id', $id)
+            ->update([
+                'status' => self::STATUS_REJECTED,
+            ]);
+
+        DB::table('accounts_table')
+            ->where('user_id', $id)
+            ->update([
+                'status' => self::STATUS_REJECTED,
+            ]);
+
+        $this->createAuditLog(
+            $admin->user_id,
+            'Reject Account',
+            'User',
+            $id,
+            'Rejected pending account for username ' . $user->username
+        );
+
+        return response()->json([
+            'message' => 'User rejected successfully',
         ]);
     }
 
@@ -1963,4 +2125,19 @@ class AuthController extends Controller
 
         return $superAdmin;
     }
+
+    private function requireAuthenticatedUser(Request $request)
+{
+    $userId = (int) $request->header('X-Admin-User-Id', 0);
+
+    $user = DB::table('users_table')
+        ->where('user_id', $userId)
+        ->first();
+
+    if (!$user || $user->status !== self::STATUS_ACTIVE) {
+        abort(403, 'Unauthorized');
+    }
+
+    return $user;
+}
 }

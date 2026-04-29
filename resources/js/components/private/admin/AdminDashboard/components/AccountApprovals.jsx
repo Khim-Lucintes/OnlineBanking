@@ -6,11 +6,15 @@ function AccountApprovals() {
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState("");
 
+  const storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  const adminUserId = storedUser?.user_id || "";
+
   const fetchPendingUsers = async () => {
     try {
       const response = await fetch("/api/admin/account-approvals", {
         headers: {
           Accept: "application/json",
+          "X-Admin-User-Id": adminUserId,
         },
       });
 
@@ -28,17 +32,17 @@ function AccountApprovals() {
     }
   };
 
-  const handleApproval = async (userId, action) => {
+  const updateStatus = async (userId, action) => {
     setMessage("");
 
     try {
-      const response = await fetch(`/api/admin/account-approvals/${userId}`, {
+      const response = await fetch(`/api/admin/account-approvals/${userId}/${action}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Accept: "application/json",
+          "X-Admin-User-Id": adminUserId,
         },
-        body: JSON.stringify({ action }),
       });
 
       const data = await response.json();
@@ -106,14 +110,14 @@ function AccountApprovals() {
                       <div style={{ display: "flex", gap: "8px", flexWrap: "wrap" }}>
                         <button
                           className="panel-action-btn"
-                          onClick={() => handleApproval(user.user_id, "approve")}
+                          onClick={() => updateStatus(user.user_id, "approve")}
                         >
                           Approve
                         </button>
 
                         <button
                           className="panel-action-btn"
-                          onClick={() => handleApproval(user.user_id, "reject")}
+                          onClick={() => updateStatus(user.user_id, "reject")}
                         >
                           Reject
                         </button>

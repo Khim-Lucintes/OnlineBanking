@@ -1,0 +1,69 @@
+.pending-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at top right, rgba(108, 99, 255, 0.15), transparent 30%),
+    linear-gradient(180deg, #0b1020, #11162a);
+}
+
+.pending-card {
+  width: 380px;
+  padding: 30px;
+  border-radius: 18px;
+  background:
+    linear-gradient(180deg, rgba(17, 22, 42, 0.95), rgba(11, 16, 32, 0.95));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  text-align: center;
+  color: #fff;
+}
+
+.pending-icon {
+  font-size: 40px;
+  margin-bottom: 12px;
+}
+
+.pending-text {
+  margin-top: 10px;
+  color: #c7d2f2;
+}
+
+.pending-subtext {
+  font-size: 13px;
+  color: #8f9bc1;
+  margin-bottom: 16px;
+}
+
+.pending-status {
+  margin: 16px 0;
+}
+
+.status-badge {
+  padding: 4px 10px;
+  border-radius: 8px;
+  background: rgba(255, 193, 7, 0.2);
+  color: #ffc107;
+  font-size: 12px;
+}
+
+.pending-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(92, 103, 255, 0.2);
+  border: 1px solid rgba(92, 103, 255, 0.4);
+  color: #5c67ff;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.logout-btn {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 77, 109, 0.2);
+  border: 1px solid rgba(255, 77, 109, 0.4);
+  color: #ff4d6d;
+  cursor: pointer;
+}

@@ -1,0 +1,65 @@
+.account-approvals {
+  padding: 20px;
+  color: #fff;
+}
+
+.account-approvals h2 {
+  margin-bottom: 16px;
+}
+
+.loading,
+.empty {
+  color: #8f9bc1;
+  font-size: 14px;
+}
+
+.approval-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.approval-card {
+  padding: 16px;
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at top right, rgba(108, 99, 255, 0.18), transparent 28%),
+    linear-gradient(180deg, rgba(12, 18, 40, 0.96), rgba(9, 14, 34, 0.98));
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.approval-info h4 {
+  margin-bottom: 6px;
+}
+
+.approval-info p {
+  font-size: 13px;
+  color: #c7d2f2;
+}
+
+.approval-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.approve-btn {
+  background: rgba(0, 201, 141, 0.15);
+  border: 1px solid rgba(0, 201, 141, 0.4);
+  color: #00c98d;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.reject-btn {
+  background: rgba(255, 77, 109, 0.15);
+  border: 1px solid rgba(255, 77, 109, 0.4);
+  color: #ff4d6d;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}

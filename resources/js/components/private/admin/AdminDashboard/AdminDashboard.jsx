@@ -16,37 +16,65 @@ import AuditLogs from "./components/AuditLogs";
 function AdminDashboard() {
   const [activePage, setActivePage] = useState("dashboard");
 
-  const renderPage = () => {
-    switch (activePage) {
-      case "manage-users":
-        return <ManageUsers />;
-      case "account-approvals":
-        return <AccountApprovals />;
-      case "transactions":
-        return <Transactions />;
-      case "reports":
-        return <Reports />;
-      case "audit-logs":
-        return <AuditLogs />;
-      default:
-        return <AdminOverview setActivePage={setActivePage} />;
-    }
-  };
+  const allowedPages = [
+    hasPermission("dashboard") && "dashboard",
+    hasPermission("manage_users") && "manage-users",
+    hasPermission("account_approvals") && "account-approvals",
+    hasPermission("transactions") && "transactions",
+    hasPermission("reports") && "reports",
+    hasPermission("full_audit_logs") && "audit-logs",
+  ].filter(Boolean);
 
   useEffect(() => {
-    const allowedPages = [
-      hasPermission("dashboard") && "dashboard",
-      hasPermission("manage_users") && "manage-users",
-      hasPermission("account_approvals") && "account-approvals",
-      hasPermission("transactions") && "transactions",
-      hasPermission("reports") && "reports",
-      hasPermission("full_audit_logs") && "audit-logs",
-    ].filter(Boolean);
-
     if (!allowedPages.includes(activePage)) {
       setActivePage(allowedPages[0] || "dashboard");
     }
   }, [activePage]);
+
+  const renderPage = () => {
+    switch (activePage) {
+      case "manage-users":
+        return hasPermission("manage_users") ? (
+          <ManageUsers />
+        ) : hasPermission("dashboard") ? (
+          <AdminOverview setActivePage={setActivePage} />
+        ) : null;
+
+      case "account-approvals":
+        return hasPermission("account_approvals") ? (
+          <AccountApprovals />
+        ) : hasPermission("dashboard") ? (
+          <AdminOverview setActivePage={setActivePage} />
+        ) : null;
+
+      case "transactions":
+        return hasPermission("transactions") ? (
+          <Transactions />
+        ) : hasPermission("dashboard") ? (
+          <AdminOverview setActivePage={setActivePage} />
+        ) : null;
+
+      case "reports":
+        return hasPermission("reports") ? (
+          <Reports />
+        ) : hasPermission("dashboard") ? (
+          <AdminOverview setActivePage={setActivePage} />
+        ) : null;
+
+      case "audit-logs":
+        return hasPermission("full_audit_logs") ? (
+          <AuditLogs />
+        ) : hasPermission("dashboard") ? (
+          <AdminOverview setActivePage={setActivePage} />
+        ) : null;
+
+      case "dashboard":
+      default:
+        return hasPermission("dashboard") ? (
+          <AdminOverview setActivePage={setActivePage} />
+        ) : null;
+    }
+  };
 
   return (
     <div className="dashboard-page">
