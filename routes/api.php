@@ -82,6 +82,10 @@ Route::prefix('superadmin')->group(function () {
     Route::get('/audit-logs', [AuthController::class, 'getSuperAdminAuditLogs']);
     Route::get('/audit-logs/export', [AuthController::class, 'exportSuperAdminAuditLogs']);
 
+    Route::get('/analytics/security-overview', [AuthController::class, 'securityOverview']);
+    Route::get('/analytics/admin-capacity', [AuthController::class, 'adminCapacity']);
+    Route::get('/notifications', [AuthController::class, 'notifications']);
+
     Route::put('/admins/{id}/deactivate', [AuthController::class, 'deactivateAdmin']);
     Route::put('/admins/{id}/activate', [AuthController::class, 'activateAdmin']);
 
@@ -99,3 +103,4 @@ Route::prefix('superadmin')->group(function () {
 
     Route::get('/superadmin/notifications', [AuthController::class, 'getNotifications']);
 });
+

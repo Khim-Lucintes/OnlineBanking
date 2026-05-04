@@ -12385,14 +12385,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/component/Cell.js");
 /* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/polar/Pie.js");
 /* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/CartesianGrid.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/Line.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/Bar.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/XAxis.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/YAxis.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/LineChart.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/BarChart.js");
-/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/PieChart.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/Bar.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/XAxis.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/cartesian/YAxis.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/BarChart.js");
+/* harmony import */ var recharts__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! recharts */ "./node_modules/recharts/es6/chart/PieChart.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _regenerator() { /*! regenerator-runtime -- Copyright (c) 2014-present, Facebook, Inc. -- license (MIT): https://github.com/babel/babel/blob/main/packages/babel-helpers/LICENSE */ var e, t, r = "function" == typeof Symbol ? Symbol : {}, n = r.iterator || "@@iterator", o = r.toStringTag || "@@toStringTag"; function i(r, n, o, i) { var c = n && n.prototype instanceof Generator ? n : Generator, u = Object.create(c.prototype); return _regeneratorDefine2(u, "_invoke", function (r, n, o) { var i, c, u, f = 0, p = o || [], y = !1, G = { p: 0, n: 0, v: e, a: d, f: d.bind(e, 4), d: function d(t, r) { return i = t, c = 0, u = e, G.n = r, a; } }; function d(r, n) { for (c = r, u = n, t = 0; !y && f && !o && t < p.length; t++) { var o, i = p[t], d = G.p, l = i[2]; r > 3 ? (o = l === n) && (u = i[(c = i[4]) ? 5 : (c = 3, 3)], i[4] = i[5] = e) : i[0] <= d && ((o = r < 2 && d < i[1]) ? (c = 0, G.v = n, G.n = i[1]) : d < l && (o = r < 3 || i[0] > n || n > l) && (i[4] = r, i[5] = n, G.n = l, c = 0)); } if (o || r > 1) return a; throw y = !0, n; } return function (o, p, l) { if (f > 1) throw TypeError("Generator is already running"); for (y && 1 === p && d(p, l), c = p, u = l; (t = c < 2 ? e : u) || !y;) { i || (c ? c < 3 ? (c > 1 && (G.n = -1), d(c, u)) : G.n = u : G.v = u); try { if (f = 2, i) { if (c || (o = "next"), t = i[o]) { if (!(t = t.call(i, u))) throw TypeError("iterator result is not an object"); if (!t.done) return t; u = t.value, c < 2 && (c = 0); } else 1 === c && (t = i["return"]) && t.call(i), c < 2 && (u = TypeError("The iterator does not provide a '" + o + "' method"), c = 1); i = e; } else if ((t = (y = G.n < 0) ? u : r.call(n, G)) !== a) break; } catch (t) { i = e, c = 1, u = t; } finally { f = 1; } } return { value: t, done: y }; }; }(r, o, i), !0), u; } var a = {}; function Generator() {} function GeneratorFunction() {} function GeneratorFunctionPrototype() {} t = Object.getPrototypeOf; var c = [][n] ? t(t([][n]())) : (_regeneratorDefine2(t = {}, n, function () { return this; }), t), u = GeneratorFunctionPrototype.prototype = Generator.prototype = Object.create(c); function f(e) { return Object.setPrototypeOf ? Object.setPrototypeOf(e, GeneratorFunctionPrototype) : (e.__proto__ = GeneratorFunctionPrototype, _regeneratorDefine2(e, o, "GeneratorFunction")), e.prototype = Object.create(u), e; } return GeneratorFunction.prototype = GeneratorFunctionPrototype, _regeneratorDefine2(u, "constructor", GeneratorFunctionPrototype), _regeneratorDefine2(GeneratorFunctionPrototype, "constructor", GeneratorFunction), GeneratorFunction.displayName = "GeneratorFunction", _regeneratorDefine2(GeneratorFunctionPrototype, o, "GeneratorFunction"), _regeneratorDefine2(u), _regeneratorDefine2(u, o, "Generator"), _regeneratorDefine2(u, n, function () { return this; }), _regeneratorDefine2(u, "toString", function () { return "[object Generator]"; }), (_regenerator = function _regenerator() { return { w: i, m: f }; })(); }
+function _regeneratorDefine2(e, r, n, t) { var i = Object.defineProperty; try { i({}, "", {}); } catch (e) { i = 0; } _regeneratorDefine2 = function _regeneratorDefine(e, r, n, t) { function o(r, n) { _regeneratorDefine2(e, r, function (e) { return this._invoke(r, n, e); }); } r ? i ? i(e, r, { value: n, enumerable: !t, configurable: !t, writable: !t }) : e[r] = n : (o("next", 0), o("throw", 1), o("return", 2)); }, _regeneratorDefine2(e, r, n, t); }
+function _slicedToArray(r, e) { return _arrayWithHoles(r) || _iterableToArrayLimit(r, e) || _unsupportedIterableToArray(r, e) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(r, a) { if (r) { if ("string" == typeof r) return _arrayLikeToArray(r, a); var t = {}.toString.call(r).slice(8, -1); return "Object" === t && r.constructor && (t = r.constructor.name), "Map" === t || "Set" === t ? Array.from(r) : "Arguments" === t || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(t) ? _arrayLikeToArray(r, a) : void 0; } }
+function _arrayLikeToArray(r, a) { (null == a || a > r.length) && (a = r.length); for (var e = 0, n = Array(a); e < a; e++) n[e] = r[e]; return n; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(r) { if (Array.isArray(r)) return r; }
+function asyncGeneratorStep(n, t, e, r, o, a, c) { try { var i = n[a](c), u = i.value; } catch (n) { return void e(n); } i.done ? t(u) : Promise.resolve(u).then(r, o); }
+function _asyncToGenerator(n) { return function () { var t = this, e = arguments; return new Promise(function (r, o) { var a = n.apply(t, e); function _next(n) { asyncGeneratorStep(a, r, o, _next, _throw, "next", n); } function _throw(n) { asyncGeneratorStep(a, r, o, _next, _throw, "throw", n); } _next(void 0); }); }; }
 
 
 
@@ -12400,21 +12408,71 @@ __webpack_require__.r(__webpack_exports__);
 function SuperAdminOverviewCharts(_ref) {
   var loading = _ref.loading,
     message = _ref.message,
-    riskData = _ref.riskData,
-    notifications = _ref.notifications,
-    alertChartData = _ref.alertChartData,
-    adminChartData = _ref.adminChartData,
-    history = _ref.history,
-    healthChartData = _ref.healthChartData,
-    systemHealth = _ref.systemHealth;
+    _ref$notifications = _ref.notifications,
+    notifications = _ref$notifications === void 0 ? [] : _ref$notifications,
+    _ref$alertChartData = _ref.alertChartData,
+    alertChartData = _ref$alertChartData === void 0 ? [] : _ref$alertChartData,
+    _ref$adminChartData = _ref.adminChartData,
+    adminChartData = _ref$adminChartData === void 0 ? [] : _ref$adminChartData,
+    setNotifications = _ref.setNotifications,
+    setAlertChartData = _ref.setAlertChartData,
+    setAdminChartData = _ref.setAdminChartData;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    var fetchAnalytics = /*#__PURE__*/function () {
+      var _ref2 = _asyncToGenerator(/*#__PURE__*/_regenerator().m(function _callee() {
+        var _yield$Promise$all, _yield$Promise$all2, res1, res2, res3, security, admins, notif, _t;
+        return _regenerator().w(function (_context) {
+          while (1) switch (_context.p = _context.n) {
+            case 0:
+              _context.p = 0;
+              _context.n = 1;
+              return Promise.all([fetch("/api/superadmin/analytics/security-overview"), fetch("/api/superadmin/analytics/admin-capacity"), fetch("/api/superadmin/notifications")]);
+            case 1:
+              _yield$Promise$all = _context.v;
+              _yield$Promise$all2 = _slicedToArray(_yield$Promise$all, 3);
+              res1 = _yield$Promise$all2[0];
+              res2 = _yield$Promise$all2[1];
+              res3 = _yield$Promise$all2[2];
+              _context.n = 2;
+              return res1.json();
+            case 2:
+              security = _context.v;
+              _context.n = 3;
+              return res2.json();
+            case 3:
+              admins = _context.v;
+              _context.n = 4;
+              return res3.json();
+            case 4:
+              notif = _context.v;
+              setAlertChartData === null || setAlertChartData === void 0 || setAlertChartData(security.data || []);
+              setAdminChartData === null || setAdminChartData === void 0 || setAdminChartData(admins.data || []);
+              setNotifications === null || setNotifications === void 0 || setNotifications(notif.notifications || []);
+              _context.n = 6;
+              break;
+            case 5:
+              _context.p = 5;
+              _t = _context.v;
+              console.error("Analytics load failed:", _t);
+            case 6:
+              return _context.a(2);
+          }
+        }, _callee, null, [[0, 5]]);
+      }));
+      return function fetchAnalytics() {
+        return _ref2.apply(this, arguments);
+      };
+    }();
+    fetchAnalytics();
+  }, [setAlertChartData, setAdminChartData, setNotifications]);
   if (loading) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("section", {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("section", {
       className: "sa-chart-grid",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
         className: "dashboard-panel",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "panel-content",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("p", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
             children: "Loading analytics..."
           })
         })
@@ -12422,13 +12480,13 @@ function SuperAdminOverviewCharts(_ref) {
     });
   }
   if (message) {
-    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("section", {
+    return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("section", {
       className: "sa-chart-grid",
-      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
         className: "dashboard-panel",
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "panel-content",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("p", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("p", {
             className: "sa-error-text",
             children: message
           })
@@ -12436,266 +12494,80 @@ function SuperAdminOverviewCharts(_ref) {
       })
     });
   }
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("section", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.Fragment, {
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("section", {
       className: "sa-chart-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "dashboard-panel sa-panel-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
-              children: "AI Risk Indicator"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h3", {
+              children: "Security Overview"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("span", {
               className: "panel-subtitle",
-              children: "Smart system risk estimation based on alerts and failures"
+              children: "System alerts and pending actions"
             })]
           })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-          className: "panel-content",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-            className: "sa-risk-card",
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-              className: "sa-risk-top",
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h4", {
-                children: riskData.label
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("span", {
-                className: "sa-risk-pill ".concat(riskData.className),
-                children: ["Score: ", riskData.score, "%"]
-              })]
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-              className: "sa-risk-bar",
-              children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-                className: "sa-risk-fill ".concat(riskData.className),
-                style: {
-                  width: "".concat(riskData.score, "%")
-                }
-              })
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("p", {
-              className: "sa-risk-advice",
-              children: riskData.advice
-            })]
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-        className: "dashboard-panel sa-panel-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-          className: "panel-header",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
-              children: "Alert Notification Center"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-              className: "panel-subtitle",
-              children: "Latest alert and operational notifications"
-            })]
-          })
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-          className: "panel-content",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("ul", {
-            className: "sa-alert-list",
-            children: notifications.map(function (item, index) {
-              return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("li", {
-                className: "sa-alert-item",
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-                  className: "sa-alert-dot"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-                  children: item
-                })]
-              }, index);
-            })
-          })
-        })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("section", {
-      className: "sa-chart-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-        className: "dashboard-panel sa-panel-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-          className: "panel-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
-              children: "Security Alerts Overview"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-              className: "panel-subtitle",
-              children: "Suspended users, failed transactions, and pending approvals"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-            className: "sa-panel-badge",
-            children: "Overview"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "panel-content sa-chart-box",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
             width: "100%",
-            height: 320,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_14__.PieChart, {
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, {
+            height: 300,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_12__.PieChart, {
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_6__.Pie, {
                 data: alertChartData,
                 dataKey: "value",
                 nameKey: "name",
-                outerRadius: 105,
-                innerRadius: 62,
+                outerRadius: 100,
+                innerRadius: 55,
                 label: true,
-                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_5__.Cell, {
-                  fill: "#6c63ff"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_5__.Cell, {
-                  fill: "#19d1c3"
-                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_5__.Cell, {
-                  fill: "#3b82f6"
-                })]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_2__.Legend, {})]
-            })
-          })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-        className: "dashboard-panel sa-panel-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-          className: "panel-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
-              children: "Admin Capacity"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-              className: "panel-subtitle",
-              children: "Total admins versus active admins"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-            className: "sa-panel-badge",
-            children: "Capacity"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-          className: "panel-content sa-chart-box",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
-            width: "100%",
-            height: 320,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_13__.BarChart, {
-              data: adminChartData,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_7__.CartesianGrid, {
-                strokeDasharray: "3 3",
-                stroke: "rgba(255,255,255,0.06)"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_10__.XAxis, {
-                dataKey: "name",
-                stroke: "#8ea0c8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_11__.YAxis, {
-                stroke: "#8ea0c8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_2__.Legend, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_9__.Bar, {
-                dataKey: "value",
-                fill: "url(#adminBarGradient)",
-                radius: [10, 10, 0, 0]
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("defs", {
-                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("linearGradient", {
-                  id: "adminBarGradient",
-                  x1: "0",
-                  y1: "0",
-                  x2: "0",
-                  y2: "1",
-                  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("stop", {
-                    offset: "0%",
-                    stopColor: "#22c1ff"
-                  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("stop", {
-                    offset: "100%",
-                    stopColor: "#6c63ff"
-                  })]
+                children: alertChartData.map(function (_, index) {
+                  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_5__.Cell, {
+                    fill: ["#6c63ff", "#19d1c3", "#3b82f6"][index % 3]
+                  }, index);
                 })
-              })]
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_2__.Legend, {})]
             })
           })
         })]
-      })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("section", {
-      className: "sa-chart-grid",
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
         className: "dashboard-panel sa-panel-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "panel-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
-              children: "Live Activity Trend"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)("div", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("h3", {
+              children: "Admin Capacity"
+            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("span", {
               className: "panel-subtitle",
-              children: "Auto-refreshing operational trends"
+              children: "Total vs active admins"
             })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-            className: "sa-panel-badge",
-            children: "Realtime"
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
-          className: "panel-content sa-chart-box",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
-            width: "100%",
-            height: 320,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_12__.LineChart, {
-              data: history,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_7__.CartesianGrid, {
-                strokeDasharray: "3 3",
-                stroke: "rgba(255,255,255,0.06)"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_10__.XAxis, {
-                dataKey: "time",
-                stroke: "#8ea0c8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_11__.YAxis, {
-                stroke: "#8ea0c8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_2__.Legend, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_8__.Line, {
-                type: "monotone",
-                dataKey: "alerts",
-                stroke: "#19d1c3",
-                strokeWidth: 3,
-                name: "Alerts"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_8__.Line, {
-                type: "monotone",
-                dataKey: "admins",
-                stroke: "#6c63ff",
-                strokeWidth: 3,
-                name: "Active Admins"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_8__.Line, {
-                type: "monotone",
-                dataKey: "pending",
-                stroke: "#3b82f6",
-                strokeWidth: 3,
-                name: "Pending"
-              })]
-            })
           })
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-        className: "dashboard-panel sa-panel-card",
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-          className: "panel-header",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)("div", {
-            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("h3", {
-              children: "System Health Score"
-            }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-              className: "panel-subtitle",
-              children: "Health condition of the platform and services"
-            })]
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("span", {
-            className: "sa-panel-badge",
-            children: systemHealth
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)("div", {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)("div", {
           className: "panel-content sa-chart-box",
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_4__.ResponsiveContainer, {
             width: "100%",
-            height: 320,
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_13__.BarChart, {
-              data: healthChartData,
-              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_7__.CartesianGrid, {
+            height: 300,
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsxs)(recharts__WEBPACK_IMPORTED_MODULE_11__.BarChart, {
+              data: adminChartData,
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_7__.CartesianGrid, {
                 strokeDasharray: "3 3",
                 stroke: "rgba(255,255,255,0.06)"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_10__.XAxis, {
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_9__.XAxis, {
                 dataKey: "name",
                 stroke: "#8ea0c8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_11__.YAxis, {
-                domain: [0, 100],
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_10__.YAxis, {
                 stroke: "#8ea0c8"
-              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_15__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_9__.Bar, {
-                dataKey: "healthScore",
-                fill: systemHealth === "Healthy" ? "#19d1c3" : systemHealth === "Warning" ? "#f59e0b" : "#ef4444",
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_3__.Tooltip, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_2__.Legend, {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_13__.jsx)(recharts__WEBPACK_IMPORTED_MODULE_8__.Bar, {
+                dataKey: "value",
+                fill: "#6c63ff",
                 radius: [10, 10, 0, 0]
               })]
             })
           })
         })]
       })]
-    })]
+    })
   });
 }
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (SuperAdminOverviewCharts);
@@ -17479,7 +17351,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".sa-chart-grid {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    gap: 20px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n.sa-panel-card {\r\n    background: radial-gradient(circle at top right,\r\n            rgba(108, 99, 255, 0.18),\r\n            transparent 28%),\r\n        linear-gradient(180deg,\r\n            rgba(12, 18, 40, 0.96),\r\n            rgba(9, 14, 34, 0.98));\r\n    border: 1px solid rgba(66, 133, 244, 0.14);\r\n    border-radius: 22px;\r\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);\r\n}\r\n\r\n.sa-panel-badge {\r\n    display: inline-flex;\r\n    align-items: center;\r\n    justify-content: center;\r\n    min-width: 86px;\r\n    height: 30px;\r\n    padding: 0 12px;\r\n    border-radius: 999px;\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    color: #ffffff;\r\n    background: rgba(59, 130, 246, 0.18);\r\n}\r\n\r\n.sa-chart-box {\r\n    width: 100%;\r\n    min-height: 300px;\r\n}\r\n\r\n.sa-risk-card {\r\n    display: flex;\r\n    flex-direction: column;\r\n    gap: 14px;\r\n}\r\n\r\n.sa-risk-top {\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    gap: 10px;\r\n}\r\n\r\n.sa-risk-top h4 {\r\n    margin: 0;\r\n    font-size: 22px;\r\n    color: #ffffff;\r\n}\r\n\r\n.sa-risk-pill {\r\n    padding: 6px 12px;\r\n    border-radius: 999px;\r\n    font-size: 12px;\r\n    font-weight: 700;\r\n    color: #ffffff;\r\n}\r\n\r\n.sa-risk-bar {\r\n    width: 100%;\r\n    height: 14px;\r\n    background: rgba(255, 255, 255, 0.08);\r\n    border-radius: 999px;\r\n    overflow: hidden;\r\n}\r\n\r\n.sa-risk-fill {\r\n    height: 100%;\r\n    border-radius: 999px;\r\n}\r\n\r\n.risk-safe {\r\n    background: #19d1c3;\r\n}\r\n\r\n.risk-warning {\r\n    background: #f59e0b;\r\n}\r\n\r\n.risk-critical {\r\n    background: #ef4444;\r\n}\r\n\r\n.sa-risk-advice {\r\n    margin: 0;\r\n    color: #8ea0c8;\r\n    line-height: 1.7;\r\n}\r\n\r\n.sa-alert-list {\r\n    list-style: none;\r\n    padding: 0;\r\n    margin: 0;\r\n    display: grid;\r\n    gap: 12px;\r\n}\r\n\r\n.sa-alert-item {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    gap: 10px;\r\n    color: #8ea0c8;\r\n    line-height: 1.6;\r\n}\r\n\r\n.sa-alert-dot {\r\n    width: 10px;\r\n    height: 10px;\r\n    margin-top: 7px;\r\n    border-radius: 50%;\r\n    background: #19d1c3;\r\n    flex-shrink: 0;\r\n}\r\n\r\n.sa-error-text {\r\n    color: #ef4444;\r\n}\r\n\r\n@media (max-width: 992px) {\r\n    .sa-chart-grid {\r\n        grid-template-columns: 1fr;\r\n    }\r\n}", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ".sa-chart-grid {\r\n    display: grid;\r\n    grid-template-columns: 1fr 1fr;\r\n    gap: 20px;\r\n    margin-bottom: 20px;\r\n}\r\n\r\n/* PANEL CARD */\r\n.sa-panel-card {\r\n    background:\r\n        radial-gradient(circle at top right, rgba(108, 99, 255, 0.18), transparent 28%),\r\n        linear-gradient(180deg, rgba(12, 18, 40, 0.96), rgba(9, 14, 34, 0.98));\r\n    border: 1px solid rgba(66, 133, 244, 0.14);\r\n    border-radius: 22px;\r\n    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);\r\n}\r\n\r\n/* PANEL HEADER (you are using this in JSX) */\r\n.panel-header {\r\n    display: flex;\r\n    justify-content: space-between;\r\n    align-items: center;\r\n    padding: 16px 18px;\r\n    border-bottom: 1px solid rgba(255, 255, 255, 0.06);\r\n}\r\n\r\n.panel-header h3 {\r\n    margin: 0;\r\n    font-size: 16px;\r\n    color: #ffffff;\r\n}\r\n\r\n.panel-subtitle {\r\n    font-size: 12px;\r\n    color: #8ea0c8;\r\n}\r\n\r\n/* PANEL CONTENT */\r\n.panel-content {\r\n    padding: 16px 18px;\r\n}\r\n\r\n/* CHART BOX */\r\n.sa-chart-box {\r\n    width: 100%;\r\n    min-height: 300px;\r\n}\r\n\r\n/* ALERT LIST */\r\n.sa-alert-list {\r\n    list-style: none;\r\n    padding: 0;\r\n    margin: 0;\r\n    display: grid;\r\n    gap: 12px;\r\n}\r\n\r\n.sa-alert-item {\r\n    display: flex;\r\n    align-items: flex-start;\r\n    gap: 10px;\r\n    color: #8ea0c8;\r\n    line-height: 1.6;\r\n    font-size: 13px;\r\n}\r\n\r\n.sa-alert-dot {\r\n    width: 8px;\r\n    height: 8px;\r\n    margin-top: 6px;\r\n    border-radius: 50%;\r\n    background: #19d1c3;\r\n    flex-shrink: 0;\r\n}\r\n\r\n/* EMPTY STATE */\r\n.sa-alert-list li {\r\n    color: #6b7aa5;\r\n}\r\n\r\n/* ERROR TEXT */\r\n.sa-error-text {\r\n    color: #ef4444;\r\n    font-size: 14px;\r\n}\r\n\r\n/* RESPONSIVE */\r\n@media (max-width: 992px) {\r\n    .sa-chart-grid {\r\n        grid-template-columns: 1fr;\r\n    }\r\n}", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 

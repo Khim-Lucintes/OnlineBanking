@@ -399,6 +399,60 @@ class AuthController extends Controller
         }
     }
 
+    public function securityOverview()
+{
+    $pending = DB::table('users_table')->where('status', 'pending')->count();
+    $active = DB::table('users_table')->where('status', 'active')->count();
+    $rejected = DB::table('users_table')->where('status', 'rejected')->count();
+
+    return response()->json([
+        'data' => [
+            ['name' => 'Pending', 'value' => $pending],
+            ['name' => 'Active', 'value' => $active],
+            ['name' => 'Rejected', 'value' => $rejected],
+        ]
+    ]);
+}
+
+public function adminCapacity()
+{
+    $totalAdmins = DB::table('users_table')
+        ->where('role_id', 2)
+        ->count();
+
+    $activeAdmins = DB::table('users_table')
+        ->where('role_id', 2)
+        ->where('status', 'active')
+        ->count();
+
+    $inactiveAdmins = DB::table('users_table')
+        ->where('role_id', 2)
+        ->where('status', '!=', 'active')
+        ->count();
+
+    return response()->json([
+        'data' => [
+            ['name' => 'Total', 'value' => $totalAdmins],
+            ['name' => 'Active', 'value' => $activeAdmins],
+            ['name' => 'Inactive', 'value' => $inactiveAdmins],
+        ]
+    ]);
+}
+
+public function notifications()
+{
+    $logs = DB::table('audit_logs_table')
+        ->orderByDesc('log_date')
+        ->limit(10)
+        ->get();
+
+    return response()->json([
+        'notifications' => $logs->map(function ($log) {
+            return $log->description;
+        })
+    ]);
+}
+
     /* =====================================================
      | ROLES & PERMISSIONS
      * ===================================================== */
